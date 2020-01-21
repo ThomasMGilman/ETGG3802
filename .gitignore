@@ -1,0 +1,8 @@
+# Directories to ignore
+.vs/
+dependencies/
+
+# Ignore commpressed files
+*.zip
+*.7z
+*.rar
