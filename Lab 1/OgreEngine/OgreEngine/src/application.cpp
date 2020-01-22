@@ -6,6 +6,7 @@ Application::Application() : OgreBites::ApplicationContext("OgreTutorialApp")
 
 void Application::setup(void)
 {
+	///////////////////////////////////////////////////////////////////////////////////////////// Initial Setup
 	//base setup
 	OgreBites::ApplicationContext::setup();
 
@@ -14,67 +15,71 @@ void Application::setup(void)
 
 	//get pointer to created root and create sceneManager
 	root = getRoot();
-	scnMgr = root->createSceneManager();
+	mScnMgr = root->createSceneManager();
+
+	mScnMgr->addRenderQueueListener(getOverlaySystem());
+	
+	logger = new LogManager();
 
 	//register scene with the RTSS(Shader)
 	Ogre::RTShader::ShaderGenerator* shadergen = 
 		Ogre::RTShader::ShaderGenerator::getSingletonPtr();
-	shadergen->addSceneManager(scnMgr);
+	shadergen->addSceneManager(mScnMgr);
 	
 	///////////////////////////////////////////////////////////////////////////////////////////// Add Lights
 	//Set Ambient light color
-	scnMgr->setAmbientLight(Ogre::ColourValue(0, 0, 0));
-	scnMgr->setShadowTechnique(Ogre::ShadowTechnique::SHADOWTYPE_STENCIL_ADDITIVE);
+	mScnMgr->setAmbientLight(Ogre::ColourValue(0, 0, 0));
+	mScnMgr->setShadowTechnique(Ogre::ShadowTechnique::SHADOWTYPE_STENCIL_ADDITIVE);
 
 	//add light to the scene
-	Ogre::Light* light = scnMgr->createLight("MainLight");
-	Ogre::SceneNode* lightNode = scnMgr->getRootSceneNode()->createChildSceneNode();
+	Ogre::Light* light = mScnMgr->createLight("MainLight");
+	Ogre::SceneNode* lightNode = mScnMgr->getRootSceneNode()->createChildSceneNode();
 	lightNode->setPosition(20, 80, 50);
 	lightNode->attachObject(light);
 
 	//add Spotlight to the scene
-	Ogre::Light* spotLight = scnMgr->createLight("SpotLight");
+	Ogre::Light* spotLight = mScnMgr->createLight("SpotLight");
 	spotLight->setDiffuseColour(.1, .1, .1);
 	spotLight->setSpecularColour(.1, .1, .1);
 	spotLight->setType(Ogre::Light::LT_SPOTLIGHT);
 	spotLight->setSpotlightRange(Ogre::Degree(35), Ogre::Degree(50));
 
 	//attach spotlight to new node and set direction and position
-	Ogre::SceneNode* spotLightNode = scnMgr->getRootSceneNode()->createChildSceneNode();
+	Ogre::SceneNode* spotLightNode = mScnMgr->getRootSceneNode()->createChildSceneNode();
 	spotLightNode->attachObject(spotLight);
 	spotLightNode->setDirection(-1, -1, 0);
 	spotLightNode->setPosition(Ogre::Vector3(200, 200, 0));
 
 	//add Directional Light
-	Ogre::Light* dirLight = scnMgr->createLight("DirectionalLight");
+	Ogre::Light* dirLight = mScnMgr->createLight("DirectionalLight");
 	dirLight->setType(Ogre::Light::LT_DIRECTIONAL);
 	dirLight->setDiffuseColour(Ogre::ColourValue(.2, .2, .2));
 	dirLight->setSpecularColour(Ogre::ColourValue(.2, .2, .2));
 
 	//set Directional Light in scene
-	Ogre::SceneNode* dirLightNode = scnMgr->getRootSceneNode()->createChildSceneNode();
+	Ogre::SceneNode* dirLightNode = mScnMgr->getRootSceneNode()->createChildSceneNode();
 	dirLightNode->attachObject(dirLight);
 	dirLightNode->setDirection(Ogre::Vector3(0, -1, 1));
 
 	//add Point Light
-	Ogre::Light* pointLight = scnMgr->createLight("PointLight");
+	Ogre::Light* pointLight = mScnMgr->createLight("PointLight");
 	pointLight->setType(Ogre::Light::LT_POINT);
 	pointLight->setDiffuseColour(.3, .3, .3);
 	pointLight->setSpecularColour(.3, .3, .3);
 
 	//set Point light in scene
-	Ogre::SceneNode* pointLightNode = scnMgr->getRootSceneNode()->createChildSceneNode();
+	Ogre::SceneNode* pointLightNode = mScnMgr->getRootSceneNode()->createChildSceneNode();
 	pointLightNode->attachObject(pointLight);
 	pointLightNode->setPosition(Ogre::Vector3(0, 150, 250));
 
 	///////////////////////////////////////////////////////////////////////////////////////////// Add Camera and ViewPort
 	//create the camera
-	Ogre::Camera* cam = scnMgr->createCamera("myCam");
+	Ogre::Camera* cam = mScnMgr->createCamera("myCam");
 	cam->setNearClipDistance(5);	//can be changed, specific for this sample
 	cam->setAutoAspectRatio(true);
 
 	//Create CameraNode and attach camera to be put into the scene
-	Ogre::SceneNode* camNode = scnMgr->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(0, 15, 30));
+	Ogre::SceneNode* camNode = mScnMgr->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(0, 15, 30));
 	camNode->lookAt(Ogre::Vector3::ZERO, Ogre::Node::TS_WORLD);
 	camNode->attachObject(cam);
 
@@ -87,9 +92,9 @@ void Application::setup(void)
 
 	///////////////////////////////////////////////////////////////////////////////////////////// Add Entitys and plane
 	//create Ogre Entity to render and set to cast shadows
-	Ogre::Entity* ogreEnt = scnMgr->createEntity("Sinbad.mesh");
+	Ogre::Entity* ogreEnt = mScnMgr->createEntity("Sinbad.mesh");
 	ogreEnt->setCastShadows(true);
-	Ogre::SceneNode* ogreNode = scnMgr->getRootSceneNode()->createChildSceneNode("OgreEnt", Ogre::Vector3(0, 5, 0), Ogre::Quaternion::IDENTITY);
+	Ogre::SceneNode* ogreNode = mScnMgr->getRootSceneNode()->createChildSceneNode("OgreEnt", Ogre::Vector3(0, 5, 0), Ogre::Quaternion::IDENTITY);
 	ogreNode->lookAt(Ogre::Vector3(0, 0, 0), Ogre::Node::TransformSpace::TS_WORLD);
 	ogreNode->pitch(Ogre::Degree(90));
 	ogreNode->attachObject(ogreEnt);
@@ -110,19 +115,26 @@ void Application::setup(void)
 		5,						//vTile floats
 		Ogre::Vector3::UNIT_Z);	//upVector
 
-	Ogre::Entity* groundEntity = scnMgr->createEntity("ground");
-	scnMgr->getRootSceneNode()->createChildSceneNode()->attachObject(groundEntity);
+	Ogre::Entity* groundEntity = mScnMgr->createEntity("ground");
+	mScnMgr->getRootSceneNode()->createChildSceneNode()->attachObject(groundEntity);
 	groundEntity->setCastShadows(false);
 	groundEntity->setMaterialName("Examples/Rockwall");
 
 
 	///////////////////////////////////////////////////////////////////////////////////////////// Enable and Add SkyBox
-	scnMgr->setSkyBox(true, "Examples/SpaceSkyBox", 300, false);
+	mScnMgr->setSkyBox(true, "Examples/SpaceSkyBox", 300, false);
 }
 
 bool Application::frameStarted(const Ogre::FrameEvent& e)
 {
 	OgreBites::ApplicationContext::frameStarted(e);
+
+	if(keysDown.find(OgreBites::SDLK_LEFT) != keysDown.end())
+		mScnMgr->getSceneNode("OgreEnt")->yaw(Ogre::Degree(-90) * e.timeSinceLastFrame);
+	
+	if (keysDown.find(OgreBites::SDLK_RIGHT) != keysDown.end())
+		mScnMgr->getSceneNode("OgreEnt")->yaw(Ogre::Degree(90) * e.timeSinceLastFrame);
+
 	return true;
 }
 
@@ -135,16 +147,17 @@ bool Application::keyPressed(const OgreBites::KeyboardEvent& evt)
 	{
 		getRoot()->queueEndRendering();
 	}
-	
-	if (evt.keysym.sym == OgreBites::SDLK_LEFT)
-	{
-		scnMgr->getSceneNode("OgreEnt")->roll(Ogre::Degree(90));
-	}
+	else
+		//Add key pressed to set of keysCurrently down
+		keysDown.emplace(evt.keysym.sym);
 
-	if (evt.keysym.sym == OgreBites::SDLK_RIGHT)
-	{
-		scnMgr->getSceneNode("OgreEnt")->roll(Ogre::Degree(90));
-	}
+	return true;
+}
+
+bool Application::keyReleased(const OgreBites::KeyboardEvent& evt)
+{
+	//Remove key that was released from set
+	keysDown.erase(keysDown.find(evt.keysym.sym));
 
 	return true;
 }
