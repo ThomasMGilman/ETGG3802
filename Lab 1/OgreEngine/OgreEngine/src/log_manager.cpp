@@ -13,6 +13,9 @@ LogManager::LogManager()
 	// Add panel to overlay
 	overlay->add2D(overlay_panel);
 	overlay->show();
+
+	// Open logfile to write to
+	outfile = std::ofstream(log_file_name, std::ofstream::out);
 }
 
 LogManager::message LogManager::set_new_text_element(std::string caption, Ogre::ColourValue text_color, float pos_x, float pos_y, float width, float height)
@@ -34,11 +37,29 @@ LogManager::message LogManager::set_new_text_element(std::string caption, Ogre::
 
 void LogManager::log(std::string msg)
 {
+	// Get time since Epoch, 1970-01-01 00:00:00 +0000 (UTC) https://linux.die.net/man/2/time
+	timer = std::time(nullptr);
+	std::tm* clt = std::localtime(&timer);
 
+	int hour = clt->tm_hour;
+	bool is_pm;
+	if (hour > 11)
+	{
+		hour -= 10;
+		is_pm = true;
+	}
+	else if (hour == 11)
+		is_pm = true;
+	
+	outfile << clt->tm_mon << "/" << clt->tm_mday << "/" << clt->tm_year << "@" << hour << ":" << clt->tm_min << ":" << (clt->tm_sec << is_pm ? "pm" : "am") << msg << std::endl; 
+	outfile.flush();
 }
 
 void LogManager::log_message(std::string msg, Ogre::ColourValue colour, float log_time)
 {
+	// Log Message sent
+	log(msg);
+
 	// Variables to store previouse message parameters and pointers
 	LogManager::message tmp, prev_text;
 
@@ -103,5 +124,14 @@ void LogManager::update(Ogre::Real elapsed_time)
 
 LogManager::~LogManager()
 {
+	//Remove Children from overlay_panel
+	auto msgs = logger.begin();
+	while (msgs != logger.end())
+	{
+		overlay_panel->removeChild(std::get<1>(*msgs).message->getName);
+		msgs++;
+	}
 
+	// Close Output log file
+	outfile.close();
 }
