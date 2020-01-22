@@ -2,6 +2,7 @@
 
 Application::Application() : OgreBites::ApplicationContext("OgreTutorialApp")
 {
+	
 }
 
 void Application::setup(void)
@@ -14,12 +15,10 @@ void Application::setup(void)
 	addInputListener(this);
 
 	//get pointer to created root and create sceneManager
-	root = getRoot();
-	mScnMgr = root->createSceneManager();
+	mRoot = getRoot();
+	mScnMgr = mRoot->createSceneManager();
 
 	mScnMgr->addRenderQueueListener(getOverlaySystem());
-	
-	logger = new LogManager();
 
 	//register scene with the RTSS(Shader)
 	Ogre::RTShader::ShaderGenerator* shadergen = 
@@ -123,17 +122,21 @@ void Application::setup(void)
 
 	///////////////////////////////////////////////////////////////////////////////////////////// Enable and Add SkyBox
 	mScnMgr->setSkyBox(true, "Examples/SpaceSkyBox", 300, false);
+
+	mLogger = new LogManager(vp->getActualHeight());
 }
 
 bool Application::frameStarted(const Ogre::FrameEvent& e)
 {
 	OgreBites::ApplicationContext::frameStarted(e);
 
-	if(keysDown.find(OgreBites::SDLK_LEFT) != keysDown.end())
+	if(mKeysDown.find(OgreBites::SDLK_LEFT) != mKeysDown.end())
 		mScnMgr->getSceneNode("OgreEnt")->yaw(Ogre::Degree(-90) * e.timeSinceLastFrame);
 	
-	if (keysDown.find(OgreBites::SDLK_RIGHT) != keysDown.end())
+	if (mKeysDown.find(OgreBites::SDLK_RIGHT) != mKeysDown.end())
 		mScnMgr->getSceneNode("OgreEnt")->yaw(Ogre::Degree(90) * e.timeSinceLastFrame);
+
+	mLogger->update(e.timeSinceLastFrame);
 
 	return true;
 }
@@ -149,7 +152,10 @@ bool Application::keyPressed(const OgreBites::KeyboardEvent& evt)
 	}
 	else
 		//Add key pressed to set of keysCurrently down
-		keysDown.emplace(evt.keysym.sym);
+		mKeysDown.emplace(evt.keysym.sym);
+
+	mStringStream << "Key Pressed = " << evt.keysym.sym;
+	mLogger->log_message(mStringStream.str(), Ogre::ColourValue(1, 1, 1), 2);
 
 	return true;
 }
@@ -157,7 +163,12 @@ bool Application::keyPressed(const OgreBites::KeyboardEvent& evt)
 bool Application::keyReleased(const OgreBites::KeyboardEvent& evt)
 {
 	//Remove key that was released from set
-	keysDown.erase(keysDown.find(evt.keysym.sym));
+	mKeysDown.erase(mKeysDown.find(evt.keysym.sym));
 
 	return true;
+}
+
+Application::~Application()
+{
+	delete(mLogger);
 }

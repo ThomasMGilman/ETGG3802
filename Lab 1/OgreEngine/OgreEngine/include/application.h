@@ -4,6 +4,7 @@
 #include "OgreApplicationContext.h"
 #include "log_manager.h"
 #include <unordered_set>
+#include <sstream>
 
 
 class Application : public OgreBites::ApplicationContext, public OgreBites::InputListener
@@ -12,6 +13,7 @@ class Application : public OgreBites::ApplicationContext, public OgreBites::Inpu
 	public:
 	
 		Application();
+		~Application();
 
 		virtual void setup(void) override;
 
@@ -22,11 +24,12 @@ class Application : public OgreBites::ApplicationContext, public OgreBites::Inpu
 		bool keyReleased(const OgreBites::KeyboardEvent& evt) override;
 
 	private:
-		Ogre::Root* root;
+		Ogre::Root* mRoot;
 		Ogre::SceneManager* mScnMgr;
-		Ogre::Timer* timer;
+		Ogre::Timer* mTimer;
 
-		std::unordered_set<int> keysDown;
+		std::unordered_set<int> mKeysDown;
+		std::stringstream mStringStream;
 
-		LogManager* logger;
+		LogManager* mLogger;
 };

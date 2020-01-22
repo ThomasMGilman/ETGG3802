@@ -1,6 +1,7 @@
 #pragma once
 
 #include <time.h>
+#include <stack>
 #include "OgreOverlay.h"
 #include "OgreOverlayManager.h"
 #include "OgreOverlayContainer.h"
@@ -12,24 +13,16 @@
 class LogManager
 {
 	public:
-
-		// Structure for messages
-		struct message
-		{
-			float pos_x, pos_y;
-			Ogre::TextAreaOverlayElement* message;
-		};
-
-		LogManager();
+		LogManager(float vpHeight, std::string logFileName = "log.txt", int numLogs = 20);
 
 		// Creates a new text element area with the desired caption and color and returns it as a message structure with its position stored
-		message set_new_text_element(std::string caption, Ogre::ColourValue text_color = Ogre::ColourValue(), float pos_x = 0, float pos_y = 0, float width = 100, float height = 100);
+		void set_text_element(std::string caption, Ogre::ColourValue text_color, float log_time_seconds);
 		
 		// Logs messages to a log file
 		void log(std::string msg);
 
 		// Outputs messages to the overlay as well as the log file
-		void log_message(std::string msg, Ogre::ColourValue colour, float log_time);
+		void log_message(std::string msg, Ogre::ColourValue text_color = Ogre::ColourValue(), float log_time_seconds = 2);
 		
 		// Updates the messages on the screen and removes messages after their time is up
 		void update(Ogre::Real elapsed_time);
@@ -38,17 +31,17 @@ class LogManager
 
 	private:
 		// Ogre Overlay tools
-		Ogre::OverlayManager& overlay_manager = Ogre::OverlayManager::getSingleton();
-		Ogre::Overlay* overlay;
-		Ogre::OverlayContainer* overlay_panel;
+		Ogre::OverlayManager& mOverlayManager = Ogre::OverlayManager::getSingleton();
+		Ogre::Overlay* mOverlay;
+		Ogre::OverlayContainer* mOverlayPanel;
 
 		// Time object
-		std::time_t timer;
+		std::time_t mTimer;
 
-		// Output stream and file name
-		std::string log_file_name = "log.txt";
-		std::ofstream outfile;
+		// Output stream
+		std::ofstream mOutfile;
 
 		// Container for text to display to screen
-		std::vector<std::tuple<float, message>> logger;
+		std::vector<std::tuple<float, Ogre::TextAreaOverlayElement*>> mLogs;
+		std::stack<std::tuple<float, std::string, Ogre::ColourValue>> mPendingLogs;
 };

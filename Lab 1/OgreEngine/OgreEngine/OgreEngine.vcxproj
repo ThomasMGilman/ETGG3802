@@ -70,6 +70,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\RTShaderSystem;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\Overlay;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\Bites;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
