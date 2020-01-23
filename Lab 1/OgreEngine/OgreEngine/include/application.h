@@ -6,6 +6,8 @@
 #include <unordered_set>
 #include <sstream>
 
+#define RAND_COLOUR_VAL static_cast<float>(rand()) / static_cast<float>(RAND_MAX)
+
 
 class Application : public OgreBites::ApplicationContext, public OgreBites::InputListener
 {

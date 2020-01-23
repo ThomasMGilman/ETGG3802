@@ -15,7 +15,7 @@ LogManager::LogManager(float vpHeight, std::string logFileName, int numLogs)
 	mOverlay->show();
 
 	// Open logfile to write to
-	mOutfile = std::ofstream(logFileName, std::ofstream::out);
+	mOutfile = std::ofstream(logFileName, std::ofstream::out | std::ofstream::trunc);
 
 	int yPosAmount = vpHeight / numLogs;
 	// setup text Areas
@@ -32,7 +32,7 @@ LogManager::LogManager(float vpHeight, std::string logFileName, int numLogs)
 
 		mOverlayPanel->addChild(text_area);
 
-		mLogs.push_back(std::tuple<float, Ogre::TextAreaOverlayElement*>(0, text_area));
+		mLogs.push_back(msg_pack{ 0, text_area });
 	}
 }
 
@@ -46,17 +46,19 @@ void LogManager::set_text_element(std::string caption, Ogre::ColourValue text_co
 	bool textSet = false;
 	for (int i = 0; i < mLogs.size(); i++)
 	{
-		if (std::get<0>(mLogs[i]) <= 0)
+		if (mLogs[i].msgTimeLeft <= 0)
 		{
+			mLogs[i].msgTimeLeft = log_time_seconds;
+			mLogs[i].msgArea->setCaption(caption);
+			mLogs[i].msgArea->setColour(text_color);
 			textSet = true;
-			std::get<0>(mLogs[i]) = log_time_seconds;
-			std::get<1>(mLogs[i])->setCaption(caption);
-			std::get<1>(mLogs[i])->setColour(text_color);
 			break;
 		}
 	}
 	if (!textSet)
+	{
 		mPendingLogs.push(std::tuple<float, std::string, Ogre::ColourValue>(log_time_seconds, caption, text_color));
+	}
 }
 
 void LogManager::log(std::string msg)
@@ -77,7 +79,7 @@ void LogManager::log(std::string msg)
 		is_pm = true;
 	
 	// output to file
-	mOutfile << clt->tm_mon << "/" << clt->tm_mday << "/" << clt->tm_year << "@" << hour << ":" << clt->tm_min << ":" << (clt->tm_sec << is_pm ? "pm" : "am") << msg << std::endl; 
+	mOutfile << clt->tm_mon + 1 << "/" << clt->tm_mday << "/" << clt->tm_year + 1900 << "@" << hour << ":" << clt->tm_min << ":" << clt->tm_sec << (is_pm ? "pm " : "am ") << msg << std::endl; 
 	mOutfile.flush();
 }
 
@@ -94,21 +96,25 @@ void LogManager::update(Ogre::Real elapsed_time)
 	auto msgs = mLogs.begin();
 	while (msgs != mLogs.end())
 	{
-		if (std::get<0>(*msgs) <= 0)
+		if (msgs->msgTimeLeft <= 0)
 			break;
 		else
 		{
-			if ((std::get<0>(*msgs) -= elapsed_time) <= 0)
+			if ((msgs->msgTimeLeft -= elapsed_time) <= 0)
 			{
 				auto msgUpdater = msgs;
 				while (msgUpdater != mLogs.end())
 				{
-					if(msgUpdater != mLogs.end() - 1)
-						msgUpdater = msgUpdater + 1;
+					if (msgUpdater != mLogs.end() - 1)
+					{
+						msgUpdater->msgTimeLeft = (msgUpdater + 1)->msgTimeLeft;
+						msgUpdater->msgArea->setCaption((msgUpdater + 1)->msgArea->getCaption());
+						msgUpdater->msgArea->setColour((msgUpdater + 1)->msgArea->getColour());
+					}
 					else
 					{
-						std::get<0>(*msgUpdater) = 0;
-						std::get<1>(*msgUpdater)->setCaption("");
+						msgUpdater->msgTimeLeft = 0;
+						msgUpdater->msgArea->setCaption("");
 					}
 					msgUpdater++;
 				}
@@ -118,12 +124,12 @@ void LogManager::update(Ogre::Real elapsed_time)
 		msgs++;
 	}
 	// Update values for text areas if logs are available and areas are available
-	while (msgs != mLogs.end() && mPendingLogs.size() > 0)
+	while (msgs != mLogs.end() && !mPendingLogs.empty())
 	{
 		std::tuple<float, std::string, Ogre::ColourValue> newLog = mPendingLogs.top();
-		std::get<0>(*msgs) = std::get<0>(newLog);
-		std::get<1>(*msgs)->setCaption(std::get<1>(newLog));
-		std::get<1>(*msgs)->setColour(std::get<2>(newLog));
+		msgs->msgTimeLeft = std::get<0>(newLog);
+		msgs->msgArea->setCaption(std::get<1>(newLog));
+		msgs->msgArea->setColour(std::get<2>(newLog));
 
 		mPendingLogs.pop();
 		msgs++;

@@ -30,6 +30,13 @@ class LogManager
 		~LogManager();
 
 	private:
+
+		struct msg_pack 
+		{
+			float msgTimeLeft;
+			Ogre::TextAreaOverlayElement* msgArea;
+		};
+
 		// Ogre Overlay tools
 		Ogre::OverlayManager& mOverlayManager = Ogre::OverlayManager::getSingleton();
 		Ogre::Overlay* mOverlay;
@@ -42,6 +49,6 @@ class LogManager
 		std::ofstream mOutfile;
 
 		// Container for text to display to screen
-		std::vector<std::tuple<float, Ogre::TextAreaOverlayElement*>> mLogs;
+		std::vector<msg_pack> mLogs;
 		std::stack<std::tuple<float, std::string, Ogre::ColourValue>> mPendingLogs;
 };

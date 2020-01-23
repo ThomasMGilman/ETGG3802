@@ -154,8 +154,10 @@ bool Application::keyPressed(const OgreBites::KeyboardEvent& evt)
 		//Add key pressed to set of keysCurrently down
 		mKeysDown.emplace(evt.keysym.sym);
 
+	// Build message to be printed and clear stringstream after for next message
 	mStringStream << "Key Pressed = " << evt.keysym.sym;
-	mLogger->log_message(mStringStream.str(), Ogre::ColourValue(1, 1, 1), 2);
+	mLogger->log_message(mStringStream.str(), Ogre::ColourValue(RAND_COLOUR_VAL, RAND_COLOUR_VAL, RAND_COLOUR_VAL), 2);
+	mStringStream.str(std::string());
 
 	return true;
 }
