@@ -5,15 +5,17 @@
 #include "log_manager.h"
 #include <unordered_set>
 #include <sstream>
+#include <Singleton.h>
 
 #define RAND_COLOUR_VAL static_cast<float>(rand()) / static_cast<float>(RAND_MAX)
+#define APPLICATION Application::getSingletonPtr()
 
-
-class Application : public OgreBites::ApplicationContext, public OgreBites::InputListener
-{
-	/// Public Application Constructor and Functions ///
+namespace OgreEngine {
+	class Application : public OgreBites::ApplicationContext, public OgreBites::InputListener, public Singleton<Application>
+	{
+		/// Public Application Constructor and Functions ///
 	public:
-	
+
 		Application();
 		~Application();
 
@@ -25,6 +27,8 @@ class Application : public OgreBites::ApplicationContext, public OgreBites::Inpu
 
 		bool keyReleased(const OgreBites::KeyboardEvent& evt) override;
 
+		Ogre::SceneManager* get_scene_manager() { return this->mScnMgr; };
+
 	private:
 		Ogre::Root* mRoot;
 		Ogre::SceneManager* mScnMgr;
@@ -34,4 +38,5 @@ class Application : public OgreBites::ApplicationContext, public OgreBites::Inpu
 		std::stringstream mStringStream;
 
 		LogManager* mLogger;
-};
+	};
+}

@@ -1,5 +1,9 @@
 #include "application.h"
 
+using namespace OgreEngine;
+
+Application* Application::Singleton::msSingleton = nullptr;
+
 Application::Application() : OgreBites::ApplicationContext("OgreTutorialApp")
 {
 	

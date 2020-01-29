@@ -1,5 +1,9 @@
 #include "log_manager.h"
 
+using namespace OgreEngine;
+
+LogManager* LogManager::Singleton::msSingleton = nullptr;
+
 LogManager::LogManager(float vpHeight, std::string logFileName, int numLogs)
 {
 	// Get Ogres Overlay Manager and create and overlay
