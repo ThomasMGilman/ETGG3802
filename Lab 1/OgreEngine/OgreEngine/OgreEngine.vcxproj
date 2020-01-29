@@ -13,9 +13,9 @@
   <ItemGroup>
     <ClCompile Include="src\application.cpp" />
     <ClCompile Include="src\game_object.cpp" />
+    <ClCompile Include="src\game_object_manager.cpp" />
     <ClCompile Include="src\log_manager.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\singleton.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\application.h" />

@@ -2,7 +2,7 @@
 
 using namespace OgreEngine;
 
-LogManager* LogManager::Singleton::msSingleton = nullptr;
+LogManager* LogManager::msSingleton = nullptr;
 
 LogManager::LogManager(float vpHeight, std::string logFileName, int numLogs)
 {

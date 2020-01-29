@@ -27,7 +27,7 @@
     <ClCompile Include="src\game_object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\singleton.cpp">
+    <ClCompile Include="src\game_object_manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

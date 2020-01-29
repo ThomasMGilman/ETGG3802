@@ -2,7 +2,11 @@
 #define _GAME_OBJECT_MANAGER_H_
 
 #include <game_object.h>
+#include <log_manager.h>
+#include <singleton.h>
+#include <map>
 
+#define GAME_OBJ_MANAGER GameObjectManager::getSingletonPtr()
 
 namespace OgreEngine
 {
@@ -13,11 +17,16 @@ namespace OgreEngine
 	/// is a collection of uniquely named GameObjects (a map-of-maps) -- in theory a GameObject name
 	/// only has to be unique within the group, but when finding a GameObject solely by name, it is 
 	/// non-deterministic which one will be returned.
-	class GameObjectManager
+	class GameObjectManager : public Singleton<GameObjectManager>
 	{
 		// ***** ATTRIBUTES *****
 	protected:
-
+		// GameObject map for creating and keeping track of GameObjects
+		std::map<std::string, std::map<std::string, GameObject*>> mObjects;
+		std::map<int, std::vector<GameObject*>> mtaggedObjects;
+		std::map<std::string, GameObject*>::iterator mObjIter;
+		std::map<std::string, std::map<std::string, GameObject*>>::iterator mGroupsIter;
+		std::map<std::string, std::map<std::string, GameObject*>>::reverse_iterator mGroupsRevIter;
 
 		// ***** CONSTRUCTOR / DESTRUCTOR *****
 	public:
@@ -44,7 +53,7 @@ namespace OgreEngine
 		// ***** METHODS ***** 
 	public:
 		/// Destroys a game object (faster version) if you know the group name
-		bool destroy_game_object(std::string group_name, std::string gobj_name);
+		bool destroy_game_object(std::string group_name, std::string gobj_name, bool ignoreLog = true);
 
 		/// Destroy a game object (slower version) if you don't know the group name.  Returns true if that game object was destroyed
 		/// (i.e. was it found)
