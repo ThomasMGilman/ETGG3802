@@ -1,4 +1,5 @@
 #include "application.h"
+#include "game_object_manager.h"
 
 using namespace OgreEngine;
 
@@ -28,7 +29,7 @@ void Application::setup(void)
 	Ogre::RTShader::ShaderGenerator* shadergen = 
 		Ogre::RTShader::ShaderGenerator::getSingletonPtr();
 	shadergen->addSceneManager(mScnMgr);
-	
+
 	///////////////////////////////////////////////////////////////////////////////////////////// Add Lights
 	//Set Ambient light color
 	mScnMgr->setAmbientLight(Ogre::ColourValue(0, 0, 0));
@@ -36,9 +37,8 @@ void Application::setup(void)
 
 	//add light to the scene
 	Ogre::Light* light = mScnMgr->createLight("MainLight");
-	Ogre::SceneNode* lightNode = mScnMgr->getRootSceneNode()->createChildSceneNode();
-	lightNode->setPosition(20, 80, 50);
-	lightNode->attachObject(light);
+	GameObject* lightNode = GAME_OBJ_MANAGER->create_game_object("temporary", light->getName(), nullptr, 0, Ogre::Vector3(20, 80, 50));
+	lightNode->attach_object(light);
 
 	//add Spotlight to the scene
 	Ogre::Light* spotLight = mScnMgr->createLight("SpotLight");
@@ -48,10 +48,9 @@ void Application::setup(void)
 	spotLight->setSpotlightRange(Ogre::Degree(35), Ogre::Degree(50));
 
 	//attach spotlight to new node and set direction and position
-	Ogre::SceneNode* spotLightNode = mScnMgr->getRootSceneNode()->createChildSceneNode();
-	spotLightNode->attachObject(spotLight);
-	spotLightNode->setDirection(-1, -1, 0);
-	spotLightNode->setPosition(Ogre::Vector3(200, 200, 0));
+	GameObject* spotLightNode = GAME_OBJ_MANAGER->create_game_object("temporary", spotLight->getName(), nullptr, 0, Ogre::Vector3(200, 200, 0));
+	spotLightNode->attach_object(spotLight);
+	spotLightNode->set_direction(-1, -1, 0);
 
 	//add Directional Light
 	Ogre::Light* dirLight = mScnMgr->createLight("DirectionalLight");
@@ -60,9 +59,9 @@ void Application::setup(void)
 	dirLight->setSpecularColour(Ogre::ColourValue(.2, .2, .2));
 
 	//set Directional Light in scene
-	Ogre::SceneNode* dirLightNode = mScnMgr->getRootSceneNode()->createChildSceneNode();
-	dirLightNode->attachObject(dirLight);
-	dirLightNode->setDirection(Ogre::Vector3(0, -1, 1));
+	GameObject* dirLightNode = GAME_OBJ_MANAGER->create_game_object("temporary", dirLight->getName());
+	dirLightNode->attach_object(dirLight);
+	dirLightNode->set_direction(Ogre::Vector3(0, -1, 1));
 
 	//add Point Light
 	Ogre::Light* pointLight = mScnMgr->createLight("PointLight");
@@ -71,9 +70,9 @@ void Application::setup(void)
 	pointLight->setSpecularColour(.3, .3, .3);
 
 	//set Point light in scene
-	Ogre::SceneNode* pointLightNode = mScnMgr->getRootSceneNode()->createChildSceneNode();
-	pointLightNode->attachObject(pointLight);
-	pointLightNode->setPosition(Ogre::Vector3(0, 150, 250));
+	GameObject* pointLightNode = GAME_OBJ_MANAGER->create_game_object("temporary", pointLight->getName());
+	pointLightNode->attach_object(pointLight);
+	pointLightNode->set_position(Ogre::Vector3(0, 150, 250));
 
 	///////////////////////////////////////////////////////////////////////////////////////////// Add Camera and ViewPort
 	//create the camera
@@ -82,9 +81,9 @@ void Application::setup(void)
 	cam->setAutoAspectRatio(true);
 
 	//Create CameraNode and attach camera to be put into the scene
-	Ogre::SceneNode* camNode = mScnMgr->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(0, 15, 30));
-	camNode->lookAt(Ogre::Vector3::ZERO, Ogre::Node::TS_WORLD);
-	camNode->attachObject(cam);
+	GameObject* camNode = GAME_OBJ_MANAGER->create_game_object("temporary", cam->getName(), nullptr, 0, Ogre::Vector3(0, 15, 30));
+	camNode->look_at(Ogre::Vector3::ZERO);
+	camNode->attach_object(cam);
 
 	//set camera to render to main window by creating a viewport and attaching the camera
 	Ogre::Viewport* vp = getRenderWindow()->addViewport(cam);
@@ -95,12 +94,12 @@ void Application::setup(void)
 
 	///////////////////////////////////////////////////////////////////////////////////////////// Add Entitys and plane
 	//create Ogre Entity to render and set to cast shadows
-	Ogre::Entity* ogreEnt = mScnMgr->createEntity("Sinbad.mesh");
+	Ogre::Entity* ogreEnt = mScnMgr->createEntity("OgreEnt", "Sinbad.mesh");
 	ogreEnt->setCastShadows(true);
-	Ogre::SceneNode* ogreNode = mScnMgr->getRootSceneNode()->createChildSceneNode("OgreEnt", Ogre::Vector3(0, 5, 0), Ogre::Quaternion::IDENTITY);
-	ogreNode->lookAt(Ogre::Vector3(0, 0, 0), Ogre::Node::TransformSpace::TS_WORLD);
-	ogreNode->pitch(Ogre::Degree(90));
-	ogreNode->attachObject(ogreEnt);
+	GameObject* ogreNode = GAME_OBJ_MANAGER->create_game_object("temporary", ogreEnt->getName(), nullptr, 0, Ogre::Vector3(0, 5, 0));
+	ogreNode->look_at();
+	ogreNode->rotate_world(90, 0, 1, 0);
+	ogreNode->attach_object(ogreEnt);
 
 	//Create Ground Plane
 	Ogre::Plane plane(Ogre::Vector3::UNIT_Y, 0);
@@ -119,10 +118,11 @@ void Application::setup(void)
 		Ogre::Vector3::UNIT_Z);	//upVector
 
 	Ogre::Entity* groundEntity = mScnMgr->createEntity("ground");
-	mScnMgr->getRootSceneNode()->createChildSceneNode()->attachObject(groundEntity);
 	groundEntity->setCastShadows(false);
 	groundEntity->setMaterialName("Examples/Rockwall");
 
+	GameObject* groundPlane = GAME_OBJ_MANAGER->create_game_object("temporary", groundEntity->getName());
+	groundPlane->attach_object(groundEntity);
 
 	///////////////////////////////////////////////////////////////////////////////////////////// Enable and Add SkyBox
 	mScnMgr->setSkyBox(true, "Examples/SpaceSkyBox", 300, false);
@@ -134,11 +134,13 @@ bool Application::frameStarted(const Ogre::FrameEvent& e)
 {
 	OgreBites::ApplicationContext::frameStarted(e);
 
-	if(mKeysDown.find(OgreBites::SDLK_LEFT) != mKeysDown.end())
-		mScnMgr->getSceneNode("OgreEnt")->yaw(Ogre::Degree(-90) * e.timeSinceLastFrame);
+	if (mKeysDown.find(OgreBites::SDLK_LEFT) != mKeysDown.end())
+		GAME_OBJ_MANAGER->get_game_object("temporary", "OgreEnt")->rotate_world(-90, 1, 0, 0);
+		//mScnMgr->getSceneNode("OgreEnt")->yaw(Ogre::Degree(-90) * e.timeSinceLastFrame);
 	
 	if (mKeysDown.find(OgreBites::SDLK_RIGHT) != mKeysDown.end())
-		mScnMgr->getSceneNode("OgreEnt")->yaw(Ogre::Degree(90) * e.timeSinceLastFrame);
+		GAME_OBJ_MANAGER->get_game_object("temporary", "OgreEnt")->rotate_world(90, 1, 0, 0);
+		//mScnMgr->getSceneNode("OgreEnt")->yaw(Ogre::Degree(90) * e.timeSinceLastFrame);
 
 	mLogger->update(e.timeSinceLastFrame);
 
@@ -176,5 +178,6 @@ bool Application::keyReleased(const OgreBites::KeyboardEvent& evt)
 
 Application::~Application()
 {
+	GAME_OBJ_MANAGER->destroy_all();
 	delete(mLogger);
 }

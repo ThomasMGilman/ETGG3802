@@ -73,7 +73,7 @@ bool OgreEngine::GameObjectManager::has_group(std::string group_name)
 	return false;
 }
 
-bool OgreEngine::GameObjectManager::destroy_game_object(std::string group_name, std::string gobj_name, bool ignoreLog = true)
+bool OgreEngine::GameObjectManager::destroy_game_object(std::string group_name, std::string gobj_name, bool ignoreLog)
 {
 	mGroupsIter = this->mObjects.find(group_name);
 	if (mGroupsIter != this->mObjects.end())
@@ -127,9 +127,21 @@ void OgreEngine::GameObjectManager::group_destroy(std::string group_name, bool d
 			mGroupsIter->second.erase(mObjIter);
 			mObjIter++;
 		}
+		if(destroy_group)
+			this->mObjects.erase(mGroupsIter);
 	}
 	else
 		LOG_MANAGER->log("User trying to clear or delete nonexistent group: " + group_name);
+}
+
+void OgreEngine::GameObjectManager::destroy_all()
+{
+	mGroupsIter = this->mObjects.begin();
+	while (mGroupsIter != this->mObjects.end())
+	{
+		group_destroy(mGroupsIter->first, true);
+		mGroupsIter++;
+	}
 }
 
 void OgreEngine::GameObjectManager::set_visibility(std::string group_name, bool is_visible)
@@ -148,17 +160,27 @@ void OgreEngine::GameObjectManager::set_visibility(std::string group_name, bool 
 		LOG_MANAGER->log("User trying to set object visibility for a nonexistent group: "+group_name);
 }
 
-GameObject* OgreEngine::GameObjectManager::create_game_object(std::string group_name, std::string object_name, GameObject* parent, unsigned int tag)
+GameObject* OgreEngine::GameObjectManager::create_game_object(std::string group_name, std::string object_name, GameObject* parent, unsigned int tag, Ogre::Vector3 pos, Ogre::Quaternion rot)
 {
-	GameObject* newObj = new GameObject(object_name, tag, parent);
+	GameObject* newObj = new GameObject(object_name, tag, parent, pos, rot);
 	mGroupsIter = this->mObjects.find(group_name);
 	if (mGroupsIter != this->mObjects.end())
 	{
-
+		// Check if Object is already in the group
+		mObjIter = this->mGroupsIter->second.find(object_name);
+		if (mObjIter == this->mGroupsIter->second.end()) // GameObject not in group, create it
+			this->mGroupsIter->second.emplace(object_name, newObj);
+		else // GameObject is already apart of the dictionary Log Error and return nullptr as GameObject
+		{
+			LOG_MANAGER->log_message("GameObject_CreationError: Object: " + object_name + " already exists in group: " + group_name, Ogre::ColourValue(1, 0, 0));
+			delete(newObj);
+			return nullptr;
+		}
 	}
-	else
+	else // Object Group does not exist, create group and place new object in group
 	{
-
+		auto newGroup = new std::map<std::string, GameObject*>();
+		this->mObjects.emplace(group_name, newGroup->emplace(object_name, newObj));
 	}
 	return newObj;
 }

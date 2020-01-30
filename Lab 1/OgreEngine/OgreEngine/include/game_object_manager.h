@@ -4,6 +4,7 @@
 #include <game_object.h>
 #include <log_manager.h>
 #include <singleton.h>
+#include <Ogre.h>
 #include <map>
 
 #define GAME_OBJ_MANAGER GameObjectManager::getSingletonPtr()
@@ -59,6 +60,8 @@ namespace OgreEngine
 		/// (i.e. was it found)
 		bool destroy_game_object(std::string gobj_name);
 
+		void destroy_all();
+
 		/// Destroys all game objects within the given group.  If destroy_group is true, also remove the group.  
 		/// Returns true if that game object was destroyed (i.e. was it found).
 		void group_destroy(std::string group_name, bool destroy_group);
@@ -67,7 +70,7 @@ namespace OgreEngine
 		void set_visibility(std::string group_name, bool is_visible);
 
 		/// Creates a new game object.  This creates a group as well, if the given one doesn't exist.
-		GameObject* create_game_object(std::string group_name, std::string object_name, GameObject* parent = NULL, unsigned int tag = 0);
+		GameObject* create_game_object(std::string group_name, std::string object_name, GameObject* parent = nullptr, unsigned int tag = 0, Ogre::Vector3 pos = Ogre::Vector3::ZERO, Ogre::Quaternion rot = Ogre::Quaternion::IDENTITY);
 	};
 }
 

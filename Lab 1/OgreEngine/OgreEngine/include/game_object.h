@@ -33,7 +33,7 @@ namespace OgreEngine
 	protected:
 		/// Constructor.  Note: Constructors are normally public.  I'm doing this, however, to force the
 		/// user to create a GameObject through the GameObjectManager (the "Factory")
-		GameObject(std::string name, int tag, GameObject* parent = NULL);
+		GameObject(std::string name, int tag, GameObject* parent = NULL, Ogre::Vector3 pos = Ogre::Vector3::ZERO, Ogre::Quaternion rot = Ogre::Quaternion::IDENTITY);
 
 		/// Destructor
 		virtual ~GameObject();
@@ -62,6 +62,12 @@ namespace OgreEngine
 		/// Sets the scale offset (relative to the parent game object)
 		void set_scale(const Ogre::Vector3& s) { mSceneNode->setScale(s); }
 
+		/// Sets the Direction vector of the Object
+		void set_direction(float x, float y, float z) { mSceneNode->setDirection(x, y, z); }
+
+		/// Sets the direction vector of the Object
+		void set_direction(const Ogre::Vector3& d) { mSceneNode->setDirection(d); }
+
 		/// Sets the rotational offset (relative to the parent game object)
 		void set_orientation(float degrees, float vx, float vy, float vz) { mSceneNode->setOrientation(Ogre::Quaternion(Ogre::Degree(degrees), Ogre::Vector3(vx, vy, vz))); }
 
@@ -70,6 +76,9 @@ namespace OgreEngine
 
 		/// Makes this object's negative z-axis point towards the given world space position
 		void look_at(float x, float y, float z) { mSceneNode->lookAt(Ogre::Vector3(x, y, z), Ogre::Node::TS_WORLD); }
+
+		/// Makes this object's negative z-axis point towards the given world space position
+		void look_at(Ogre::Vector3 d = Ogre::Vector3::ZERO) { mSceneNode->lookAt(d, Ogre::Node::TS_WORLD); }
 
 		// ***** TRANSFORMATION (RELATIVE) SETTERS *****
 	public:

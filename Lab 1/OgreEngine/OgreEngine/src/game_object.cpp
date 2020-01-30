@@ -3,12 +3,12 @@
 
 using namespace OgreEngine;
 
-GameObject::GameObject(std::string name, int tag, GameObject* parent) : mName(name), mTag(tag)
+GameObject::GameObject(std::string name, int tag, GameObject* parent, Ogre::Vector3 pos, Ogre::Quaternion rot) : mName(name), mTag(tag)
 {
 	if (parent != NULL)
-		mSceneNode = parent->get_scene_node()->createChildSceneNode();
+		mSceneNode = parent->get_scene_node()->createChildSceneNode(pos, rot);
 	else
-		mSceneNode = APPLICATION->get_scene_manager()->getRootSceneNode()->createChildSceneNode();
+		mSceneNode = APPLICATION->get_scene_manager()->getRootSceneNode()->createChildSceneNode(pos, rot);
 }
 
 GameObject::~GameObject()
