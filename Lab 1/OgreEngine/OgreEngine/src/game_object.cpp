@@ -14,8 +14,13 @@ GameObject::GameObject(std::string name, int tag, GameObject* parent, Ogre::Vect
 GameObject::~GameObject()
 {
 	// Remove our scene node from the scene
-	mSceneNode->getParentSceneNode()->removeChild(mSceneNode);
-	APPLICATION->get_scene_manager()->destroySceneNode(mSceneNode);
+	
+	/*Ogre::SceneNode* parentNode = mSceneNode->getParentSceneNode();
+	if(parentNode != nullptr)
+		parentNode->removeChild(mSceneNode);*/
+	
+	//Ogre::SceneNode* parentNode = mSceneNode->getParentSceneNode();
+	//APPLICATION->get_scene_manager()->destroySceneNode(mSceneNode);
 }
 
 

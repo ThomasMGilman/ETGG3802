@@ -27,6 +27,7 @@ namespace OgreEngine
 		std::map<std::string, std::map<std::string, GameObject*>> mObjects;
 		std::map<int, std::vector<GameObject*>> mtaggedObjects;
 		std::map<std::string, GameObject*>::iterator mObjIter;
+		std::map<std::string, GameObject*>::reverse_iterator mObjRevIter;
 		std::map<std::string, std::map<std::string, GameObject*>>::iterator mGroupsIter;
 		std::map<std::string, std::map<std::string, GameObject*>>::reverse_iterator mGroupsRevIter;
 

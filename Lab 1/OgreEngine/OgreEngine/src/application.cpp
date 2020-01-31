@@ -107,6 +107,21 @@ void Application::setup(void)
 	ogreNode->rotate_world(90, 1, 0, 0);
 	ogreNode->attach_object(ogreEnt);
 
+	//create Peguin Entity to render that is a child of Ogre
+	Ogre::Entity* penguinEnt = mScnMgr->createEntity("PenguinEnt", "penguin.mesh");
+	penguinEnt->setCastShadows(true);
+	GameObject* penguinNode = GAME_OBJ_MANAGER->create_game_object("temporary", penguinEnt->getName(), ogreNode, 0, Ogre::Vector3(1.75, 3.5, 0));
+	penguinNode->look_at();
+	penguinNode->set_scale(Ogre::Vector3(.05));
+	penguinNode->rotate_world(90, 1, 0, 0);
+	penguinNode->rotate_world(-25, 0, 0, 1);
+	penguinNode->attach_object(penguinEnt);
+
+	//Enable Penguins amuse animation and play it
+	mAnimationState = penguinEnt->getAnimationState("amuse");
+	mAnimationState->setLoop(true);
+	mAnimationState->setEnabled(true);
+
 	//Create Ground Plane
 	Ogre::Plane plane(Ogre::Vector3::UNIT_Y, 0);
 	Ogre::MeshManager::getSingleton().createPlane(
@@ -139,13 +154,24 @@ void Application::setup(void)
 bool Application::frameStarted(const Ogre::FrameEvent& e)
 {
 	OgreBites::ApplicationContext::frameStarted(e);
+
+	// Update current Animation being played by penguin
+	mAnimationState->addTime(e.timeSinceLastFrame);
 	
+	////////////////////////////////////////////////////////////// Rotation Keys for Ogre
 	if (mKeysDown.find(OgreBites::SDLK_LEFT) != mKeysDown.end())
 		GAME_OBJ_MANAGER->get_game_object("OgreEnt", "temporary")->rotate_world(-90 * e.timeSinceLastFrame, 0, 1, 0);
 	
 	if (mKeysDown.find(OgreBites::SDLK_RIGHT) != mKeysDown.end())
 		GAME_OBJ_MANAGER->get_game_object("OgreEnt", "temporary")->rotate_world(90 * e.timeSinceLastFrame, 0, 1, 0);
-	
+
+	////////////////////////////////////////////////////////////// visibility Keys for all of temporary group
+	if (mKeysDown.find(OgreBites::SDLK_F1) != mKeysDown.end())
+		GAME_OBJ_MANAGER->set_visibility("temporary", false);
+
+	if (mKeysDown.find(OgreBites::SDLK_F2) != mKeysDown.end())
+		GAME_OBJ_MANAGER->set_visibility("temporary", true);
+
 	mLogger->update(e.timeSinceLastFrame);
 	
 	return true;

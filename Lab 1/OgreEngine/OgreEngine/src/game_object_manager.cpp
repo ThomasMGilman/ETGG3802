@@ -138,7 +138,7 @@ void GameObjectManager::group_destroy(std::string group_name, bool destroy_group
 			mObjIter++;
 		}
 		if(destroy_group)
-			mObjects.erase(mGroupsIter);
+			mObjects.erase(mGroupsIter->first);
 	}
 	else
 		LOG_MANAGER->log("User trying to clear or delete nonexistent group: " + group_name);
@@ -150,20 +150,19 @@ void GameObjectManager::group_destroy(std::map<std::string, std::map<std::string
 	while (mObjIter != mGroupsIter->second.end())
 	{
 		delete(mObjIter->second);
-		mGroupsIter->second.erase(mObjIter);
 		mObjIter++;
 	}
+	mGroupsIter->second.clear();
 	if (destroy_group)
-		mObjects.erase(mGroupsIter);
+		mObjects.erase(mGroupsIter->first);
 }
 
 void GameObjectManager::destroy_all()
 {
 	mGroupsIter = mObjects.begin();
-	while (mGroupsIter != mObjects.end())
+	while (mObjects.size() > 0)
 	{
 		group_destroy(mGroupsIter, true);
-		mGroupsIter++;
 	}
 }
 
