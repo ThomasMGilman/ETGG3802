@@ -30,6 +30,8 @@ namespace OgreEngine {
 		Ogre::SceneManager* get_scene_manager() { return this->mScnMgr; };
 
 	private:
+		//std::vector<GameObject*> objects;
+
 		Ogre::Root* mRoot;
 		Ogre::SceneManager* mScnMgr;
 		Ogre::Timer* mTimer;

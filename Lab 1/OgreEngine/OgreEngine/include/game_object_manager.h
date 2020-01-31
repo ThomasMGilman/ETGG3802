@@ -1,8 +1,9 @@
+#pragma once
+
 #ifndef _GAME_OBJECT_MANAGER_H_
 #define _GAME_OBJECT_MANAGER_H_
 
 #include <game_object.h>
-#include <log_manager.h>
 #include <singleton.h>
 #include <Ogre.h>
 #include <map>
@@ -37,6 +38,7 @@ namespace OgreEngine
 		/// Destructor
 		~GameObjectManager();
 
+		
 		// ***** GETTERS / SETTERS *****
 	public:
 		/// Gets a game object (NULL if it doesn't exist) -- more costly: searches through all groups
@@ -47,30 +49,38 @@ namespace OgreEngine
 
 		/// Gets all game objects within a group.  result is an output parameter (and is cleared upon calling this)
 		void get_game_objects(std::string group_name, std::vector<GameObject*>& result);
-
+		
 		/// Returns true if there is a group by this name
 		bool has_group(std::string group_name);
-
+		
 		// ***** METHODS ***** 
 	public:
 		/// Destroys a game object (faster version) if you know the group name
 		bool destroy_game_object(std::string group_name, std::string gobj_name, bool ignoreLog = true);
-
+		
 		/// Destroy a game object (slower version) if you don't know the group name.  Returns true if that game object was destroyed
 		/// (i.e. was it found)
 		bool destroy_game_object(std::string gobj_name);
-
-		void destroy_all();
+		
 
 		/// Destroys all game objects within the given group.  If destroy_group is true, also remove the group.  
 		/// Returns true if that game object was destroyed (i.e. was it found).
 		void group_destroy(std::string group_name, bool destroy_group);
+
+		
+		void group_destroy(std::map<std::string, std::map<std::string, GameObject*>>::iterator group, bool destroy_group);
+
+
+		/// Destroys all game objects and groups entirely
+		void destroy_all();
+
 
 		/// Sets the visibility of all game objects within the given group.
 		void set_visibility(std::string group_name, bool is_visible);
 
 		/// Creates a new game object.  This creates a group as well, if the given one doesn't exist.
 		GameObject* create_game_object(std::string group_name, std::string object_name, GameObject* parent = nullptr, unsigned int tag = 0, Ogre::Vector3 pos = Ogre::Vector3::ZERO, Ogre::Quaternion rot = Ogre::Quaternion::IDENTITY);
+
 	};
 }
 

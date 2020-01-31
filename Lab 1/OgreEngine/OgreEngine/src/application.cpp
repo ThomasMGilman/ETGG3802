@@ -1,5 +1,5 @@
-#include "application.h"
-#include "game_object_manager.h"
+#include <application.h>
+#include <game_object_manager.h>
 
 using namespace OgreEngine;
 
@@ -7,7 +7,6 @@ Application* Application::msSingleton = nullptr;
 
 Application::Application() : OgreBites::ApplicationContext("OgreTutorialApp")
 {
-	
 }
 
 void Application::setup(void)
@@ -35,11 +34,16 @@ void Application::setup(void)
 	mScnMgr->setAmbientLight(Ogre::ColourValue(0, 0, 0));
 	mScnMgr->setShadowTechnique(Ogre::ShadowTechnique::SHADOWTYPE_STENCIL_ADDITIVE);
 
+	//Initialize GameObjectManager
+	GameObjectManager* mGameObjectManager = new GameObjectManager();
+
 	//add light to the scene
 	Ogre::Light* light = mScnMgr->createLight("MainLight");
 	GameObject* lightNode = GAME_OBJ_MANAGER->create_game_object("temporary", light->getName(), nullptr, 0, Ogre::Vector3(20, 80, 50));
 	lightNode->attach_object(light);
 
+	//objects.push_back(lightNode);
+	
 	//add Spotlight to the scene
 	Ogre::Light* spotLight = mScnMgr->createLight("SpotLight");
 	spotLight->setDiffuseColour(.1, .1, .1);
@@ -51,6 +55,8 @@ void Application::setup(void)
 	GameObject* spotLightNode = GAME_OBJ_MANAGER->create_game_object("temporary", spotLight->getName(), nullptr, 0, Ogre::Vector3(200, 200, 0));
 	spotLightNode->attach_object(spotLight);
 	spotLightNode->set_direction(-1, -1, 0);
+
+	//objects.push_back(spotLightNode);
 
 	//add Directional Light
 	Ogre::Light* dirLight = mScnMgr->createLight("DirectionalLight");
@@ -73,7 +79,7 @@ void Application::setup(void)
 	GameObject* pointLightNode = GAME_OBJ_MANAGER->create_game_object("temporary", pointLight->getName());
 	pointLightNode->attach_object(pointLight);
 	pointLightNode->set_position(Ogre::Vector3(0, 150, 250));
-
+	
 	///////////////////////////////////////////////////////////////////////////////////////////// Add Camera and ViewPort
 	//create the camera
 	Ogre::Camera* cam = mScnMgr->createCamera("myCam");
@@ -91,14 +97,14 @@ void Application::setup(void)
 
 	//set camera aspect Ratio
 	cam->setAspectRatio(Ogre::Real(vp->getActualWidth()) / Ogre::Real(vp->getActualHeight()));
-
+	
 	///////////////////////////////////////////////////////////////////////////////////////////// Add Entitys and plane
 	//create Ogre Entity to render and set to cast shadows
 	Ogre::Entity* ogreEnt = mScnMgr->createEntity("OgreEnt", "Sinbad.mesh");
 	ogreEnt->setCastShadows(true);
 	GameObject* ogreNode = GAME_OBJ_MANAGER->create_game_object("temporary", ogreEnt->getName(), nullptr, 0, Ogre::Vector3(0, 5, 0));
 	ogreNode->look_at();
-	ogreNode->rotate_world(90, 0, 1, 0);
+	ogreNode->rotate_world(90, 1, 0, 0);
 	ogreNode->attach_object(ogreEnt);
 
 	//Create Ground Plane
@@ -126,24 +132,22 @@ void Application::setup(void)
 
 	///////////////////////////////////////////////////////////////////////////////////////////// Enable and Add SkyBox
 	mScnMgr->setSkyBox(true, "Examples/SpaceSkyBox", 300, false);
-
+	
 	mLogger = new LogManager(vp->getActualHeight());
 }
 
 bool Application::frameStarted(const Ogre::FrameEvent& e)
 {
 	OgreBites::ApplicationContext::frameStarted(e);
-
+	
 	if (mKeysDown.find(OgreBites::SDLK_LEFT) != mKeysDown.end())
-		GAME_OBJ_MANAGER->get_game_object("temporary", "OgreEnt")->rotate_world(-90, 1, 0, 0);
-		//mScnMgr->getSceneNode("OgreEnt")->yaw(Ogre::Degree(-90) * e.timeSinceLastFrame);
+		GAME_OBJ_MANAGER->get_game_object("OgreEnt", "temporary")->rotate_world(-90 * e.timeSinceLastFrame, 0, 1, 0);
 	
 	if (mKeysDown.find(OgreBites::SDLK_RIGHT) != mKeysDown.end())
-		GAME_OBJ_MANAGER->get_game_object("temporary", "OgreEnt")->rotate_world(90, 1, 0, 0);
-		//mScnMgr->getSceneNode("OgreEnt")->yaw(Ogre::Degree(90) * e.timeSinceLastFrame);
-
+		GAME_OBJ_MANAGER->get_game_object("OgreEnt", "temporary")->rotate_world(90 * e.timeSinceLastFrame, 0, 1, 0);
+	
 	mLogger->update(e.timeSinceLastFrame);
-
+	
 	return true;
 }
 

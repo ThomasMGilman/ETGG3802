@@ -1,15 +1,25 @@
 #include <game_object_manager.h>
+#include <log_manager.h>
 
 using namespace OgreEngine;
 
 GameObjectManager* GameObjectManager::msSingleton = nullptr;
 
-GameObject* OgreEngine::GameObjectManager::get_game_object(std::string game_object_name)
+GameObjectManager::GameObjectManager()
+{
+}
+
+GameObjectManager::~GameObjectManager()
+{
+	destroy_all();
+}
+
+GameObject* GameObjectManager::get_game_object(std::string game_object_name)
 {
 	GameObject* reqObject = nullptr;
-	mGroupsIter = this->mObjects.begin();
-	mGroupsRevIter = this->mObjects.rbegin();
-	while (mGroupsIter != this->mObjects.end() && mGroupsRevIter != this->mObjects.rend() && *mGroupsIter != *mGroupsRevIter)
+	mGroupsIter = mObjects.begin();
+	mGroupsRevIter = mObjects.rbegin();
+	while (mGroupsIter != mObjects.end() && mGroupsRevIter != mObjects.rend() && *mGroupsIter != *mGroupsRevIter)
 	{
 		mObjIter = mGroupsIter->second.find(game_object_name);
 		if (mObjIter != mGroupsIter->second.end())
@@ -30,7 +40,7 @@ GameObject* OgreEngine::GameObjectManager::get_game_object(std::string game_obje
 	return reqObject;
 }
 
-GameObject* OgreEngine::GameObjectManager::get_game_object(std::string game_object_name, std::string group_name)
+GameObject* GameObjectManager::get_game_object(std::string game_object_name, std::string group_name)
 {
 	GameObject* reqObject = nullptr;
 	
@@ -46,13 +56,13 @@ GameObject* OgreEngine::GameObjectManager::get_game_object(std::string game_obje
 	else
 		LOG_MANAGER->log("User trying to access nonexistent group: "+group_name+" to find gameObject: "+game_object_name);
 
-	return nullptr;
+	return reqObject;
 }
 
-void OgreEngine::GameObjectManager::get_game_objects(std::string group_name, std::vector<GameObject*>& result)
+void GameObjectManager::get_game_objects(std::string group_name, std::vector<GameObject*>& result)
 {
-	mGroupsIter = this->mObjects.find(group_name);
-	if (mGroupsIter != this->mObjects.end())
+	mGroupsIter = mObjects.find(group_name);
+	if (mGroupsIter != mObjects.end())
 	{
 		mObjIter = mGroupsIter->second.begin();
 		while (mObjIter != mGroupsIter->second.end())
@@ -65,18 +75,18 @@ void OgreEngine::GameObjectManager::get_game_objects(std::string group_name, std
 		LOG_MANAGER->log("User trying to get gameObjects from nonexistent group: " + group_name);
 }
 
-bool OgreEngine::GameObjectManager::has_group(std::string group_name)
+bool GameObjectManager::has_group(std::string group_name)
 {
-	mGroupsIter = this->mObjects.find(group_name);
-	if (mGroupsIter != this->mObjects.end())
+	mGroupsIter = mObjects.find(group_name);
+	if (mGroupsIter != mObjects.end())
 		return true;
 	return false;
 }
 
-bool OgreEngine::GameObjectManager::destroy_game_object(std::string group_name, std::string gobj_name, bool ignoreLog)
+bool GameObjectManager::destroy_game_object(std::string group_name, std::string gobj_name, bool ignoreLog)
 {
-	mGroupsIter = this->mObjects.find(group_name);
-	if (mGroupsIter != this->mObjects.end())
+	mGroupsIter = mObjects.find(group_name);
+	if (mGroupsIter != mObjects.end())
 	{
 		mObjIter = mGroupsIter->second.find(gobj_name);
 		if (mObjIter != mGroupsIter->second.end())
@@ -93,12 +103,12 @@ bool OgreEngine::GameObjectManager::destroy_game_object(std::string group_name, 
 	return false;
 }
 
-bool OgreEngine::GameObjectManager::destroy_game_object(std::string gobj_name)
+bool GameObjectManager::destroy_game_object(std::string gobj_name)
 {
 	bool deletedObj = false;
-	mGroupsIter = this->mObjects.begin();
-	mGroupsRevIter = this->mObjects.rbegin();
-	while (mGroupsIter != this->mObjects.end() && mGroupsRevIter != this->mObjects.rend())
+	mGroupsIter = mObjects.begin();
+	mGroupsRevIter = mObjects.rbegin();
+	while (mGroupsIter != mObjects.end() && mGroupsRevIter != mObjects.rend())
 	{
 		if (*mGroupsIter == *mGroupsRevIter)
 		{
@@ -106,8 +116,8 @@ bool OgreEngine::GameObjectManager::destroy_game_object(std::string gobj_name)
 			break;
 		}
 
-		this->destroy_game_object(mGroupsIter->first, gobj_name, false);
-		this->destroy_game_object(mGroupsRevIter->first, gobj_name, false);
+		destroy_game_object(mGroupsIter->first, gobj_name, false);
+		destroy_game_object(mGroupsRevIter->first, gobj_name, false);
 
 		mGroupsIter++;
 		mGroupsRevIter++;
@@ -115,10 +125,10 @@ bool OgreEngine::GameObjectManager::destroy_game_object(std::string gobj_name)
 	return deletedObj;
 }
 
-void OgreEngine::GameObjectManager::group_destroy(std::string group_name, bool destroy_group)
+void GameObjectManager::group_destroy(std::string group_name, bool destroy_group)
 {
-	mGroupsIter = this->mObjects.find(group_name);
-	if (mGroupsIter != this->mObjects.end())
+	mGroupsIter = mObjects.find(group_name);
+	if (mGroupsIter != mObjects.end())
 	{
 		mObjIter = mGroupsIter->second.begin();
 		while(mObjIter != mGroupsIter->second.end())
@@ -128,26 +138,39 @@ void OgreEngine::GameObjectManager::group_destroy(std::string group_name, bool d
 			mObjIter++;
 		}
 		if(destroy_group)
-			this->mObjects.erase(mGroupsIter);
+			mObjects.erase(mGroupsIter);
 	}
 	else
 		LOG_MANAGER->log("User trying to clear or delete nonexistent group: " + group_name);
 }
 
-void OgreEngine::GameObjectManager::destroy_all()
+void GameObjectManager::group_destroy(std::map<std::string, std::map<std::string, GameObject*>>::iterator group, bool destroy_group)
 {
-	mGroupsIter = this->mObjects.begin();
-	while (mGroupsIter != this->mObjects.end())
+	mObjIter = mGroupsIter->second.begin();
+	while (mObjIter != mGroupsIter->second.end())
 	{
-		group_destroy(mGroupsIter->first, true);
+		delete(mObjIter->second);
+		mGroupsIter->second.erase(mObjIter);
+		mObjIter++;
+	}
+	if (destroy_group)
+		mObjects.erase(mGroupsIter);
+}
+
+void GameObjectManager::destroy_all()
+{
+	mGroupsIter = mObjects.begin();
+	while (mGroupsIter != mObjects.end())
+	{
+		group_destroy(mGroupsIter, true);
 		mGroupsIter++;
 	}
 }
 
-void OgreEngine::GameObjectManager::set_visibility(std::string group_name, bool is_visible)
+void GameObjectManager::set_visibility(std::string group_name, bool is_visible)
 {
-	mGroupsIter = this->mObjects.find(group_name);
-	if (mGroupsIter != this->mObjects.end())
+	mGroupsIter = mObjects.find(group_name);
+	if (mGroupsIter != mObjects.end())
 	{
 		mObjIter = mGroupsIter->second.begin();
 		while (mObjIter != mGroupsIter->second.end())
@@ -160,16 +183,17 @@ void OgreEngine::GameObjectManager::set_visibility(std::string group_name, bool 
 		LOG_MANAGER->log("User trying to set object visibility for a nonexistent group: "+group_name);
 }
 
-GameObject* OgreEngine::GameObjectManager::create_game_object(std::string group_name, std::string object_name, GameObject* parent, unsigned int tag, Ogre::Vector3 pos, Ogre::Quaternion rot)
+GameObject* GameObjectManager::create_game_object(std::string group_name, std::string object_name, GameObject* parent, unsigned int tag, Ogre::Vector3 pos, Ogre::Quaternion rot)
 {
 	GameObject* newObj = new GameObject(object_name, tag, parent, pos, rot);
-	mGroupsIter = this->mObjects.find(group_name);
-	if (mGroupsIter != this->mObjects.end())
+	
+	mGroupsIter = mObjects.find(group_name);
+	if (mGroupsIter != mObjects.end())
 	{
 		// Check if Object is already in the group
-		mObjIter = this->mGroupsIter->second.find(object_name);
-		if (mObjIter == this->mGroupsIter->second.end()) // GameObject not in group, create it
-			this->mGroupsIter->second.emplace(object_name, newObj);
+		mObjIter = mGroupsIter->second.find(object_name);
+		if (mObjIter == mGroupsIter->second.end()) // GameObject not in group, create it
+			mGroupsIter->second[object_name] = newObj; //.emplace(object_name, newObj);
 		else // GameObject is already apart of the dictionary Log Error and return nullptr as GameObject
 		{
 			LOG_MANAGER->log_message("GameObject_CreationError: Object: " + object_name + " already exists in group: " + group_name, Ogre::ColourValue(1, 0, 0));
@@ -179,8 +203,12 @@ GameObject* OgreEngine::GameObjectManager::create_game_object(std::string group_
 	}
 	else // Object Group does not exist, create group and place new object in group
 	{
-		auto newGroup = new std::map<std::string, GameObject*>();
-		this->mObjects.emplace(group_name, newGroup->emplace(object_name, newObj));
+		auto newGroup = std::map<std::string, GameObject*>();
+		newGroup[object_name] = newObj;
+		mObjects[group_name] = newGroup;
+		
+		//mObjects.emplace(group_name, newGroup->emplace(object_name, newObj));
 	}
 	return newObj;
 }
+
