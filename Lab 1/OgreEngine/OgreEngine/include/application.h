@@ -11,6 +11,7 @@
 #define APPLICATION Application::getSingletonPtr()
 
 namespace OgreEngine {
+	class GameObjectManager;
 	class Application : public OgreBites::ApplicationContext, public OgreBites::InputListener, public Singleton<Application>
 	{
 		/// Public Application Constructor and Functions ///
@@ -20,6 +21,13 @@ namespace OgreEngine {
 		~Application();
 
 		virtual void setup(void) override;
+
+		virtual void shutdown(void) override
+		{
+			// Delete all of the GameObjects
+			delete(mGOM);
+			OgreBites::ApplicationContext::shutdown();
+		};
 
 		virtual bool frameStarted(const Ogre::FrameEvent& e) override;
 
@@ -40,6 +48,7 @@ namespace OgreEngine {
 		std::unordered_set<int> mKeysDown;
 		std::stringstream mStringStream;
 
+		OgreEngine::GameObjectManager* mGOM;
 		LogManager* mLogger;
 	};
 }

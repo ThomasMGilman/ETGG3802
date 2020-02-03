@@ -140,6 +140,8 @@ namespace OgreEngine
 		/// Gets the ogre scene node this object is based upon.
 		Ogre::SceneNode* get_scene_node() { return mSceneNode; }
 
+		Ogre::SceneNode* get_parent_node() { return mSceneNode->getParentSceneNode(); }
+
 		/// [TEMPORARY] Adds a Moveable object (Entity, Light, etc.) to the GameObject's scene node
 		/// Once we have our Component model, this will likely go away.
 		void attach_object(Ogre::MovableObject* obj) { mSceneNode->attachObject(obj); }

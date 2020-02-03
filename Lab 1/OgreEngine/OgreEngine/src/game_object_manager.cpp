@@ -144,15 +144,15 @@ void GameObjectManager::group_destroy(std::string group_name, bool destroy_group
 		LOG_MANAGER->log("User trying to clear or delete nonexistent group: " + group_name);
 }
 
-void GameObjectManager::group_destroy(std::map<std::string, std::map<std::string, GameObject*>>::iterator group, bool destroy_group)
+void GameObjectManager::group_destroy(std::map<std::string, std::map<std::string, GameObject*>>::iterator& group, bool destroy_group)
 {
-	mObjIter = mGroupsIter->second.begin();
-	while (mObjIter != mGroupsIter->second.end())
+	mObjIter = group->second.begin();
+	while (mObjIter != group->second.end())
 	{
 		delete(mObjIter->second);
 		mObjIter++;
 	}
-	mGroupsIter->second.clear();
+	group->second.clear();
 	if (destroy_group)
 		mObjects.erase(mGroupsIter->first);
 }
@@ -201,13 +201,8 @@ GameObject* GameObjectManager::create_game_object(std::string group_name, std::s
 		}
 	}
 	else // Object Group does not exist, create group and place new object in group
-	{
-		auto newGroup = std::map<std::string, GameObject*>();
-		newGroup[object_name] = newObj;
-		mObjects[group_name] = newGroup;
+		mObjects[group_name][object_name] = newObj;
 		
-		//mObjects.emplace(group_name, newGroup->emplace(object_name, newObj));
-	}
 	return newObj;
 }
 

@@ -1,6 +1,7 @@
 # Directories to ignore
 .vs/
 dependencies/
+zips/
 
 # Ignore commpressed files
 *.zip

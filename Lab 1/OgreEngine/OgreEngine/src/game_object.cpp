@@ -5,7 +5,7 @@ using namespace OgreEngine;
 
 GameObject::GameObject(std::string name, int tag, GameObject* parent, Ogre::Vector3 pos, Ogre::Quaternion rot) : mName(name), mTag(tag)
 {
-	if (parent != NULL)
+	if (parent != nullptr)
 		mSceneNode = parent->get_scene_node()->createChildSceneNode(pos, rot);
 	else
 		mSceneNode = APPLICATION->get_scene_manager()->getRootSceneNode()->createChildSceneNode(pos, rot);
@@ -15,12 +15,13 @@ GameObject::~GameObject()
 {
 	// Remove our scene node from the scene
 	
-	/*Ogre::SceneNode* parentNode = mSceneNode->getParentSceneNode();
+	Ogre::SceneNode* parentNode = mSceneNode->getParentSceneNode();		//BREAKS HERE!!! Causes Read Access Violation when trying to get parent of GameObject*
 	if(parentNode != nullptr)
-		parentNode->removeChild(mSceneNode);*/
+		parentNode->removeChild(mSceneNode);
 	
 	//Ogre::SceneNode* parentNode = mSceneNode->getParentSceneNode();
-	//APPLICATION->get_scene_manager()->destroySceneNode(mSceneNode);
+	APPLICATION->get_scene_manager()->destroySceneNode(mSceneNode);
+	
 }
 
 

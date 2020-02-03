@@ -7,6 +7,7 @@ Application* Application::msSingleton = nullptr;
 
 Application::Application() : OgreBites::ApplicationContext("OgreTutorialApp")
 {
+
 }
 
 void Application::setup(void)
@@ -35,15 +36,13 @@ void Application::setup(void)
 	mScnMgr->setShadowTechnique(Ogre::ShadowTechnique::SHADOWTYPE_STENCIL_ADDITIVE);
 
 	//Initialize GameObjectManager
-	GameObjectManager* mGameObjectManager = new GameObjectManager();
+	mGOM = new GameObjectManager();
 
 	//add light to the scene
 	Ogre::Light* light = mScnMgr->createLight("MainLight");
 	GameObject* lightNode = GAME_OBJ_MANAGER->create_game_object("temporary", light->getName(), nullptr, 0, Ogre::Vector3(20, 80, 50));
 	lightNode->attach_object(light);
 
-	//objects.push_back(lightNode);
-	
 	//add Spotlight to the scene
 	Ogre::Light* spotLight = mScnMgr->createLight("SpotLight");
 	spotLight->setDiffuseColour(.1, .1, .1);
@@ -55,8 +54,6 @@ void Application::setup(void)
 	GameObject* spotLightNode = GAME_OBJ_MANAGER->create_game_object("temporary", spotLight->getName(), nullptr, 0, Ogre::Vector3(200, 200, 0));
 	spotLightNode->attach_object(spotLight);
 	spotLightNode->set_direction(-1, -1, 0);
-
-	//objects.push_back(spotLightNode);
 
 	//add Directional Light
 	Ogre::Light* dirLight = mScnMgr->createLight("DirectionalLight");
@@ -208,6 +205,5 @@ bool Application::keyReleased(const OgreBites::KeyboardEvent& evt)
 
 Application::~Application()
 {
-	GAME_OBJ_MANAGER->destroy_all();
 	delete(mLogger);
 }

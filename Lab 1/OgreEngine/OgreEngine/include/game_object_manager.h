@@ -69,7 +69,7 @@ namespace OgreEngine
 		void group_destroy(std::string group_name, bool destroy_group);
 
 		
-		void group_destroy(std::map<std::string, std::map<std::string, GameObject*>>::iterator group, bool destroy_group);
+		void group_destroy(std::map<std::string, std::map<std::string, GameObject*>>::iterator& group, bool destroy_group);
 
 
 		/// Destroys all game objects and groups entirely
