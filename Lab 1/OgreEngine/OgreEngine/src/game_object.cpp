@@ -13,7 +13,7 @@ GameObject::GameObject(std::string name, int tag, GameObject* parent, Ogre::Vect
 
 GameObject::~GameObject()
 {
-	// Remove our scene node from the scene
+	delete_all_components();
 	
 	Ogre::SceneNode* parentNode = mSceneNode->getParentSceneNode();		//BREAKS HERE!!! Causes Read Access Violation when trying to get parent of GameObject*
 	if(parentNode != nullptr)
@@ -32,4 +32,102 @@ void GameObject::set_parent(GameObject* parent)
 
 	// Now make it a parent of parent's scene node
 	parent->get_scene_node()->addChild(mSceneNode);
+}
+
+void GameObject::delete_all_components()
+{
+	mTypeIter = mComponents.begin();
+	while (mTypeIter != mComponents.end())
+	{
+		mCompIter = mTypeIter->second.begin();
+		while (mCompIter != mTypeIter->second.end())
+		{
+			delete(mCompIter->second);
+			mTypeIter->second.erase(mCompIter);
+		}
+		mComponents.erase(mTypeIter);
+	}
+}
+
+bool GameObject::delete_component(std::string objectName)
+{
+	bool deleted = false;
+	mTypeIter = mComponents.begin();
+	while (mTypeIter != mComponents.end())
+	{
+		mCompIter = mTypeIter->second.find(objectName);
+		if (mCompIter != mTypeIter->second.end())
+		{
+			deleted = true;
+			delete(mCompIter->second);
+			mTypeIter->second.erase(objectName);
+		}
+		mTypeIter++;
+	}
+	return deleted;
+}
+
+bool GameObject::delete_component(std::string objectName, Component::ComponentType type)
+{
+	mTypeIter = mComponents.find(type);
+	if (mTypeIter != mComponents.end)
+	{
+		mCompIter = mTypeIter->second.find(objectName);
+		if (mCompIter != mTypeIter->second.end())
+		{
+			delete(mCompIter->second);
+			mTypeIter->second.erase(objectName);
+			return true;
+		}
+	}
+	return false;
+}
+
+template<class C>
+C* GameObject::get_component(std::string objectName, Component::ComponentType type)
+{
+	mTypeIter = mComponents.find(type);
+	if (mTypeIter != mComponents.end())
+	{
+		mCompIter = mTypeIter->second.find(objectName);
+		if (mCompIter != mTypeIter->second.end())
+			return dynamic_cast<C*>(mCompIter->second);
+	}
+	return nullptr;
+}
+
+MeshComponent* GameObject::create_mesh(std::string meshName, std::string fname)
+{
+	if (get_component<MeshComponent>(meshName, Component::ComponentType::MESH) != nullptr)
+	{
+		LOG_MANAGER->log_message("MESH_COMPONENT CREATION ERROR!!! Trying to create mesh object with a name that already exits: "+ this->get_name() + " _mesh" + meshName);
+		return nullptr;
+	}
+	MeshComponent* newMesh = new MeshComponent(fname, this);
+	mComponents[Component::ComponentType::MESH][meshName] = newMesh;
+	return newMesh;
+}
+
+LightComponent* GameObject::create_light(std::string lightName, LightType lightType)
+{
+	if (get_component<LightComponent>(lightName, Component::ComponentType::LIGHT) != nullptr)
+	{
+		LOG_MANAGER->log_message("LIGHT_COMPONENT CREATION ERROR!!! Trying to create light object with a name that already exists: " + this->get_name() +" _light" + lightName);
+		return nullptr;
+	}
+	LightComponent* newLight = new LightComponent(lightType, this);
+	mComponents[Component::ComponentType::LIGHT][lightName] = newLight;
+	return newLight;
+}
+
+CameraComponent* GameObject::create_camera(std::string cameraName)
+{
+	if (get_component<CameraComponent>(cameraName, Component::ComponentType::CAMERA) != nullptr)
+	{
+		LOG_MANAGER->log_message("CAMERA_COMPONENT CREATION ERROR!!! Trying to create camera object with a name that already exists: " + this->get_name() + " _camera" + cameraName);
+		return nullptr;
+	}
+	CameraComponent* newCamera = new CameraComponent(this);
+	mComponents[Component::ComponentType::CAMERA][cameraName] = newCamera;
+	return newCamera;
 }

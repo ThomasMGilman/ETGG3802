@@ -1,6 +1,9 @@
 #pragma once
 
 #include <Ogre.h>
+#include <component_light.h>
+#include <component_camera.h>
+#include <component_mesh.h>
 
 namespace OgreEngine
 {
@@ -29,6 +32,10 @@ namespace OgreEngine
 		/// An integer tag that can be used by the user (e.g. 0 = invaders, 1 = player, ... 
 		int mTag;
 
+		std::map<Component::ComponentType, std::map<std::string, Component*>> mComponents;
+		std::map<Component::ComponentType, std::map<std::string, Component*>>::iterator mTypeIter;
+		std::map<std::string, Component*>::iterator mCompIter;
+
 		// ***** CONSTRUCTORS / DESTRUCTORS *****
 	protected:
 		/// Constructor.  Note: Constructors are normally public.  I'm doing this, however, to force the
@@ -37,7 +44,6 @@ namespace OgreEngine
 
 		/// Destructor
 		virtual ~GameObject();
-
 
 		// ***** TRANSFORMATION (ABSOLUTE) SETTERS *****
 	public:
@@ -142,10 +148,6 @@ namespace OgreEngine
 
 		Ogre::SceneNode* get_parent_node() { return mSceneNode->getParentSceneNode(); }
 
-		/// [TEMPORARY] Adds a Moveable object (Entity, Light, etc.) to the GameObject's scene node
-		/// Once we have our Component model, this will likely go away.
-		void attach_object(Ogre::MovableObject* obj) { mSceneNode->attachObject(obj); }
-
 		/// Gets the name of this game object
 		std::string get_name() { return mName; }
 
@@ -157,5 +159,30 @@ namespace OgreEngine
 	public:
 		/// Makes all components of this object active / visible (or not, if the parameter is false)
 		void set_visibility(bool is_visible) { mSceneNode->setVisible(is_visible); }
+
+		// ***** COMPONENT METHODS *****
+	public:
+		
+		void delete_all_components();
+
+
+		bool delete_component(std::string objectName);
+		
+
+		bool delete_component(std::string objectName, Component::ComponentType type);
+
+
+		template<class C>
+		C* get_component(std::string objectName, Component::ComponentType type);
+		
+		
+		MeshComponent* create_mesh(std::string meshName, std::string fname);
+
+
+		LightComponent* create_light(std::string lightName, LightType lightType);
+
+
+		CameraComponent* create_camera(std::string cameraName);
+		
 	};
 }

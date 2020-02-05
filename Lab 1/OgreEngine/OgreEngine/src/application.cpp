@@ -38,20 +38,27 @@ void Application::setup(void)
 	//Initialize GameObjectManager
 	mGOM = new GameObjectManager();
 
-	//add light to the scene
-	Ogre::Light* light = mScnMgr->createLight("MainLight");
-	GameObject* lightNode = GAME_OBJ_MANAGER->create_game_object("temporary", light->getName(), nullptr, 0, Ogre::Vector3(20, 80, 50));
-	lightNode->attach_object(light);
+	//add lights to the scene
+	GameObject* lightNode = GAME_OBJ_MANAGER->create_game_object("temporary", "Lights", nullptr, 0, Ogre::Vector3(20, 80, 50));
+	lightNode->create_light("MainLight", OgreEngine::LightType::POINT);
 
+	//create spotlight in scene
+	LightComponent* spotLight = lightNode->create_light("SpotLight", OgreEngine::LightType::SPOT);
+	spotLight->set_diffuse_color(.1, .1, .1);
+	spotLight->set_specular_color(.1, .1, .1);
+	spotLight->set_spotlight_params(35, 50);
+	spotLight->set_direction(-1, -1, 0);
+
+	
+
+	//attach spotlight to new node and set direction and position
+	GameObject* spotLightNode = GAME_OBJ_MANAGER->create_game_object("temporary", spotLight->getName(), nullptr, 0, Ogre::Vector3(200, 200, 0));
 	//add Spotlight to the scene
-	Ogre::Light* spotLight = mScnMgr->createLight("SpotLight");
+	Ogre::Light* spotLight = spotLightNode->create_light("SpotLight");
 	spotLight->setDiffuseColour(.1, .1, .1);
 	spotLight->setSpecularColour(.1, .1, .1);
 	spotLight->setType(Ogre::Light::LT_SPOTLIGHT);
 	spotLight->setSpotlightRange(Ogre::Degree(35), Ogre::Degree(50));
-
-	//attach spotlight to new node and set direction and position
-	GameObject* spotLightNode = GAME_OBJ_MANAGER->create_game_object("temporary", spotLight->getName(), nullptr, 0, Ogre::Vector3(200, 200, 0));
 	spotLightNode->attach_object(spotLight);
 	spotLightNode->set_direction(-1, -1, 0);
 

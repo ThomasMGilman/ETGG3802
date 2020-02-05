@@ -1,8 +1,7 @@
 #pragma once
-#include <stdafx.h>
 #include <component.h>
 
-namespace ssuge
+namespace OgreEngine
 {
 	class GameObject;
 
@@ -17,7 +16,7 @@ namespace ssuge
 	// @@@@@ CONSTRUCTORS / DESTRUCTORS @@@@@
 	public:
 		/// The constructor
-		MeshComponent(std::string fname, GameObject * owner);
+		MeshComponent(std::string fname, GameObject * owner, std::string name = "");
 
 		/// Destructor
 		~MeshComponent();
@@ -25,14 +24,14 @@ namespace ssuge
 	// @@@@@ METHODS @@@@@
 	public:
 		/// Sets the material for a sub-entity
-		void setMaterial(int sub_entity, std::string mat_name);
+		void set_material(int subEntity, std::string matName);
 
 	// @@@@@ OVERRIDES from COMPONENT @@@@@
 	public:
 		/// Returns the type of this component.
-		ComponentType getType() override { return ComponentType::MESH; }
+		ComponentType get_type() override { return ComponentType::MESH; }
 		
 		/// Makes this mesh not render (if is_visible is false)
-		void setVisible(bool is_visible) override { mEntity->setVisible(is_visible); }
+		void set_visible(bool isVisible) override { mEntity->setVisible(isVisible); }
 	};
 }

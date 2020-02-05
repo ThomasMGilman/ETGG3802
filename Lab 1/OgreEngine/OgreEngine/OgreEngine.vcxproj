@@ -12,6 +12,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\application.cpp" />
+    <ClCompile Include="src\component_camera.cpp" />
+    <ClCompile Include="src\component_light.cpp" />
+    <ClCompile Include="src\component_mesh.cpp" />
     <ClCompile Include="src\game_object.cpp" />
     <ClCompile Include="src\game_object_manager.cpp" />
     <ClCompile Include="src\log_manager.cpp" />
@@ -19,6 +22,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\application.h" />
+    <ClInclude Include="include\component.h" />
+    <ClInclude Include="include\component_camera.h" />
+    <ClInclude Include="include\component_light.h" />
+    <ClInclude Include="include\component_mesh.h" />
     <ClInclude Include="include\game_object.h" />
     <ClInclude Include="include\game_object_manager.h" />
     <ClInclude Include="include\log_manager.h" />

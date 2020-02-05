@@ -1,28 +1,29 @@
-#include <stdafx.h>
-#include <mesh_component.h>
+#include <component_mesh.h>
 #include <game_object.h>
 #include <application.h>
 
-ssuge::MeshComponent::MeshComponent(std::string fname, GameObject * owner) : Component(owner)
+using namespace OgreEngine;
+
+MeshComponent::MeshComponent(std::string fname, GameObject * owner, std::string name) : Component(owner)
 {
-	mEntity = APPLICATION->getSceneManager()->createEntity(owner->getName() + "_entity", fname);
-	owner->getSceneNode()->attachObject(mEntity);
+	mEntity = APPLICATION->get_scene_manager()->createEntity(owner->get_name() + "_entity" + name, fname);
+	owner->get_scene_node()->attachObject(mEntity);
 }
 
 
-ssuge::MeshComponent::~MeshComponent()
+MeshComponent::~MeshComponent()
 {
 	if (mEntity)
 	{
 		if (mEntity->getParentSceneNode())
 			mEntity->getParentSceneNode()->detachObject(mEntity);
-		APPLICATION->getSceneManager()->destroyEntity(mEntity);
+		APPLICATION->get_scene_manager()->destroyEntity(mEntity);
 	}
 }
 
 
-void ssuge::MeshComponent::setMaterial(int sub_entity, std::string mat_name)
+void MeshComponent::set_material(int subEntity, std::string matName)
 {
-	Ogre::SubEntity * se = mEntity->getSubEntity(sub_entity);
-	se->setMaterialName(mat_name);
+	Ogre::SubEntity * se = mEntity->getSubEntity(subEntity);
+	se->setMaterialName(matName);
 }

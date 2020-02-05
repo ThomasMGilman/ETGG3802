@@ -1,8 +1,8 @@
 #pragma once
-#include <stdafx.h>
 #include <component.h>
+#include <Ogre.h>
 
-namespace ssuge
+namespace OgreEngine
 {
 	// Forward reference to game object class (used to prevent a circular dependency loop)
 	class GameObject;
@@ -22,7 +22,7 @@ namespace ssuge
 	// @@@@@ CONSTRUCTORS / DESTRUCTORS @@@@@
 	public:
 		/// Constructor
-		LightComponent(LightType type, GameObject * owner);
+		LightComponent(LightType type, GameObject * owner, std::string name = "");
 
 		/// Destructor
 		~LightComponent();
@@ -30,26 +30,28 @@ namespace ssuge
 	// @@@@@ COMPONENT OVERRIDES
 	public:
 		/// Return the type of this component
-		ComponentType getType() override { return ComponentType::LIGHT; }
+		ComponentType get_type() override { return ComponentType::LIGHT; }
 
 		/// Deactivates this component if is_visible is false.
-		void setVisible(bool is_visible) override { mLight->setVisible(is_visible); }
+		void set_visible(bool isVisible) override { mLight->setVisible(isVisible); }
 		
 	// @@@@@ SETTERS @@@@@
 	public:
 		/// Sets the directional offset of this light (ignored if this is a point light)
-		void setDirection(Ogre::Vector3 d) { mLight->setDirection(d); }
+		void set_direction(Ogre::Vector3 d) { mLight->setDirection(d); }
+
+		void set_direction(float x, float y, float z) { mLight->setDirection(x, y, z); }
 
 		/// Sets the diffuse light color of this light
-		void setDiffuseColor(float r, float g, float b) { mLight->setDiffuseColour(Ogre::ColourValue(r, g, b)); }
+		void set_diffuse_color(float r, float g, float b) { mLight->setDiffuseColour(Ogre::ColourValue(r, g, b)); }
 
 		/// Sets the specuilar light color of this light.
-		void setSpecularColor(float r, float g, float b) { mLight->setSpecularColour(Ogre::ColourValue(r, g, b)); }
+		void set_specular_color(float r, float g, float b) { mLight->setSpecularColour(Ogre::ColourValue(r, g, b)); }
 
 		/// Sets the position of this light (relative to the parent game object) -- ignored if this is a directional light.
-		void setPositionOffset(Ogre::Vector3 p) { mLight->setPosition(p); }
+		void set_position_offset(Ogre::Vector3 p) { mLight->setPosition(p); }
 		
 		/// Only affects spotlights.
-		void setSpotlightParams(float inner_angle, float outer_angle) { mLight->setSpotlightRange(Ogre::Degree(inner_angle), Ogre::Degree(outer_angle)); }
+		void set_spotlight_params(float innerAngle, float outerAngle) { mLight->setSpotlightRange(Ogre::Degree(innerAngle), Ogre::Degree(outerAngle)); }
 	};
 }

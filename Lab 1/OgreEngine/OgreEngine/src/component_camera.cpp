@@ -1,30 +1,31 @@
-#include <stdafx.h>
-#include <camera_component.h>
+#include <component_camera.h>
 #include <game_object.h>
 #include <application.h>
 
-ssuge::CameraComponent::CameraComponent(GameObject * owner) : Component(owner)
+using namespace OgreEngine;
+
+CameraComponent::CameraComponent(GameObject * owner, std::string name) : Component(owner)
 {
-	mCamera = APPLICATION->getSceneManager()->createCamera(owner->getName() + "_camera");
-	owner->getSceneNode()->attachObject(mCamera);
+	mCamera = APPLICATION->get_scene_manager()->createCamera(owner->get_name() + "_camera" + name);
+	owner->get_scene_node()->attachObject(mCamera);
 	mCamera->setAutoAspectRatio(true);
 	mCamera->setNearClipDistance(0.1f);
 	mCamera->setFarClipDistance(1000.0f);
 }
 
 
-ssuge::CameraComponent::~CameraComponent()
+CameraComponent::~CameraComponent()
 {
 	if (mCamera)
 	{
 		if (mCamera->getParentSceneNode())
 			mCamera->getParentSceneNode()->detachObject(mCamera);
-		APPLICATION->getSceneManager()->destroyCamera(mCamera);
+		APPLICATION->get_scene_manager()->destroyCamera(mCamera);
 	}
 }
 
 
-Ogre::Ray ssuge::CameraComponent::getScreenRay(Ogre::Vector2 v)
+Ogre::Ray CameraComponent::get_screen_ray(Ogre::Vector2 v)
 {
 	return mCamera->getCameraToViewportRay(v.x, v.y);
 }

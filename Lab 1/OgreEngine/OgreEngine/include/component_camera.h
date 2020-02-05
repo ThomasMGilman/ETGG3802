@@ -1,8 +1,8 @@
 #pragma once
-#include <stdafx.h>
 #include <component.h>
+#include <Ogre.h>
 
-namespace ssuge
+namespace OgreEngine
 {
 	// Forward reference to the game object class (which we include in the .cpp file to avoid a circular dependency)
 	class GameObject;
@@ -20,7 +20,7 @@ namespace ssuge
 	// @@@@@ CONSTRUCTOR / DESTRUCTORS @@@@@
 	public:
 		/// Constructor
-		CameraComponent(GameObject * owner);
+		CameraComponent(GameObject * owner, std::string name = "");
 
 		/// Destructor
 		~CameraComponent();
@@ -28,26 +28,26 @@ namespace ssuge
 	// @@@@@ OVERRIDES from Component class @@@@@
 	public:
 		/// Tells the caller what type we are.
-		ComponentType getType() override { return ComponentType::CAMERA; }
+		ComponentType get_type() override { return ComponentType::CAMERA; }
 		
 		/// Makes this component inactive if is_visible is set to true
-		void setVisible(bool is_visible) override { mCamera->setVisible(is_visible); }
+		void set_visible(bool isVisible) override { mCamera->setVisible(isVisible); }
 
 	// @@@@@ METHODS @@@@@
 	public:
 		/// Sets the directional offset of this camera (from game object)
-		void setDirection(Ogre::Vector3 d) { mCamera->setDirection(d); }
+		void set_direction(Ogre::Vector3 d) { mCamera->setDirection(d); }
 
 		/// Sets the positional offset of this camera (from game object)
-		void setPositionOffset(Ogre::Vector3 p) { mCamera->setPosition(p); }
+		void set_positionOffset(Ogre::Vector3 p) { mCamera->setPosition(p); }
 
 		/// Sets the near and far clip values for the camera
-		void setClipDistances(float n, float f) { mCamera->setNearClipDistance(n); mCamera->setFarClipDistance(f); }
+		void set_clip_distances(float n, float f) { mCamera->setNearClipDistance(n); mCamera->setFarClipDistance(f); }
 
 		/// Connects this contained camera to a viewport (making it render there)
-		void connectToViewport(Ogre::Viewport * v) { v->setCamera(mCamera); }
+		void connect_to_viewport(Ogre::Viewport * v) { v->setCamera(mCamera); }
 
 		/// Gets a Ray which goes through the (normalized) screen position
-		Ogre::Ray getScreenRay(Ogre::Vector2 v);
+		Ogre::Ray get_screen_ray(Ogre::Vector2 v);
 	};
 }

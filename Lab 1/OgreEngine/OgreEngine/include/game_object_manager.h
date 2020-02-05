@@ -81,7 +81,6 @@ namespace OgreEngine
 
 		/// Creates a new game object.  This creates a group as well, if the given one doesn't exist.
 		GameObject* create_game_object(std::string group_name, std::string object_name, GameObject* parent = nullptr, unsigned int tag = 0, Ogre::Vector3 pos = Ogre::Vector3::ZERO, Ogre::Quaternion rot = Ogre::Quaternion::IDENTITY);
-
 	};
 }
 
