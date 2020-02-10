@@ -39,92 +39,68 @@ void Application::setup(void)
 	mGOM = new GameObjectManager();
 
 	//add lights to the scene
-	GameObject* lightNode = GAME_OBJ_MANAGER->create_game_object("temporary", "Lights", nullptr, 0, Ogre::Vector3(20, 80, 50));
+	GameObject* lightNode = GAME_OBJ_MANAGER->create_game_object("temporary", "PointLight0", nullptr, 0, Ogre::Vector3(20, 80, 50));
 	lightNode->create_light("MainLight", OgreEngine::LightType::POINT);
 
+	//attach spotlight to new node and set direction and position
+	GameObject* spotLightNode = GAME_OBJ_MANAGER->create_game_object("temporary", "SpotLights", nullptr, 0, Ogre::Vector3(200, 200, 0));
+	
 	//create spotlight in scene
-	LightComponent* spotLight = lightNode->create_light("SpotLight", OgreEngine::LightType::SPOT);
+	LightComponent* spotLight = spotLightNode->create_light("SpotLight", OgreEngine::LightType::SPOT);
 	spotLight->set_diffuse_color(.1, .1, .1);
 	spotLight->set_specular_color(.1, .1, .1);
 	spotLight->set_spotlight_params(35, 50);
 	spotLight->set_direction(-1, -1, 0);
 
-	
-
-	//attach spotlight to new node and set direction and position
-	GameObject* spotLightNode = GAME_OBJ_MANAGER->create_game_object("temporary", spotLight->getName(), nullptr, 0, Ogre::Vector3(200, 200, 0));
-	//add Spotlight to the scene
-	Ogre::Light* spotLight = spotLightNode->create_light("SpotLight");
-	spotLight->setDiffuseColour(.1, .1, .1);
-	spotLight->setSpecularColour(.1, .1, .1);
-	spotLight->setType(Ogre::Light::LT_SPOTLIGHT);
-	spotLight->setSpotlightRange(Ogre::Degree(35), Ogre::Degree(50));
-	spotLightNode->attach_object(spotLight);
-	spotLightNode->set_direction(-1, -1, 0);
-
 	//add Directional Light
-	Ogre::Light* dirLight = mScnMgr->createLight("DirectionalLight");
-	dirLight->setType(Ogre::Light::LT_DIRECTIONAL);
-	dirLight->setDiffuseColour(Ogre::ColourValue(.2, .2, .2));
-	dirLight->setSpecularColour(Ogre::ColourValue(.2, .2, .2));
-
-	//set Directional Light in scene
-	GameObject* dirLightNode = GAME_OBJ_MANAGER->create_game_object("temporary", dirLight->getName());
-	dirLightNode->attach_object(dirLight);
-	dirLightNode->set_direction(Ogre::Vector3(0, -1, 1));
+	GameObject* dirLightNode = GAME_OBJ_MANAGER->create_game_object("temporary", "DirectionLights");
+	LightComponent* dirLight = dirLightNode->create_light("DirectionLight", OgreEngine::LightType::DIRECTIONAL);//mScnMgr->createLight("DirectionalLight");
+	dirLight->set_diffuse_color(.2, .2, .2);
+	dirLight->set_specular_color(.2, .2, .2);
+	dirLight->set_direction(Ogre::Vector3(0, -1, 1));
 
 	//add Point Light
-	Ogre::Light* pointLight = mScnMgr->createLight("PointLight");
-	pointLight->setType(Ogre::Light::LT_POINT);
-	pointLight->setDiffuseColour(.3, .3, .3);
-	pointLight->setSpecularColour(.3, .3, .3);
-
-	//set Point light in scene
-	GameObject* pointLightNode = GAME_OBJ_MANAGER->create_game_object("temporary", pointLight->getName());
-	pointLightNode->attach_object(pointLight);
-	pointLightNode->set_position(Ogre::Vector3(0, 150, 250));
+	GameObject* pointLightNode = GAME_OBJ_MANAGER->create_game_object("temporary", "PointLight1", nullptr, 0, Ogre::Vector3(0, 150, 250));
+	LightComponent* pointLight = pointLightNode->create_light("PointLight", OgreEngine::LightType::POINT);
+	pointLight->set_diffuse_color(.3, .3, .3);
+	pointLight->set_specular_color(.3, .3, .3);
 	
 	///////////////////////////////////////////////////////////////////////////////////////////// Add Camera and ViewPort
-	//create the camera
-	Ogre::Camera* cam = mScnMgr->createCamera("myCam");
-	cam->setNearClipDistance(5);	//can be changed, specific for this sample
-	cam->setAutoAspectRatio(true);
-
-	//Create CameraNode and attach camera to be put into the scene
-	GameObject* camNode = GAME_OBJ_MANAGER->create_game_object("temporary", cam->getName(), nullptr, 0, Ogre::Vector3(0, 15, 30));
-	camNode->look_at(Ogre::Vector3::ZERO);
-	camNode->attach_object(cam);
-
-	//set camera to render to main window by creating a viewport and attaching the camera
-	Ogre::Viewport* vp = getRenderWindow()->addViewport(cam);
+	// Create Viewport
+	Ogre::Viewport* vp = getRenderWindow()->addViewport(nullptr);
 	vp->setBackgroundColour(Ogre::ColourValue(0, 0, 0));
-
-	//set camera aspect Ratio
-	cam->setAspectRatio(Ogre::Real(vp->getActualWidth()) / Ogre::Real(vp->getActualHeight()));
 	
+	// Create the camera
+	// Create CameraNode and attach camera to be put into the scene
+	GameObject* camNode = GAME_OBJ_MANAGER->create_game_object("temporary", "CameraNode", nullptr, 0, Ogre::Vector3(0, 15, 30));
+	camNode->look_at(Ogre::Vector3::ZERO);
+
+	CameraComponent* cam = camNode->create_camera("MainCamera");
+	cam->set_clip_distances(5, 100);
+	cam->set_auto_aspect_ratio(true);
+	cam->connect_to_viewport(vp);
+	cam->set_aspect_ratio(vp->getActualWidth(), vp->getActualHeight());
+
 	///////////////////////////////////////////////////////////////////////////////////////////// Add Entitys and plane
 	//create Ogre Entity to render and set to cast shadows
-	Ogre::Entity* ogreEnt = mScnMgr->createEntity("OgreEnt", "Sinbad.mesh");
-	ogreEnt->setCastShadows(true);
-	GameObject* ogreNode = GAME_OBJ_MANAGER->create_game_object("temporary", ogreEnt->getName(), nullptr, 0, Ogre::Vector3(0, 5, 0));
+	
+	GameObject* ogreNode = GAME_OBJ_MANAGER->create_game_object("temporary", "OgreEnt", nullptr, 0, Ogre::Vector3(0, 5, 0));
 	ogreNode->look_at();
 	ogreNode->rotate_world(90, 1, 0, 0);
-	ogreNode->attach_object(ogreEnt);
+
+	MeshComponent* ogreEnt = ogreNode->create_mesh("OgreMesh", "Sinbad.mesh");
+	ogreEnt->set_cast_shadows(true);
 
 	//create Peguin Entity to render that is a child of Ogre
-	Ogre::Entity* penguinEnt = mScnMgr->createEntity("PenguinEnt", "penguin.mesh");
-	penguinEnt->setCastShadows(true);
-	GameObject* penguinNode = GAME_OBJ_MANAGER->create_game_object("temporary", penguinEnt->getName(), ogreNode, 0, Ogre::Vector3(1.75, 3.5, 0));
+	GameObject* penguinNode = GAME_OBJ_MANAGER->create_game_object("temporary", "PenguinEnt", ogreNode, 0, Ogre::Vector3(1.75, 3.5, 0));
 	penguinNode->look_at();
 	penguinNode->set_scale(Ogre::Vector3(.05));
 	penguinNode->rotate_world(90, 1, 0, 0);
 	penguinNode->rotate_world(-25, 0, 0, 1);
-	penguinNode->attach_object(penguinEnt);
 
-	//Enable Penguins amuse animation and play it
-	mAnimationState = penguinEnt->getAnimationState("amuse");
-	mAnimationState->setLoop(true);
-	mAnimationState->setEnabled(true);
+	MeshComponent* penguinEnt = penguinNode->create_mesh("PenguinMesh", "penguin.mesh");
+	penguinEnt->set_cast_shadows(true);
+	penguinEnt->play_animation("amuse", true, true);
 
 	//Create Ground Plane
 	Ogre::Plane plane(Ogre::Vector3::UNIT_Y, 0);
@@ -142,12 +118,10 @@ void Application::setup(void)
 		5,						//vTile floats
 		Ogre::Vector3::UNIT_Z);	//upVector
 
-	Ogre::Entity* groundEntity = mScnMgr->createEntity("ground");
-	groundEntity->setCastShadows(false);
-	groundEntity->setMaterialName("Examples/Rockwall");
-
-	GameObject* groundPlane = GAME_OBJ_MANAGER->create_game_object("temporary", groundEntity->getName());
-	groundPlane->attach_object(groundEntity);
+	GameObject* groundNode = GAME_OBJ_MANAGER->create_game_object("temporary", "GroundNode");
+	MeshComponent* groundEnt = groundNode->create_mesh("groundMesh", "ground");
+	groundEnt->set_cast_shadows(true);
+	groundEnt->set_material("Examples/Rockwall");
 
 	///////////////////////////////////////////////////////////////////////////////////////////// Enable and Add SkyBox
 	mScnMgr->setSkyBox(true, "Examples/SpaceSkyBox", 300, false);
@@ -160,7 +134,8 @@ bool Application::frameStarted(const Ogre::FrameEvent& e)
 	OgreBites::ApplicationContext::frameStarted(e);
 
 	// Update current Animation being played by penguin
-	mAnimationState->addTime(e.timeSinceLastFrame);
+	GAME_OBJ_MANAGER->update(e.timeSinceLastFrame);
+	//mAnimationState->addTime(e.timeSinceLastFrame);
 	
 	////////////////////////////////////////////////////////////// Rotation Keys for Ogre
 	if (mKeysDown.find(OgreBites::SDLK_LEFT) != mKeysDown.end())

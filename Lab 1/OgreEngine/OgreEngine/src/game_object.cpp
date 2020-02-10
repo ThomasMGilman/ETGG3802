@@ -24,6 +24,20 @@ GameObject::~GameObject()
 	
 }
 
+void GameObject::update(float elapsed)
+{
+	mTypeIter = mComponents.begin();
+	while (mTypeIter != mComponents.end())
+	{
+		mCompIter = mTypeIter->second.begin();
+		while (mCompIter != mTypeIter->second.end())
+		{
+			mCompIter->second->update(elapsed);
+			mCompIter++;
+		}
+		mTypeIter++;
+	}
+}
 
 void GameObject::set_parent(GameObject* parent)
 {
@@ -70,7 +84,7 @@ bool GameObject::delete_component(std::string objectName)
 bool GameObject::delete_component(std::string objectName, Component::ComponentType type)
 {
 	mTypeIter = mComponents.find(type);
-	if (mTypeIter != mComponents.end)
+	if (mTypeIter != mComponents.end())
 	{
 		mCompIter = mTypeIter->second.find(objectName);
 		if (mCompIter != mTypeIter->second.end())

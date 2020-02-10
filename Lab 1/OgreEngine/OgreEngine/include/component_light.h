@@ -27,6 +27,8 @@ namespace OgreEngine
 		/// Destructor
 		~LightComponent();
 
+		void update(float elapsed) override;
+
 	// @@@@@ COMPONENT OVERRIDES
 	public:
 		/// Return the type of this component

@@ -27,3 +27,8 @@ LightComponent::~LightComponent()
 		APPLICATION->get_scene_manager()->destroyLight(mLight);
 	}
 }
+
+void LightComponent::update(float elapsed)
+{
+
+}

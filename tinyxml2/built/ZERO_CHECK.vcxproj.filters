@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\a8693fef5fa7ab6fa4faaa55b0eafbe5\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{0410707D-6E39-374A-8F93-26C660C9662F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

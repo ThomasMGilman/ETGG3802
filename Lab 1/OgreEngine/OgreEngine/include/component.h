@@ -18,6 +18,8 @@ namespace OgreEngine
 
 		~Component() {};
 
+		virtual void update(float elapsed) = NULL;
+
 		virtual ComponentType get_type() = NULL;
 
 		virtual void set_visible(bool isVisible) = NULL;

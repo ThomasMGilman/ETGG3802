@@ -24,6 +24,10 @@ CameraComponent::~CameraComponent()
 	}
 }
 
+void CameraComponent::update(float elapsed)
+{
+
+}
 
 Ogre::Ray CameraComponent::get_screen_ray(Ogre::Vector2 v)
 {

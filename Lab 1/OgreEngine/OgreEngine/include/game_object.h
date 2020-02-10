@@ -44,6 +44,10 @@ namespace OgreEngine
 
 		/// Destructor
 		virtual ~GameObject();
+		
+		// ***** UPDATE *****
+	public:
+		void update(float elapsed);
 
 		// ***** TRANSFORMATION (ABSOLUTE) SETTERS *****
 	public:

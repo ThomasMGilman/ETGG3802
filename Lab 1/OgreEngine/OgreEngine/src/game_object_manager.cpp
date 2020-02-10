@@ -14,6 +14,21 @@ GameObjectManager::~GameObjectManager()
 	destroy_all();
 }
 
+void GameObjectManager::update(float elapsed)
+{
+	mGroupsIter = mObjects.begin();
+	while (mGroupsIter != mObjects.end())
+	{
+		mObjIter = mGroupsIter->second.begin();
+		while (mObjIter != mGroupsIter->second.end())
+		{
+			mObjIter->second->update(elapsed);
+			mObjIter++;
+		}
+		mGroupsIter++;
+	}
+}
+
 GameObject* GameObjectManager::get_game_object(std::string game_object_name)
 {
 	GameObject* reqObject = nullptr;
@@ -39,6 +54,8 @@ GameObject* GameObjectManager::get_game_object(std::string game_object_name)
 
 	return reqObject;
 }
+
+
 
 GameObject* GameObjectManager::get_game_object(std::string game_object_name, std::string group_name)
 {

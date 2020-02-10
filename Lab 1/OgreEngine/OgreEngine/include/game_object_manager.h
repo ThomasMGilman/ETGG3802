@@ -39,6 +39,9 @@ namespace OgreEngine
 		/// Destructor
 		~GameObjectManager();
 
+		// ***** Update Function *****
+	public:
+		void update(float elapsed);
 		
 		// ***** GETTERS / SETTERS *****
 	public:

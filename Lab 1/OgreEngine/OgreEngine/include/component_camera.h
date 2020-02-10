@@ -24,6 +24,8 @@ namespace OgreEngine
 
 		/// Destructor
 		~CameraComponent();
+
+		void update(float elapsed) override;
 		
 	// @@@@@ OVERRIDES from Component class @@@@@
 	public:
@@ -46,6 +48,10 @@ namespace OgreEngine
 
 		/// Connects this contained camera to a viewport (making it render there)
 		void connect_to_viewport(Ogre::Viewport * v) { v->setCamera(mCamera); }
+
+		void set_auto_aspect_ratio(bool set) { mCamera->setAutoAspectRatio(set); }
+
+		void set_aspect_ratio(float width, float height) { mCamera->setAspectRatio(Ogre::Real(width) / Ogre::Real(height)); }
 
 		/// Gets a Ray which goes through the (normalized) screen position
 		Ogre::Ray get_screen_ray(Ogre::Vector2 v);
