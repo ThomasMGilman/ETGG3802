@@ -21,7 +21,7 @@ LogManager::LogManager(float vpHeight, std::string logFileName, int numLogs)
 	// Open logfile to write to
 	mOutfile = std::ofstream(logFileName, std::ofstream::out | std::ofstream::trunc);
 
-	int yPosAmount = vpHeight / numLogs;
+	int yPosAmount = CHAR_HEIGHT; //vpHeight / numLogs;
 	// setup text Areas
 	for (int i = 0; i < numLogs; i++)
 	{
@@ -31,7 +31,7 @@ LogManager::LogManager(float vpHeight, std::string logFileName, int numLogs)
 		text_area->setMetricsMode(Ogre::GMM_PIXELS);
 		text_area->setPosition(0, i * yPosAmount);
 		text_area->setDimensions(100, 100);
-		text_area->setCharHeight(16);
+		text_area->setCharHeight(CHAR_HEIGHT);
 		text_area->setFontName("SdkTrays/Value");
 
 		mOverlayPanel->addChild(text_area);

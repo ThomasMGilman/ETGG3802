@@ -86,8 +86,8 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>OgreBites_d.lib;OgreMain_d.lib;OgreOverlay_d.lib;OgreRTShaderSystem_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\lib;$(ProjectDir)dependencies\tinyxml2\lib\pkgconfig;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OgreBites_d.lib;OgreMain_d.lib;OgreOverlay_d.lib;OgreRTShaderSystem_d.lib;tinyxml2d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\lib;$(ProjectDir)dependencies\tinyxml2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

@@ -7,7 +7,6 @@
 #include <sstream>
 #include <Singleton.h>
 
-#define RAND_COLOUR_VAL static_cast<float>(rand()) / static_cast<float>(RAND_MAX)
 #define APPLICATION Application::getSingletonPtr()
 
 namespace OgreEngine {

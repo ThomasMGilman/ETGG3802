@@ -12,6 +12,9 @@
 #include "OgreFontManager.h"
 
 #define LOG_MANAGER LogManager::getSingletonPtr()
+#define CHAR_HEIGHT 16
+#define RAND_COLOUR_VAL static_cast<float>(rand()) / static_cast<float>(RAND_MAX)
+#define RAND_COLOUR Ogre::ColourValue(RAND_COLOUR_VAL, RAND_COLOUR_VAL, RAND_COLOUR_VAL)
 
 namespace OgreEngine {
 	class LogManager : public Singleton<LogManager>
@@ -26,7 +29,7 @@ namespace OgreEngine {
 		void log(std::string msg);
 
 		// Outputs messages to the overlay as well as the log file
-		void log_message(std::string msg, Ogre::ColourValue text_color = Ogre::ColourValue(), float log_time_seconds = 2);
+		void log_message(std::string msg, Ogre::ColourValue text_color = RAND_COLOUR, float log_time_seconds = 2);
 
 		// Updates the messages on the screen and removes messages after their time is up
 		void update(Ogre::Real elapsed_time);

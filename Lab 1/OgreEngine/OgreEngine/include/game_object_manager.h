@@ -6,7 +6,7 @@
 #include <game_object.h>
 #include <singleton.h>
 #include <Ogre.h>
-//#include <tinyxml2.h>
+#include <tinyxml2.h>
 #include <map>
 
 #define GAME_OBJ_MANAGER GameObjectManager::getSingletonPtr()
@@ -34,8 +34,8 @@ namespace OgreEngine
 
 		std::string mMediaPath = "../Media/my_media/";
 
-		// tinyXML2 document reader
-		//tinyxml2::XMLDocument mDoc;
+		//tinyXML2 document reader
+		tinyxml2::XMLDocument* mDoc;
 
 		// ***** CONSTRUCTOR / DESTRUCTOR *****
 	public:
@@ -71,7 +71,7 @@ namespace OgreEngine
 		/// Load in the given scene/objects from the file given using tinyxml2
 		void load_scene(std::string fileName);
 
-		void parse_xml_nodes();//tinyxml2::XMLNode* node);
+		void parse_xml_nodes(tinyxml2::XMLNode* node);
 		
 		// ***** DELETION METHODS ***** 
 	public:

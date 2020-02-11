@@ -7,10 +7,12 @@ GameObjectManager* GameObjectManager::msSingleton = nullptr;
 
 GameObjectManager::GameObjectManager()
 {
+	mDoc = new tinyxml2::XMLDocument;
 }
 
 GameObjectManager::~GameObjectManager()
 {
+	delete(mDoc);
 	destroy_all();
 }
 
@@ -41,18 +43,28 @@ void GameObjectManager::load_scenes(std::list<std::string> fileNames)
 
 void GameObjectManager::load_scene(std::string fileName)
 {
-	/*mDoc.LoadFile((mMediaPath + fileName).c_str());
-	if (mDoc.FirstChild() != NULL)
-		parse_xml_nodes(mDoc.FirstChild());*/
+	mDoc->LoadFile((mMediaPath + fileName).c_str());
+	if (mDoc->Error())
+	{
+		std::string error = mDoc->ErrorStr();
+		LOG_MANAGER->log("tinyxml2 Error: " + error);
+	}
+	tinyxml2::XMLNode* firstNode = mDoc->FirstChild();
+	if (firstNode != NULL)
+		parse_xml_nodes(firstNode);
 }
 
-void GameObjectManager::parse_xml_nodes()//tinyxml2::XMLNode* node)
+void GameObjectManager::parse_xml_nodes(tinyxml2::XMLNode* node)
 {
-	/*LOG_MANAGER->log_message("Readin XML Node: " + *node->Value());
-	if (node->FirstChild() != NULL)
-		parse_xml_nodes(node->FirstChild());
-	if (node->NextSibling() != NULL)
-		parse_xml_nodes(node->NextSibling());*/
+	std::string nodeVal = node->Value();
+	LOG_MANAGER->log_message("Readin XML Node: " + nodeVal);
+	tinyxml2::XMLNode* firstChild = node->FirstChild();
+	if (firstChild != NULL)
+		parse_xml_nodes(firstChild);
+
+	tinyxml2::XMLNode* nextSibling = node->NextSibling();
+	if (nextSibling != NULL)
+		parse_xml_nodes(nextSibling);
 }
 
 GameObject* GameObjectManager::get_game_object(std::string game_object_name)
