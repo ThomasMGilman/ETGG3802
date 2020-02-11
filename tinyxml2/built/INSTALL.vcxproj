@@ -22,8 +22,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{2EA8A57E-EBE2-3F34-83EE-94D213B2BB68}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectGuid>{C0140484-DD54-3A21-81CC-06584257F068}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
     <ProjectName>INSTALL</ProjectName>
@@ -153,7 +153,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\a8693fef5fa7ab6fa4faaa55b0eafbe5\INSTALL_force.rule">
+    <CustomBuild Include="D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\16397588c9275e2f7311824bead2e7d8\INSTALL_force.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> </Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
 cd .
@@ -165,7 +165,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\INSTALL_force</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</VerifyInputsAndOutputsExist>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> </Message>
@@ -179,7 +179,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\INSTALL_force</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</VerifyInputsAndOutputsExist>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'"> </Message>
@@ -193,7 +193,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\INSTALL_force</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</VerifyInputsAndOutputsExist>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'"> </Message>
@@ -207,20 +207,20 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\INSTALL_force</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</VerifyInputsAndOutputsExist>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\ZERO_CHECK.vcxproj">
-      <Project>{ACC6B47C-9D94-3FCD-9E82-E1F0BB48BC8C}</Project>
+    <ProjectReference Include="D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\ZERO_CHECK.vcxproj">
+      <Project>{8A5F06C5-1792-3EEF-AA07-67B0F87277E2}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\ALL_BUILD.vcxproj">
-      <Project>{1EC6762D-F532-3BCF-8C30-846F35564541}</Project>
+    <ProjectReference Include="D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\ALL_BUILD.vcxproj">
+      <Project>{296AFA5E-1993-3F45-98C7-444DEA172EF8}</Project>
       <Name>ALL_BUILD</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

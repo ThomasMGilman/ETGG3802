@@ -46,35 +46,35 @@ add_library(tinyxml2 SHARED IMPORTED)
 
 set_target_properties(tinyxml2 PROPERTIES
   INTERFACE_COMPILE_DEFINITIONS "\$<\$<CONFIG:Debug>:TINYXML2_DEBUG>;_CRT_SECURE_NO_WARNINGS"
-  INTERFACE_INCLUDE_DIRECTORIES "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2"
+  INTERFACE_INCLUDE_DIRECTORIES "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2"
 )
 
 # Import target "tinyxml2" for configuration "Debug"
 set_property(TARGET tinyxml2 APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(tinyxml2 PROPERTIES
-  IMPORTED_IMPLIB_DEBUG "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Debug/tinyxml2d.lib"
-  IMPORTED_LOCATION_DEBUG "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Debug/tinyxml2d.dll"
+  IMPORTED_IMPLIB_DEBUG "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Debug/tinyxml2d.lib"
+  IMPORTED_LOCATION_DEBUG "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Debug/tinyxml2d.dll"
   )
 
 # Import target "tinyxml2" for configuration "Release"
 set_property(TARGET tinyxml2 APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(tinyxml2 PROPERTIES
-  IMPORTED_IMPLIB_RELEASE "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Release/tinyxml2.lib"
-  IMPORTED_LOCATION_RELEASE "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Release/tinyxml2.dll"
+  IMPORTED_IMPLIB_RELEASE "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Release/tinyxml2.lib"
+  IMPORTED_LOCATION_RELEASE "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Release/tinyxml2.dll"
   )
 
 # Import target "tinyxml2" for configuration "MinSizeRel"
 set_property(TARGET tinyxml2 APPEND PROPERTY IMPORTED_CONFIGURATIONS MINSIZEREL)
 set_target_properties(tinyxml2 PROPERTIES
-  IMPORTED_IMPLIB_MINSIZEREL "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/MinSizeRel/tinyxml2.lib"
-  IMPORTED_LOCATION_MINSIZEREL "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/MinSizeRel/tinyxml2.dll"
+  IMPORTED_IMPLIB_MINSIZEREL "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/MinSizeRel/tinyxml2.lib"
+  IMPORTED_LOCATION_MINSIZEREL "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/MinSizeRel/tinyxml2.dll"
   )
 
 # Import target "tinyxml2" for configuration "RelWithDebInfo"
 set_property(TARGET tinyxml2 APPEND PROPERTY IMPORTED_CONFIGURATIONS RELWITHDEBINFO)
 set_target_properties(tinyxml2 PROPERTIES
-  IMPORTED_IMPLIB_RELWITHDEBINFO "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/RelWithDebInfo/tinyxml2.lib"
-  IMPORTED_LOCATION_RELWITHDEBINFO "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/RelWithDebInfo/tinyxml2.dll"
+  IMPORTED_IMPLIB_RELWITHDEBINFO "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/RelWithDebInfo/tinyxml2.lib"
+  IMPORTED_LOCATION_RELWITHDEBINFO "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/RelWithDebInfo/tinyxml2.dll"
   )
 
 # This file does not depend on other imported targets which have

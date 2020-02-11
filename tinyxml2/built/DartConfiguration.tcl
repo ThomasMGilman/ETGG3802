@@ -4,14 +4,14 @@
 
 
 # Configuration directories and files
-SourceDirectory: D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2
-BuildDirectory: D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built
+SourceDirectory: D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2
+BuildDirectory: D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: DESKTOP-ET2RN54
+Site: DESKTOP-MBD9A4F
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
 BuildName: Win32-MSBuild
@@ -26,7 +26,7 @@ SubmitURL: http://
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "C:/Program Files/CMake/bin/cmake.exe" "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2"
+ConfigureCommand: "C:/Program Files/CMake/bin/cmake.exe" "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2"
 MakeCommand: "C:\Program Files\CMake\bin\cmake.exe" --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
@@ -63,7 +63,7 @@ UpdateType:
 
 # Compiler info
 Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.24.28314/bin/Hostx64/x64/cl.exe
-CompilerVersion: 19.24.28316.0
+CompilerVersion: 19.24.28315.0
 
 # Dynamic analysis (MemCheck)
 PurifyCommand: 

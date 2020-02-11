@@ -67,8 +67,8 @@ void Application::setup(void)
 	
 	///////////////////////////////////////////////////////////////////////////////////////////// Add Camera and ViewPort
 	// Create Viewport
-	Ogre::Viewport* vp = getRenderWindow()->addViewport(nullptr);
-	vp->setBackgroundColour(Ogre::ColourValue(0, 0, 0));
+	mVp = getRenderWindow()->addViewport(nullptr);
+	mVp->setBackgroundColour(Ogre::ColourValue(0, 0, 0));
 	
 	// Create the camera
 	// Create CameraNode and attach camera to be put into the scene
@@ -78,8 +78,7 @@ void Application::setup(void)
 	CameraComponent* cam = camNode->create_camera("MainCamera");
 	cam->set_clip_distances(5, 100);
 	cam->set_auto_aspect_ratio(true);
-	cam->connect_to_viewport(vp);
-	cam->set_aspect_ratio(vp->getActualWidth(), vp->getActualHeight());
+	cam->set_main_camera(mVp);
 
 	///////////////////////////////////////////////////////////////////////////////////////////// Add Entitys and plane
 	//create Ogre Entity to render and set to cast shadows
@@ -126,7 +125,9 @@ void Application::setup(void)
 	///////////////////////////////////////////////////////////////////////////////////////////// Enable and Add SkyBox
 	mScnMgr->setSkyBox(true, "Examples/SpaceSkyBox", 300, false);
 	
-	mLogger = new LogManager(vp->getActualHeight());
+	mLogger = new LogManager(mVp->getActualHeight());
+
+	//GAME_OBJ_MANAGER->load_scene("Cube.mesh");
 }
 
 bool Application::frameStarted(const Ogre::FrameEvent& e)

@@ -6,6 +6,7 @@
 #include <game_object.h>
 #include <singleton.h>
 #include <Ogre.h>
+//#include <tinyxml2.h>
 #include <map>
 
 #define GAME_OBJ_MANAGER GameObjectManager::getSingletonPtr()
@@ -31,6 +32,11 @@ namespace OgreEngine
 		std::map<std::string, std::map<std::string, GameObject*>>::iterator mGroupsIter;
 		std::map<std::string, std::map<std::string, GameObject*>>::reverse_iterator mGroupsRevIter;
 
+		std::string mMediaPath = "../Media/my_media/";
+
+		// tinyXML2 document reader
+		//tinyxml2::XMLDocument mDoc;
+
 		// ***** CONSTRUCTOR / DESTRUCTOR *****
 	public:
 		/// Constructor
@@ -38,7 +44,7 @@ namespace OgreEngine
 
 		/// Destructor
 		~GameObjectManager();
-
+		
 		// ***** Update Function *****
 	public:
 		void update(float elapsed);
@@ -56,8 +62,18 @@ namespace OgreEngine
 		
 		/// Returns true if there is a group by this name
 		bool has_group(std::string group_name);
+
+		// ***** OBJECT / XML READER FUNCTIONS *****
+	public:
+		/// Given a list of scenes or object xmls. This loads in the scene/objects
+		void load_scenes(std::list<std::string> fileNames);
+
+		/// Load in the given scene/objects from the file given using tinyxml2
+		void load_scene(std::string fileName);
+
+		void parse_xml_nodes();//tinyxml2::XMLNode* node);
 		
-		// ***** METHODS ***** 
+		// ***** DELETION METHODS ***** 
 	public:
 		/// Destroys a game object (faster version) if you know the group name
 		bool destroy_game_object(std::string group_name, std::string gobj_name, bool ignoreLog = true);
@@ -65,7 +81,6 @@ namespace OgreEngine
 		/// Destroy a game object (slower version) if you don't know the group name.  Returns true if that game object was destroyed
 		/// (i.e. was it found)
 		bool destroy_game_object(std::string gobj_name);
-		
 
 		/// Destroys all game objects within the given group.  If destroy_group is true, also remove the group.  
 		/// Returns true if that game object was destroyed (i.e. was it found).
@@ -74,10 +89,8 @@ namespace OgreEngine
 		
 		void group_destroy(std::map<std::string, std::map<std::string, GameObject*>>::iterator& group, bool destroy_group);
 
-
 		/// Destroys all game objects and groups entirely
 		void destroy_all();
-
 
 		/// Sets the visibility of all game objects within the given group.
 		void set_visibility(std::string group_name, bool is_visible);

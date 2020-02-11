@@ -47,7 +47,7 @@ namespace OgreEngine
 		void set_clip_distances(float n, float f) { mCamera->setNearClipDistance(n); mCamera->setFarClipDistance(f); }
 
 		/// Connects this contained camera to a viewport (making it render there)
-		void connect_to_viewport(Ogre::Viewport * v) { v->setCamera(mCamera); }
+		void set_main_camera(Ogre::Viewport* v) { v->setCamera(mCamera); this->set_aspect_ratio(v->getActualWidth(), v->getActualHeight()); }
 
 		void set_auto_aspect_ratio(bool set) { mCamera->setAutoAspectRatio(set); }
 

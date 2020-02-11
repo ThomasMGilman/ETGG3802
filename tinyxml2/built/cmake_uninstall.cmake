@@ -1,8 +1,8 @@
-if(NOT EXISTS "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/install_manifest.txt")
-  message(FATAL_ERROR "Cannot find install manifest: D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/install_manifest.txt")
-endif(NOT EXISTS "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/install_manifest.txt")
+if(NOT EXISTS "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/install_manifest.txt")
+  message(FATAL_ERROR "Cannot find install manifest: D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/install_manifest.txt")
+endif(NOT EXISTS "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/install_manifest.txt")
 
-file(READ "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/install_manifest.txt" files)
+file(READ "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 foreach(file ${files})
   message(STATUS "Uninstalling $ENV{DESTDIR}${file}")

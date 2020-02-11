@@ -15,7 +15,7 @@ GameObject::~GameObject()
 {
 	delete_all_components();
 	
-	Ogre::SceneNode* parentNode = mSceneNode->getParentSceneNode();		//BREAKS HERE!!! Causes Read Access Violation when trying to get parent of GameObject*
+	Ogre::SceneNode* parentNode = mSceneNode->getParentSceneNode();
 	if(parentNode != nullptr)
 		parentNode->removeChild(mSceneNode);
 	

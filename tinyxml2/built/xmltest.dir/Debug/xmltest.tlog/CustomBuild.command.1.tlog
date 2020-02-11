@@ -1,6 +1,6 @@
-^D:\SCHOOLANDPROJECTS\PROGRAMS\ETGG 3802_01 REALTIME INTERACTIVE PROG 2\TINYXML2\CMAKELISTS.TXT
+^D:\SCHOOL\PROGRAMS\ETGG 3802_01 REALTIME INTERACTIVE PROG 2\TINYXML2\CMAKELISTS.TXT
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SD:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2" "-BD:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built" --check-stamp-file "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2" "-BD:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built" --check-stamp-file "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

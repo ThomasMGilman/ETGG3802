@@ -42,7 +42,7 @@ namespace OgreEngine {
 
 		Ogre::Root* mRoot;
 		Ogre::SceneManager* mScnMgr;
-		Ogre::AnimationState* mAnimationState;
+		Ogre::Viewport* mVp;
 		Ogre::Timer* mTimer;
 
 		std::unordered_set<int> mKeysDown;

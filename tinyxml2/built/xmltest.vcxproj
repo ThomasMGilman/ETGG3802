@@ -22,8 +22,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{322C4E38-8446-3364-8330-5B9176428268}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectGuid>{B82712F8-68F2-34FE-9168-00732BFE36E9}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
     <ProjectName>xmltest</ProjectName>
@@ -59,25 +59,25 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">xmltest.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">xmltest</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">xmltest.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">xmltest</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">xmltest.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">xmltest</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">xmltest.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">xmltest</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -104,10 +104,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;TINYXML2_DEBUG;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -115,11 +115,11 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>Configuring xmltest resources directory: D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/resources</Message>
+      <Message>Configuring xmltest resources directory: D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/resources</Message>
       <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/resources" "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Debug/resources"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/resources" "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Debug/resources"
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Debug/resources/out"
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Debug/resources/out"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -134,8 +134,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Debug/xmltest.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Debug/xmltest.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Debug/xmltest.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Debug/xmltest.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -144,7 +144,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -162,10 +162,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -173,11 +173,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>Configuring xmltest resources directory: D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/resources</Message>
+      <Message>Configuring xmltest resources directory: D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/resources</Message>
       <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/resources" "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Release/resources"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/resources" "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Release/resources"
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Release/resources/out"
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Release/resources/out"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -192,8 +192,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Release/xmltest.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Release/xmltest.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Release/xmltest.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/Release/xmltest.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -202,7 +202,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -220,10 +220,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -231,11 +231,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>Configuring xmltest resources directory: D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/resources</Message>
+      <Message>Configuring xmltest resources directory: D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/resources</Message>
       <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/resources" "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/MinSizeRel/resources"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/resources" "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/MinSizeRel/resources"
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/MinSizeRel/resources/out"
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/MinSizeRel/resources/out"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -250,8 +250,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/MinSizeRel/xmltest.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/MinSizeRel/xmltest.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/MinSizeRel/xmltest.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/MinSizeRel/xmltest.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -260,7 +260,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -277,10 +277,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -288,11 +288,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>Configuring xmltest resources directory: D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/resources</Message>
+      <Message>Configuring xmltest resources directory: D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/resources</Message>
       <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/resources" "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/RelWithDebInfo/resources"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/resources" "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/RelWithDebInfo/resources"
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/RelWithDebInfo/resources/out"
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/RelWithDebInfo/resources/out"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -307,8 +307,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/RelWithDebInfo/xmltest.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/RelWithDebInfo/xmltest.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/RelWithDebInfo/xmltest.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/RelWithDebInfo/xmltest.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -316,10 +316,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\CMakeLists.txt">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/CMakeLists.txt</Message>
+    <CustomBuild Include="D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SD:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2" "-BD:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built" --check-stamp-file "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2" "-BD:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built" --check-stamp-file "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -327,12 +327,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.16\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTest.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTestTargets.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTestUseLaunchers.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\DartConfiguration.tcl.in;C:\Program Files\CMake\share\cmake-3.16\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\WriteBasicConfigVersionFile.cmake;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\Config.cmake.in;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeCCompiler.cmake;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeCXXCompiler.cmake;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeRCCompiler.cmake;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeSystem.cmake;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\cmake_uninstall.cmake.in;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\tinyxml2.pc.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.16\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTest.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTestTargets.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTestUseLaunchers.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\DartConfiguration.tcl.in;C:\Program Files\CMake\share\cmake-3.16\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\WriteBasicConfigVersionFile.cmake;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\Config.cmake.in;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeCCompiler.cmake;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeCXXCompiler.cmake;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeRCCompiler.cmake;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeSystem.cmake;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\cmake_uninstall.cmake.in;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\tinyxml2.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SD:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2" "-BD:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built" --check-stamp-file "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2" "-BD:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built" --check-stamp-file "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -340,12 +340,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.16\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTest.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTestTargets.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTestUseLaunchers.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\DartConfiguration.tcl.in;C:\Program Files\CMake\share\cmake-3.16\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\WriteBasicConfigVersionFile.cmake;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\Config.cmake.in;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeCCompiler.cmake;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeCXXCompiler.cmake;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeRCCompiler.cmake;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeSystem.cmake;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\cmake_uninstall.cmake.in;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\tinyxml2.pc.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.16\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTest.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTestTargets.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTestUseLaunchers.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\DartConfiguration.tcl.in;C:\Program Files\CMake\share\cmake-3.16\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\WriteBasicConfigVersionFile.cmake;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\Config.cmake.in;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeCCompiler.cmake;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeCXXCompiler.cmake;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeRCCompiler.cmake;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeSystem.cmake;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\cmake_uninstall.cmake.in;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\tinyxml2.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SD:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2" "-BD:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built" --check-stamp-file "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2" "-BD:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built" --check-stamp-file "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -353,12 +353,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.16\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTest.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTestTargets.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTestUseLaunchers.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\DartConfiguration.tcl.in;C:\Program Files\CMake\share\cmake-3.16\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\WriteBasicConfigVersionFile.cmake;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\Config.cmake.in;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeCCompiler.cmake;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeCXXCompiler.cmake;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeRCCompiler.cmake;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeSystem.cmake;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\cmake_uninstall.cmake.in;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\tinyxml2.pc.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.16\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTest.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTestTargets.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTestUseLaunchers.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\DartConfiguration.tcl.in;C:\Program Files\CMake\share\cmake-3.16\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\WriteBasicConfigVersionFile.cmake;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\Config.cmake.in;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeCCompiler.cmake;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeCXXCompiler.cmake;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeRCCompiler.cmake;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeSystem.cmake;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\cmake_uninstall.cmake.in;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\tinyxml2.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SD:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2" "-BD:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built" --check-stamp-file "D:/SchoolAndProjects/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2" "-BD:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built" --check-stamp-file "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -366,23 +366,23 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.16\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTest.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTestTargets.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTestUseLaunchers.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\DartConfiguration.tcl.in;C:\Program Files\CMake\share\cmake-3.16\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\WriteBasicConfigVersionFile.cmake;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\Config.cmake.in;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeCCompiler.cmake;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeCXXCompiler.cmake;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeRCCompiler.cmake;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeSystem.cmake;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\cmake_uninstall.cmake.in;D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\tinyxml2.pc.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.16\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTest.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTestTargets.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CTestUseLaunchers.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\DartConfiguration.tcl.in;C:\Program Files\CMake\share\cmake-3.16\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\WriteBasicConfigVersionFile.cmake;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\Config.cmake.in;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeCCompiler.cmake;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeCXXCompiler.cmake;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeRCCompiler.cmake;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\3.16.4\CMakeSystem.cmake;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\cmake_uninstall.cmake.in;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\tinyxml2.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\xmltest.cpp" />
+    <ClCompile Include="D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\xmltest.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\ZERO_CHECK.vcxproj">
-      <Project>{ACC6B47C-9D94-3FCD-9E82-E1F0BB48BC8C}</Project>
+    <ProjectReference Include="D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\ZERO_CHECK.vcxproj">
+      <Project>{8A5F06C5-1792-3EEF-AA07-67B0F87277E2}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\tinyxml2.vcxproj">
-      <Project>{8E145403-5C27-368F-AF4E-81BE4B575401}</Project>
+    <ProjectReference Include="D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\tinyxml2\built\tinyxml2.vcxproj">
+      <Project>{647C63F8-3F8E-3A32-B70C-F2FA2FEA32ED}</Project>
       <Name>tinyxml2</Name>
     </ProjectReference>
   </ItemGroup>

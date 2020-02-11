@@ -29,6 +29,32 @@ void GameObjectManager::update(float elapsed)
 	}
 }
 
+void GameObjectManager::load_scenes(std::list<std::string> fileNames)
+{
+	std::list<std::string>::iterator fileIter = fileNames.begin();
+	while (fileIter != fileNames.end())
+	{
+		load_scene(*fileIter);
+		fileIter++;
+	}
+}
+
+void GameObjectManager::load_scene(std::string fileName)
+{
+	/*mDoc.LoadFile((mMediaPath + fileName).c_str());
+	if (mDoc.FirstChild() != NULL)
+		parse_xml_nodes(mDoc.FirstChild());*/
+}
+
+void GameObjectManager::parse_xml_nodes()//tinyxml2::XMLNode* node)
+{
+	/*LOG_MANAGER->log_message("Readin XML Node: " + *node->Value());
+	if (node->FirstChild() != NULL)
+		parse_xml_nodes(node->FirstChild());
+	if (node->NextSibling() != NULL)
+		parse_xml_nodes(node->NextSibling());*/
+}
+
 GameObject* GameObjectManager::get_game_object(std::string game_object_name)
 {
 	GameObject* reqObject = nullptr;
