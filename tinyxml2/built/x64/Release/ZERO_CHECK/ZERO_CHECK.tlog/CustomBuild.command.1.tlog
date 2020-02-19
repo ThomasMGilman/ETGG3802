@@ -1,0 +1,10 @@
+^D:\SCHOOL\PROGRAMS\ETGG 3802_01 REALTIME INTERACTIVE PROG 2\TINYXML2\BUILT\CMAKEFILES\16397588C9275E2F7311824BEAD2E7D8\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2" "-BD:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/tinyxml2.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,5 +1,6 @@
 #include <game_object_manager.h>
 #include <log_manager.h>
+#include <application.h>
 
 using namespace OgreEngine;
 
@@ -47,7 +48,16 @@ void GameObjectManager::load_scene(std::string fileName, std::string path)
 	}
 	tinyxml2::XMLElement* firstElement = mDoc->FirstChildElement();
 	if (firstElement != NULL)
-		parse_xml_nodes(firstElement, fileName, path);
+	{
+		LOG_MANAGER->log_message("Read in Scene by: " + std::string(firstElement->Attribute("author")));
+		tinyxml2::XMLElement* nodesElement = firstElement->FirstChildElement();
+		if (nodesElement != NULL)
+		{
+			tinyxml2::XMLElement* firstNode = nodesElement->FirstChildElement();
+			if(firstNode != NULL)
+				parse_xml_nodes(firstNode, fileName, path);
+		}
+	}
 }
 
 void GameObjectManager::parse_xml_nodes(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent)
@@ -56,15 +66,35 @@ void GameObjectManager::parse_xml_nodes(tinyxml2::XMLElement* element, std::stri
 	LOG_MANAGER->log_message("Read in XML Element: " + nodeVal);
 	if (nodeVal == "node")
 	{
-		GameObject* newObject = create_game_object(groupName, element->Name(), parent);
+		GameObject* newObject = create_game_object(groupName, element->Attribute("name"), parent);
 		tinyxml2::XMLElement* firstChild = element->FirstChildElement();
 		if (firstChild != NULL)
 			parse_xml_gameobject(firstChild, groupName, path, newObject);
 	}
+	else if (nodeVal == "externals")
+	{
+		std::string externType = element->Attribute("type");
+
+		tinyxml2::XMLElement* firstElement = element->FirstChildElement();
+		if (firstElement != NULL)
+			parse_xml_external(firstElement, externType, path);
+	}
+	else if (nodeVal == "environment")
+		parse_xml_environment(element);
+
+	tinyxml2::XMLElement* firstElement = element->FirstChildElement();
+	if (firstElement != NULL)
+		parse_xml_nodes(firstElement, groupName, path, parent);
 
 	tinyxml2::XMLElement* nextSibling = element->NextSiblingElement();
 	if (nextSibling != NULL)
 		parse_xml_nodes(nextSibling, groupName, path, parent);
+}
+
+Ogre::ColourValue GameObjectManager::parse_xml_color_data(tinyxml2::XMLElement* element)
+{
+	float alpha = element->FloatAttribute("a");
+	return Ogre::ColourValue(element->FloatAttribute("r"), element->FloatAttribute("g"), element->FloatAttribute("b"), alpha == NULL ? 1.0f : alpha);
 }
 
 Ogre::Vector3 GameObjectManager::parse_xml_position_data(tinyxml2::XMLElement* element)
@@ -93,86 +123,181 @@ Ogre::Quaternion GameObjectManager::parse_xml_quaternion_data(tinyxml2::XMLEleme
 	return newQuat;
 }
 
+void GameObjectManager::parse_xml_external(tinyxml2::XMLElement* element, std::string resourceType, std::string path)
+{
+	mExternals[resourceType].push_back({ element->Attribute("name"), path });
+	if (resourceType == "material")
+		create_ground_plane(element->Attribute("name"));
+
+	tinyxml2::XMLElement* nextSibling = element->NextSiblingElement();
+	if (nextSibling != NULL)
+		parse_xml_external(nextSibling, resourceType, path);
+}
+
+void GameObjectManager::parse_xml_environment(tinyxml2::XMLElement* element)
+{
+	std::string nodeVal = element->Value();
+	if (nodeVal == "colourAmbient")
+		APPLICATION->get_scene_manager()->setAmbientLight(parse_xml_color_data(element));
+	else if (nodeVal == "colourBackground")
+		APPLICATION->getRenderWindow()->getViewport(0)->setBackgroundColour(parse_xml_color_data(element));
+
+	tinyxml2::XMLElement* nextSibling = element->NextSiblingElement();
+	if (nextSibling != NULL)
+		parse_xml_environment(nextSibling);
+}
+
 void GameObjectManager::parse_xml_gameobject(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent)
 {
 	std::string nodeVal = element->Value();
 	LOG_MANAGER->log_message("Read in objectProperty: " + nodeVal);
-	if (nodeVal == "position")
-		parent->set_position(parse_xml_position_data(element));
-	if (nodeVal == "rotation")
-		parent->set_orientation(parse_xml_quaternion_data(element));
-	if (nodeVal == "scale")
-		parent->set_scale(parse_xml_position_data(element));
-	if (nodeVal == "userData")
-		parse_xml_properties(element, groupName, path, parent);
 
+	// Object Type
+	if (nodeVal == "node")
+		parse_xml_nodes(element, groupName, path, parent);
+	else if (nodeVal == "entity")
+		parse_xml_mesh(element, groupName, path, parent);
+	else if (nodeVal == "camera")
+		parse_xml_camera(element, groupName, path, parent);
+	else if (nodeVal == "light")
+		parse_xml_light(element, groupName, path, parent);
+	else
+	{
+		// Object Positional data
+		if (nodeVal == "position")
+			parent->set_position(parse_xml_position_data(element));
+		else if (nodeVal == "rotation")
+			parent->set_orientation(parse_xml_quaternion_data(element));
+		else if (nodeVal == "scale")
+			parent->set_scale(parse_xml_position_data(element));
+	}
+	
 	tinyxml2::XMLElement* nextSibling = element->NextSiblingElement();
 	if (nextSibling != NULL)
-		parse_xml_nodes(nextSibling, groupName, path, parent);
+		parse_xml_gameobject(nextSibling, groupName, path, parent);
 }
 
 void GameObjectManager::parse_xml_mesh(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent)
 {
+	std::string name = element->Attribute("name");
+	MeshComponent* mesh = parent->create_mesh(name.empty() ? parent->get_name() : name, std::string(element->Attribute("meshFile")));
 
+	// Handle check for userData
+	tinyxml2::XMLElement* firstElement = element->FirstChildElement();
+	if (firstElement != NULL)
+		parse_xml_mesh_data(firstElement, groupName, path, mesh);
+}
+
+void GameObjectManager::parse_xml_mesh_data(tinyxml2::XMLElement* element, std::string groupName, std::string path, MeshComponent* parent)
+{
+	std::string nodeVal = element->Value();
+	LOG_MANAGER->log_message("Read in objectProperty: " + nodeVal);
+
+	// Mesh Object Data
+	if (nodeVal == "userData")
+	{
+		tinyxml2::XMLElement* firstElement = element->FirstChildElement();
+		if (firstElement != NULL)
+			parse_xml_properties(firstElement, groupName, path, parent);
+	}
+
+	tinyxml2::XMLElement* nextSibling = element->NextSiblingElement();
+	if (nextSibling != NULL)
+		parse_xml_mesh_data(nextSibling, groupName, path, parent);
 }
 
 void GameObjectManager::parse_xml_camera(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent)
 {
+	std::string name = element->Attribute("name");
+	CameraComponent* camera = parent->create_camera(name.empty() ? parent->get_name() : name);
+	camera->set_fov(element->FloatAttribute("fov"));
+	if (element->Attribute("projectionType") == "perspective")
+		camera->set_projection_type(Ogre::ProjectionType::PT_PERSPECTIVE);
+	else
+		camera->set_projection_type(Ogre::ProjectionType::PT_ORTHOGRAPHIC);
+	camera->set_main_camera(APPLICATION->getRenderWindow()->getViewport(0));
 
+	tinyxml2::XMLElement* firstElement = element->FirstChildElement();
+	if (firstElement != NULL)
+		parse_xml_camera_data(firstElement, groupName, path, camera);
 }
 
-template<typename T>
-T GameObjectManager::parse_xml_value(tinyxml2::XMLElement* element)
+void GameObjectManager::parse_xml_camera_data(tinyxml2::XMLElement* element, std::string groupName, std::string path, CameraComponent* parent)
 {
-	switch (T)
-	{
-	case std::string:
-		return std::string(element->Attribute("data"));
-	case int:
-		return element->IntAttribute("data");
-	case float:
-		return element->FloatAttribute("data");
-	case double:
-		return element->DoubleAttribute("data");
-	case bool:
-		return element->BoolAttribute("data");
-	default:
-		throw new std::exception("TYPE ERROR!!! Did not provide valid data type given to attrieve!!\n\tGot Type: " + typeid(T).name());
-		break;
-	}
-}
+	std::string nodeVal = element->Value();
+	LOG_MANAGER->log_message("Read in objectProperty: " + nodeVal);
 
-void GameObjectManager::parse_xml_properties(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent)
-{
-	std::string type = element->Attribute("type");
-	if (type == "str")
-	{
-		std::string val = parse_xml_value<std::string>(element);;
-	}
-	if (type == "bool")
-	{
-		bool val = parse_xml_value<bool>(element);;
-	}
-	if (type == "int")
-	{
-		int val = parse_xml_value<int>(element);
-	}
-	if (type == "float")
-	{
-		float val = parse_xml_value<float>(element);
-	}
-	if (type == "double")
-	{
-		double val = parse_xml_value<double>(element);
-	}
+	// Camera Object Data
+	if (nodeVal == "clipping")
+		parent->set_clip_distances(element->FloatAttribute("near"), element->FloatAttribute("far"));
+
 	tinyxml2::XMLElement* nextSibling = element->NextSiblingElement();
 	if (nextSibling != NULL)
-		parse_xml_nodes(nextSibling, groupName, path, parent);
+		parse_xml_camera_data(nextSibling, groupName, path, parent);
+}
+
+void GameObjectManager::parse_xml_light(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent)
+{
+	std::string lightType = element->Attribute("type");
+	OgreEngine::LightType type;
+	if (lightType == "point")
+		type = OgreEngine::LightType::POINT;
+	else if (lightType == "spot")
+		type = OgreEngine::LightType::SPOT;
+	else
+		type = OgreEngine::LightType::DIRECTIONAL;
+
+	std::string name = element->Attribute("name");
+	LightComponent* light = parent->create_light(name.empty() ? parent->get_name() : name, type);
+
+	tinyxml2::XMLElement* firstElement = element->FirstChildElement();
+	if (firstElement != NULL)
+		parse_xml_light_data(firstElement, groupName, path, light);
+}
+
+void GameObjectManager::parse_xml_light_data(tinyxml2::XMLElement* element, std::string groupName, std::string path, LightComponent* parent)
+{
+	std::string nodeVal = element->Value();
+	LOG_MANAGER->log_message("Read in objectProperty: " + nodeVal);
+
+	// Light Object data
+	if (nodeVal == "colorDiffuse")
+		parent->set_diffuse_color(parse_xml_color_data(element));
+	else if (nodeVal == "colorSpecular")
+		parent->set_specular_color(parse_xml_color_data(element));
+	else if (nodeVal == "lightAttenuation")
+		parent->set_attenuation(element->FloatAttribute("constant"), element->FloatAttribute("linear"), element->FloatAttribute("quadratic"), element->FloatAttribute("range"));
+
+	tinyxml2::XMLElement* nextSibling = element->NextSiblingElement();
+	if (nextSibling != NULL)
+		parse_xml_light_data(nextSibling, groupName, path, parent);
+}
+
+void GameObjectManager::parse_xml_properties(tinyxml2::XMLElement* element, std::string groupName, std::string path, Component* parent)
+{
+	std::string type = element->Attribute("type");
+	
+	if (type == "str")
+		parent->add_xml_string_property(element->Attribute("name"), std::string(element->Attribute("data")));
+	else if (type == "bool")
+		parent->add_xml_bool_property(element->Attribute("name"), element->BoolAttribute("data"));
+	else if (type == "int")
+		parent->add_xml_int_property(element->Attribute("name"), element->IntAttribute("data"));
+	else if (type == "float")
+		parent->add_xml_float_property(element->Attribute("name"), element->FloatAttribute("data"));
+	else if (type == "double")
+		parent->add_xml_double_property(element->Attribute("name"), element->DoubleAttribute("data"));
+	else
+		throw new std::exception(("TYPE ERROR!!! Did not provide valid data type given to attrieve!!\n\tGot Type: " + type).c_str());
+
+	tinyxml2::XMLElement* nextSibling = element->NextSiblingElement();
+	if (nextSibling != NULL)
+		parse_xml_properties(nextSibling, groupName, path, parent);
 }
 
 void GameObjectManager::set_game_object_tag(int newTag, GameObject* object)
 {
-	mtaggedObjects[object->get_tag()];
+	mTaggedObjects[object->get_tag()];
 }
 
 GameObject* GameObjectManager::get_game_object(std::string game_object_name)
@@ -355,7 +480,7 @@ GameObject* GameObjectManager::create_game_object(std::string group_name, std::s
 		if (mObjIter == mGroupsIter->second.end()) // GameObject not in group, create it
 		{
 			mGroupsIter->second[object_name] = newObj; //.emplace(object_name, newObj);
-			mtaggedObjects[tag].push_back(newObj);
+			mTaggedObjects[tag].push_back(newObj);
 		}
 			
 		else // GameObject is already apart of the dictionary Log Error and return nullptr as GameObject
@@ -371,3 +496,100 @@ GameObject* GameObjectManager::create_game_object(std::string group_name, std::s
 	return newObj;
 }
 
+GameObject* GameObjectManager::create_ground_plane(std::string materialName)
+{
+	//Create Ground Plane
+	Ogre::Plane plane(Ogre::Vector3::UNIT_Y, 0);
+	Ogre::MeshManager::getSingleton().createPlane(
+		"ground",				//Name
+		Ogre::RGN_DEFAULT,		//GroupName
+		plane,					//Plane object
+		100,					//Width
+		100,					//Height
+		20,						//xSegments
+		20,						//ySegments
+		true,					//normals?
+		1,						//numTexCoordSets
+		5,						//uTile floats
+		5,						//vTile floats
+		Ogre::Vector3::UNIT_Z);	//upVector
+
+	GameObject* groundNode = GAME_OBJ_MANAGER->create_game_object("temporary", "GroundNode");
+	MeshComponent* groundEnt = groundNode->create_mesh("groundMesh", "ground");
+	groundEnt->set_cast_shadows(true);
+	groundEnt->set_material(materialName);
+
+	return groundNode;
+}
+
+void GameObjectManager::set_default_scene()
+{
+	//add lights to the scene
+	GameObject* lightNode = GAME_OBJ_MANAGER->create_game_object("temporary", "PointLight0", nullptr, 0, Ogre::Vector3(20, 80, 50));
+	lightNode->create_light("MainLight", OgreEngine::LightType::POINT);
+
+	//attach spotlight to new node and set direction and position
+	GameObject* spotLightNode = GAME_OBJ_MANAGER->create_game_object("temporary", "SpotLights", nullptr, 0, Ogre::Vector3(200, 200, 0));
+
+	//create spotlight in scene
+	LightComponent* spotLight = spotLightNode->create_light("SpotLight", OgreEngine::LightType::SPOT);
+	spotLight->set_diffuse_color(.1, .1, .1);
+	spotLight->set_specular_color(.1, .1, .1);
+	spotLight->set_spotlight_params(35, 50);
+	spotLight->set_direction(-1, -1, 0);
+
+	//add Directional Light
+	GameObject* dirLightNode = GAME_OBJ_MANAGER->create_game_object("temporary", "DirectionLights");
+	LightComponent* dirLight = dirLightNode->create_light("DirectionLight", OgreEngine::LightType::DIRECTIONAL);//mScnMgr->createLight("DirectionalLight");
+	dirLight->set_diffuse_color(.2, .2, .2);
+	dirLight->set_specular_color(.2, .2, .2);
+	dirLight->set_direction(Ogre::Vector3(0, -1, 1));
+
+	//add Point Light
+	GameObject* pointLightNode = GAME_OBJ_MANAGER->create_game_object("temporary", "PointLight1", nullptr, 0, Ogre::Vector3(0, 150, 250));
+	LightComponent* pointLight = pointLightNode->create_light("PointLight", OgreEngine::LightType::POINT);
+	pointLight->set_diffuse_color(.3, .3, .3);
+	pointLight->set_specular_color(.3, .3, .3);
+
+	///////////////////////////////////////////////////////////////////////////////////////////// Add Camera and ViewPort
+	// Create Viewport
+	Ogre::Viewport* mVp = APPLICATION->getRenderWindow()->addViewport(nullptr);
+	mVp->setBackgroundColour(Ogre::ColourValue(0, 0, 0));
+
+	// Create the camera
+	// Create CameraNode and attach camera to be put into the scene
+	GameObject* camNode = GAME_OBJ_MANAGER->create_game_object("temporary", "CameraNode", nullptr, 0, Ogre::Vector3(0, 15, 30));
+	camNode->look_at(Ogre::Vector3::ZERO);
+
+	CameraComponent* cam = camNode->create_camera("MainCamera");
+	cam->set_clip_distances(5, 100);
+	cam->set_auto_aspect_ratio(true);
+	cam->set_main_camera(mVp);
+
+	///////////////////////////////////////////////////////////////////////////////////////////// Add Entitys and plane
+	//create Ogre Entity to render and set to cast shadows
+
+	GameObject* ogreNode = GAME_OBJ_MANAGER->create_game_object("temporary", "OgreEnt", nullptr, 0, Ogre::Vector3(0, 5, 0));
+	ogreNode->look_at();
+	ogreNode->rotate_world(90, 1, 0, 0);
+
+	MeshComponent* ogreEnt = ogreNode->create_mesh("OgreMesh", "Sinbad.mesh");
+	ogreEnt->set_cast_shadows(true);
+
+	//create Peguin Entity to render that is a child of Ogre
+	GameObject* penguinNode = GAME_OBJ_MANAGER->create_game_object("temporary", "PenguinEnt", ogreNode, 0, Ogre::Vector3(1.75, 3.5, 0));
+	penguinNode->look_at();
+	penguinNode->set_scale(Ogre::Vector3(.05));
+	penguinNode->rotate_world(90, 1, 0, 0);
+	penguinNode->rotate_world(-25, 0, 0, 1);
+
+	MeshComponent* penguinEnt = penguinNode->create_mesh("PenguinMesh", "penguin.mesh");
+	penguinEnt->set_cast_shadows(true);
+	penguinEnt->play_animation("amuse", true, true);
+
+	//Create Ground Plane
+	create_ground_plane("Examples/Rockwall");
+
+	///////////////////////////////////////////////////////////////////////////////////////////// Enable and Add SkyBox
+	APPLICATION->get_scene_manager()->setSkyBox(true, "Examples/SpaceSkyBox", 300, false);
+}

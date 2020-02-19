@@ -117,7 +117,7 @@ MeshComponent* GameObject::create_mesh(std::string meshName, std::string fname)
 		LOG_MANAGER->log_message("MESH_COMPONENT CREATION ERROR!!! Trying to create mesh object with a name that already exits: "+ this->get_name() + " _mesh" + meshName);
 		return nullptr;
 	}
-	MeshComponent* newMesh = new MeshComponent(fname, this);
+	MeshComponent* newMesh = new MeshComponent(fname, this, meshName);
 	mComponents[Component::ComponentType::MESH][meshName] = newMesh;
 	return newMesh;
 }
@@ -129,7 +129,7 @@ LightComponent* GameObject::create_light(std::string lightName, LightType lightT
 		LOG_MANAGER->log_message("LIGHT_COMPONENT CREATION ERROR!!! Trying to create light object with a name that already exists: " + this->get_name() +" _light" + lightName);
 		return nullptr;
 	}
-	LightComponent* newLight = new LightComponent(lightType, this);
+	LightComponent* newLight = new LightComponent(lightType, this, lightName);
 	mComponents[Component::ComponentType::LIGHT][lightName] = newLight;
 	return newLight;
 }
@@ -141,7 +141,7 @@ CameraComponent* GameObject::create_camera(std::string cameraName)
 		LOG_MANAGER->log_message("CAMERA_COMPONENT CREATION ERROR!!! Trying to create camera object with a name that already exists: " + this->get_name() + " _camera" + cameraName);
 		return nullptr;
 	}
-	CameraComponent* newCamera = new CameraComponent(this);
+	CameraComponent* newCamera = new CameraComponent(this, cameraName);
 	mComponents[Component::ComponentType::CAMERA][cameraName] = newCamera;
 	return newCamera;
 }

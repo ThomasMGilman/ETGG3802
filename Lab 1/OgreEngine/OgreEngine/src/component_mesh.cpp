@@ -6,7 +6,7 @@ using namespace OgreEngine;
 
 MeshComponent::MeshComponent(std::string fname, GameObject * owner, std::string name) : Component(owner)
 {
-	mEntity = APPLICATION->get_scene_manager()->createEntity(owner->get_name() + "_entity" + name, fname);
+	mEntity = APPLICATION->get_scene_manager()->createEntity(owner->get_name() + "_entity" + (name.empty() ? owner->get_name() : name), fname);
 	owner->get_scene_node()->attachObject(mEntity);
 	mAnimationState = NULL;
 }

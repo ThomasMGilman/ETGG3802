@@ -11,7 +11,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="script_manager.cpp" />
     <ClCompile Include="src\application.cpp" />
     <ClCompile Include="src\component_camera.cpp" />
     <ClCompile Include="src\component_light.cpp" />
@@ -20,6 +19,7 @@
     <ClCompile Include="src\game_object_manager.cpp" />
     <ClCompile Include="src\log_manager.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\script_manager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\application.h" />
@@ -30,8 +30,8 @@
     <ClInclude Include="include\game_object.h" />
     <ClInclude Include="include\game_object_manager.h" />
     <ClInclude Include="include\log_manager.h" />
+    <ClInclude Include="include\script_manager.h" />
     <ClInclude Include="include\singleton.h" />
-    <ClInclude Include="script_manager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

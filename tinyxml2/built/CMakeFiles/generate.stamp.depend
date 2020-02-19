@@ -1,0 +1,34 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.16/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
+C:/Program Files/CMake/share/cmake-3.16/Modules/CMakeCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.16/Modules/CMakeCXXInformation.cmake
+C:/Program Files/CMake/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files/CMake/share/cmake-3.16/Modules/CMakeGenericSystem.cmake
+C:/Program Files/CMake/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake
+C:/Program Files/CMake/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.16/Modules/CMakePackageConfigHelpers.cmake
+C:/Program Files/CMake/share/cmake-3.16/Modules/CMakeRCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files/CMake/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Program Files/CMake/share/cmake-3.16/Modules/CTest.cmake
+C:/Program Files/CMake/share/cmake-3.16/Modules/CTestTargets.cmake
+C:/Program Files/CMake/share/cmake-3.16/Modules/CTestUseLaunchers.cmake
+C:/Program Files/CMake/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/Program Files/CMake/share/cmake-3.16/Modules/Compiler/MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.16/Modules/Compiler/MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.16/Modules/DartConfiguration.tcl.in
+C:/Program Files/CMake/share/cmake-3.16/Modules/GNUInstallDirs.cmake
+C:/Program Files/CMake/share/cmake-3.16/Modules/Platform/Windows-MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.16/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.16/Modules/Platform/Windows-MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.16/Modules/Platform/Windows.cmake
+C:/Program Files/CMake/share/cmake-3.16/Modules/Platform/WindowsPaths.cmake
+C:/Program Files/CMake/share/cmake-3.16/Modules/WriteBasicConfigVersionFile.cmake
+D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/CMakeLists.txt
+D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/Config.cmake.in
+D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/CMakeFiles/3.16.4/CMakeCCompiler.cmake
+D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/CMakeFiles/3.16.4/CMakeCXXCompiler.cmake
+D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/CMakeFiles/3.16.4/CMakeRCCompiler.cmake
+D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/built/CMakeFiles/3.16.4/CMakeSystem.cmake
+D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/cmake_uninstall.cmake.in
+D:/School/Programs/ETGG 3802_01 Realtime Interactive Prog 2/tinyxml2/tinyxml2.pc.in

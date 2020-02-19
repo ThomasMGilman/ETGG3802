@@ -39,7 +39,7 @@
     <ClCompile Include="src\component_mesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="script_manager.cpp">
+    <ClCompile Include="src\script_manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,7 +71,7 @@
     <ClInclude Include="include\component.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="script_manager.h">
+    <ClInclude Include="include\script_manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

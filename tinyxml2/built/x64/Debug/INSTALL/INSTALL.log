@@ -1,0 +1,9 @@
+﻿  -- Install configuration: "Debug"
+  -- Installing: C:/tmp2/lib/tinyxml2d.lib
+  -- Installing: C:/tmp2/bin/tinyxml2d.dll
+  -- Up-to-date: C:/tmp2/include/tinyxml2.h
+  -- Up-to-date: C:/tmp2/lib/pkgconfig/tinyxml2.pc
+  -- Up-to-date: C:/tmp2/lib/cmake/tinyxml2/tinyxml2Config.cmake
+  -- Up-to-date: C:/tmp2/lib/cmake/tinyxml2/tinyxml2ConfigVersion.cmake
+  -- Up-to-date: C:/tmp2/lib/cmake/tinyxml2/tinyxml2Targets.cmake
+  -- Installing: C:/tmp2/lib/cmake/tinyxml2/tinyxml2Targets-debug.cmake

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ed0c1221-3aa6-419b-b84d-c1f89894cc62" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/OgreEngine.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/OgreEngine.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/bin/Debug/OgreEngine.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/bin/Debug/OgreEngine.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/bin/Debug/OgreEngine.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/bin/Debug/OgreEngine.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/bin/Debug/OgreEngine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/bin/Debug/OgreEngine.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/bin/Debug/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/bin/Debug/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/include/application.h" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/include/application.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/include/component_camera.h" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/include/component_camera.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/include/game_object_manager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/include/game_object_manager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/src/application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/src/application.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/src/game_object.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/src/game_object.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/src/game_object_manager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/src/game_object_manager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.log" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/OgreEngine.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/OgreEngine.lastbuildstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/link.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/link.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/application.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/application.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/component_camera.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/component_camera.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/component_light.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/component_light.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/component_mesh.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/component_mesh.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/game_object.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/game_object.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/game_object_manager.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/game_object_manager.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/log_manager.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/log_manager.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/main.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/main.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/vc142.idb" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/vc142.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/OgreEngine/OgreEngine/tmp/Debug/vc142.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/ALL_BUILD.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/ALL_BUILD.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/ALL_BUILD.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/ALL_BUILD.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdC/CompilerIdC.exe" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdC/CompilerIdC.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdC/CompilerIdC.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdC/CompilerIdC.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdC/Debug/CMakeCCompilerId.obj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdC/Debug/CMakeCCompilerId.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdC/Debug/CompilerIdC.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdC/Debug/CompilerIdC.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdC/Debug/CompilerIdC.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdC/Debug/CompilerIdC.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdC/Debug/CompilerIdC.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdC/Debug/CompilerIdC.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdC/Debug/CompilerIdC.tlog/CompilerIdC.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdC/Debug/CompilerIdC.tlog/CompilerIdC.lastbuildstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdC/Debug/CompilerIdC.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdC/Debug/CompilerIdC.tlog/link.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdC/Debug/CompilerIdC.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdC/Debug/CompilerIdC.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdC/Debug/CompilerIdC.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdC/Debug/CompilerIdC.tlog/link.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdCXX/CompilerIdCXX.exe" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdCXX/CompilerIdCXX.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdCXX/CompilerIdCXX.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdCXX/CompilerIdCXX.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdCXX/Debug/CMakeCXXCompilerId.obj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdCXX/Debug/CMakeCXXCompilerId.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CompilerIdCXX.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CompilerIdCXX.lastbuildstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/VCTargetsPath.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/3.16.4/VCTargetsPath.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/a8693fef5fa7ab6fa4faaa55b0eafbe5/Continuous.rule" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/16397588c9275e2f7311824bead2e7d8/Continuous.rule" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/a8693fef5fa7ab6fa4faaa55b0eafbe5/Experimental.rule" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/16397588c9275e2f7311824bead2e7d8/Experimental.rule" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/a8693fef5fa7ab6fa4faaa55b0eafbe5/INSTALL_force.rule" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/16397588c9275e2f7311824bead2e7d8/INSTALL_force.rule" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/a8693fef5fa7ab6fa4faaa55b0eafbe5/Nightly.rule" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/16397588c9275e2f7311824bead2e7d8/Nightly.rule" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/a8693fef5fa7ab6fa4faaa55b0eafbe5/NightlyMemoryCheck.rule" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/16397588c9275e2f7311824bead2e7d8/NightlyMemoryCheck.rule" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/a8693fef5fa7ab6fa4faaa55b0eafbe5/RUN_TESTS_force.rule" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/16397588c9275e2f7311824bead2e7d8/RUN_TESTS_force.rule" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/a8693fef5fa7ab6fa4faaa55b0eafbe5/generate.stamp.rule" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/16397588c9275e2f7311824bead2e7d8/generate.stamp.rule" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/a8693fef5fa7ab6fa4faaa55b0eafbe5/uninstall.rule" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/16397588c9275e2f7311824bead2e7d8/uninstall.rule" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/generate.stamp.list" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CMakeFiles/generate.stamp.list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/CTestTestfile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/CTestTestfile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/Continuous.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/Continuous.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/Continuous.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/Continuous.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/DartConfiguration.tcl" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/DartConfiguration.tcl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/Debug/resources/out/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/Debug/tinyxml2d.dll" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/Debug/tinyxml2d.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/Debug/tinyxml2d.exp" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/Debug/tinyxml2d.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/Debug/tinyxml2d.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/Debug/tinyxml2d.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/Debug/tinyxml2d.lib" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/Debug/tinyxml2d.lib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/Debug/tinyxml2d.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/Debug/tinyxml2d.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/Debug/xmltest.exe" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/Debug/xmltest.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/Debug/xmltest.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/Debug/xmltest.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/Debug/xmltest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/Debug/xmltest.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/Experimental.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/Experimental.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/Experimental.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/Experimental.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/INSTALL.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/INSTALL.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/INSTALL.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/INSTALL.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/Nightly.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/Nightly.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/Nightly.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/Nightly.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/NightlyMemoryCheck.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/NightlyMemoryCheck.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/NightlyMemoryCheck.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/NightlyMemoryCheck.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/RUN_TESTS.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/RUN_TESTS.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/RUN_TESTS.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/RUN_TESTS.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/Release/resources/out/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/Release/tinyxml2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/Release/tinyxml2.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/Release/tinyxml2.exp" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/Release/tinyxml2.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/Release/tinyxml2.lib" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/Release/tinyxml2.lib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/Release/xmltest.exe" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/Release/xmltest.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/ZERO_CHECK.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/ZERO_CHECK.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/ZERO_CHECK.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/ZERO_CHECK.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/cmake_uninstall.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/cmake_uninstall.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/install_manifest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/install_manifest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.log" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.obj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.tlog/CustomBuild.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.tlog/CustomBuild.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.tlog/CustomBuild.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.tlog/CustomBuild.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.tlog/CustomBuild.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.tlog/CustomBuild.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.tlog/link.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.tlog/link.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.tlog/tinyxml2.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.tlog/tinyxml2.lastbuildstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.tlog/tinyxml2.write.1u.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/tinyxml2.tlog/tinyxml2.write.1u.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Debug/vc142.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.log" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.obj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.tlog/CustomBuild.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.tlog/CustomBuild.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.tlog/CustomBuild.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.tlog/CustomBuild.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.tlog/CustomBuild.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.tlog/CustomBuild.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.tlog/link.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.tlog/link.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.tlog/tinyxml2.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.tlog/tinyxml2.lastbuildstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.tlog/tinyxml2.write.1u.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.dir/Release/tinyxml2.tlog/tinyxml2.write.1u.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.pc" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.pc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.sln" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/tinyxml2Targets.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/tinyxml2Targets.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/uninstall.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/uninstall.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/uninstall.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/uninstall.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/vc142.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.log" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.obj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.tlog/CustomBuild.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.tlog/CustomBuild.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.tlog/CustomBuild.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.tlog/CustomBuild.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.tlog/CustomBuild.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.tlog/CustomBuild.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.tlog/link.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.tlog/link.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.tlog/xmltest.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Debug/xmltest.tlog/xmltest.lastbuildstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.log" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.obj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.tlog/CustomBuild.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.tlog/CustomBuild.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.tlog/CustomBuild.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.tlog/CustomBuild.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.tlog/CustomBuild.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.tlog/CustomBuild.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.tlog/link.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.tlog/link.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.tlog/xmltest.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.dir/Release/xmltest.tlog/xmltest.lastbuildstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml2/built/xmltest.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/tinyxml2/built/xmltest.vcxproj.filters" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1XduAiWWNXUri27Y4GhzKx2LB76" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ed0c1221-3aa6-419b-b84d-c1f89894cc62" name="Default Changelist" comment="" />
+      <created>1581388150591</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581388150591</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="977" y="525" key="com.intellij.ide.util.TipDialog" timestamp="1581388163628">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="977" y="525" key="com.intellij.ide.util.TipDialog/3840.560.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1581388163628" />
+  </component>
+</project>

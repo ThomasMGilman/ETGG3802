@@ -42,12 +42,20 @@ namespace OgreEngine
 		/// Sets the directional offset of this light (ignored if this is a point light)
 		void set_direction(Ogre::Vector3 d) { mLight->setDirection(d); }
 
+		void set_attenuation(float constant, float linear, float quadratic, float range) { mLight->setAttenuation(range, constant, linear, quadratic); };
+
 		void set_direction(float x, float y, float z) { mLight->setDirection(x, y, z); }
+
+		/// Sets the diffuse light color of this light
+		void set_diffuse_color(Ogre::ColourValue c) { mLight->setDiffuseColour(c); }
 
 		/// Sets the diffuse light color of this light
 		void set_diffuse_color(float r, float g, float b) { mLight->setDiffuseColour(Ogre::ColourValue(r, g, b)); }
 
-		/// Sets the specuilar light color of this light.
+		/// Sets the specular light color of this light.
+		void set_specular_color(Ogre::ColourValue c) { mLight->setSpecularColour(c); }
+
+		/// Sets the specular light color of this light.
 		void set_specular_color(float r, float g, float b) { mLight->setSpecularColour(Ogre::ColourValue(r, g, b)); }
 
 		/// Sets the position of this light (relative to the parent game object) -- ignored if this is a directional light.

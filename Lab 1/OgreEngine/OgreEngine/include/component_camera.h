@@ -53,6 +53,10 @@ namespace OgreEngine
 
 		void set_aspect_ratio(float width, float height) { mCamera->setAspectRatio(Ogre::Real(width) / Ogre::Real(height)); }
 
+		void set_projection_type(Ogre::ProjectionType pt) { mCamera->setProjectionType(pt); }
+
+		void set_fov(float fov) { mCamera->setFOVy(Ogre::Radian(fov)); }
+
 		/// Gets a Ray which goes through the (normalized) screen position
 		Ogre::Ray get_screen_ray(Ogre::Vector2 v);
 	};
