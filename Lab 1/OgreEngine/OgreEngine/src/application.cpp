@@ -41,7 +41,7 @@ void Application::setup(void)
 	mGOM = new GameObjectManager();
 	//mGOM->set_default_scene();
 
-	mGOM->load_scene("test.scene", "../Media/my_media/");
+	mGOM->load_scene("main_scene.scene", "../Media/invader_media/");
 }
 
 bool Application::frameStarted(const Ogre::FrameEvent& e)
@@ -52,14 +52,17 @@ bool Application::frameStarted(const Ogre::FrameEvent& e)
 	GAME_OBJ_MANAGER->update(e.timeSinceLastFrame);
 	//mAnimationState->addTime(e.timeSinceLastFrame);
 	
-	/*
-	////////////////////////////////////////////////////////////// Rotation Keys for Ogre
-	if (mKeysDown.find(OgreBites::SDLK_LEFT) != mKeysDown.end())
-		GAME_OBJ_MANAGER->get_game_object("OgreEnt", "temporary")->rotate_world(-90 * e.timeSinceLastFrame, 0, 1, 0);
+	GameObject* player = GAME_OBJ_MANAGER->get_game_object("OgreEnt", "temporary");
+	if (player != nullptr)
+	{
+		////////////////////////////////////////////////////////////// Rotation Keys for Ogre
+		if (mKeysDown.find(OgreBites::SDLK_LEFT) != mKeysDown.end())
+			player->rotate_world(-90 * e.timeSinceLastFrame, 0, 1, 0);
+
+		if (mKeysDown.find(OgreBites::SDLK_RIGHT) != mKeysDown.end())
+			player->rotate_world(90 * e.timeSinceLastFrame, 0, 1, 0);
+	}
 	
-	if (mKeysDown.find(OgreBites::SDLK_RIGHT) != mKeysDown.end())
-		GAME_OBJ_MANAGER->get_game_object("OgreEnt", "temporary")->rotate_world(90 * e.timeSinceLastFrame, 0, 1, 0);
-	*/
 	////////////////////////////////////////////////////////////// visibility Keys for all of temporary group
 	if (mKeysDown.find(OgreBites::SDLK_F1) != mKeysDown.end())
 		GAME_OBJ_MANAGER->set_visibility("temporary", false);

@@ -152,6 +152,8 @@ namespace OgreEngine
 		
 		GameObject* create_ground_plane(std::string materialName);
 
+		void set_skybox(std::string materialName = "Examples/SpaceSkyBox", float distance = 300.0f, bool drawFirst = false);
+
 		/// Creates the default scene
 		void set_default_scene();
 	};

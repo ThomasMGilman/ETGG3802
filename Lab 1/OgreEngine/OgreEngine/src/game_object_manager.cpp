@@ -81,11 +81,12 @@ void GameObjectManager::parse_xml_nodes(tinyxml2::XMLElement* element, std::stri
 	}
 	else if (nodeVal == "environment")
 		parse_xml_environment(element);
-
-	tinyxml2::XMLElement* firstElement = element->FirstChildElement();
-	if (firstElement != NULL)
-		parse_xml_nodes(firstElement, groupName, path, parent);
-
+	else if (parent != NULL)
+	{
+		tinyxml2::XMLElement* firstElement = element->FirstChildElement();
+		if (firstElement != NULL)
+			parse_xml_nodes(firstElement, groupName, path, parent);
+	}
 	tinyxml2::XMLElement* nextSibling = element->NextSiblingElement();
 	if (nextSibling != NULL)
 		parse_xml_nodes(nextSibling, groupName, path, parent);
@@ -127,7 +128,7 @@ void GameObjectManager::parse_xml_external(tinyxml2::XMLElement* element, std::s
 {
 	mExternals[resourceType].push_back({ element->Attribute("name"), path });
 	if (resourceType == "material")
-		create_ground_plane(element->Attribute("name"));
+		set_skybox(element->Attribute("name"));//create_ground_plane(element->Attribute("name"));
 
 	tinyxml2::XMLElement* nextSibling = element->NextSiblingElement();
 	if (nextSibling != NULL)
@@ -161,11 +162,24 @@ void GameObjectManager::parse_xml_gameobject(tinyxml2::XMLElement* element, std:
 		parse_xml_camera(element, groupName, path, parent);
 	else if (nodeVal == "light")
 		parse_xml_light(element, groupName, path, parent);
+	else if (nodeVal == "userData")
+	{
+		tinyxml2::XMLElement* propertyElement = element->FirstChildElement();
+		if (propertyElement != NULL)
+			parse_xml_gameobject(propertyElement, groupName, path, parent);
+	}
+	else if (nodeVal == "property")
+	{
+		std::string nodeName = element->Attribute("name");
+		if (nodeName == "tag")
+			set_game_object_tag(element->IntAttribute("data"), parent);
+		//else if (nodeName == "script")
+	}
 	else
 	{
 		// Object Positional data
 		if (nodeVal == "position")
-			parent->set_position(parse_xml_position_data(element));
+			parent->set_position(parse_xml_position_data(element));//Breaks at Camera Node
 		else if (nodeVal == "rotation")
 			parent->set_orientation(parse_xml_quaternion_data(element));
 		else if (nodeVal == "scale")
@@ -191,7 +205,7 @@ void GameObjectManager::parse_xml_mesh(tinyxml2::XMLElement* element, std::strin
 void GameObjectManager::parse_xml_mesh_data(tinyxml2::XMLElement* element, std::string groupName, std::string path, MeshComponent* parent)
 {
 	std::string nodeVal = element->Value();
-	LOG_MANAGER->log_message("Read in objectProperty: " + nodeVal);
+	LOG_MANAGER->log_message("Read in meshProperty: " + nodeVal);
 
 	// Mesh Object Data
 	if (nodeVal == "userData")
@@ -211,10 +225,8 @@ void GameObjectManager::parse_xml_camera(tinyxml2::XMLElement* element, std::str
 	std::string name = element->Attribute("name");
 	CameraComponent* camera = parent->create_camera(name.empty() ? parent->get_name() : name);
 	camera->set_fov(element->FloatAttribute("fov"));
-	if (element->Attribute("projectionType") == "perspective")
-		camera->set_projection_type(Ogre::ProjectionType::PT_PERSPECTIVE);
-	else
-		camera->set_projection_type(Ogre::ProjectionType::PT_ORTHOGRAPHIC);
+	//if (element->Attribute("projectionType") != "perspective")
+	//	camera->set_projection_type(Ogre::ProjectionType::PT_ORTHOGRAPHIC);
 	camera->set_main_camera(APPLICATION->getRenderWindow()->getViewport(0));
 
 	tinyxml2::XMLElement* firstElement = element->FirstChildElement();
@@ -225,7 +237,7 @@ void GameObjectManager::parse_xml_camera(tinyxml2::XMLElement* element, std::str
 void GameObjectManager::parse_xml_camera_data(tinyxml2::XMLElement* element, std::string groupName, std::string path, CameraComponent* parent)
 {
 	std::string nodeVal = element->Value();
-	LOG_MANAGER->log_message("Read in objectProperty: " + nodeVal);
+	LOG_MANAGER->log_message("Read in cameraProperty: " + nodeVal);
 
 	// Camera Object Data
 	if (nodeVal == "clipping")
@@ -258,7 +270,7 @@ void GameObjectManager::parse_xml_light(tinyxml2::XMLElement* element, std::stri
 void GameObjectManager::parse_xml_light_data(tinyxml2::XMLElement* element, std::string groupName, std::string path, LightComponent* parent)
 {
 	std::string nodeVal = element->Value();
-	LOG_MANAGER->log_message("Read in objectProperty: " + nodeVal);
+	LOG_MANAGER->log_message("Read in lightProperty: " + nodeVal);
 
 	// Light Object data
 	if (nodeVal == "colorDiffuse")
@@ -275,18 +287,18 @@ void GameObjectManager::parse_xml_light_data(tinyxml2::XMLElement* element, std:
 
 void GameObjectManager::parse_xml_properties(tinyxml2::XMLElement* element, std::string groupName, std::string path, Component* parent)
 {
+	std::string nodeVal = element->Attribute("name");
 	std::string type = element->Attribute("type");
-	
 	if (type == "str")
-		parent->add_xml_string_property(element->Attribute("name"), std::string(element->Attribute("data")));
+		parent->add_xml_string_property(nodeVal, std::string(element->Attribute("data")));
 	else if (type == "bool")
-		parent->add_xml_bool_property(element->Attribute("name"), element->BoolAttribute("data"));
+		parent->add_xml_bool_property(nodeVal, element->BoolAttribute("data"));
 	else if (type == "int")
-		parent->add_xml_int_property(element->Attribute("name"), element->IntAttribute("data"));
+		parent->add_xml_int_property(nodeVal, element->IntAttribute("data"));
 	else if (type == "float")
-		parent->add_xml_float_property(element->Attribute("name"), element->FloatAttribute("data"));
+		parent->add_xml_float_property(nodeVal, element->FloatAttribute("data"));
 	else if (type == "double")
-		parent->add_xml_double_property(element->Attribute("name"), element->DoubleAttribute("data"));
+		parent->add_xml_double_property(nodeVal, element->DoubleAttribute("data"));
 	else
 		throw new std::exception(("TYPE ERROR!!! Did not provide valid data type given to attrieve!!\n\tGot Type: " + type).c_str());
 
@@ -297,7 +309,20 @@ void GameObjectManager::parse_xml_properties(tinyxml2::XMLElement* element, std:
 
 void GameObjectManager::set_game_object_tag(int newTag, GameObject* object)
 {
-	mTaggedObjects[object->get_tag()];
+	if (mTaggedObjects.find(object->get_tag()) != mTaggedObjects.end())
+	{
+		std::vector<GameObject*>::iterator taggedObjects = mTaggedObjects[object->get_tag()].begin();
+		while (*taggedObjects != object && taggedObjects != mTaggedObjects[object->get_tag()].end())
+			taggedObjects++;
+
+		if (taggedObjects == mTaggedObjects[object->get_tag()].end())
+			throw new std::exception("Did not find the object in the tagged list!! Fix comparison");
+
+		mTaggedObjects[object->get_tag()].erase(taggedObjects);
+	}
+	mTaggedObjects[newTag].push_back(object);
+	
+	object->set_tag(newTag);
 }
 
 GameObject* GameObjectManager::get_game_object(std::string game_object_name)
@@ -522,6 +547,11 @@ GameObject* GameObjectManager::create_ground_plane(std::string materialName)
 	return groundNode;
 }
 
+void GameObjectManager::set_skybox(std::string materialName, float distance, bool drawFirst)
+{
+	APPLICATION->get_scene_manager()->setSkyBox(true, materialName, distance, drawFirst);
+}
+
 void GameObjectManager::set_default_scene()
 {
 	//add lights to the scene
@@ -591,5 +621,5 @@ void GameObjectManager::set_default_scene()
 	create_ground_plane("Examples/Rockwall");
 
 	///////////////////////////////////////////////////////////////////////////////////////////// Enable and Add SkyBox
-	APPLICATION->get_scene_manager()->setSkyBox(true, "Examples/SpaceSkyBox", 300, false);
+	set_skybox();
 }

@@ -6,14 +6,29 @@ namespace OgreEngine
 	class GameObject;
 	class Component
 	{
+	private:
+		
+		struct propertyData {
+			type_info dataType;
+			union data
+			{
+				std::string sVal;
+				bool bVal;
+				int iVal;
+				float fVal;
+				double dVal;
+			};
+		};
+
 	protected:
 		GameObject* Parent;
+		//std::map<std::string, propertyData> mProperties;
 		std::map<std::string, std::string> mStringProperties;
 		std::map<std::string, bool> mBoolProperties;
 		std::map<std::string, int> mIntProperties;
 		std::map<std::string, float> mFloatProperties;
 		std::map<std::string, double> mDoubleProperties;
-	private:
+	
 
 	public:
 		enum class ComponentType { CAMERA, LIGHT, MESH };
@@ -52,38 +67,17 @@ namespace OgreEngine
 				mDoubleProperties[name] = data;
 		}
 
-		/*/// Append the property of type T to its appropriate map container
+		/*/// Append the property of type T to the property map container
 		template<typename T>
-		void add_xml_property(std::string name, T data)
+		void add_xml_property(std::string name, T d)
 		{
-			type_info ti = typeid(T);
-			if (ti.hash_code() == typeid(std::string).hash_code())
+			if (mProperties.find(name) == mProperties.end())
 			{
-				if (mStringProperties.find(name) == mStringProperties.end())
-					mStringProperties[name] = reinterpret_cast<std::string>(data);
+				
+				//struct propertyData pData = {typeid(T), d};
+				//memcpy_s((void*)&pData.val, sizeof(d), (void*)&d, sizeof(d));
+				mProperties[name] = std::make_tuple(typeid(T), d);
 			}
-			else if (ti.hash_code() == typeid(bool).hash_code())
-			{
-				if (mBoolProperties.find(name) == mBoolProperties.end())
-					mBoolProperties[name] = reinterpret_cast<bool>(data);
-			}
-			else if (ti.hash_code() == typeid(int).hash_code())
-			{
-				if (mIntProperties.find(name) == mIntProperties.end())
-					mIntProperties[name] = reinterpret_cast<int>(data);
-			}
-			else if (ti.hash_code() == typeid(float).hash_code())
-			{
-				if (mFloatProperties.find(name) == mFloatProperties.end())
-					mFloatProperties[name] = reinterpret_cast<float>(data);
-			}
-			else if (ti.hash_code() == typeid(double).hash_code())
-			{
-				if (mDoubleProperties.find(name) == mDoubleProperties.end())
-					mDoubleProperties[name] = reinterpret_cast<double>(data);
-			}
-			else
-				throw new std::exception(("TYPE ERROR!!! Did not provide valid data type given to append to mapped properties!!\n\tGot Type: " + std::string(typeid(T).name())).c_str());
 		};*/
 
 		virtual void update(float elapsed) = NULL;
