@@ -290,15 +290,15 @@ void GameObjectManager::parse_xml_properties(tinyxml2::XMLElement* element, std:
 	std::string nodeVal = element->Attribute("name");
 	std::string type = element->Attribute("type");
 	if (type == "str")
-		parent->add_xml_string_property(nodeVal, std::string(element->Attribute("data")));
+		parent->add_xml_property(nodeVal, std::string(element->Attribute("data")));
 	else if (type == "bool")
-		parent->add_xml_bool_property(nodeVal, element->BoolAttribute("data"));
+		parent->add_xml_property(nodeVal, element->BoolAttribute("data"));
 	else if (type == "int")
-		parent->add_xml_int_property(nodeVal, element->IntAttribute("data"));
+		parent->add_xml_property(nodeVal, element->IntAttribute("data"));
 	else if (type == "float")
-		parent->add_xml_float_property(nodeVal, element->FloatAttribute("data"));
+		parent->add_xml_property(nodeVal, element->FloatAttribute("data"));
 	else if (type == "double")
-		parent->add_xml_double_property(nodeVal, element->DoubleAttribute("data"));
+		parent->add_xml_property(nodeVal, element->DoubleAttribute("data"));
 	else
 		throw new std::exception(("TYPE ERROR!!! Did not provide valid data type given to attrieve!!\n\tGot Type: " + type).c_str());
 

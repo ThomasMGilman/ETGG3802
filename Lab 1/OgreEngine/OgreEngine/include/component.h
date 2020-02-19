@@ -1,34 +1,24 @@
 #pragma once
 #include <Ogre.h>
+#include <variant>
 
 namespace OgreEngine
 {
+	
 	class GameObject;
 	class Component
 	{
-	private:
 		
+	private:
+		using data = std::variant<std::string, bool, int, float, double>;
 		struct propertyData {
-			type_info dataType;
-			union data
-			{
-				std::string sVal;
-				bool bVal;
-				int iVal;
-				float fVal;
-				double dVal;
-			};
+			const std::type_info* dataType;
+			data d;
 		};
 
 	protected:
 		GameObject* Parent;
-		//std::map<std::string, propertyData> mProperties;
-		std::map<std::string, std::string> mStringProperties;
-		std::map<std::string, bool> mBoolProperties;
-		std::map<std::string, int> mIntProperties;
-		std::map<std::string, float> mFloatProperties;
-		std::map<std::string, double> mDoubleProperties;
-	
+		std::map<std::string, propertyData> mProperties;
 
 	public:
 		enum class ComponentType { CAMERA, LIGHT, MESH };
@@ -37,48 +27,13 @@ namespace OgreEngine
 
 		~Component() {};
 
-		void add_xml_string_property(std::string name, std::string data)
-		{
-			if (mStringProperties.find(name) == mStringProperties.end())
-				mStringProperties[name] = data;
-		}
-
-		void add_xml_bool_property(std::string name, bool data)
-		{
-			if (mBoolProperties.find(name) == mBoolProperties.end())
-				mBoolProperties[name] = data;
-		}
-
-		void add_xml_int_property(std::string name, int data)
-		{
-			if (mIntProperties.find(name) == mIntProperties.end())
-				mIntProperties[name] = data;
-		}
-
-		void add_xml_float_property(std::string name, float data)
-		{
-			if (mFloatProperties.find(name) == mFloatProperties.end())
-				mFloatProperties[name] = data;
-		}
-
-		void add_xml_double_property(std::string name, double data)
-		{
-			if (mDoubleProperties.find(name) == mDoubleProperties.end())
-				mDoubleProperties[name] = data;
-		}
-
-		/*/// Append the property of type T to the property map container
+		/// Append the property of type T to the property map container
 		template<typename T>
 		void add_xml_property(std::string name, T d)
 		{
 			if (mProperties.find(name) == mProperties.end())
-			{
-				
-				//struct propertyData pData = {typeid(T), d};
-				//memcpy_s((void*)&pData.val, sizeof(d), (void*)&d, sizeof(d));
-				mProperties[name] = std::make_tuple(typeid(T), d);
-			}
-		};*/
+				mProperties[name] = { &typeid(T), d };
+		};
 
 		virtual void update(float elapsed) = NULL;
 

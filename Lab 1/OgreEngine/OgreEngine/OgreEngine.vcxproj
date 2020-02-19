@@ -84,7 +84,8 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\RTShaderSystem;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\Overlay;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\Bites;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE;$(ProjectDir)dependencies\tinyxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -101,6 +102,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\RTShaderSystem;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\Overlay;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\Bites;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE;$(ProjectDir)dependencies\tinyxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
