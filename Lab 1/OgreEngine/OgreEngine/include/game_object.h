@@ -44,6 +44,8 @@ namespace OgreEngine
 
 		/// Destructor
 		virtual ~GameObject();
+
+		void set_tag(int newTag) { mTag = newTag; };
 		
 		// ***** UPDATE *****
 	public:

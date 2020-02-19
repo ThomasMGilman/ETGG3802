@@ -1,8 +1,0 @@
-C:/tmp2/lib/tinyxml2d.lib
-C:/tmp2/bin/tinyxml2d.dll
-C:/tmp2/include/tinyxml2.h
-C:/tmp2/lib/pkgconfig/tinyxml2.pc
-C:/tmp2/lib/cmake/tinyxml2/tinyxml2Config.cmake
-C:/tmp2/lib/cmake/tinyxml2/tinyxml2ConfigVersion.cmake
-C:/tmp2/lib/cmake/tinyxml2/tinyxml2Targets.cmake
-C:/tmp2/lib/cmake/tinyxml2/tinyxml2Targets-debug.cmake

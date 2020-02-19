@@ -127,7 +127,7 @@ void Application::setup(void)
 	
 	mLogger = new LogManager(mVp->getActualHeight());
 
-	GAME_OBJ_MANAGER->load_scene("Cube.mesh.xml");
+	GAME_OBJ_MANAGER->load_scene("test.scene");
 }
 
 bool Application::frameStarted(const Ogre::FrameEvent& e)

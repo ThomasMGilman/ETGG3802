@@ -31,40 +31,148 @@ void GameObjectManager::update(float elapsed)
 	}
 }
 
-void GameObjectManager::load_scenes(std::list<std::string> fileNames)
+void GameObjectManager::load_scenes(std::list<std::tuple<std::string, std::string>> fileNames)
 {
-	std::list<std::string>::iterator fileIter = fileNames.begin();
-	while (fileIter != fileNames.end())
-	{
-		load_scene(*fileIter);
-		fileIter++;
-	}
+	for(std::tuple < std::string, std::string > val : fileNames)
+		load_scene(std::get<0>(val), std::get<1>(val));
 }
 
-void GameObjectManager::load_scene(std::string fileName)
+void GameObjectManager::load_scene(std::string fileName, std::string path)
 {
-	mDoc->LoadFile((mMediaPath + fileName).c_str());
+	mDoc->LoadFile((path + fileName).c_str());
 	if (mDoc->Error())
 	{
 		std::string error = mDoc->ErrorStr();
 		LOG_MANAGER->log("tinyxml2 Error: " + error);
 	}
-	tinyxml2::XMLNode* firstNode = mDoc->FirstChild();
-	if (firstNode != NULL)
-		parse_xml_nodes(firstNode);
+	tinyxml2::XMLElement* firstElement = mDoc->FirstChildElement();
+	if (firstElement != NULL)
+		parse_xml_nodes(firstElement, fileName, path);
 }
 
-void GameObjectManager::parse_xml_nodes(tinyxml2::XMLNode* node)
+void GameObjectManager::parse_xml_nodes(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent)
 {
-	std::string nodeVal = node->Value();
-	LOG_MANAGER->log_message("Readin XML Node: " + nodeVal);
-	tinyxml2::XMLNode* firstChild = node->FirstChild();
-	if (firstChild != NULL)
-		parse_xml_nodes(firstChild);
+	std::string nodeVal = element->Value();
+	LOG_MANAGER->log_message("Read in XML Element: " + nodeVal);
+	if (nodeVal == "node")
+	{
+		GameObject* newObject = create_game_object(groupName, element->Name(), parent);
+		tinyxml2::XMLElement* firstChild = element->FirstChildElement();
+		if (firstChild != NULL)
+			parse_xml_gameobject(firstChild, groupName, path, newObject);
+	}
 
-	tinyxml2::XMLNode* nextSibling = node->NextSibling();
+	tinyxml2::XMLElement* nextSibling = element->NextSiblingElement();
 	if (nextSibling != NULL)
-		parse_xml_nodes(nextSibling);
+		parse_xml_nodes(nextSibling, groupName, path, parent);
+}
+
+Ogre::Vector3 GameObjectManager::parse_xml_position_data(tinyxml2::XMLElement* element)
+{
+	Ogre::Vector3 newVec;
+	if (element->Attribute("x"))
+		newVec.x = element->FloatAttribute("x");
+	if (element->Attribute("y"))
+		newVec.y = element->FloatAttribute("y");
+	if (element->Attribute("z"))
+		newVec.z = element->FloatAttribute("z");
+	return newVec;
+}
+
+Ogre::Quaternion GameObjectManager::parse_xml_quaternion_data(tinyxml2::XMLElement* element)
+{
+	Ogre::Quaternion newQuat;
+	if (element->Attribute("qx"))
+		newQuat.x = element->FloatAttribute("qx");
+	if (element->Attribute("qy"))
+		newQuat.y = element->FloatAttribute("qy");
+	if (element->Attribute("qz"))
+		newQuat.z = element->FloatAttribute("qz");
+	if (element->Attribute("qw"))
+		newQuat.w = element->FloatAttribute("qw");
+	return newQuat;
+}
+
+void GameObjectManager::parse_xml_gameobject(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent)
+{
+	std::string nodeVal = element->Value();
+	LOG_MANAGER->log_message("Read in objectProperty: " + nodeVal);
+	if (nodeVal == "position")
+		parent->set_position(parse_xml_position_data(element));
+	if (nodeVal == "rotation")
+		parent->set_orientation(parse_xml_quaternion_data(element));
+	if (nodeVal == "scale")
+		parent->set_scale(parse_xml_position_data(element));
+	if (nodeVal == "userData")
+		parse_xml_properties(element, groupName, path, parent);
+
+	tinyxml2::XMLElement* nextSibling = element->NextSiblingElement();
+	if (nextSibling != NULL)
+		parse_xml_nodes(nextSibling, groupName, path, parent);
+}
+
+void GameObjectManager::parse_xml_mesh(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent)
+{
+
+}
+
+void GameObjectManager::parse_xml_camera(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent)
+{
+
+}
+
+template<typename T>
+T GameObjectManager::parse_xml_value(tinyxml2::XMLElement* element)
+{
+	switch (T)
+	{
+	case std::string:
+		return std::string(element->Attribute("data"));
+	case int:
+		return element->IntAttribute("data");
+	case float:
+		return element->FloatAttribute("data");
+	case double:
+		return element->DoubleAttribute("data");
+	case bool:
+		return element->BoolAttribute("data");
+	default:
+		throw new std::exception("TYPE ERROR!!! Did not provide valid data type given to attrieve!!\n\tGot Type: " + typeid(T).name());
+		break;
+	}
+}
+
+void GameObjectManager::parse_xml_properties(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent)
+{
+	std::string type = element->Attribute("type");
+	if (type == "str")
+	{
+		std::string val = parse_xml_value<std::string>(element);;
+	}
+	if (type == "bool")
+	{
+		bool val = parse_xml_value<bool>(element);;
+	}
+	if (type == "int")
+	{
+		int val = parse_xml_value<int>(element);
+	}
+	if (type == "float")
+	{
+		float val = parse_xml_value<float>(element);
+	}
+	if (type == "double")
+	{
+		double val = parse_xml_value<double>(element);
+	}
+	tinyxml2::XMLElement* nextSibling = element->NextSiblingElement();
+	if (nextSibling != NULL)
+		parse_xml_nodes(nextSibling, groupName, path, parent);
+}
+
+void GameObjectManager::set_game_object_tag(int newTag, GameObject* object)
+{
+	mtaggedObjects[object->get_tag()];
 }
 
 GameObject* GameObjectManager::get_game_object(std::string game_object_name)
@@ -92,8 +200,6 @@ GameObject* GameObjectManager::get_game_object(std::string game_object_name)
 
 	return reqObject;
 }
-
-
 
 GameObject* GameObjectManager::get_game_object(std::string game_object_name, std::string group_name)
 {
@@ -247,7 +353,11 @@ GameObject* GameObjectManager::create_game_object(std::string group_name, std::s
 		// Check if Object is already in the group
 		mObjIter = mGroupsIter->second.find(object_name);
 		if (mObjIter == mGroupsIter->second.end()) // GameObject not in group, create it
+		{
 			mGroupsIter->second[object_name] = newObj; //.emplace(object_name, newObj);
+			mtaggedObjects[tag].push_back(newObj);
+		}
+			
 		else // GameObject is already apart of the dictionary Log Error and return nullptr as GameObject
 		{
 			LOG_MANAGER->log_message("GameObject_CreationError: Object: " + object_name + " already exists in group: " + group_name, Ogre::ColourValue(1, 0, 0));

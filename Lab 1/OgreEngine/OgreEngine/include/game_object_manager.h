@@ -66,13 +66,28 @@ namespace OgreEngine
 		// ***** OBJECT / XML READER FUNCTIONS *****
 	public:
 		/// Given a list of scenes or object xmls. This loads in the scene/objects
-		void load_scenes(std::list<std::string> fileNames);
+		void load_scenes(std::list<std::tuple<std::string, std::string>> fileNames);
 
 		/// Load in the given scene/objects from the file given using tinyxml2
-		void load_scene(std::string fileName);
+		void load_scene(std::string fileName, std::string path);
 
-		void parse_xml_nodes(tinyxml2::XMLNode* node);
+		void parse_xml_nodes(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent = nullptr);
 		
+		Ogre::Vector3 parse_xml_position_data(tinyxml2::XMLElement* element);
+
+		Ogre::Quaternion parse_xml_quaternion_data(tinyxml2::XMLElement* element);
+
+		void parse_xml_gameobject(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent);
+
+		void parse_xml_mesh(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent);
+
+		void parse_xml_camera(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent);
+
+		template<typename T>
+		T parse_xml_value(tinyxml2::XMLElement* element);
+
+		void parse_xml_properties(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent);
+
 		// ***** DELETION METHODS ***** 
 	public:
 		/// Destroys a game object (faster version) if you know the group name
@@ -91,6 +106,8 @@ namespace OgreEngine
 
 		/// Destroys all game objects and groups entirely
 		void destroy_all();
+
+		void set_game_object_tag(int newTag, GameObject* object);
 
 		/// Sets the visibility of all game objects within the given group.
 		void set_visibility(std::string group_name, bool is_visible);

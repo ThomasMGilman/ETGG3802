@@ -1,0 +1,10 @@
+﻿  dllmain.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1274,5): warning MSB8012: TargetPath(D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\linkPythonTest\test_module\x64\Release\test_module.dll) does not match the Linker's OutputFile property value (D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\linkPythonTest\test_module\x64\Release\test_module.pyd). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1275,5): warning MSB8012: TargetExt(.dll) does not match the Linker's OutputFile property value (.pyd). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+     Creating library D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\linkPythonTest\test_module\x64\Release\test_module.lib and object D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\linkPythonTest\test_module\x64\Release\test_module.exp
+  Generating code
+  1 of 6 functions (16.7%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  test_module.vcxproj -> D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\linkPythonTest\test_module\x64\Release\test_module.dll
