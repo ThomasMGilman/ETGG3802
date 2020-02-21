@@ -3,7 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include <regex>
-#include <collection.h>
+#include <list>
 
 PyObject* my_func(PyObject* self, PyObject* args)
 {
@@ -14,19 +14,33 @@ PyObject* my_func(PyObject* self, PyObject* args)
 	{
 		const char* lines = PyUnicode_AsUTF8(PyTuple_GetItem(args, 0));
 		const char* toCheckFor = PyUnicode_AsUTF8(PyTuple_GetItem(args, 1));
-
-		std::list<int> indiciesStringCheck;
-		printf("text=%s\nsearch=%s", lines, toCheckFor);
+		std::cout << "text = " << lines << "\nsearch = " << toCheckFor << std::endl;
 
 		std::ostringstream oss;
 		oss << "[" << toCheckFor << "]";
-		
-		std::regex reg(oss.str());
-		
 
-		// If we aren't returning anything
-		// Increment the ref-count on the python None object.
-		Py_IncRef(Py_None);
+		std::string s = lines;
+		std::regex reg(oss.str());
+		std::smatch m;
+		std::regex_search(s, m, reg);
+
+		if (m.size() > 0)
+		{
+			PyObject* indicies = PyTuple_New(m.size());
+			for (int i = 0; i < m.size(); i++)
+			{
+				PyTuple_SetItem(indicies, i, (PyObject*)m[i]);
+			}
+
+			Py_IncRef(indicies);
+			return indicies;
+		}
+		else
+		{
+			// If we aren't returning anything
+			// Increment the ref-count on the python None object.
+			Py_IncRef(Py_None);
+		}
 	}
 	else
 		PyErr_SetString(PyExc_ValueError, "Did not get arguement of type Tuple");
