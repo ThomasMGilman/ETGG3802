@@ -1,9 +1,0 @@
-﻿  -- Install configuration: "Release"
-  -- Installing: C:/tmp2/lib/tinyxml2.lib
-  -- Installing: C:/tmp2/bin/tinyxml2.dll
-  -- Installing: C:/tmp2/include/tinyxml2.h
-  -- Installing: C:/tmp2/lib/pkgconfig/tinyxml2.pc
-  -- Installing: C:/tmp2/lib/cmake/tinyxml2/tinyxml2Config.cmake
-  -- Installing: C:/tmp2/lib/cmake/tinyxml2/tinyxml2ConfigVersion.cmake
-  -- Installing: C:/tmp2/lib/cmake/tinyxml2/tinyxml2Targets.cmake
-  -- Installing: C:/tmp2/lib/cmake/tinyxml2/tinyxml2Targets-release.cmake
