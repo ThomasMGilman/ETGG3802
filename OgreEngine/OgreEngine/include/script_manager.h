@@ -4,7 +4,6 @@
 #define _SCRIPT_MANAGER_H_
 
 #include <singleton.h>
-#include <script_functions.h>
 
 #define SCRIPT_MANAGER ScriptManager::getSingletonPtr()
 

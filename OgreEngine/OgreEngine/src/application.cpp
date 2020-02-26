@@ -51,7 +51,7 @@ bool Application::frameStarted(const Ogre::FrameEvent& e)
 	// Update current Animation being played by penguin
 	GAME_OBJ_MANAGER->update(e.timeSinceLastFrame);
 	//mAnimationState->addTime(e.timeSinceLastFrame);
-	
+	/*
 	GameObject* player = GAME_OBJ_MANAGER->get_game_object("OgreEnt", "temporary");
 	if (player != nullptr)
 	{
@@ -61,7 +61,7 @@ bool Application::frameStarted(const Ogre::FrameEvent& e)
 
 		if (mKeysDown.find(OgreBites::SDLK_RIGHT) != mKeysDown.end())
 			player->rotate_world(90 * e.timeSinceLastFrame, 0, 1, 0);
-	}
+	}*/
 	
 	////////////////////////////////////////////////////////////// visibility Keys for all of temporary group
 	if (mKeysDown.find(OgreBites::SDLK_F1) != mKeysDown.end())

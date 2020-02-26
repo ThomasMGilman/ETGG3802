@@ -66,7 +66,10 @@ void GameObjectManager::parse_xml_nodes(tinyxml2::XMLElement* element, std::stri
 	LOG_MANAGER->log_message("Read in XML Element: " + nodeVal);
 	if (nodeVal == "node")
 	{
-		GameObject* newObject = create_game_object(groupName, element->Attribute("name"), parent);
+		std::string par = parent != nullptr ? parent->get_name() : "NULL";
+		std::string name = element->Attribute("name");
+		LOG_MANAGER->log_message("Creating " + name + " Parent is: " + par);
+		GameObject* newObject = create_game_object(groupName, name, parent);
 		tinyxml2::XMLElement* firstChild = element->FirstChildElement();
 		if (firstChild != NULL)
 			parse_xml_gameobject(firstChild, groupName, path, newObject);

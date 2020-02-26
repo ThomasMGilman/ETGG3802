@@ -1,399 +1,208 @@
-2/19/2020@6:21:4pm Read in Scene by: JasonW
-2/19/2020@6:21:4pm Read in XML Element: node
-2/19/2020@6:21:4pm Read in objectProperty: position
-2/19/2020@6:21:4pm Read in objectProperty: rotation
-2/19/2020@6:21:4pm Read in objectProperty: scale
-2/19/2020@6:21:4pm Read in objectProperty: userData
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: entity
-2/19/2020@6:21:4pm Read in meshProperty: userData
-2/19/2020@6:21:4pm Read in XML Element: node
-2/19/2020@6:21:4pm Read in objectProperty: position
-2/19/2020@6:21:4pm Read in objectProperty: rotation
-2/19/2020@6:21:4pm Read in objectProperty: scale
-2/19/2020@6:21:4pm Read in objectProperty: userData
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: entity
-2/19/2020@6:21:4pm Read in meshProperty: userData
-2/19/2020@6:21:4pm Read in XML Element: node
-2/19/2020@6:21:4pm Read in objectProperty: position
-2/19/2020@6:21:4pm Read in objectProperty: rotation
-2/19/2020@6:21:4pm Read in objectProperty: scale
-2/19/2020@6:21:4pm Read in objectProperty: userData
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: entity
-2/19/2020@6:21:4pm Read in meshProperty: userData
-2/19/2020@6:21:4pm Read in XML Element: node
-2/19/2020@6:21:4pm Read in objectProperty: position
-2/19/2020@6:21:4pm Read in objectProperty: rotation
-2/19/2020@6:21:4pm Read in objectProperty: scale
-2/19/2020@6:21:4pm Read in objectProperty: userData
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: entity
-2/19/2020@6:21:4pm Read in meshProperty: userData
-2/19/2020@6:21:4pm Read in XML Element: node
-2/19/2020@6:21:4pm Read in objectProperty: position
-2/19/2020@6:21:4pm Read in objectProperty: rotation
-2/19/2020@6:21:4pm Read in objectProperty: scale
-2/19/2020@6:21:4pm Read in objectProperty: userData
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: entity
-2/19/2020@6:21:4pm Read in meshProperty: userData
-2/19/2020@6:21:4pm Read in XML Element: node
-2/19/2020@6:21:4pm Read in objectProperty: position
-2/19/2020@6:21:4pm Read in objectProperty: rotation
-2/19/2020@6:21:4pm Read in objectProperty: scale
-2/19/2020@6:21:4pm Read in objectProperty: userData
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: entity
-2/19/2020@6:21:4pm Read in meshProperty: userData
-2/19/2020@6:21:4pm Read in XML Element: node
-2/19/2020@6:21:4pm Read in objectProperty: position
-2/19/2020@6:21:4pm Read in objectProperty: rotation
-2/19/2020@6:21:4pm Read in objectProperty: scale
-2/19/2020@6:21:4pm Read in objectProperty: userData
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: entity
-2/19/2020@6:21:4pm Read in meshProperty: userData
-2/19/2020@6:21:4pm Read in XML Element: node
-2/19/2020@6:21:4pm Read in objectProperty: position
-2/19/2020@6:21:4pm Read in objectProperty: rotation
-2/19/2020@6:21:4pm Read in objectProperty: scale
-2/19/2020@6:21:4pm Read in objectProperty: userData
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: entity
-2/19/2020@6:21:4pm Read in meshProperty: userData
-2/19/2020@6:21:4pm Read in XML Element: node
-2/19/2020@6:21:4pm Read in objectProperty: position
-2/19/2020@6:21:4pm Read in objectProperty: rotation
-2/19/2020@6:21:4pm Read in objectProperty: scale
-2/19/2020@6:21:4pm Read in objectProperty: userData
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: entity
-2/19/2020@6:21:4pm Read in meshProperty: userData
-2/19/2020@6:21:4pm Read in XML Element: node
-2/19/2020@6:21:4pm Read in objectProperty: position
-2/19/2020@6:21:4pm Read in objectProperty: rotation
-2/19/2020@6:21:4pm Read in objectProperty: scale
-2/19/2020@6:21:4pm Read in objectProperty: userData
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: entity
-2/19/2020@6:21:4pm Read in meshProperty: userData
-2/19/2020@6:21:4pm Read in XML Element: node
-2/19/2020@6:21:4pm Read in objectProperty: position
-2/19/2020@6:21:4pm Read in objectProperty: rotation
-2/19/2020@6:21:4pm Read in objectProperty: scale
-2/19/2020@6:21:4pm Read in objectProperty: userData
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: entity
-2/19/2020@6:21:4pm Read in meshProperty: userData
-2/19/2020@6:21:4pm Read in XML Element: node
-2/19/2020@6:21:4pm Read in objectProperty: position
-2/19/2020@6:21:4pm Read in objectProperty: rotation
-2/19/2020@6:21:4pm Read in objectProperty: scale
-2/19/2020@6:21:4pm Read in objectProperty: userData
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: entity
-2/19/2020@6:21:4pm Read in meshProperty: userData
-2/19/2020@6:21:4pm Read in XML Element: node
-2/19/2020@6:21:4pm Read in objectProperty: position
-2/19/2020@6:21:4pm Read in objectProperty: rotation
-2/19/2020@6:21:4pm Read in objectProperty: scale
-2/19/2020@6:21:4pm Read in objectProperty: userData
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: entity
-2/19/2020@6:21:4pm Read in meshProperty: userData
-2/19/2020@6:21:4pm Read in XML Element: node
-2/19/2020@6:21:4pm Read in objectProperty: position
-2/19/2020@6:21:4pm Read in objectProperty: rotation
-2/19/2020@6:21:4pm Read in objectProperty: scale
-2/19/2020@6:21:4pm Read in objectProperty: userData
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: entity
-2/19/2020@6:21:4pm Read in meshProperty: userData
-2/19/2020@6:21:4pm Read in XML Element: node
-2/19/2020@6:21:4pm Read in objectProperty: position
-2/19/2020@6:21:4pm Read in objectProperty: rotation
-2/19/2020@6:21:4pm Read in objectProperty: scale
-2/19/2020@6:21:4pm Read in objectProperty: userData
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: entity
-2/19/2020@6:21:4pm Read in meshProperty: userData
-2/19/2020@6:21:4pm Read in XML Element: node
-2/19/2020@6:21:4pm Read in objectProperty: position
-2/19/2020@6:21:4pm Read in objectProperty: rotation
-2/19/2020@6:21:4pm Read in objectProperty: scale
-2/19/2020@6:21:4pm Read in objectProperty: userData
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: entity
-2/19/2020@6:21:4pm Read in meshProperty: userData
-2/19/2020@6:21:4pm Read in XML Element: node
-2/19/2020@6:21:4pm Read in objectProperty: position
-2/19/2020@6:21:4pm Read in objectProperty: rotation
-2/19/2020@6:21:4pm Read in objectProperty: scale
-2/19/2020@6:21:4pm Read in objectProperty: userData
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: entity
-2/19/2020@6:21:4pm Read in meshProperty: userData
-2/19/2020@6:21:4pm Read in XML Element: node
-2/19/2020@6:21:4pm Read in objectProperty: position
-2/19/2020@6:21:4pm Read in objectProperty: rotation
-2/19/2020@6:21:4pm Read in objectProperty: scale
-2/19/2020@6:21:4pm Read in objectProperty: userData
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: entity
-2/19/2020@6:21:4pm Read in meshProperty: userData
-2/19/2020@6:21:4pm Read in XML Element: node
-2/19/2020@6:21:4pm Read in objectProperty: position
-2/19/2020@6:21:4pm Read in objectProperty: rotation
-2/19/2020@6:21:4pm Read in objectProperty: scale
-2/19/2020@6:21:4pm Read in objectProperty: userData
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: light
-2/19/2020@6:21:4pm Read in lightProperty: colourDiffuse
-2/19/2020@6:21:4pm Read in lightProperty: colourSpecular
-2/19/2020@6:21:4pm Read in lightProperty: lightAttenuation
-2/19/2020@6:21:4pm Read in XML Element: node
-2/19/2020@6:21:4pm Read in objectProperty: position
-2/19/2020@6:21:4pm Read in objectProperty: rotation
-2/19/2020@6:21:4pm Read in objectProperty: scale
-2/19/2020@6:21:4pm Read in objectProperty: userData
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: entity
-2/19/2020@6:21:4pm Read in meshProperty: userData
-2/19/2020@6:21:4pm Read in objectProperty: node
-2/19/2020@6:21:4pm Read in XML Element: node
-2/19/2020@6:21:4pm Read in objectProperty: position
-2/19/2020@6:21:4pm Read in objectProperty: rotation
-2/19/2020@6:21:4pm Read in objectProperty: scale
-2/19/2020@6:21:4pm Read in objectProperty: userData
-2/19/2020@6:21:4pm Read in objectProperty: property
-2/19/2020@6:21:4pm Read in objectProperty: camera
-2/19/2020@6:21:4pm Read in cameraProperty: clipping
-2/19/2020@6:21:4pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:5pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:6pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:7pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
-2/19/2020@6:21:8pm Key Pressed = 27
-2/19/2020@6:21:8pm User trying to access nonexistent group: temporary to find gameObject: OgreEnt
+2/26/2020@11:9:20pm Read in Scene by: JasonW
+2/26/2020@11:9:20pm Read in XML Element: node
+2/26/2020@11:9:20pm Creating ShieldA.002 Parent is: NULL
+2/26/2020@11:9:20pm Read in objectProperty: position
+2/26/2020@11:9:20pm Read in objectProperty: rotation
+2/26/2020@11:9:20pm Read in objectProperty: scale
+2/26/2020@11:9:20pm Read in objectProperty: userData
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: entity
+2/26/2020@11:9:20pm Read in meshProperty: userData
+2/26/2020@11:9:20pm Read in XML Element: node
+2/26/2020@11:9:20pm Creating ShieldA.001 Parent is: NULL
+2/26/2020@11:9:20pm Read in objectProperty: position
+2/26/2020@11:9:20pm Read in objectProperty: rotation
+2/26/2020@11:9:20pm Read in objectProperty: scale
+2/26/2020@11:9:20pm Read in objectProperty: userData
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: entity
+2/26/2020@11:9:20pm Read in meshProperty: userData
+2/26/2020@11:9:20pm Read in XML Element: node
+2/26/2020@11:9:20pm Creating Invader.011 Parent is: NULL
+2/26/2020@11:9:20pm Read in objectProperty: position
+2/26/2020@11:9:20pm Read in objectProperty: rotation
+2/26/2020@11:9:20pm Read in objectProperty: scale
+2/26/2020@11:9:20pm Read in objectProperty: userData
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: entity
+2/26/2020@11:9:20pm Read in meshProperty: userData
+2/26/2020@11:9:20pm Read in XML Element: node
+2/26/2020@11:9:20pm Creating Invader.010 Parent is: NULL
+2/26/2020@11:9:20pm Read in objectProperty: position
+2/26/2020@11:9:20pm Read in objectProperty: rotation
+2/26/2020@11:9:20pm Read in objectProperty: scale
+2/26/2020@11:9:20pm Read in objectProperty: userData
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: entity
+2/26/2020@11:9:20pm Read in meshProperty: userData
+2/26/2020@11:9:20pm Read in XML Element: node
+2/26/2020@11:9:20pm Creating Invader.009 Parent is: NULL
+2/26/2020@11:9:20pm Read in objectProperty: position
+2/26/2020@11:9:20pm Read in objectProperty: rotation
+2/26/2020@11:9:20pm Read in objectProperty: scale
+2/26/2020@11:9:20pm Read in objectProperty: userData
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: entity
+2/26/2020@11:9:20pm Read in meshProperty: userData
+2/26/2020@11:9:20pm Read in XML Element: node
+2/26/2020@11:9:20pm Creating Invader.008 Parent is: NULL
+2/26/2020@11:9:20pm Read in objectProperty: position
+2/26/2020@11:9:20pm Read in objectProperty: rotation
+2/26/2020@11:9:20pm Read in objectProperty: scale
+2/26/2020@11:9:20pm Read in objectProperty: userData
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: entity
+2/26/2020@11:9:20pm Read in meshProperty: userData
+2/26/2020@11:9:20pm Read in XML Element: node
+2/26/2020@11:9:20pm Creating Invader.007 Parent is: NULL
+2/26/2020@11:9:20pm Read in objectProperty: position
+2/26/2020@11:9:20pm Read in objectProperty: rotation
+2/26/2020@11:9:20pm Read in objectProperty: scale
+2/26/2020@11:9:20pm Read in objectProperty: userData
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: entity
+2/26/2020@11:9:20pm Read in meshProperty: userData
+2/26/2020@11:9:20pm Read in XML Element: node
+2/26/2020@11:9:20pm Creating Invader.006 Parent is: NULL
+2/26/2020@11:9:20pm Read in objectProperty: position
+2/26/2020@11:9:20pm Read in objectProperty: rotation
+2/26/2020@11:9:20pm Read in objectProperty: scale
+2/26/2020@11:9:20pm Read in objectProperty: userData
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: entity
+2/26/2020@11:9:20pm Read in meshProperty: userData
+2/26/2020@11:9:20pm Read in XML Element: node
+2/26/2020@11:9:20pm Creating Invader.005 Parent is: NULL
+2/26/2020@11:9:20pm Read in objectProperty: position
+2/26/2020@11:9:20pm Read in objectProperty: rotation
+2/26/2020@11:9:20pm Read in objectProperty: scale
+2/26/2020@11:9:20pm Read in objectProperty: userData
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: entity
+2/26/2020@11:9:20pm Read in meshProperty: userData
+2/26/2020@11:9:20pm Read in XML Element: node
+2/26/2020@11:9:20pm Creating Invader.004 Parent is: NULL
+2/26/2020@11:9:20pm Read in objectProperty: position
+2/26/2020@11:9:20pm Read in objectProperty: rotation
+2/26/2020@11:9:20pm Read in objectProperty: scale
+2/26/2020@11:9:20pm Read in objectProperty: userData
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: entity
+2/26/2020@11:9:20pm Read in meshProperty: userData
+2/26/2020@11:9:20pm Read in XML Element: node
+2/26/2020@11:9:20pm Creating Invader.003 Parent is: NULL
+2/26/2020@11:9:20pm Read in objectProperty: position
+2/26/2020@11:9:20pm Read in objectProperty: rotation
+2/26/2020@11:9:20pm Read in objectProperty: scale
+2/26/2020@11:9:20pm Read in objectProperty: userData
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: entity
+2/26/2020@11:9:20pm Read in meshProperty: userData
+2/26/2020@11:9:20pm Read in XML Element: node
+2/26/2020@11:9:20pm Creating Invader.002 Parent is: NULL
+2/26/2020@11:9:20pm Read in objectProperty: position
+2/26/2020@11:9:20pm Read in objectProperty: rotation
+2/26/2020@11:9:20pm Read in objectProperty: scale
+2/26/2020@11:9:20pm Read in objectProperty: userData
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: entity
+2/26/2020@11:9:20pm Read in meshProperty: userData
+2/26/2020@11:9:20pm Read in XML Element: node
+2/26/2020@11:9:20pm Creating Invader.001 Parent is: NULL
+2/26/2020@11:9:20pm Read in objectProperty: position
+2/26/2020@11:9:20pm Read in objectProperty: rotation
+2/26/2020@11:9:20pm Read in objectProperty: scale
+2/26/2020@11:9:20pm Read in objectProperty: userData
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: entity
+2/26/2020@11:9:20pm Read in meshProperty: userData
+2/26/2020@11:9:20pm Read in XML Element: node
+2/26/2020@11:9:20pm Creating ShieldA Parent is: NULL
+2/26/2020@11:9:20pm Read in objectProperty: position
+2/26/2020@11:9:20pm Read in objectProperty: rotation
+2/26/2020@11:9:20pm Read in objectProperty: scale
+2/26/2020@11:9:20pm Read in objectProperty: userData
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: entity
+2/26/2020@11:9:20pm Read in meshProperty: userData
+2/26/2020@11:9:20pm Read in XML Element: node
+2/26/2020@11:9:20pm Creating RightBumper Parent is: NULL
+2/26/2020@11:9:20pm Read in objectProperty: position
+2/26/2020@11:9:20pm Read in objectProperty: rotation
+2/26/2020@11:9:20pm Read in objectProperty: scale
+2/26/2020@11:9:20pm Read in objectProperty: userData
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: entity
+2/26/2020@11:9:20pm Read in meshProperty: userData
+2/26/2020@11:9:20pm Read in XML Element: node
+2/26/2020@11:9:20pm Creating LeftBumper Parent is: NULL
+2/26/2020@11:9:20pm Read in objectProperty: position
+2/26/2020@11:9:20pm Read in objectProperty: rotation
+2/26/2020@11:9:20pm Read in objectProperty: scale
+2/26/2020@11:9:20pm Read in objectProperty: userData
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: entity
+2/26/2020@11:9:20pm Read in meshProperty: userData
+2/26/2020@11:9:20pm Read in XML Element: node
+2/26/2020@11:9:20pm Creating Ground Parent is: NULL
+2/26/2020@11:9:20pm Read in objectProperty: position
+2/26/2020@11:9:20pm Read in objectProperty: rotation
+2/26/2020@11:9:20pm Read in objectProperty: scale
+2/26/2020@11:9:20pm Read in objectProperty: userData
+2/26/2020@11:9:20pm Read in objectProperty: property
+2/26/2020@11:9:20pm Read in objectProperty: entity
+2/26/2020@11:9:21pm Read in meshProperty: userData
+2/26/2020@11:9:21pm Read in XML Element: node
+2/26/2020@11:9:21pm Creating Invader Parent is: NULL
+2/26/2020@11:9:21pm Read in objectProperty: position
+2/26/2020@11:9:21pm Read in objectProperty: rotation
+2/26/2020@11:9:21pm Read in objectProperty: scale
+2/26/2020@11:9:21pm Read in objectProperty: userData
+2/26/2020@11:9:21pm Read in objectProperty: property
+2/26/2020@11:9:21pm Read in objectProperty: property
+2/26/2020@11:9:21pm Read in objectProperty: entity
+2/26/2020@11:9:21pm Read in meshProperty: userData
+2/26/2020@11:9:21pm Read in XML Element: node
+2/26/2020@11:9:21pm Creating Lamp Parent is: NULL
+2/26/2020@11:9:21pm Read in objectProperty: position
+2/26/2020@11:9:21pm Read in objectProperty: rotation
+2/26/2020@11:9:21pm Read in objectProperty: scale
+2/26/2020@11:9:21pm Read in objectProperty: userData
+2/26/2020@11:9:21pm Read in objectProperty: property
+2/26/2020@11:9:21pm Read in objectProperty: light
+2/26/2020@11:9:21pm Read in lightProperty: colourDiffuse
+2/26/2020@11:9:21pm Read in lightProperty: colourSpecular
+2/26/2020@11:9:21pm Read in lightProperty: lightAttenuation
+2/26/2020@11:9:21pm Read in XML Element: node
+2/26/2020@11:9:21pm Creating Ship Parent is: NULL
+2/26/2020@11:9:21pm Read in objectProperty: position
+2/26/2020@11:9:21pm Read in objectProperty: rotation
+2/26/2020@11:9:21pm Read in objectProperty: scale
+2/26/2020@11:9:21pm Read in objectProperty: userData
+2/26/2020@11:9:21pm Read in objectProperty: property
+2/26/2020@11:9:21pm Read in objectProperty: entity
+2/26/2020@11:9:21pm Read in meshProperty: userData
+2/26/2020@11:9:21pm Read in objectProperty: node
+2/26/2020@11:9:21pm Read in XML Element: node
+2/26/2020@11:9:21pm Creating Camera Parent is: Ship
+2/26/2020@11:9:21pm Read in objectProperty: position
+2/26/2020@11:9:21pm Read in objectProperty: rotation
+2/26/2020@11:9:21pm Read in objectProperty: scale
+2/26/2020@11:9:21pm Read in objectProperty: userData
+2/26/2020@11:9:21pm Read in objectProperty: property
+2/26/2020@11:9:21pm Read in objectProperty: camera
+2/26/2020@11:9:21pm Read in cameraProperty: clipping
+2/26/2020@11:9:31pm Key Pressed = 27
