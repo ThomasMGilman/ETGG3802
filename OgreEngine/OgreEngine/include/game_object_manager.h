@@ -79,13 +79,13 @@ namespace OgreEngine
 		// ***** OBJECT / XML READER FUNCTIONS *****
 	public:
 		/// Given a list of scenes or object xmls. This loads in the scene/objects
-		void load_scenes(std::list<std::tuple<std::string, std::string>> fileNames);
+		void load_scenes(std::list<std::tuple<std::string, std::string>> fileNames, bool printReadValues = true);
 
 		/// Load in the given scene/objects from the file given using tinyxml2
-		void load_scene(std::string fileName, std::string path);
+		void load_scene(std::string fileName, std::string path, bool printReadValues = true);
 
 		/// Create new GameObject Component from xml parameters
-		void parse_xml_nodes(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent = nullptr);
+		void parse_xml_nodes(tinyxml2::XMLElement* element, std::string groupName, std::string path, bool printReadValues, GameObject* parent = nullptr);
 		
 		/// Get Colour back from XML
 		Ogre::ColourValue parse_xml_color_data(tinyxml2::XMLElement* element);
@@ -97,31 +97,31 @@ namespace OgreEngine
 		Ogre::Quaternion parse_xml_quaternion_data(tinyxml2::XMLElement* element);
 
 		/// Parse External Resource file and add it to map of its type
-		void parse_xml_external(tinyxml2::XMLElement* element, std::string resourceType, std::string path);
+		void parse_xml_external(tinyxml2::XMLElement* element, std::string resourceType, std::string path, bool printReadValues);
 
 		/// Parse Envrionment variables
-		void parse_xml_environment(tinyxml2::XMLElement* element);
+		void parse_xml_environment(tinyxml2::XMLElement* element, bool printReadValues);
 
 		/// Templated class appends node elements from xml file to specified parent passed, both GameObject or Component.
-		void parse_xml_gameobject(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent);
+		void parse_xml_gameobject(tinyxml2::XMLElement* element, std::string groupName, std::string path, bool printReadValues, GameObject* parent);
 
 		/// Create new Mesh Component from xml parameters
-		void parse_xml_mesh(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent);
+		void parse_xml_mesh(tinyxml2::XMLElement* element, std::string groupName, std::string path, bool printReadValues, GameObject* parent);
 
-		void parse_xml_mesh_data(tinyxml2::XMLElement* element, std::string groupName, std::string path, MeshComponent* parent);
+		void parse_xml_mesh_data(tinyxml2::XMLElement* element, std::string groupName, std::string path, bool printReadValues, MeshComponent* parent);
 
 		/// Create new Camera Component from xml parameters
-		void parse_xml_camera(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent);
+		void parse_xml_camera(tinyxml2::XMLElement* element, std::string groupName, std::string path, bool printReadValues, GameObject* parent);
 
-		void parse_xml_camera_data(tinyxml2::XMLElement* element, std::string groupName, std::string path, CameraComponent* parent);
+		void parse_xml_camera_data(tinyxml2::XMLElement* element, std::string groupName, std::string path, bool printReadValues, CameraComponent* parent);
 
 		/// Create new Light Component from xml parameters
-		void parse_xml_light(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent);
+		void parse_xml_light(tinyxml2::XMLElement* element, std::string groupName, std::string path, bool printReadValues, GameObject* parent);
 
-		void parse_xml_light_data(tinyxml2::XMLElement* element, std::string groupName, std::string path, LightComponent* parent);
+		void parse_xml_light_data(tinyxml2::XMLElement* element, std::string groupName, std::string path, bool printReadValues, LightComponent* parent);
 
 		/// Append Properties from the userData section of the xml being parsed to the parent object
-		void parse_xml_properties(tinyxml2::XMLElement* element, std::string groupName, std::string path, Component* parent);
+		void parse_xml_properties(tinyxml2::XMLElement* element, std::string groupName, std::string path, bool printReadValues, Component* parent);
 
 		// ***** DELETION METHODS ***** 
 	public:

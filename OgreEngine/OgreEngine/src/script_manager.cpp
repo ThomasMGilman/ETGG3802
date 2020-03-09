@@ -15,7 +15,7 @@ PyMethodDef my_functions[] = {
 
 struct PyModuleDef ogre_module = {
 	PyModuleDef_HEAD_INIT,			// data to place at beginning
-	"ogre functions",
+	"ogre_module",
 	"set of functions to interract with the Ogre game engine",
 	-1,								// -1 = keep module state in globals
 	my_functions					// (from last slide)
@@ -32,7 +32,43 @@ ScriptManager::ScriptManager()
 {
 	PyImport_AppendInittab("ogre_module", PyInit_ogre_module);
 	Py_Initialize();
+	
+}
+
+ScriptManager::~ScriptManager()
+{
 	Py_Finalize();
+}
+
+void OgreEngine::ScriptManager::run_script(std::string fileName)
+{
+	std::ifstream is(fileName, std::ifstream::binary);
+	if (is)
+	{
+		is.seekg(0, is.end);
+		int len = is.tellg();
+		is.seekg(0, is.beg);
+		
+		char* buffer = new char[len+1];
+		is.read(buffer, len);
+		buffer[len] = '\0';
+		is.close();
+
+		PyObject* pyScript = Py_CompileString(buffer, fileName.c_str(), Py_file_input);
+		if (pyScript)
+		{
+			PyObject* pyImportExec = PyImport_ExecCodeModule(fileName.c_str(), pyScript);
+			if (pyImportExec)
+				LOG_MANAGER->log("Successfully loaded script: " + fileName);
+			else
+				handle_error();
+		}
+		else
+			handle_error();
+		delete(buffer);
+	}
+	else
+		LOG_MANAGER->log_message("FAILED TO OPEN AND READ SCRIPT IN SCRIPT MANAGER\nScript: " + fileName, ERROR_COLOUR);
 }
 
 void ScriptManager::handle_error()

@@ -1,5 +1,6 @@
 #include <application.h>
 #include <game_object_manager.h>
+#include <script_manager.h>
 
 using namespace OgreEngine;
 
@@ -38,10 +39,12 @@ void Application::setup(void)
 	mLogger = new LogManager(getRenderWindow()->getViewport(0)->getActualHeight());
 
 	//Initialize GameObjectManager
-	mGOM = new GameObjectManager();
-	//mGOM->set_default_scene();
-
-	mGOM->load_scene("main_scene.scene", "../Media/invader_media/");
+	new GameObjectManager();
+	//GAME_OBJ_MANAGER->load_scene("main_scene.scene", "../Media/invader_media/", false);
+	GAME_OBJ_MANAGER->set_default_scene();
+	
+	new ScriptManager();
+	SCRIPT_MANAGER->run_script("../Media/scripts/embedding_test_script.py");
 }
 
 bool Application::frameStarted(const Ogre::FrameEvent& e)

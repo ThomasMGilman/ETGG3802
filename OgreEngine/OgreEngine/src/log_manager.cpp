@@ -1,4 +1,5 @@
 #include "log_manager.h"
+#include <vector>
 
 using namespace OgreEngine;
 
@@ -90,8 +91,24 @@ void LogManager::log(std::string msg)
 void LogManager::log_message(std::string msg, Ogre::ColourValue color, float log_time_seconds)
 {
 	// Log Message sent and set a text area with message
+	std::vector<std::string> lines;
 	log(msg);
-	set_text_element(msg, color, log_time_seconds);
+	int lastNewLine = 0;
+	for (int i = 0; i < msg.length(); i++)
+	{
+		if (msg[i] == '\n')
+		{
+			lines.push_back(msg.substr(lastNewLine, i));
+			lastNewLine = i+1;
+		}
+	}
+	if(lines.size() == 0)
+		set_text_element(msg, color, log_time_seconds);
+	else
+	{
+		for (int i = 0; i < lines.size(); i++)
+			set_text_element(lines[i], color, log_time_seconds);
+	}
 }
 
 // Fix here

@@ -17,6 +17,10 @@ namespace OgreEngine
 
 		ScriptManager();
 
+		~ScriptManager();
+
+		void run_script(std::string fileName);
+
 		void handle_error();
 	};
 }

@@ -32,13 +32,13 @@ void GameObjectManager::update(float elapsed)
 	}
 }
 
-void GameObjectManager::load_scenes(std::list<std::tuple<std::string, std::string>> fileNames)
+void GameObjectManager::load_scenes(std::list<std::tuple<std::string, std::string>> fileNames, bool printReadValues)
 {
 	for(std::tuple < std::string, std::string > val : fileNames)
-		load_scene(std::get<0>(val), std::get<1>(val));
+		load_scene(std::get<0>(val), std::get<1>(val), printReadValues);
 }
 
-void GameObjectManager::load_scene(std::string fileName, std::string path)
+void GameObjectManager::load_scene(std::string fileName, std::string path, bool printReadValues)
 {
 	mDoc->LoadFile((path + fileName).c_str());
 	if (mDoc->Error())
@@ -55,24 +55,27 @@ void GameObjectManager::load_scene(std::string fileName, std::string path)
 		{
 			tinyxml2::XMLElement* firstNode = nodesElement->FirstChildElement();
 			if(firstNode != NULL)
-				parse_xml_nodes(firstNode, fileName, path);
+				parse_xml_nodes(firstNode, fileName, path, printReadValues);
 		}
 	}
 }
 
-void GameObjectManager::parse_xml_nodes(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent)
+void GameObjectManager::parse_xml_nodes(tinyxml2::XMLElement* element, std::string groupName, std::string path, bool printReadValues, GameObject* parent)
 {
 	std::string nodeVal = element->Value();
-	LOG_MANAGER->log_message("Read in XML Element: " + nodeVal);
+	
+	if(printReadValues)
+		LOG_MANAGER->log_message("Read in XML Element: " + nodeVal);
 	if (nodeVal == "node")
 	{
 		std::string par = parent != nullptr ? parent->get_name() : "NULL";
 		std::string name = element->Attribute("name");
-		LOG_MANAGER->log_message("Creating " + name + " Parent is: " + par);
+		if(printReadValues)
+			LOG_MANAGER->log_message("Creating " + name + " Parent is: " + par);
 		GameObject* newObject = create_game_object(groupName, name, parent);
 		tinyxml2::XMLElement* firstChild = element->FirstChildElement();
 		if (firstChild != NULL)
-			parse_xml_gameobject(firstChild, groupName, path, newObject);
+			parse_xml_gameobject(firstChild, groupName, path, printReadValues, newObject);
 	}
 	else if (nodeVal == "externals")
 	{
@@ -80,19 +83,19 @@ void GameObjectManager::parse_xml_nodes(tinyxml2::XMLElement* element, std::stri
 
 		tinyxml2::XMLElement* firstElement = element->FirstChildElement();
 		if (firstElement != NULL)
-			parse_xml_external(firstElement, externType, path);
+			parse_xml_external(firstElement, externType, path, printReadValues);
 	}
 	else if (nodeVal == "environment")
-		parse_xml_environment(element);
+		parse_xml_environment(element, printReadValues);
 	else if (parent != NULL)
 	{
 		tinyxml2::XMLElement* firstElement = element->FirstChildElement();
 		if (firstElement != NULL)
-			parse_xml_nodes(firstElement, groupName, path, parent);
+			parse_xml_nodes(firstElement, groupName, path, printReadValues, parent);
 	}
 	tinyxml2::XMLElement* nextSibling = element->NextSiblingElement();
 	if (nextSibling != NULL)
-		parse_xml_nodes(nextSibling, groupName, path, parent);
+		parse_xml_nodes(nextSibling, groupName, path, printReadValues, parent);
 }
 
 Ogre::ColourValue GameObjectManager::parse_xml_color_data(tinyxml2::XMLElement* element)
@@ -127,7 +130,7 @@ Ogre::Quaternion GameObjectManager::parse_xml_quaternion_data(tinyxml2::XMLEleme
 	return newQuat;
 }
 
-void GameObjectManager::parse_xml_external(tinyxml2::XMLElement* element, std::string resourceType, std::string path)
+void GameObjectManager::parse_xml_external(tinyxml2::XMLElement* element, std::string resourceType, std::string path, bool printReadValues)
 {
 	mExternals[resourceType].push_back({ element->Attribute("name"), path });
 	if (resourceType == "material")
@@ -135,10 +138,10 @@ void GameObjectManager::parse_xml_external(tinyxml2::XMLElement* element, std::s
 
 	tinyxml2::XMLElement* nextSibling = element->NextSiblingElement();
 	if (nextSibling != NULL)
-		parse_xml_external(nextSibling, resourceType, path);
+		parse_xml_external(nextSibling, resourceType, path, printReadValues);
 }
 
-void GameObjectManager::parse_xml_environment(tinyxml2::XMLElement* element)
+void GameObjectManager::parse_xml_environment(tinyxml2::XMLElement* element, bool printReadValues)
 {
 	std::string nodeVal = element->Value();
 	if (nodeVal == "colourAmbient")
@@ -148,28 +151,29 @@ void GameObjectManager::parse_xml_environment(tinyxml2::XMLElement* element)
 
 	tinyxml2::XMLElement* nextSibling = element->NextSiblingElement();
 	if (nextSibling != NULL)
-		parse_xml_environment(nextSibling);
+		parse_xml_environment(nextSibling, printReadValues);
 }
 
-void GameObjectManager::parse_xml_gameobject(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent)
+void GameObjectManager::parse_xml_gameobject(tinyxml2::XMLElement* element, std::string groupName, std::string path, bool printReadValues, GameObject* parent)
 {
 	std::string nodeVal = element->Value();
-	LOG_MANAGER->log_message("Read in objectProperty: " + nodeVal);
+	if(printReadValues)
+		LOG_MANAGER->log_message("Read in objectProperty: " + nodeVal);
 
 	// Object Type
 	if (nodeVal == "node")
-		parse_xml_nodes(element, groupName, path, parent);
+		parse_xml_nodes(element, groupName, path, printReadValues, parent);
 	else if (nodeVal == "entity")
-		parse_xml_mesh(element, groupName, path, parent);
+		parse_xml_mesh(element, groupName, path, printReadValues, parent);
 	else if (nodeVal == "camera")
-		parse_xml_camera(element, groupName, path, parent);
+		parse_xml_camera(element, groupName, path, printReadValues, parent);
 	else if (nodeVal == "light")
-		parse_xml_light(element, groupName, path, parent);
+		parse_xml_light(element, groupName, path, printReadValues, parent);
 	else if (nodeVal == "userData")
 	{
 		tinyxml2::XMLElement* propertyElement = element->FirstChildElement();
 		if (propertyElement != NULL)
-			parse_xml_gameobject(propertyElement, groupName, path, parent);
+			parse_xml_gameobject(propertyElement, groupName, path, printReadValues, parent);
 	}
 	else if (nodeVal == "property")
 	{
@@ -191,10 +195,10 @@ void GameObjectManager::parse_xml_gameobject(tinyxml2::XMLElement* element, std:
 	
 	tinyxml2::XMLElement* nextSibling = element->NextSiblingElement();
 	if (nextSibling != NULL)
-		parse_xml_gameobject(nextSibling, groupName, path, parent);
+		parse_xml_gameobject(nextSibling, groupName, path, printReadValues, parent);
 }
 
-void GameObjectManager::parse_xml_mesh(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent)
+void GameObjectManager::parse_xml_mesh(tinyxml2::XMLElement* element, std::string groupName, std::string path, bool printReadValues, GameObject* parent)
 {
 	std::string name = element->Attribute("name");
 	MeshComponent* mesh = parent->create_mesh(name.empty() ? parent->get_name() : name, std::string(element->Attribute("meshFile")));
@@ -202,28 +206,29 @@ void GameObjectManager::parse_xml_mesh(tinyxml2::XMLElement* element, std::strin
 	// Handle check for userData
 	tinyxml2::XMLElement* firstElement = element->FirstChildElement();
 	if (firstElement != NULL)
-		parse_xml_mesh_data(firstElement, groupName, path, mesh);
+		parse_xml_mesh_data(firstElement, groupName, path, printReadValues, mesh);
 }
 
-void GameObjectManager::parse_xml_mesh_data(tinyxml2::XMLElement* element, std::string groupName, std::string path, MeshComponent* parent)
+void GameObjectManager::parse_xml_mesh_data(tinyxml2::XMLElement* element, std::string groupName, std::string path, bool printReadValues, MeshComponent* parent)
 {
 	std::string nodeVal = element->Value();
-	LOG_MANAGER->log_message("Read in meshProperty: " + nodeVal);
+	if(printReadValues)
+		LOG_MANAGER->log_message("Read in meshProperty: " + nodeVal);
 
 	// Mesh Object Data
 	if (nodeVal == "userData")
 	{
 		tinyxml2::XMLElement* firstElement = element->FirstChildElement();
 		if (firstElement != NULL)
-			parse_xml_properties(firstElement, groupName, path, parent);
+			parse_xml_properties(firstElement, groupName, path, printReadValues, parent);
 	}
 
 	tinyxml2::XMLElement* nextSibling = element->NextSiblingElement();
 	if (nextSibling != NULL)
-		parse_xml_mesh_data(nextSibling, groupName, path, parent);
+		parse_xml_mesh_data(nextSibling, groupName, path, printReadValues, parent);
 }
 
-void GameObjectManager::parse_xml_camera(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent)
+void GameObjectManager::parse_xml_camera(tinyxml2::XMLElement* element, std::string groupName, std::string path, bool printReadValues, GameObject* parent)
 {
 	std::string name = element->Attribute("name");
 	CameraComponent* camera = parent->create_camera(name.empty() ? parent->get_name() : name);
@@ -234,13 +239,14 @@ void GameObjectManager::parse_xml_camera(tinyxml2::XMLElement* element, std::str
 
 	tinyxml2::XMLElement* firstElement = element->FirstChildElement();
 	if (firstElement != NULL)
-		parse_xml_camera_data(firstElement, groupName, path, camera);
+		parse_xml_camera_data(firstElement, groupName, path, printReadValues, camera);
 }
 
-void GameObjectManager::parse_xml_camera_data(tinyxml2::XMLElement* element, std::string groupName, std::string path, CameraComponent* parent)
+void GameObjectManager::parse_xml_camera_data(tinyxml2::XMLElement* element, std::string groupName, std::string path, bool printReadValues, CameraComponent* parent)
 {
 	std::string nodeVal = element->Value();
-	LOG_MANAGER->log_message("Read in cameraProperty: " + nodeVal);
+	if(printReadValues)
+		LOG_MANAGER->log_message("Read in cameraProperty: " + nodeVal);
 
 	// Camera Object Data
 	if (nodeVal == "clipping")
@@ -248,10 +254,10 @@ void GameObjectManager::parse_xml_camera_data(tinyxml2::XMLElement* element, std
 
 	tinyxml2::XMLElement* nextSibling = element->NextSiblingElement();
 	if (nextSibling != NULL)
-		parse_xml_camera_data(nextSibling, groupName, path, parent);
+		parse_xml_camera_data(nextSibling, groupName, path, printReadValues, parent);
 }
 
-void GameObjectManager::parse_xml_light(tinyxml2::XMLElement* element, std::string groupName, std::string path, GameObject* parent)
+void GameObjectManager::parse_xml_light(tinyxml2::XMLElement* element, std::string groupName, std::string path, bool printReadValues, GameObject* parent)
 {
 	std::string lightType = element->Attribute("type");
 	OgreEngine::LightType type;
@@ -267,13 +273,14 @@ void GameObjectManager::parse_xml_light(tinyxml2::XMLElement* element, std::stri
 
 	tinyxml2::XMLElement* firstElement = element->FirstChildElement();
 	if (firstElement != NULL)
-		parse_xml_light_data(firstElement, groupName, path, light);
+		parse_xml_light_data(firstElement, groupName, path, printReadValues, light);
 }
 
-void GameObjectManager::parse_xml_light_data(tinyxml2::XMLElement* element, std::string groupName, std::string path, LightComponent* parent)
+void GameObjectManager::parse_xml_light_data(tinyxml2::XMLElement* element, std::string groupName, std::string path, bool printReadValues, LightComponent* parent)
 {
 	std::string nodeVal = element->Value();
-	LOG_MANAGER->log_message("Read in lightProperty: " + nodeVal);
+	if(printReadValues)
+		LOG_MANAGER->log_message("Read in lightProperty: " + nodeVal);
 
 	// Light Object data
 	if (nodeVal == "colorDiffuse")
@@ -285,10 +292,10 @@ void GameObjectManager::parse_xml_light_data(tinyxml2::XMLElement* element, std:
 
 	tinyxml2::XMLElement* nextSibling = element->NextSiblingElement();
 	if (nextSibling != NULL)
-		parse_xml_light_data(nextSibling, groupName, path, parent);
+		parse_xml_light_data(nextSibling, groupName, path, printReadValues, parent);
 }
 
-void GameObjectManager::parse_xml_properties(tinyxml2::XMLElement* element, std::string groupName, std::string path, Component* parent)
+void GameObjectManager::parse_xml_properties(tinyxml2::XMLElement* element, std::string groupName, std::string path, bool printReadValues, Component* parent)
 {
 	std::string nodeVal = element->Attribute("name");
 	std::string type = element->Attribute("type");
@@ -307,7 +314,7 @@ void GameObjectManager::parse_xml_properties(tinyxml2::XMLElement* element, std:
 
 	tinyxml2::XMLElement* nextSibling = element->NextSiblingElement();
 	if (nextSibling != NULL)
-		parse_xml_properties(nextSibling, groupName, path, parent);
+		parse_xml_properties(nextSibling, groupName, path, printReadValues, parent);
 }
 
 void GameObjectManager::set_game_object_tag(int newTag, GameObject* object)
@@ -586,7 +593,7 @@ void GameObjectManager::set_default_scene()
 
 	///////////////////////////////////////////////////////////////////////////////////////////// Add Camera and ViewPort
 	// Create Viewport
-	Ogre::Viewport* mVp = APPLICATION->getRenderWindow()->addViewport(nullptr);
+	Ogre::Viewport* mVp = APPLICATION->getRenderWindow()->getViewport(0);
 	mVp->setBackgroundColour(Ogre::ColourValue(0, 0, 0));
 
 	// Create the camera

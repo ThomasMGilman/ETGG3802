@@ -24,7 +24,6 @@ namespace OgreEngine {
 		virtual void shutdown(void) override
 		{
 			// Delete all of the GameObjects
-			delete(mGOM);
 			OgreBites::ApplicationContext::shutdown();
 		};
 
@@ -46,7 +45,6 @@ namespace OgreEngine {
 		std::unordered_set<int> mKeysDown;
 		std::stringstream mStringStream;
 
-		OgreEngine::GameObjectManager* mGOM;
 		LogManager* mLogger;
 	};
 }
