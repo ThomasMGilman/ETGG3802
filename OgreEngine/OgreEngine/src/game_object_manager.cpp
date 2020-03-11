@@ -1,3 +1,4 @@
+#include <stdafx.h>
 #include <game_object_manager.h>
 #include <log_manager.h>
 #include <application.h>

@@ -1,3 +1,4 @@
+#include <stdafx.h>
 #include <component_mesh.h>
 #include <game_object.h>
 #include <application.h>

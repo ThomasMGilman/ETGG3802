@@ -1,15 +1,7 @@
 #pragma once
 
-#include <time.h>
-#include <stack>
+#include <stdafx.h>
 #include <singleton.h>
-#include "OgreOverlay.h"
-#include "OgreOverlayManager.h"
-#include "OgreOverlayContainer.h"
-#include "OgreOverlaySystem.h"
-#include "OgreTextAreaOverlayElement.h"
-#include "OgreFont.h"
-#include "OgreFontManager.h"
 
 #define LOG_MANAGER LogManager::getSingletonPtr()
 #define CHAR_HEIGHT 16

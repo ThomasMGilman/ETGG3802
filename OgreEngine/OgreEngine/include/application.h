@@ -1,10 +1,7 @@
 #pragma once
 
-#include "Ogre.h"
-#include "OgreApplicationContext.h"
+#include <stdafx.h>
 #include "log_manager.h"
-#include <unordered_set>
-#include <sstream>
 #include <Singleton.h>
 
 #define APPLICATION Application::getSingletonPtr()

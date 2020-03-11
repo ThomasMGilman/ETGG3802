@@ -1,3 +1,4 @@
+#include <stdafx.h>
 #include <component_light.h>
 #include <game_object.h>
 #include <application.h>

@@ -45,6 +45,15 @@
     <ClCompile Include="src\script_functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\script_game_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\script_game_object_methods.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\application.h">
@@ -78,6 +87,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\script_functions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\script_game_object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\script_game_object_methods.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,10 +1,8 @@
+#include <stdafx.h>
 #include <script_functions.h>
 #include <log_manager.h>
 #include <game_object_manager.h>
-#include <iostream>
-#include <sstream>
-#include <regex>
-#include <list>
+
 
 float OgreEngine::get_float_from_pytuple(PyObject* tuple, int index)
 {

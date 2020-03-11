@@ -1,5 +1,5 @@
 #pragma once
-
+#include <stdafx.h>
 #include <Ogre.h>
 #include <component_light.h>
 #include <component_camera.h>

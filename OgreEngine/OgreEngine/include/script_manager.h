@@ -2,7 +2,7 @@
 
 #ifndef _SCRIPT_MANAGER_H_
 #define _SCRIPT_MANAGER_H_
-
+#include <stdafx.h>
 #include <singleton.h>
 
 #define SCRIPT_MANAGER ScriptManager::getSingletonPtr()

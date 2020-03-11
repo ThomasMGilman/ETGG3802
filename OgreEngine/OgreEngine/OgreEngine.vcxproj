@@ -20,7 +20,13 @@
     <ClCompile Include="src\log_manager.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\script_functions.cpp" />
+    <ClCompile Include="src\script_game_object.cpp" />
+    <ClCompile Include="src\script_game_object_methods.cpp" />
     <ClCompile Include="src\script_manager.cpp" />
+    <ClCompile Include="src\stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\application.h" />
@@ -32,8 +38,11 @@
     <ClInclude Include="include\game_object_manager.h" />
     <ClInclude Include="include\log_manager.h" />
     <ClInclude Include="include\script_functions.h" />
+    <ClInclude Include="include\script_game_object.h" />
+    <ClInclude Include="include\script_game_object_methods.h" />
     <ClInclude Include="include\script_manager.h" />
     <ClInclude Include="include\singleton.h" />
+    <ClInclude Include="include\stdafx.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -88,6 +97,7 @@
       <AdditionalIncludeDirectories>$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\RTShaderSystem;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\Overlay;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\Bites;$(ProjectDir)dependencies\tinyxml2\include;$(ProjectDir)dependencies\python-3.8.1-x64\include;$(ProjectDir)dependencies\python-3.8.1-x64\include\cpython;$(ProjectDir)dependencies\python-3.8.1-x64\include\internal;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -105,6 +115,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\RTShaderSystem;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\Overlay;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\Bites;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE;$(ProjectDir)dependencies\tinyxml2\include;$(ProjectDir)dependencies\python-3.8.1-x64\include;$(ProjectDir)dependencies\python-3.8.1-x64\include\cpython;$(ProjectDir)dependencies\python-3.8.1-x64\include\internal;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

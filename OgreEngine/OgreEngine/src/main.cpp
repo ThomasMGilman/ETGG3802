@@ -1,5 +1,6 @@
+#include <stdafx.h>
 #include "application.h"
-#include <variant>
+
 
 using namespace OgreEngine;
 

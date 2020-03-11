@@ -1,6 +1,5 @@
 #pragma once
-#include <python.h>
-#include <Ogre.h>
+#include <stdafx.h>
 
 namespace OgreEngine
 {

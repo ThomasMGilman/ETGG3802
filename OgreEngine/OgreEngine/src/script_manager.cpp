@@ -1,3 +1,4 @@
+#include <stdafx.h>
 #include <script_manager.h>
 #include <script_functions.h>
 #include <log_manager.h>

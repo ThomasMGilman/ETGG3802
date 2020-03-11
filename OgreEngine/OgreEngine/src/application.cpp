@@ -1,3 +1,4 @@
+#include <stdafx.h>
 #include <application.h>
 #include <game_object_manager.h>
 #include <script_manager.h>
@@ -40,8 +41,8 @@ void Application::setup(void)
 
 	//Initialize GameObjectManager
 	new GameObjectManager();
-	//GAME_OBJ_MANAGER->load_scene("main_scene.scene", "../Media/invader_media/", false);
-	GAME_OBJ_MANAGER->set_default_scene();
+	GAME_OBJ_MANAGER->load_scene("main_scene.scene", "../Media/invader_media/", false);
+	//GAME_OBJ_MANAGER->set_default_scene();
 	
 	new ScriptManager();
 	SCRIPT_MANAGER->run_script("../Media/scripts/embedding_test_script.py");

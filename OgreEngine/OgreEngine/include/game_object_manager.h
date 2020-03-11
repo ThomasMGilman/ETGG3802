@@ -3,11 +3,9 @@
 #ifndef _GAME_OBJECT_MANAGER_H_
 #define _GAME_OBJECT_MANAGER_H_
 
+#include <stdafx.h>
 #include <game_object.h>
 #include <singleton.h>
-#include <Ogre.h>
-#include <tinyxml2.h>
-#include <map>
 
 #define GAME_OBJ_MANAGER GameObjectManager::getSingletonPtr()
 

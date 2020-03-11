@@ -1,5 +1,5 @@
+#include <stdafx.h>
 #include "log_manager.h"
-#include <vector>
 
 using namespace OgreEngine;
 

@@ -1,6 +1,6 @@
 #pragma once
+#include <stdafx.h>
 #include <component.h>
-#include <Ogre.h>
 
 namespace OgreEngine
 {

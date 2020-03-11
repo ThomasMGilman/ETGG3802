@@ -7,3 +7,6 @@ zips/
 *.zip
 *.7z
 *.rar
+
+#ignore precompilled headers
+*.pch
