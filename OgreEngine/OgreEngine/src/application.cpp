@@ -42,6 +42,7 @@ void Application::setup(void)
 	//Initialize GameObjectManager
 	new GameObjectManager();
 	GAME_OBJ_MANAGER->load_scene("main_scene.scene", "../Media/invader_media/", false);
+
 	//GAME_OBJ_MANAGER->set_default_scene();
 	
 	new ScriptManager();

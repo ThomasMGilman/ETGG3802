@@ -1,8 +1,5 @@
-3/11/2020@9:42:39am Read in Scene by: JasonW
-3/11/2020@9:42:39am this will just go to the log file
-3/11/2020@9:42:39am a test visual / file log message
-3/11/2020@9:42:39am random color message
-3/11/2020@9:42:39am Successfully loaded script: ../Media/scripts/embedding_test_script.py
-3/11/2020@9:42:45am Key Pressed = 13
-3/11/2020@9:42:46am Key Pressed = 113
-3/11/2020@9:42:47am Key Pressed = 27
+3/15/2020@11:10:44pm Read in Scene by: JasonW
+3/15/2020@11:10:45pm this will just go to the log file
+3/15/2020@11:10:45pm a test visual / file log message
+3/15/2020@11:10:45pm random color message
+3/15/2020@11:10:45pm Successfully loaded script: ../Media/scripts/embedding_test_script.py
