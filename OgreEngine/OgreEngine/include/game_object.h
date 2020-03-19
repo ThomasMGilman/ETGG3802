@@ -23,6 +23,9 @@ namespace OgreEngine
 
 		// ***** ATTRIBUTES *****
 	protected:
+		/// The Script class associated with this object; Null if not script aware
+		PyObject* mScriptTwin = nullptr;
+
 		/// The name of this object 
 		std::string mName;
 
@@ -160,6 +163,13 @@ namespace OgreEngine
 		/// Gets the group name (as a string) of this game object in the GOM
 		int get_tag() { return mTag; }
 
+		// ***** SCRIPT METHODS *****
+
+		/// simple setter for gameObject
+		void set_script_twin(PyObject* twin) { mScriptTwin = twin; }
+
+		/// Calls the method passed and runs it as long as the args_tuple contains a valid number of arguments
+		void run_method(std::string meth_name, PyObject* args_tuple);
 
 		// ***** OTHER METHODS *****
 	public:

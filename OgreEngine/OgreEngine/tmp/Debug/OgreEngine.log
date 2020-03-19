@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+﻿  script_game_object.cpp
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\include\component_camera.h(50,130): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\include\component_camera.h(50,108): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  script_game_object_methods.cpp
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\include\component_camera.h(50,130): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\include\component_camera.h(50,108): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_game_object_methods.cpp(28,18): warning C4244: 'initializing': conversion from 'Py_ssize_t' to 'int', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_game_object_methods.cpp(38,48): error C2440: 'initializing': cannot convert from 'PyObject *(__cdecl *)(PyTypeObject *,PyObject *)' to 'PyCFunction'
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_game_object_methods.cpp(38,48): message : None of the functions with this name in scope match the target type
+  script_manager.cpp
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\include\component_camera.h(50,130): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\include\component_camera.h(50,108): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_manager.cpp(12,43): warning C4356: 'OgreEngine::Singleton<OgreEngine::ScriptManager>::msSingleton': static data member cannot be initialized via derived class
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_manager.cpp(56,11): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+  Generating Code...
+=======
 ﻿  stdafx.cpp
 D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\dependencies\ogre1.12.2_vc2019_x64\include\OGRE\OgreAxisAlignedBox.h(66,25): warning C4251: 'Ogre::AxisAlignedBox::mMinimum': class 'Ogre::Vector<3,Ogre::Real>' needs to have dll-interface to be used by clients of class 'Ogre::AxisAlignedBox'
 D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\dependencies\ogre1.12.2_vc2019_x64\include\OGRE\OgrePrerequisites.h(254): message : see declaration of 'Ogre::Vector<3,Ogre::Real>'
@@ -526,3 +543,4 @@ D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngin
   Generating Code...
      Creating library D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\bin\Debug\OgreEngine.lib and object D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\bin\Debug\OgreEngine.exp
   OgreEngine.vcxproj -> D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\bin\Debug\OgreEngine.exe
+>>>>>>> 3ef36fb9dba08b655cf1069a2cc148e1d83f91f3

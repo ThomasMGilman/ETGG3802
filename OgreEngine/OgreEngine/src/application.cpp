@@ -46,7 +46,7 @@ void Application::setup(void)
 	//GAME_OBJ_MANAGER->set_default_scene();
 	
 	new ScriptManager();
-	SCRIPT_MANAGER->run_script("../Media/scripts/embedding_test_script.py");
+	SCRIPT_MANAGER->run_script("../Media/scripts/test_script.py");
 }
 
 bool Application::frameStarted(const Ogre::FrameEvent& e)

@@ -19,5 +19,9 @@ namespace OgreEngine
 		/// Called when python needs to allocate memory for a new python game object.  Currently doesn't 
 		/// do much, for the same reason as GameObject_init
 		PyObject* GameObject_new(PyTypeObject* type, PyObject* args, PyObject* kwds);
+
+		PyObject* create_game_object(PyObject* self, PyObject* args);
+
+		PyObject* create_mesh_component(PyObject* self, PyObject* args);
 	}
 }

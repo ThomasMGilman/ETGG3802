@@ -49,6 +49,21 @@ void GameObject::set_parent(GameObject* parent)
 	parent->get_scene_node()->addChild(mSceneNode);
 }
 
+void OgreEngine::GameObject::run_method(std::string meth_name, PyObject* args_tuple)
+{
+	if (mScriptTwin == nullptr)
+		throw new std::exception("PyObject* mScriptTwin is NULL!!! Trying to call method on gameobject that does not have an associated python script attached to it!!!");
+	if (PyObject_HasAttrString(mScriptTwin, meth_name.c_str()))
+	{
+		PyObject* method = PyObject_GetAttrString(mScriptTwin, meth_name.c_str());
+		PyObject* results = PyObject_CallObject(method, args_tuple);
+		if (results == nullptr)
+			throw new std::exception(("PyObject Method failure!!! The method: " + meth_name + " failed! Check arguments passed and method called!!").c_str());
+	}
+	else
+		throw new std::exception(("Invalid Method called!! mScriptTwin does not contain the method called: " + meth_name).c_str());
+}
+
 void GameObject::delete_all_components()
 {
 	mTypeIter = mComponents.begin();

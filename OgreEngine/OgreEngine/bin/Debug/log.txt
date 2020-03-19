@@ -1,5 +1,28 @@
+<<<<<<< HEAD
+3/19/2020@8:26:21pm Read in Scene by: JasonW
+3/19/2020@8:26:21pm ['GameObject', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'find_string_match_indicies', 'log', 'set_skybox']
+3/19/2020@8:26:21pm GameObject
+3/19/2020@8:26:21pm GameObject's docstring
+3/19/2020@8:26:21pm dir(ogre_module.GameObject)
+3/19/2020@8:26:21pm =====================
+3/19/2020@8:26:21pm    __class__
+3/19/2020@8:26:21pm    __doc__
+3/19/2020@8:26:21pm    __init__
+3/19/2020@8:26:21pm    __init_subclass__
+3/19/2020@8:26:21pm    __new__
+3/19/2020@8:26:21pm    __sizeof__
+3/19/2020@8:26:21pm    __str__
+3/19/2020@8:26:21pm Traceback (most recent call last):
+
+3/19/2020@8:26:21pm   File "../Media/scripts/test_script.py", line 26, in <module>
+    simple_gobj = ogre_module.create_game_object("test_group", "simple_object", 55)
+
+3/19/2020@8:26:21pm AttributeError: module 'ogre_module' has no attribute 'create_game_object'
+
+=======
 3/15/2020@11:10:44pm Read in Scene by: JasonW
 3/15/2020@11:10:45pm this will just go to the log file
 3/15/2020@11:10:45pm a test visual / file log message
 3/15/2020@11:10:45pm random color message
 3/15/2020@11:10:45pm Successfully loaded script: ../Media/scripts/embedding_test_script.py
+>>>>>>> 3ef36fb9dba08b655cf1069a2cc148e1d83f91f3

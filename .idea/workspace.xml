@@ -3,26 +3,37 @@
   <component name="ChangeListManager">
     <list default="true" id="ed0c1221-3aa6-419b-b84d-c1f89894cc62" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/ETGG 3802_01 Realtime Interactive Prog 2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ETGG 3802_01 Realtime Interactive Prog 2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Debug/OgreEngine.exe" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Debug/OgreEngine.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Debug/OgreEngine.exp" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Debug/OgreEngine.exp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Debug/OgreEngine.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Debug/OgreEngine.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Debug/OgreEngine.lib" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Debug/OgreEngine.lib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Debug/OgreEngine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Debug/OgreEngine.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Debug/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Debug/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/include/application.h" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/include/application.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/include/game_object_manager.h" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/include/game_object_manager.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/include/script_functions.h" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/include/script_functions.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/include/script_manager.h" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/include/script_manager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Media/invader_media/invader_media/main_scene.material" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Media/invader_media/invader_media/main_scene.material" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Media/invader_media/invader_media/main_scene.scene" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Media/invader_media/invader_media/main_scene.scene" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Media/invader_media/main_scene.material" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Media/invader_media/main_scene.material" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Media/invader_media/main_scene.scene" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Media/invader_media/main_scene.scene" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Media/my_media/test.material" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Media/my_media/test.material" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Media/my_media/test.scene" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Media/my_media/test.scene" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Media/scripts/test_script.py" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/bin/Media/scripts/test_script.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/include/game_object.h" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/include/game_object.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/include/script_game_object_methods.h" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/include/script_game_object_methods.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/src/application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/src/application.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/src/game_object_manager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/src/game_object_manager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/src/log_manager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/src/log_manager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/src/script_functions.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/src/script_functions.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/src/game_object.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/src/game_object.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/src/script_game_object.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/src/script_game_object.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/src/script_game_object_methods.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/src/script_game_object_methods.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/src/script_manager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/src/script_manager.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.log" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/CL.command.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/CL.read.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/OgreEngine.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/OgreEngine.lastbuildstate" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/OgreEngine.write.1u.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/OgreEngine.write.1u.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/link.command.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/OgreEngine.tlog/link.write.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/application.obj" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/application.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/component_camera.obj" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/component_camera.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/component_light.obj" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/component_light.obj" afterDir="false" />
@@ -33,6 +44,7 @@
       <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/main.obj" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/main.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/script_functions.obj" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/script_functions.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/script_manager.obj" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/script_manager.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/stdafx.obj" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/stdafx.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/vc142.idb" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/vc142.idb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/OgreEngine/OgreEngine/tmp/Debug/vc142.pdb" afterDir="false" />
     </list>
@@ -96,29 +108,39 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1092" height="208" key="GridCell.Tab.0.bottom" timestamp="1583772366609">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="2385" y="52" key="FileChooserDialogImpl" timestamp="1584656009368">
+      <screen x="1920" y="-543" width="2560" height="1400" />
+    </state>
+    <state x="2385" y="52" key="FileChooserDialogImpl/0.0.1920.1040/1920.-543.2560.1400@1920.-543.2560.1400" timestamp="1584656009368" />
+    <state width="930" height="281" key="GridCell.Tab.0.bottom" timestamp="1584657689069">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1092" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1583772366609" />
-    <state width="1092" height="208" key="GridCell.Tab.0.center" timestamp="1583772366609">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="930" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-543.2560.1400@0.0.1920.1040" timestamp="1584657689069" />
+    <state width="930" height="281" key="GridCell.Tab.0.center" timestamp="1584657689069">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1092" height="208" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1583772366609" />
-    <state width="1092" height="208" key="GridCell.Tab.0.left" timestamp="1583772366609">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="930" height="281" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-543.2560.1400@0.0.1920.1040" timestamp="1584657689069" />
+    <state width="930" height="281" key="GridCell.Tab.0.left" timestamp="1584657689069">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1092" height="208" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1583772366609" />
-    <state width="1092" height="208" key="GridCell.Tab.0.right" timestamp="1583772366609">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="930" height="281" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-543.2560.1400@0.0.1920.1040" timestamp="1584657689069" />
+    <state width="930" height="281" key="GridCell.Tab.0.right" timestamp="1584657689069">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1092" height="208" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1583772366609" />
-    <state x="555" y="55" key="SettingsEditor" timestamp="1583756805484">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="930" height="281" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-543.2560.1400@0.0.1920.1040" timestamp="1584657689069" />
+    <state x="2845" y="-450" key="SettingsEditor" timestamp="1584656022170">
+      <screen x="1920" y="-543" width="2560" height="1400" />
     </state>
     <state x="555" y="55" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1583756805484" />
-    <state x="977" y="525" key="com.intellij.ide.util.TipDialog" timestamp="1581388163628">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="2845" y="-450" key="SettingsEditor/0.0.1920.1040/1920.-543.2560.1400@1920.-543.2560.1400" timestamp="1584656022170" />
+    <state x="733" y="390" key="com.intellij.ide.util.TipDialog" timestamp="1584655937486">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="733" y="390" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.-543.2560.1400@0.0.1920.1040" timestamp="1584655937486" />
     <state x="977" y="525" key="com.intellij.ide.util.TipDialog/3840.560.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1581388163628" />
   </component>
 </project>
