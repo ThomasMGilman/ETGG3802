@@ -16,7 +16,7 @@ PyTypeObject GameObjectType =
 {
     PyVarObject_HEAD_INIT(NULL, 0)
 
-    "ssuge.GameObject",                                     // tp_name: For printing, in format "<module>.<name>" 
+    "ogre_module.GameObject",                               // tp_name: For printing, in format "<module>.<name>" 
     sizeof(OgreEngine::script::GameObject),                 // tp_size: size (in bytes) of our Object
     0,                                                      // tp_itemsize
 

@@ -14,6 +14,7 @@ ScriptManager* ScriptManager::msSingleton = nullptr;
 PyMethodDef my_functions[] = {
 		{"find_string_match_indicies", find_string_match_indicies, METH_VARARGS, "Takes a two argument tuple of strings.\n\tReturns the indicies of all matches of the 2nd string within the 1st string.\n\tIf no matches, returns None"},
 		{"log", log, METH_VARARGS, "Takes a Tuple containing the message to log, optional color value, and optional time to stay on screen for."},
+		{"create_game_object", create_python_game_object, METH_VARARGS, "Creates a new object given a group name, object name, tag, and other parameters."},
 		{"set_skybox", set_skybox, METH_VARARGS, "Takes a material name to set as the background skybox texture and an optinal distance from the viewer."},
 		{NULL, NULL, 0, NULL}
 };
@@ -31,7 +32,13 @@ PyMODINIT_FUNC PyInit_ogre_module(void)
 	PyObject* m = PyModule_Create(&ogre_module);
 	PyType_Ready((PyTypeObject*)&GameObjectType);
 	Py_IncRef((PyObject*)&GameObjectType);
-	PyModule_AddObject(m, "GameObject", (PyObject*)&GameObjectType);
+	if (PyModule_AddObject(m, "GameObject", (PyObject*)&GameObjectType) < 0)
+	{
+		LOG_MANAGER->log_message("Failed to add GameObject Functions to Ogre_Module for Python use!!", ERROR_COLOUR, ERROR_DISPLAY_TIME);
+		Py_DECREF((PyObject*)&GameObjectType);
+		Py_DECREF(m);
+		return NULL;
+	}
 	return m == NULL ? NULL : m;
 }
 
@@ -39,7 +46,6 @@ ScriptManager::ScriptManager()
 {
 	PyImport_AppendInittab("ogre_module", PyInit_ogre_module);
 	Py_Initialize();
-	
 }
 
 ScriptManager::~ScriptManager()
@@ -75,7 +81,7 @@ void OgreEngine::ScriptManager::run_script(std::string fileName)
 		delete(buffer);
 	}
 	else
-		LOG_MANAGER->log_message("FAILED TO OPEN AND READ SCRIPT IN SCRIPT MANAGER\nScript: " + fileName, ERROR_COLOUR);
+		LOG_MANAGER->log_message("FAILED TO OPEN AND READ SCRIPT IN SCRIPT MANAGER\nScript: " + fileName, ERROR_COLOUR, ERROR_DISPLAY_TIME);
 }
 
 void ScriptManager::handle_error()
@@ -93,7 +99,7 @@ void ScriptManager::handle_error()
 		if (errTraceback == NULL)
 		{
 			PyObject* tmpValStr = PyObject_Str(errVal);
-			LOG_MANAGER->log_message(PyUnicode_AsUTF8(tmpValStr), ERROR_COLOUR, 10.0f);
+			LOG_MANAGER->log_message(PyUnicode_AsUTF8(tmpValStr), ERROR_COLOUR, ERROR_DISPLAY_TIME);
 			Py_DECREF(tmpValStr);
 		}
 		else
@@ -119,22 +125,22 @@ void ScriptManager::handle_error()
 					if (result && PyList_Check(result))
 					{
 						for (int i = 0; i < PyList_Size(result); i++)
-							LOG_MANAGER->log_message(PyUnicode_AsUTF8(PyList_GetItem(result, i)), ERROR_COLOUR, 10.0f);
+							LOG_MANAGER->log_message(PyUnicode_AsUTF8(PyList_GetItem(result, i)), ERROR_COLOUR, ERROR_DISPLAY_TIME);
 					}
 					else
-						LOG_MANAGER->log_message("'format_exception_function' ERROR!! returned NULL from result passed!!!", ERROR_COLOUR, 10.0f);
+						LOG_MANAGER->log_message("'format_exception_function' ERROR!! returned NULL from result passed!!!", ERROR_COLOUR, ERROR_DISPLAY_TIME);
 
 					Py_XDECREF(result);
 					Py_DECREF(args_tuple);
 				}
 				else
-					LOG_MANAGER->log_message("'format_exception_function' ERROR!! could not get format_exception_function!!!", ERROR_COLOUR, 10.0f);
+					LOG_MANAGER->log_message("'format_exception_function' ERROR!! could not get format_exception_function!!!", ERROR_COLOUR, ERROR_DISPLAY_TIME);
 
 				Py_XDECREF(format_exception_func);		// make sure its null before decref'ing
 				Py_DECREF(traceback_mod);
 			}
 			else
-				LOG_MANAGER->log_message("'traceback_module' ERROR!! Did not get traceback module!!!", ERROR_COLOUR, 10.0f);
+				LOG_MANAGER->log_message("'traceback_module' ERROR!! Did not get traceback module!!!", ERROR_COLOUR, ERROR_DISPLAY_TIME);
 		}
 	}
 }

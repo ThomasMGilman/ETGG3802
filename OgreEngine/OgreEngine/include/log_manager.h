@@ -4,10 +4,6 @@
 #include <singleton.h>
 
 #define LOG_MANAGER LogManager::getSingletonPtr()
-#define CHAR_HEIGHT 16
-#define RAND_COLOUR_VAL static_cast<float>(rand()) / static_cast<float>(RAND_MAX)
-#define RAND_COLOUR Ogre::ColourValue(RAND_COLOUR_VAL, RAND_COLOUR_VAL, RAND_COLOUR_VAL)
-#define ERROR_COLOUR Ogre::ColourValue(1, 0, 0)
 
 namespace OgreEngine {
 	class LogManager : public Singleton<LogManager>

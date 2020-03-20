@@ -9,6 +9,11 @@
 // function pointer to one of these in the "big-giant-structure".  If it's a non-special 
 // method (e.g. translate_world), add an entry to the method_def structure at the bottom of this file.
 
+//{"a_new_method", OgreEngine::script::GameObject_???, METH_VARARGS, "its docstring"},
+PyMethodDef GameObject_methods[] = {
+    {"create_mesh_component", OgreEngine::script::create_mesh_component, METH_VARARGS, "Creates a new mesh component attached to the associated self PyObject."},
+    {NULL}  /* Sentinel */
+};
 
 void OgreEngine::script::GameObject_dealloc(OgreEngine::script::GameObject* self)
 {
@@ -23,20 +28,10 @@ int OgreEngine::script::GameObject_init(OgreEngine::script::GameObject* self, Py
 
 PyObject* OgreEngine::script::GameObject_new(PyTypeObject* type, PyObject* args, PyObject* kwds)
 {
-    return (PyObject*)(GameObject*)type->tp_alloc(type, 0);
-}
-
-PyObject* OgreEngine::script::create_game_object(PyObject* self, PyObject* args)
-{
-    return nullptr;
+    return (PyObject*)(OgreEngine::script::GameObject*)type->tp_alloc(type, 0);
 }
 
 PyObject* OgreEngine::script::create_mesh_component(PyObject* self, PyObject* args)
 {
+    return nullptr;
 }
-
-PyMethodDef GameObject_methods[] = {
-    {"create_game_object", OgreEngine::script::create_game_object, METH_VARARGS, "Creates a new object given a group name, object name, tag, and other parameters."},
-    //{"a_new_method", OgreEngine::script::GameObject_???, METH_VARARGS, "its docstring"},
-    {NULL}  /* Sentinel */
-};
