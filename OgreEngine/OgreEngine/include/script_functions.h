@@ -6,7 +6,8 @@ namespace OgreEngine
 	template<typename T>
 	struct package
 	{
-		T* data = nullptr;
+		T data;
+		bool errSet = false;
 		std::string msg = "Good";
 	};
 
