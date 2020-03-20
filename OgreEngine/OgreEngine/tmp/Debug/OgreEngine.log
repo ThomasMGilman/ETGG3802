@@ -1,18 +1,16 @@
 ﻿  script_functions.cpp
-D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\include\component_camera.h(50,130): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\include\component_camera.h(50,108): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(24,27): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\include\component_camera.h(50,130): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\include\component_camera.h(50,108): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(25,27): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(112,36): warning C4244: 'argument': conversion from '__int64' to '_Ty', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(113,36): warning C4244: 'argument': conversion from '__int64' to '_Ty', possible loss of data
           with
           [
               _Ty=int
           ]
-D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(159,21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(181,16): warning C4244: 'initializing': conversion from 'Py_ssize_t' to 'int', possible loss of data
-D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(236,21): warning C4244: 'initializing': conversion from 'Py_ssize_t' to 'int', possible loss of data
-D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(338,93): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  OgreEngine.vcxproj -> D:\SchoolAndProjects\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\bin\Debug\OgreEngine.exe
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(160,21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(190,93): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  OgreEngine.vcxproj -> D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\bin\Debug\OgreEngine.exe

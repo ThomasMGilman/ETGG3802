@@ -1,21 +1,14 @@
-3/20/2020@3:57:48pm Read in Scene by: JasonW
-3/20/2020@3:57:48pm ['GameObject', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'create_game_object', 'find_string_match_indicies', 'log', 'set_skybox']
-3/20/2020@3:57:48pm GameObject
-3/20/2020@3:57:48pm GameObject's docstring
-3/20/2020@3:57:48pm dir(ogre_module.GameObject)
-3/20/2020@3:57:48pm =====================
-3/20/2020@3:57:48pm    __class__
-3/20/2020@3:57:48pm    __doc__
-3/20/2020@3:57:48pm    __init__
-3/20/2020@3:57:48pm    __init_subclass__
-3/20/2020@3:57:48pm    __new__
-3/20/2020@3:57:48pm    __sizeof__
-3/20/2020@3:57:48pm    __str__
-3/20/2020@3:57:48pm    create_mesh_component
-3/20/2020@3:57:48pm Traceback (most recent call last):
-
-3/20/2020@3:57:48pm   File "../Media/scripts/test_script.py", line 26, in <module>
-    simple_gobj = ogre_module.create_game_object("test_group", "simple_object", 55)
-
-3/20/2020@3:57:48pm MemoryError
-
+3/20/2020@5:54:15pm Read in Scene by: JasonW
+3/20/2020@5:54:15pm ['GameObject', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'create_game_object', 'find_string_match_indicies', 'log', 'set_skybox']
+3/20/2020@5:54:15pm GameObject
+3/20/2020@5:54:15pm GameObject's docstring
+3/20/2020@5:54:15pm dir(ogre_module.GameObject)
+3/20/2020@5:54:15pm =====================
+3/20/2020@5:54:15pm    __class__
+3/20/2020@5:54:15pm    __doc__
+3/20/2020@5:54:15pm    __init__
+3/20/2020@5:54:15pm    __init_subclass__
+3/20/2020@5:54:15pm    __new__
+3/20/2020@5:54:15pm    __sizeof__
+3/20/2020@5:54:15pm    __str__
+3/20/2020@5:54:15pm    create_mesh_component

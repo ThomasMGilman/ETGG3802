@@ -2,7 +2,6 @@
 #include <script_manager.h>
 #include <script_functions.h>
 #include <script_game_object.h>
-#include <script_game_object_methods.h>
 #include <log_manager.h>
 
 using namespace OgreEngine;
