@@ -2,30 +2,11 @@
 #include <script_functions.h>
 #include <log_manager.h>
 #include <game_object_manager.h>
+#include <script_manager.h>
 #include <script_game_object_methods.h>
 #include <script_game_object.h>
 
-
-OgreEngine::package<float> OgreEngine::get_float_from_pytuple(PyObject* tuple, int index)
-{
-	OgreEngine::package<float> f;
-	if (!PyNumber_Check(PyTuple_GetItem(tuple, index)))
-	{
-		f.msg = "Item in tuple at index: " + std::to_string(index)+ " is not a number\n\t";
-		return f;
-	}
-	PyObject* num = PyNumber_Float(PyTuple_GetItem(tuple, index));
-	if (num == NULL)
-	{
-		Py_DECREF(num);
-		f.msg = "Could not convert object in tuple at index: " + std::to_string(index) + " to float!!\n\t";
-		f.errSet = true;
-		return f;
-	}
-	f.data = PyFloat_AsDouble(num);
-	Py_DECREF(num);
-	return f;
-}
+extern PyTypeObject GameObjectType;
 
 OgreEngine::package<Ogre::ColourValue> OgreEngine::get_colour_from_pytuple(PyObject* tuple)
 {
@@ -35,9 +16,9 @@ OgreEngine::package<Ogre::ColourValue> OgreEngine::get_colour_from_pytuple(PyObj
 	else
 	{
 		OgreEngine::package<float> r, g, b;
-		r = get_float_from_pytuple(tuple, 0);
-		g = get_float_from_pytuple(tuple, 1);
-		b = get_float_from_pytuple(tuple, 2);
+		r = get_num_from_pytuple<float>(tuple, 0);
+		g = get_num_from_pytuple<float>(tuple, 1);
+		b = get_num_from_pytuple<float>(tuple, 2);
 		if (r.errSet || g.errSet || b.errSet)
 			returnPack.msg = "Got Invalid Paramater in tuple!!!\n\tr: " + r.msg + "\n\tg: " + g.msg + "\n\tb: " + b.msg+"\n\t";
 		if (r.data > 1 || r.data < 0 || g.data > 1 || g.data < 0 || b.data > 1 || b.data < 0)
@@ -57,9 +38,9 @@ OgreEngine::package<Ogre::Vector3> OgreEngine::get_vector3_from_pytuple(PyObject
 	else
 	{
 		OgreEngine::package<float> x, y, z;
-		x = get_float_from_pytuple(tuple, 0);
-		y = get_float_from_pytuple(tuple, 1);
-		z = get_float_from_pytuple(tuple, 2);
+		x = get_num_from_pytuple<float>(tuple, 0);
+		y = get_num_from_pytuple<float>(tuple, 1);
+		z = get_num_from_pytuple<float>(tuple, 2);
 		if (x.errSet || y.errSet || z.errSet)
 		{
 			returnPack.errSet = true;
@@ -79,10 +60,10 @@ OgreEngine::package<Ogre::Quaternion> OgreEngine::get_quaternion_from_pytuple(Py
 	else
 	{
 		OgreEngine::package<float> x, y, z, w;
-		x = get_float_from_pytuple(tuple, 0);
-		y = get_float_from_pytuple(tuple, 1);
-		z = get_float_from_pytuple(tuple, 2);
-		w = get_float_from_pytuple(tuple, 3);
+		x = get_num_from_pytuple<float>(tuple, 0);
+		y = get_num_from_pytuple<float>(tuple, 1);
+		z = get_num_from_pytuple<float>(tuple, 2);
+		w = get_num_from_pytuple<float>(tuple, 3);
 		if (x.errSet || y.errSet || z.errSet || w.errSet)
 		{
 			returnPack.errSet = true;
@@ -92,6 +73,39 @@ OgreEngine::package<Ogre::Quaternion> OgreEngine::get_quaternion_from_pytuple(Py
 			returnPack.data = Ogre::Quaternion(w.data, x.data, y.data, z.data);
 	}
 	return returnPack;
+}
+
+PyObject* OgreEngine::load_script(PyObject* self, PyObject* args)
+{
+	std::string excMsg = (__FILE__);
+	bool excSet = false;
+	if (PyTuple_Check(args) && PyTuple_Size(args) == 1)
+	{
+		if (PyUnicode_Check(PyTuple_GetItem(args, 0)))
+		{
+			std::string file = PyUnicode_AsUTF8(PyTuple_GetItem(args, 0));
+			SCRIPT_MANAGER->run_script(file);
+		}
+		else
+		{
+			excMsg += "\n\tLine: " + (__LINE__);
+			excMsg += " Argument passed is not string!! Need to pass a valid script file to parse!!";
+			excSet = true;
+		}
+	}
+	else
+	{
+		excMsg += "\n\tLine: " + (__LINE__);
+		excMsg += " Argument passed is not tuple, or not size 1!!Need to pass a valid script file to parse!!";
+		excSet = true;
+	}
+	if (excSet)
+	{
+		PyErr_SetString(PyExc_AttributeError, excMsg.c_str());
+		return NULL;
+	}
+	Py_INCREF(Py_None);
+	return Py_None;
 }
 
 PyObject* OgreEngine::find_string_match_indicies(PyObject* self, PyObject* args)
@@ -177,7 +191,116 @@ PyObject* OgreEngine::log(PyObject* self, PyObject* args)
 
 PyObject* OgreEngine::create_python_game_object(PyObject* self, PyObject* args)
 {
-	return script::GameObject_new((PyTypeObject*), args, 0);
+	PyObject* exception = nullptr, * curObjLookingAt, *pythonClassScript = NULL, *newPyObj = NULL, *extraArgs = NULL;
+	std::string errorMsg = (__FILE__);
+	int tupleSize = PyTuple_Size(args);
+	if (tupleSize >= 3)
+	{
+		std::string groupName, objName;
+		int tag;
+		/// Group Name
+		if (!PyUnicode_Check(PyTuple_GetItem(args, 0)))
+		{
+			exception = PyExc_AttributeError;
+			errorMsg += " Line: " + std::to_string(__LINE__) + "Did not pass valid GroupName!! Needs to be a string value for argument 0!!\n\t";
+		}
+		else
+			groupName = PyUnicode_AsUTF8(PyTuple_GetItem(args, 0));
+		/// Object Name
+		if (!PyUnicode_Check(PyTuple_GetItem(args, 1)))
+		{
+			exception = PyExc_AttributeError;
+			errorMsg += "Line: " + std::to_string(__LINE__) + "Did not pass valid ObjectName!! Needs to be a string value for argument 1!!\n\t";
+		}
+		else
+			objName = PyUnicode_AsUTF8(PyTuple_GetItem(args, 1));
+		/// Tag
+		if (!PyLong_Check(PyTuple_GetItem(args, 2)))
+		{
+			exception = PyExc_AttributeError;
+			errorMsg += "Line: " + std::to_string(__LINE__) + "Did not pass a valid Tag!! Needs to be a integer value for argument 2!!\n\t";
+		}
+		else
+			tag = PyLong_AsLong(PyTuple_GetItem(args, 2));
+
+		bool scriptClassSet = false;
+
+		/// Python script class name
+		if (tupleSize >= 4)
+		{
+			curObjLookingAt = PyTuple_GetItem(args, 3);
+			if (!PyUnicode_Check(curObjLookingAt))
+			{
+				exception = PyExc_AttributeError;
+				errorMsg += "Line: " + std::to_string(__LINE__) + "Did not pass a valid class name!! Needs to be the string name of class currently in scope!!\n\t";
+			}
+			else
+			{
+				scriptClassSet = true;
+				pythonClassScript = curObjLookingAt;
+			}
+		}
+		if (tupleSize >= 5) // Any additional arguments
+		{
+			int numArgs = tupleSize - 4;
+			extraArgs = PyTuple_New(numArgs);
+			for (int i = 4; i < tupleSize; i++)
+			{
+				int index = numArgs - (tupleSize - i);
+				PyObject* objToMove = PyTuple_GetItem(args, i);
+				Py_INCREF(objToMove);
+				if (PyTuple_SetItem(extraArgs, index, objToMove) == -1)
+				{
+					exception = PyExc_IndexError;
+					errorMsg += "Line: "+std::to_string(__LINE__)+" Invalid index of tuple!! Trying to place PyObject outside of range of tuple size specified!!\n\t";
+				}
+			}
+		}
+		if (exception == nullptr)
+		{
+			//LOG_MANAGER->log_message("Making OBJ!!",RAND_COLOUR,10.0f);
+			if (!scriptClassSet)
+			{
+				newPyObj = PyObject_Call((PyObject*)&GameObjectType, args, 0);
+				((script::GameObject*)newPyObj)->mTwin = GAME_OBJ_MANAGER->create_game_object(groupName, objName, nullptr, tag);
+			}
+			else
+			{
+				PyObject* globs = PyEval_GetGlobals(); // dictionary of all globals
+				PyObject* pyClass = PyDict_GetItem(globs, pythonClassScript);
+				if (pyClass == NULL)
+				{
+					if (SCRIPT_MANAGER->PyClasses.find(PyUnicode_AsUTF8(pythonClassScript)) != SCRIPT_MANAGER->PyClasses.end())
+						pyClass = SCRIPT_MANAGER->PyClasses.at(PyUnicode_AsUTF8(pythonClassScript));
+				}
+				if (pyClass != NULL)
+				{
+					newPyObj = PyObject_Call(pyClass, args, 0);
+					((script::GameObject*)newPyObj)->mTwin = GAME_OBJ_MANAGER->create_game_object(groupName, objName, nullptr, tag);
+					((script::GameObject*)newPyObj)->mTwin->set_script_twin(newPyObj);
+					if (extraArgs == NULL)
+						extraArgs = PyTuple_New(0);
+					((script::GameObject*)newPyObj)->mTwin->run_method("create", extraArgs);
+				}
+				else
+				{
+					exception = PyExc_AttributeError;
+					errorMsg += "Line: " + std::to_string(__LINE__) + " Invalid class passed!! class is not contained within scope!!";
+				}
+			}	
+		}
+	}
+	else
+	{
+		exception = PyExc_AttributeError;
+		errorMsg += "Got Invalid number of attributes passed!! need to pass a GroupName, ObjectName, and Tag atleast to create a valid gameObject!!";
+	}
+	if (exception != NULL)
+	{
+		PyErr_SetString(exception, errorMsg.c_str());
+		newPyObj = NULL;
+	}
+	return newPyObj;
 }
 
 PyObject* OgreEngine::set_skybox(PyObject* self, PyObject* args)

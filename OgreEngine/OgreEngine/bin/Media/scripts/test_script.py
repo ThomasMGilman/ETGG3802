@@ -24,11 +24,12 @@ for item in dir(ogre_module.GameObject):
 
 # Phase II: Create a non-script aware game object
 simple_gobj = ogre_module.create_game_object("test_group", "simple_object", 55)
-'''
+
 simple_gobj.create_mesh_component("robot.mesh")
 simple_gobj.rotate_world(90, 1, 0, 0)
 simple_gobj.scale(0.03, 0.03, 0.03)
 simple_gobj.translate_world(-2.5, 7, 0)
+
 
 # Phase III testing: Make a GameObject-derived class then make an instance of it
 class TestClass(ogre_module.GameObject):
@@ -59,6 +60,5 @@ print("gobj's name = ''" + gobj.name() + "'")
 print(dir(gobj))
 
 # This should test the other way of gettin a class
-ogre_module.load_script("../media/my_media/another_class.py")
+ogre_module.load_script("../media/scripts/another_class.py")
 another_gobj = ogre_module.create_game_object("test_group", "another_obj", 99, "AnotherClass")
-'''

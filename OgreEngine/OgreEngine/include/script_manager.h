@@ -14,7 +14,7 @@ namespace OgreEngine
 	private:
 	protected:
 	public:
-
+		std::unordered_map<std::string, PyObject*> PyClasses;
 		ScriptManager();
 
 		~ScriptManager();

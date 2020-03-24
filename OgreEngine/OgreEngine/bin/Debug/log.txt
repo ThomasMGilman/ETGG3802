@@ -1,14 +1,25 @@
-3/20/2020@5:54:15pm Read in Scene by: JasonW
-3/20/2020@5:54:15pm ['GameObject', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'create_game_object', 'find_string_match_indicies', 'log', 'set_skybox']
-3/20/2020@5:54:15pm GameObject
-3/20/2020@5:54:15pm GameObject's docstring
-3/20/2020@5:54:15pm dir(ogre_module.GameObject)
-3/20/2020@5:54:15pm =====================
-3/20/2020@5:54:15pm    __class__
-3/20/2020@5:54:15pm    __doc__
-3/20/2020@5:54:15pm    __init__
-3/20/2020@5:54:15pm    __init_subclass__
-3/20/2020@5:54:15pm    __new__
-3/20/2020@5:54:15pm    __sizeof__
-3/20/2020@5:54:15pm    __str__
-3/20/2020@5:54:15pm    create_mesh_component
+3/24/2020@11:4:7pm Read in Scene by: JasonW
+3/24/2020@11:4:7pm ['GameObject', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'create_game_object', 'find_string_match_indicies', 'load_script', 'log', 'set_skybox']
+3/24/2020@11:4:7pm GameObject
+3/24/2020@11:4:7pm GameObject's docstring
+3/24/2020@11:4:7pm dir(ogre_module.GameObject)
+3/24/2020@11:4:7pm =====================
+3/24/2020@11:4:7pm    __class__
+3/24/2020@11:4:7pm    __doc__
+3/24/2020@11:4:7pm    __init__
+3/24/2020@11:4:7pm    __init_subclass__
+3/24/2020@11:4:7pm    __new__
+3/24/2020@11:4:7pm    __sizeof__
+3/24/2020@11:4:7pm    __str__
+3/24/2020@11:4:7pm    create_mesh_component
+3/24/2020@11:4:7pm    name
+3/24/2020@11:4:7pm    rotate_world
+3/24/2020@11:4:7pm    scale
+3/24/2020@11:4:7pm    translate_world
+3/24/2020@11:4:7pm gobj's name = ''test_object'
+3/24/2020@11:4:7pm ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'create', 'create_mesh_component', 'mRate', 'name', 'rotate_world', 'scale', 'translate_world', 'update']
+3/24/2020@11:4:7pm Got Class: AnotherClass
+3/24/2020@11:4:7pm Successfully loaded script: ../media/scripts/another_class.py
+3/24/2020@11:4:7pm I'm an instance of 'AnotherClass'
+3/24/2020@11:4:7pm Got Class: TestClass
+3/24/2020@11:4:7pm Successfully loaded script: ../Media/scripts/test_script.py

@@ -27,6 +27,15 @@ GameObject::~GameObject()
 
 void GameObject::update(float elapsed)
 {
+	if (mScriptTwin != nullptr)
+	{
+		if (PyObject_HasAttrString(mScriptTwin, "update"))
+		{
+			PyObject* elapsedTuple = PyTuple_New(1);
+			PyTuple_SetItem(elapsedTuple, 0, PyFloat_FromDouble(elapsed));
+			run_method("update", elapsedTuple);
+		}
+	}
 	mTypeIter = mComponents.begin();
 	while (mTypeIter != mComponents.end())
 	{
@@ -56,7 +65,7 @@ void OgreEngine::GameObject::run_method(std::string meth_name, PyObject* args_tu
 	if (PyObject_HasAttrString(mScriptTwin, meth_name.c_str()))
 	{
 		PyObject* method = PyObject_GetAttrString(mScriptTwin, meth_name.c_str());
-		PyObject* results = PyObject_CallObject(method, args_tuple);
+		PyObject* results = PyObject_Call(method, args_tuple, 0);
 		if (results == nullptr)
 			throw new std::exception(("PyObject Method failure!!! The method: " + meth_name + " failed! Check arguments passed and method called!!").c_str());
 	}

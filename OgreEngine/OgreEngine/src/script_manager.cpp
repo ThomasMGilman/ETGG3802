@@ -11,6 +11,7 @@ extern PyTypeObject GameObjectType;
 ScriptManager* ScriptManager::msSingleton = nullptr;
 
 PyMethodDef my_functions[] = {
+		{"load_script", load_script, METH_VARARGS, "Takes a string of a filename of type python script to parse and load classes from."},
 		{"find_string_match_indicies", find_string_match_indicies, METH_VARARGS, "Takes a two argument tuple of strings.\n\tReturns the indicies of all matches of the 2nd string within the 1st string.\n\tIf no matches, returns None"},
 		{"log", log, METH_VARARGS, "Takes a Tuple containing the message to log, optional color value, and optional time to stay on screen for."},
 		{"create_game_object", create_python_game_object, METH_VARARGS, "Creates a new object given a group name, object name, tag, and other parameters."},
@@ -71,7 +72,29 @@ void OgreEngine::ScriptManager::run_script(std::string fileName)
 		{
 			PyObject* pyImportExec = PyImport_ExecCodeModule(fileName.c_str(), pyScript);
 			if (pyImportExec)
+			{
+				PyObject* key, * value, * dict = PyModule_GetDict(pyImportExec);
+				Py_ssize_t pos = 0;
+				std::string modName = PyModule_GetName(pyImportExec);
+				while (PyDict_Next(dict, &pos, &key, &value))
+				{
+					if (PyType_Check(value))
+					{
+						std::string classString;
+						if (PyUnicode_Check(key))
+							classString = PyUnicode_AsUTF8(key);
+
+						if (PyClasses.find(classString) == PyClasses.end())
+						{
+							Py_IncRef(value);
+							PyClasses[classString] = value;
+							LOG_MANAGER->log_message("Got Class: " + classString, RAND_COLOUR, 10.0f);
+						}
+					}
+				}
 				LOG_MANAGER->log("Successfully loaded script: " + fileName);
+				
+			}
 			else
 				handle_error();
 		}

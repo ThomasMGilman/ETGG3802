@@ -639,13 +639,13 @@
         </userData>
       </entity>
       <node name="Camera" >
-        <position x="0.000000" y="-6.984127" z="4.077788" />
+        <position x="0.000000" y="-12.47413" z="5.32617" />
         <rotation qw="0.789047" qx="0.614333" qy="0.000000" qz="0.000000" />
         <scale x="1.000000" y="1.000000" z="1.000000" />
         <userData >
           <property data="1" name="tag" type="int" />
         </userData>
-        <camera fov="0.5033799435163735" name="Camera" projectionType="perspective" >
+        <camera fov="0.9033799435163735" name="Camera" projectionType="perspective" >
           <clipping far="100.0" near="0.10000000149011612" />
         </camera>
       </node>
