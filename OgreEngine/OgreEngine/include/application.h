@@ -43,5 +43,7 @@ namespace OgreEngine {
 		std::stringstream mStringStream;
 
 		LogManager* mLogger;
+		GameObjectManager* mGOM;
+		ScriptManager* mSM;
 	};
 }

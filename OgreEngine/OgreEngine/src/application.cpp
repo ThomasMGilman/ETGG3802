@@ -24,7 +24,6 @@ void Application::setup(void)
 	//get pointer to created root and create sceneManager
 	mRoot = getRoot();
 	mScnMgr = mRoot->createSceneManager();
-
 	mScnMgr->addRenderQueueListener(getOverlaySystem());
 
 	//register scene with the RTSS(Shader)
@@ -37,16 +36,14 @@ void Application::setup(void)
 	mScnMgr->setAmbientLight(Ogre::ColourValue(0, 0, 0));
 	mScnMgr->setShadowTechnique(Ogre::ShadowTechnique::SHADOWTYPE_STENCIL_ADDITIVE);
 	getRenderWindow()->addViewport(nullptr)->setBackgroundColour(Ogre::ColourValue(0,0,0));
+
+	//Initialize application managers
 	mLogger = new LogManager(getRenderWindow()->getViewport(0)->getActualHeight());
+	mGOM = new GameObjectManager();
+	mSM = new ScriptManager();
 
-	//Initialize GameObjectManager
-	new GameObjectManager();
-	GAME_OBJ_MANAGER->load_scene("main_scene.scene", "../Media/invader_media/", false);
-
-	//GAME_OBJ_MANAGER->set_default_scene();
-	
-	new ScriptManager();
-	SCRIPT_MANAGER->run_script("../Media/scripts/test_script.py");
+	// Start Game instance
+	SCRIPT_MANAGER->run_script("../Media/scripts/init.py");
 }
 
 bool Application::frameStarted(const Ogre::FrameEvent& e)
@@ -111,5 +108,7 @@ bool Application::keyReleased(const OgreBites::KeyboardEvent& evt)
 
 Application::~Application()
 {
+	delete(mGOM);
+	delete(mSM);
 	delete(mLogger);
 }

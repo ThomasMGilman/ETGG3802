@@ -20,6 +20,12 @@
 // XML Reader headers
 #include <tinyxml2.h>
 
+//SDL headers
+#include <SDL.h>
+#include <SDL_keycode.h>
+#include <SDL_keyboard.h>
+#include <SDL_gamecontroller.h>
+
 // Ogre headers
 #include <Ogre.h>
 #include <OgreOverlay.h>
