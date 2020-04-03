@@ -26,8 +26,6 @@ namespace OgreEngine
 		/// Some games use this too -- to display different icons for actions ("Start" with gamepad, "Escape" with keyboard)
 		InputDevice mLastDeviceUsed = InputDevice::NONE;
 
-
-
 		/// Map of keycode => action bindings
 		std::map<SDL_Keycode, std::string> mKeyActionBindings;
 
@@ -36,10 +34,7 @@ namespace OgreEngine
 
 		/// Keycode => Axis-value modifications.  When this key goes down, add the float
 		/// amount to the axis value.  When it comes up, subtract it.
-		std::map<SDL_Keycode, std::pair<std::string, float>> mKeyAxisBindings;
-
-		
-
+		std::map<SDL_Keycode, std::map<std::string, float>> mKeyAxisBindings;
 
 		/// A mapping of all plugged in gamepads.  The int is the id# of the gamepda
 		std::map<int, SDL_GameController*> mGamepads;
@@ -61,6 +56,9 @@ namespace OgreEngine
 		/// A dead-zone value for gamepads.  If the absolute value of an axis is less than
 		/// this, it's considered to be 0.  If it's between this and -1...+1, the value is scaled up proportionally
 		float mGamepadDeadZone = 0.2f;
+
+		///tinyXML2 document reader
+		tinyxml2::XMLDocument* mDoc;
 
 	// ****** CONSTRUCTORS / DESTUCTOR ******
 	public:
@@ -94,8 +92,19 @@ namespace OgreEngine
 		void update(float dt);
 		
 		/// loads an xml bindings file
-		void load_bindings(std::string fname);
+		void load_bindings(std::string fname, std::string fpath = "../Media/my_media/");
 
+	private:
+		/// parses the input binding nodes
+		void xml_parse_binding_nodes(tinyxml2::XMLElement* bindingNode);
+
+		/// parses the key actions
+		void xml_parse_action_nodes(tinyxml2::XMLElement* bindingNode);
+
+		/// parses the controller actions
+		void xml_parse_axis_nodes(tinyxml2::XMLElement* bindingNode);
+
+	public:
 		/// Creates the axis with this name, if it doesn't already exist (and sets the axis value to 0.0f)
 		void create_axis(std::string name);
 
