@@ -20,6 +20,9 @@ namespace OgreEngine {
 		// Outputs messages to the overlay as well as the log file
 		void log_message(std::string msg, Ogre::ColourValue text_color = RAND_COLOUR, float log_time_seconds = 2);
 
+		// Outputs an error message to the overlay and log file
+		void log_error(std::string msg);
+
 		// Updates the messages on the screen and removes messages after their time is up
 		void update(Ogre::Real elapsed_time);
 

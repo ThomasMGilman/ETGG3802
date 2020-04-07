@@ -43,7 +43,7 @@ void Application::setup(void)
 	mSM = new ScriptManager();
 
 	// Start Game instance
-	SCRIPT_MANAGER->run_script("../Media/scripts/init.py");
+	SCRIPT_MANAGER->run_script("../Media/invader_media/init.py");
 }
 
 bool Application::frameStarted(const Ogre::FrameEvent& e)

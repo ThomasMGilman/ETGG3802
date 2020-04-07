@@ -17,6 +17,7 @@
     <ClCompile Include="src\component_mesh.cpp" />
     <ClCompile Include="src\game_object.cpp" />
     <ClCompile Include="src\game_object_manager.cpp" />
+    <ClCompile Include="src\input_manager.cpp" />
     <ClCompile Include="src\log_manager.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\script_functions.cpp" />
@@ -32,15 +33,18 @@
     <ClInclude Include="include\application.h" />
     <ClInclude Include="include\component.h" />
     <ClInclude Include="include\component_camera.h" />
+    <ClInclude Include="include\component_input_listener.h" />
     <ClInclude Include="include\component_light.h" />
     <ClInclude Include="include\component_mesh.h" />
     <ClInclude Include="include\game_object.h" />
     <ClInclude Include="include\game_object_manager.h" />
+    <ClInclude Include="include\input_manager.h" />
     <ClInclude Include="include\log_manager.h" />
     <ClInclude Include="include\script_functions.h" />
     <ClInclude Include="include\script_game_object.h" />
     <ClInclude Include="include\script_game_object_methods.h" />
     <ClInclude Include="include\script_manager.h" />
+    <ClInclude Include="include\SDL_name_mappings.h" />
     <ClInclude Include="include\singleton.h" />
     <ClInclude Include="include\stdafx.h" />
   </ItemGroup>
@@ -94,15 +98,15 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\RTShaderSystem;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\Overlay;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\Bites;$(ProjectDir)dependencies\tinyxml2\include;$(ProjectDir)dependencies\python-3.8.1-x64\include;$(ProjectDir)dependencies\python-3.8.1-x64\include\cpython;$(ProjectDir)dependencies\python-3.8.1-x64\include\internal;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\RTShaderSystem;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\Overlay;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\Bites;$(ProjectDir)dependencies\tinyxml2\include;$(ProjectDir)dependencies\python-3.8.1-x64\include;$(ProjectDir)dependencies\python-3.8.1-x64\include\cpython;$(ProjectDir)dependencies\python-3.8.1-x64\include\internal;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\dependencies\SDL2-2.0.10\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>OgreBites_d.lib;OgreMain_d.lib;OgreOverlay_d.lib;OgreRTShaderSystem_d.lib;tinyxml2d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\lib;$(ProjectDir)dependencies\tinyxml2\lib;$(ProjectDir)dependencies\python-3.8.1-x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OgreBites_d.lib;OgreMain_d.lib;OgreOverlay_d.lib;OgreRTShaderSystem_d.lib;tinyxml2d.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\lib;$(ProjectDir)dependencies\tinyxml2\lib;$(ProjectDir)dependencies\python-3.8.1-x64\lib;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\dependencies\SDL2-2.0.10\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

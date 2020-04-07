@@ -111,6 +111,11 @@ void LogManager::log_message(std::string msg, Ogre::ColourValue color, float log
 	}
 }
 
+void OgreEngine::LogManager::log_error(std::string msg)
+{
+	log_message(msg, ERROR_COLOUR, ERROR_DISPLAY_TIME);
+}
+
 // Fix here
 void LogManager::update(Ogre::Real elapsed_time)
 {
