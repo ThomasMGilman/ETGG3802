@@ -101,16 +101,22 @@ namespace OgreEngine
 		void rotate_world(float degrees, float vx, float vy, float vz) { mSceneNode->rotate(Ogre::Quaternion(Ogre::Degree(degrees), Ogre::Vector3(vx, vy, vz)), Ogre::Node::TS_WORLD); }
 
 		/// Adjusts the rotational offset (relative to the parent game object) -- the passed rotation information is relative to the world axes
+		void rotate_world(float degrees, Ogre::Vector3 axis) { mSceneNode->rotate(axis, Ogre::Degree(degrees), Ogre::Node::TS_WORLD); }
+
+		/// Adjusts the rotational offset (relative to the parent game object) -- the passed rotation information is relative to the world axes
 		void rotate_world(const Ogre::Quaternion& q) { mSceneNode->rotate(q, Ogre::Node::TS_WORLD); }
 
 		/// Adjusts the rotational offset (relative to the parent game object) -- the passed rotation information is relative to the world axes
 		void rotate_world(const Ogre::Matrix3& m) { mSceneNode->rotate(m, Ogre::Node::TS_WORLD); }
 
 		/// Adjusts the rotational offset (relative to the parent game object) -- the passed rotation information is relative to the local axes
-		void rotate_local(float degrees, float vx, float vy, float vz) { mSceneNode->rotate(Ogre::Quaternion(Ogre::Degree(degrees), Ogre::Vector3(vx, vy, vz)), Ogre::Node::TS_LOCAL); }
+		void rotate_local(float degrees, float vx, float vy, float vz) { mSceneNode->rotate(Ogre::Quaternion(Ogre::Degree(degrees), Ogre::Vector3(vx, vy, vz))); }
 
 		/// Adjusts the rotational offset (relative to the parent game object) -- the passed rotation information is relative to the local axes
-		void rotate_local(const Ogre::Quaternion& q) { mSceneNode->rotate(q, Ogre::Node::TS_LOCAL); }
+		void rotate_local(float degrees, Ogre::Vector3 axis) { mSceneNode->rotate(axis, Ogre::Degree(degrees)); }
+
+		/// Adjusts the rotational offset (relative to the parent game object) -- the passed rotation information is relative to the local axes
+		void rotate_local(const Ogre::Quaternion& q) { mSceneNode->rotate(q); }
 
 		/// Adjusts the positional offset (relative to the parent game object) -- the passed translation information is relative to the world axes
 		void translate_world(float tx, float ty, float tz) { mSceneNode->translate(Ogre::Vector3(tx, ty, tz), Ogre::Node::TS_WORLD); }

@@ -60,10 +60,13 @@ namespace OgreEngine
 		///tinyXML2 document reader
 		tinyxml2::XMLDocument* mDoc;
 
+		///Debug Mode State
+		bool mDebugging;
+
 	// ****** CONSTRUCTORS / DESTUCTOR ******
 	public:
 		/// Default Constructor
-		InputManager(std::string bindings_file);
+		InputManager(std::string bindings_file, bool debugMode = false);
 
 		/// Destructor
 		~InputManager();

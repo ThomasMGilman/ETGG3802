@@ -1,12 +1,27 @@
 #pragma once
+#include <stdafx.h>
+#include <component.h>
 
-class ComponentInputListener
+namespace OgreEngine
 {
-private:
-protected:
-public:
+	class GameObject;
 
-	ComponentInputListener();
+	class ComponentInputListener : public Component
+	{
+	private:
+	protected:
 
-	~ComponentInputListener();
-};
+		GameObject* mParent;
+	public:
+
+		ComponentInputListener(GameObject* owner, std::string name = "");
+
+		~ComponentInputListener();
+
+		/// process incoming broadcasted input button/key events
+		void process_key_action(std::string action, bool is_pressed);
+
+		/// process incoming broadcasted input axis events
+		void process_axis_action(std::string axis, float amount);
+	};
+}

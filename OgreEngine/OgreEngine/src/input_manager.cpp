@@ -1,10 +1,16 @@
 #include <stdafx.h>
+#include <application.h>
+#include <log_manager.h>
 #include <input_manager.h>
 #include <SDL_name_mappings.h>
-#include <log_manager.h>
 
-OgreEngine::InputManager::InputManager(std::string bindings_file)
+using namespace OgreEngine;
+
+InputManager* InputManager::msSingleton = nullptr;
+
+InputManager::InputManager(std::string bindings_file, bool debugMode)
 {
+	this->mDebugging = true;
 	this->mKeyNames = OgreEngine::InputBindings::mKeyNames;
 	this->mGamepadAxisNames = OgreEngine::InputBindings::mGamepadAxisNames;
 	this->mGamepadButtonNames = OgreEngine::InputBindings::mGamepadButtonNames;
@@ -13,35 +19,33 @@ OgreEngine::InputManager::InputManager(std::string bindings_file)
 	load_bindings(bindings_file);
 }
 
-OgreEngine::InputManager::~InputManager()
+InputManager::~InputManager()
 {
 }
 
-bool OgreEngine::InputManager::has_axis(std::string name)
+bool InputManager::has_axis(std::string name)
 {
 	return mAxisValues.count(name);
 }
 
-bool OgreEngine::InputManager::has_action(std::string name)
+bool InputManager::has_action(std::string name)
 {
 	return mActionValues.count(name);
 }
 
-float OgreEngine::InputManager::get_axis(std::string name)
+float InputManager::get_axis(std::string name)
 {
 	if (has_axis(name))
 		return mAxisValues[name];
 	return 0.0f;
 }
 
-bool OgreEngine::InputManager::is_action_active(std::string name)
+bool InputManager::is_action_active(std::string name)
 {
-	if(has_action(name) && mActionValues[name] > 0)
-		return true;
-	return false;
+	return (has_action(name) && mActionValues[name] > 0);
 }
 
-void OgreEngine::InputManager::update(float dt)
+void InputManager::update(float dt)
 {
 	SDL_Event event;
 	while (SDL_PollEvent(&event))
@@ -85,7 +89,7 @@ void OgreEngine::InputManager::update(float dt)
 	}
 }
 
-void OgreEngine::InputManager::load_bindings(std::string fname, std::string fpath)
+void InputManager::load_bindings(std::string fname, std::string fpath)
 {
 	mDoc->LoadFile((fpath + fname).c_str());
 	if (mDoc->Error())
@@ -107,7 +111,7 @@ void OgreEngine::InputManager::load_bindings(std::string fname, std::string fpat
 	}
 }
 
-void OgreEngine::InputManager::xml_parse_binding_nodes(tinyxml2::XMLElement* bindingNode)
+void InputManager::xml_parse_binding_nodes(tinyxml2::XMLElement* bindingNode)
 {
 	std::string nodeVal = bindingNode->Value();
 	tinyxml2::XMLElement* childBinding = bindingNode->FirstChildElement();
@@ -126,7 +130,7 @@ void OgreEngine::InputManager::xml_parse_binding_nodes(tinyxml2::XMLElement* bin
 		xml_parse_binding_nodes(nextElement);
 }
 
-void OgreEngine::InputManager::xml_parse_action_nodes(tinyxml2::XMLElement* bindingNode)
+void InputManager::xml_parse_action_nodes(tinyxml2::XMLElement* bindingNode)
 {
 	std::string action = bindingNode->Attribute("name");
 	std::string type = bindingNode->Attribute("type");
@@ -155,7 +159,7 @@ void OgreEngine::InputManager::xml_parse_action_nodes(tinyxml2::XMLElement* bind
 		xml_parse_action_nodes(nextElement);
 }
 
-void OgreEngine::InputManager::xml_parse_axis_nodes(tinyxml2::XMLElement* bindingNode)
+void InputManager::xml_parse_axis_nodes(tinyxml2::XMLElement* bindingNode)
 {
 	std::string action = bindingNode->Attribute("name");
 	std::string type = bindingNode->Attribute("type");
@@ -189,7 +193,7 @@ void OgreEngine::InputManager::xml_parse_axis_nodes(tinyxml2::XMLElement* bindin
 		xml_parse_axis_nodes(nextElement);
 }
 
-void OgreEngine::InputManager::create_axis(std::string name)
+void InputManager::create_axis(std::string name)
 {
 	if (mAxisValues.find(name) == mAxisValues.end())
 		mAxisValues[name] = 0;
@@ -197,7 +201,7 @@ void OgreEngine::InputManager::create_axis(std::string name)
 		LOG_MANAGER->log_error("Trying to add duplicate Axis mapping!! axis: " + name);
 }
 
-void OgreEngine::InputManager::create_action(std::string name)
+void InputManager::create_action(std::string name)
 {
 	if (mActionValues.find(name) == mActionValues.end())
 		mActionValues[name] = 0;
@@ -205,42 +209,82 @@ void OgreEngine::InputManager::create_action(std::string name)
 		LOG_MANAGER->log_error("Trying to add duplicate Action mapping!! action: " + name);
 }
 
-void OgreEngine::InputManager::register_listener(ComponentInputListener* comp)
+void InputManager::register_listener(ComponentInputListener* comp)
 {
 	mListeners.insert(comp);
 }
 
-void OgreEngine::InputManager::deregister_listener(ComponentInputListener* comp)
+void InputManager::deregister_listener(ComponentInputListener* comp)
 {
 	mListeners.erase(comp);
 }
 
-void OgreEngine::InputManager::broadcast_action(std::string action, bool is_pressed)
+void InputManager::broadcast_action(std::string action, bool is_pressed)
 {
-}
+	mActionValues[action] = is_pressed;
 
-void OgreEngine::InputManager::broadcast_axis_event(std::string axis, float new_value)
-{
-}
-
-void OgreEngine::InputManager::scan_for_gamepads()
-{
-}
-
-void OgreEngine::InputManager::handle_key(SDL_Keycode k, bool is_pressed)
-{
-	// Check if action for key_event exists, if it does, update action binding and broadcast event_type
-	if (mKeyActionBindings.find(k) != mKeyActionBindings.end())
+	if (this->mDebugging) LOG_MANAGER->log_message((is_pressed ? "pressed: " : "released: ") + action, DEBUG_COLOUR, ERROR_DISPLAY_TIME);
+	if (action == "escape")
 	{
-		mActionValues[mKeyActionBindings[k]] = is_pressed;
-		broadcast_action(mKeyActionBindings[k], is_pressed);
+		APPLICATION->getRoot()->queueEndRendering();
+	}
+	else
+	{
+		for (ComponentInputListener* listener : this->mListeners)
+			listener->process_key_action(action, is_pressed);
 	}
 }
 
-void OgreEngine::InputManager::handle_joy_button(SDL_GameControllerButton button, int joy_id, bool is_pressed)
+void InputManager::broadcast_axis_event(std::string axis, float new_value)
+{
+	if (this->mDebugging) LOG_MANAGER->log_message(axis + ": " + std::to_string(new_value), DEBUG_COLOUR, ERROR_DISPLAY_TIME);
+	for (ComponentInputListener* listener : this->mListeners)
+		listener->process_axis_action(axis, new_value);
+}
+
+///WORK HERE
+void InputManager::scan_for_gamepads()
 {
 }
 
-void OgreEngine::InputManager::handle_joy_axis(SDL_GameControllerAxis axis, int joy_id, Sint16 value)
+///WORK HERE
+void InputManager::handle_key(SDL_Keycode k, bool is_pressed)
 {
+	// Check if action for key_event exists, if it does, update action binding and broadcast event_type
+	if (mKeyActionBindings.find(k) != mKeyActionBindings.end())
+		broadcast_action(mKeyActionBindings[k], is_pressed);
+	else if(mKeyAxisBindings.find(k) != mKeyAxisBindings.end())
+	{
+		
+	}
+}
+
+void InputManager::handle_joy_button(SDL_GameControllerButton button, int joy_id, bool is_pressed)
+{
+	// Find Controller attached
+	if (mGamepadButtonBindings.find(joy_id) != mGamepadButtonBindings.end())
+	{
+		// Find corresponding action
+		if (mGamepadButtonBindings[joy_id].find(button) != mGamepadButtonBindings[joy_id].end())
+			broadcast_action(mGamepadButtonBindings[joy_id][button], is_pressed);
+	}
+}
+
+///WORK HERE
+void InputManager::handle_joy_axis(SDL_GameControllerAxis axis, int joy_id, Sint16 value)
+{
+	if (value > mGamepadDeadZone || value < -mGamepadDeadZone)
+	{
+		// Find Controller attached
+		if (mGamepadAxisBindings.find(joy_id) != mGamepadAxisBindings.end())
+		{
+			// Find corresponding action
+			if (mGamepadAxisBindings[joy_id].find(axis) != mGamepadAxisBindings[joy_id].end())
+			{
+				std::string axisName = mGamepadAxisBindings[joy_id][axis];
+				mAxisValues[axisName] += value;
+				broadcast_axis_event(axisName, mAxisValues[axisName]);
+			}
+		}
+	}
 }

@@ -18,13 +18,24 @@ namespace OgreEngine::script
 	/// do much, for the same reason as GameObject_init
 	PyObject* GameObject_new(PyTypeObject* type, PyObject* args, PyObject* kwds);
 
+	/// Get the associated gameobjects name
 	PyObject* get_name(PyObject* self, PyObject* args);
 
+	/// Creates a mesh component object and attaches it to the associated gameobject
 	PyObject* create_mesh_component(PyObject* self, PyObject* args);
 
+	/// Rotates the associated gameobject around the world axis
+	PyObject* rotate_local(PyObject* self, PyObject* args);
+
+	/// Rotates the associated gameobject around the world axis
 	PyObject* rotate_world(PyObject* self, PyObject* args);
 
+	/// Scales the associated gameobject
 	PyObject* scale(PyObject* self, PyObject* args);
 
+	/// Translates the associated gameobject along the objects local axis
+	PyObject* translate_local(PyObject* self, PyObject* args);
+
+	/// Translates the associated gameobject along the world axis
 	PyObject* translate_world(PyObject* self, PyObject* args);
 }

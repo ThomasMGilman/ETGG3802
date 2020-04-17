@@ -22,7 +22,7 @@ namespace OgreEngine
 	// @@@@@ CONSTRUCTORS / DESTRUCTORS @@@@@
 	public:
 		/// Constructor
-		LightComponent(LightType type, GameObject * owner, std::string name = "");
+		LightComponent(LightType type, GameObject *owner, std::string name = "");
 
 		/// Destructor
 		~LightComponent();

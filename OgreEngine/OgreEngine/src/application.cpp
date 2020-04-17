@@ -2,6 +2,7 @@
 #include <application.h>
 #include <game_object_manager.h>
 #include <script_manager.h>
+#include <input_manager.h>
 
 using namespace OgreEngine;
 
@@ -17,9 +18,6 @@ void Application::setup(void)
 	///////////////////////////////////////////////////////////////////////////////////////////// Initial Setup
 	//base setup
 	OgreBites::ApplicationContext::setup();
-
-	//register for input events
-	addInputListener(this);
 
 	//get pointer to created root and create sceneManager
 	mRoot = getRoot();
@@ -41,36 +39,26 @@ void Application::setup(void)
 	mLogger = new LogManager(getRenderWindow()->getViewport(0)->getActualHeight());
 	mGOM = new GameObjectManager();
 	mSM = new ScriptManager();
+	mIM = new InputManager("../Media/my_media/input_bindings.xml");
 
 	// Start Game instance
-	SCRIPT_MANAGER->run_script("../Media/invader_media/init.py");
+	mSM->run_script("../Media/invader_media/init.py");
 }
 
 bool Application::frameStarted(const Ogre::FrameEvent& e)
 {
 	OgreBites::ApplicationContext::frameStarted(e);
+	mIM->update(e.timeSinceLastFrame);
 
 	// Update current Animation being played by penguin
-	GAME_OBJ_MANAGER->update(e.timeSinceLastFrame);
-	//mAnimationState->addTime(e.timeSinceLastFrame);
-	/*
-	GameObject* player = GAME_OBJ_MANAGER->get_game_object("OgreEnt", "temporary");
-	if (player != nullptr)
-	{
-		////////////////////////////////////////////////////////////// Rotation Keys for Ogre
-		if (mKeysDown.find(OgreBites::SDLK_LEFT) != mKeysDown.end())
-			player->rotate_world(-90 * e.timeSinceLastFrame, 0, 1, 0);
+	mGOM->update(e.timeSinceLastFrame);
 
-		if (mKeysDown.find(OgreBites::SDLK_RIGHT) != mKeysDown.end())
-			player->rotate_world(90 * e.timeSinceLastFrame, 0, 1, 0);
-	}*/
-	
 	////////////////////////////////////////////////////////////// visibility Keys for all of temporary group
 	if (mKeysDown.find(OgreBites::SDLK_F1) != mKeysDown.end())
-		GAME_OBJ_MANAGER->set_visibility("temporary", false);
+		mGOM->set_visibility("temporary", false);
 
 	if (mKeysDown.find(OgreBites::SDLK_F2) != mKeysDown.end())
-		GAME_OBJ_MANAGER->set_visibility("temporary", true);
+		mGOM->set_visibility("temporary", true);
 
 	mLogger->update(e.timeSinceLastFrame);
 	
@@ -111,4 +99,5 @@ Application::~Application()
 	delete(mGOM);
 	delete(mSM);
 	delete(mLogger);
+	delete(mIM);
 }

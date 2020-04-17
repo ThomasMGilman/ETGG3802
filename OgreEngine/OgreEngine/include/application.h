@@ -2,13 +2,16 @@
 
 #include <stdafx.h>
 #include "log_manager.h"
+#include "game_object_manager.h"
+#include "input_manager.h"
+#include "script_manager.h"
 #include <Singleton.h>
 
 #define APPLICATION Application::getSingletonPtr()
 
 namespace OgreEngine {
 	class GameObjectManager;
-	class Application : public OgreBites::ApplicationContext, public OgreBites::InputListener, public Singleton<Application>
+	class Application : public OgreBites::ApplicationContext, public Singleton<Application>
 	{
 		/// Public Application Constructor and Functions ///
 	public:
@@ -26,10 +29,6 @@ namespace OgreEngine {
 
 		virtual bool frameStarted(const Ogre::FrameEvent& e) override;
 
-		bool keyPressed(const OgreBites::KeyboardEvent& evt) override;
-
-		bool keyReleased(const OgreBites::KeyboardEvent& evt) override;
-
 		Ogre::SceneManager* get_scene_manager() { return this->mScnMgr; };
 
 	private:
@@ -45,5 +44,6 @@ namespace OgreEngine {
 		LogManager* mLogger;
 		GameObjectManager* mGOM;
 		ScriptManager* mSM;
+		InputManager* mIM;
 	};
 }

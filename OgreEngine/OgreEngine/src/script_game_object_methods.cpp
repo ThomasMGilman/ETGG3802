@@ -12,11 +12,13 @@
 
 //{"a_new_method", OgreEngine::script::GameObject_???, METH_VARARGS, "its docstring"},
 PyMethodDef GameObject_methods[] = {
-    {"create_mesh_component", OgreEngine::script::create_mesh_component, METH_VARARGS, "Creates a new mesh component attached to the associated self PyObject."},
-    {"translate_world", OgreEngine::script::translate_world, METH_VARARGS, "Translates the object in world space by x, y, z amount specified."},
-    {"rotate_world", OgreEngine::script::rotate_world, METH_VARARGS, "Rotates the object in world space by the degrees specified along the x, y, and z axis amount specified."},
-    {"scale", OgreEngine::script::scale, METH_VARARGS, "Scales the object by the x, y, and z amount specified."},
-    {"name", OgreEngine::script::get_name, METH_VARARGS, "returns the name of the object."},
+    {"name", OgreEngine::script::get_name, METH_VARARGS, "name() -> string"},
+    {"create_mesh_component", OgreEngine::script::create_mesh_component, METH_VARARGS, "create_mesh_component('mesh_fname') -> None"},
+    {"rotate_local", OgreEngine::script::rotate_world, METH_VARARGS, "rotate_local(degrees, axisx, axisy, axisz) -> None"},
+    {"rotate_world", OgreEngine::script::rotate_world, METH_VARARGS, "rotate_world(degrees, axisx, axisy, axisz) -> None"},
+    {"scale", OgreEngine::script::scale, METH_VARARGS, "scale(sx, sy, sz) -> None"},
+    {"translate_local", OgreEngine::script::translate_local, METH_VARARGS, "translate_local(tx, ty, tz) -> None"},
+    {"translate_world", OgreEngine::script::translate_world, METH_VARARGS, "translate_world(tx, ty, tz) -> None"},
     {NULL}  /* Sentinel */
 };
 
@@ -45,102 +47,94 @@ PyObject* OgreEngine::script::get_name(PyObject* self, PyObject* args)
 
 PyObject* OgreEngine::script::create_mesh_component(PyObject* self, PyObject* args)
 {
-    //LOG_MANAGER->log_message("creating mesh!!", RAND_COLOUR, 10.0f);
+    std::string errMsg;
     if (PyTuple_Check(args) && PyTuple_Size(args) == 1)
     {
-        if(PyUnicode_Check(PyTuple_GetItem(args, 0)))
+        if (PyUnicode_Check(PyTuple_GetItem(args, 0)))
         {
             std::string fileName = PyUnicode_AsUTF8(PyTuple_GetItem(args, 0));
             script::GameObject* thisObj = ((script::GameObject*)(PyTypeObject*)self);
             thisObj->mTwin->create_mesh(thisObj->mTwin->get_name() + "_Mesh", fileName);
+            Py_INCREF(Py_None);
+            return Py_None;
         }
         else
-        {
-            PyErr_SetString(PyExc_ValueError, "Value Is not of type string!!");
-            return NULL;
-        }
+            errMsg = "create_mesh_component ERROR!! Value Is not of type string!!";
     }
     else
+        errMsg = "create_mesh_component ERROR!! Did not get a valid Tuple!! Need to recieve a tuple of size 1 containing a string!!";
+    PyErr_SetString(PyExc_ValueError, errMsg.c_str());
+    return NULL;
+}
+
+PyObject* OgreEngine::script::rotate_local(PyObject* self, PyObject* args)
+{
+    OgreEngine::package<float> degrees = get_num_from_pytuple<float>(args, 0);
+    OgreEngine::package<Ogre::Vector3> axisPackage = get_vector3_from_pytuple(args);
+    if (degrees.errSet || axisPackage.errSet)
     {
-        PyErr_SetString(PyExc_ValueError, "Did not get a valid Tuple!! Need to recieve a tuple of size 1 containing a string!!");
+        PyErr_SetString(PyExc_ValueError, ("rotate_world ERROR!! Degrees: " + degrees.msg + "Axis: " + axisPackage.msg).c_str());
         return NULL;
     }
+    script::GameObject* thisObj = ((script::GameObject*)(PyTypeObject*)self);
+    thisObj->mTwin->rotate_local(degrees.data, axisPackage.data);
     Py_INCREF(Py_None);
     return Py_None;
 }
 
 PyObject* OgreEngine::script::rotate_world(PyObject* self, PyObject* args)
 {
-    //LOG_MANAGER->log_message("Rotating world!!", RAND_COLOUR, 10.0f);
-    if (PyTuple_Check(args) && PyTuple_Size(args) == 4)
+    OgreEngine::package<float> degrees = get_num_from_pytuple<float>(args, 0);
+    OgreEngine::package<Ogre::Vector3> axisPackage = get_vector3_from_pytuple(args);
+    if (degrees.errSet || axisPackage.errSet)
     {
-        OgreEngine::package<float> degrees = get_num_from_pytuple<float>(args, 0);
-        OgreEngine::package<float> xAmount = get_num_from_pytuple<float>(args, 1);
-        OgreEngine::package<float> yAmount = get_num_from_pytuple<float>(args, 2);
-        OgreEngine::package<float> zAmount = get_num_from_pytuple<float>(args, 3);
-        if (!degrees.errSet && !xAmount.errSet && !yAmount.errSet && !zAmount.errSet)
-        {
-            //LOG_MANAGER->log_message("Rotating!! "+ std::to_string(degrees.data) + "," + std::to_string(xAmount.data) + "," + std::to_string(yAmount.data) + "," + std::to_string(zAmount.data), RAND_COLOUR, 10.0f);
-            script::GameObject* thisObj = ((script::GameObject*)(PyTypeObject*)self);
-            thisObj->mTwin->rotate_world(degrees.data, xAmount.data, yAmount.data, zAmount.data);
-            Py_INCREF(Py_None);
-            return Py_None;
-        }
-        std::string excMsg = "Rotate_world ERROR!! Internal Tuple Value Error!!\n\tRotationVal: " + degrees.msg +
-            "\n\txVal: " + xAmount.msg + "\n\tyVal: " + yAmount.msg + "\n\tzVal: " + zAmount.msg;
-        PyErr_SetString(PyExc_ValueError, excMsg.c_str());
+        PyErr_SetString(PyExc_ValueError, ("rotate_world ERROR!! Degrees: "+degrees.msg+"Axis: "+axisPackage.msg).c_str());
         return NULL;
     }
-    PyErr_SetString(PyExc_ValueError, "Rotate_world ERROR!! Did not get a valid Tuple!! Need to recieve a tuple of size 4 containing Floats!!");
-    return NULL;
+    script::GameObject* thisObj = ((script::GameObject*)(PyTypeObject*)self);
+    thisObj->mTwin->rotate_world(degrees.data, axisPackage.data);
+    Py_INCREF(Py_None);
+    return Py_None;
 }
 
 PyObject* OgreEngine::script::scale(PyObject* self, PyObject* args)
 {
-    //LOG_MANAGER->log_message("Scaling!!", RAND_COLOUR, 10.0f);
-    if (PyTuple_Check(args) && PyTuple_Size(args) == 3)
+    OgreEngine::package<Ogre::Vector3> translationPackage = get_vector3_from_pytuple(args);
+    if (translationPackage.errSet)
     {
-        OgreEngine::package<float> xAmount = get_num_from_pytuple<float>(args, 0);
-        OgreEngine::package<float> yAmount = get_num_from_pytuple<float>(args, 1);
-        OgreEngine::package<float> zAmount = get_num_from_pytuple<float>(args, 2);
-        if (!xAmount.errSet && !yAmount.errSet && !zAmount.errSet)
-        {
-            //LOG_MANAGER->log_message("Scaling!! " + std::to_string(xAmount.data) + "," + std::to_string(yAmount.data) + "," + std::to_string(zAmount.data), RAND_COLOUR, 10.0f);
-            script::GameObject* thisObj = ((script::GameObject*)(PyTypeObject*)self);
-            thisObj->mTwin->scale(xAmount.data, yAmount.data, zAmount.data);
-            Py_INCREF(Py_None);
-            return Py_None;
-        }
-        std::string excMsg = "Scale ERROR!! Internal Tuple Value Error!!\n\txVal" + 
-            xAmount.msg + "\n\tyVal: " + yAmount.msg + "\n\tzVal: " + zAmount.msg;
-        PyErr_SetString(PyExc_ValueError, excMsg.c_str());
+        PyErr_SetString(PyExc_ValueError, ("scale ERROR!! "+translationPackage.msg).c_str());
         return NULL;
     }
-    PyErr_SetString(PyExc_ValueError, "Scale ERROR!! Did not get a valid Tuple!! Need to recieve a tuple of size 3 containing Floats!!");
-    return NULL;
+    script::GameObject* thisObj = ((script::GameObject*)(PyTypeObject*)self);
+    thisObj->mTwin->scale(translationPackage.data);
+    Py_INCREF(Py_None);
+    return Py_None;
+}
+
+PyObject* OgreEngine::script::translate_local(PyObject* self, PyObject* args)
+{
+    OgreEngine::package<Ogre::Vector3> translationPackage = get_vector3_from_pytuple(args);
+    if (translationPackage.errSet)
+    {
+        PyErr_SetString(PyExc_ValueError, ("tanslate_local ERROR!! "+translationPackage.msg).c_str());
+        return NULL;
+    }
+    script::GameObject* thisObj = ((script::GameObject*)(PyTypeObject*)self);
+    thisObj->mTwin->translate_local(translationPackage.data);
+    Py_INCREF(Py_None);
+    return Py_None;
 }
 
 PyObject* OgreEngine::script::translate_world(PyObject* self, PyObject* args)
 {
-    //LOG_MANAGER->log_message("Translating!!", RAND_COLOUR, 10.0f);
-    if (PyTuple_Check(args) && PyTuple_Size(args) == 3)
+    OgreEngine::package<Ogre::Vector3> translationPackage = get_vector3_from_pytuple(args);
+    if (translationPackage.errSet)
     {
-        OgreEngine::package<float> xAmount = get_num_from_pytuple<float>(args, 0);
-        OgreEngine::package<float> yAmount = get_num_from_pytuple<float>(args, 1);
-        OgreEngine::package<float> zAmount = get_num_from_pytuple<float>(args, 2);
-        if (!xAmount.errSet && !yAmount.errSet && !zAmount.errSet)
-        {
-            //LOG_MANAGER->log_message("Translating!! "+std::to_string(xAmount.data)+","+ std::to_string(yAmount.data) + ","+ std::to_string(zAmount.data), RAND_COLOUR, 10.0f);
-            script::GameObject* thisObj = ((script::GameObject*)(PyTypeObject*)self);
-            thisObj->mTwin->translate_world(xAmount.data, yAmount.data, zAmount.data);
-            Py_INCREF(Py_None);
-            return Py_None;
-        }
-        std::string excMsg = "Translate_world ERROR!! Internal Tuple Value Error!!\n\txVal" +
-            xAmount.msg + "\n\tyVal: " + yAmount.msg + "\n\tzVal: " + zAmount.msg;
-        PyErr_SetString(PyExc_ValueError, excMsg.c_str());
+        PyErr_SetString(PyExc_ValueError, ("tanslate_world ERROR!! "+translationPackage.msg).c_str());
         return NULL;
     }
-    PyErr_SetString(PyExc_ValueError, "Translate_world ERROR!! Did not get a valid Tuple!! Need to recieve a tuple of size 3 containing Floats!!");
-    return NULL;
+    script::GameObject* thisObj = ((script::GameObject*)(PyTypeObject*)self);
+    thisObj->mTwin->translate_world(translationPackage.data);
+    Py_INCREF(Py_None);
+    return Py_None;
 }

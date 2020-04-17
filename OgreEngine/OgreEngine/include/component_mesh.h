@@ -18,7 +18,7 @@ namespace OgreEngine
 	// @@@@@ CONSTRUCTORS / DESTRUCTORS @@@@@
 	public:
 		/// The constructor
-		MeshComponent(std::string fname, GameObject * owner, std::string name = "");
+		MeshComponent(std::string fname, GameObject* owner, std::string name = "");
 
 		/// Destructor
 		~MeshComponent();

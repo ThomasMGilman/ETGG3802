@@ -27,6 +27,7 @@ GameObject::~GameObject()
 
 void GameObject::update(float elapsed)
 {
+	// Check if script twin present and pass time to that function
 	if (mScriptTwin != nullptr)
 	{
 		if (PyObject_HasAttrString(mScriptTwin, "update"))
@@ -36,6 +37,8 @@ void GameObject::update(float elapsed)
 			run_method("update", elapsedTuple);
 		}
 	}
+
+	// Update Attached Components
 	mTypeIter = mComponents.begin();
 	while (mTypeIter != mComponents.end())
 	{

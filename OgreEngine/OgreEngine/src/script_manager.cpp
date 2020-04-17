@@ -11,12 +11,19 @@ extern PyTypeObject GameObjectType;
 ScriptManager* ScriptManager::msSingleton = nullptr;
 
 PyMethodDef my_functions[] = {
-		{"load_script", load_script, METH_VARARGS, "Takes a string of a filename of type python script to parse and load classes from."},
-		{"find_string_match_indicies", find_string_match_indicies, METH_VARARGS, "Takes a two argument tuple of strings.\n\tReturns the indicies of all matches of the 2nd string within the 1st string.\n\tIf no matches, returns None"},
-		{"log", log, METH_VARARGS, "Takes a Tuple containing the message to log, optional color value, and optional time to stay on screen for."},
-		{"create_game_object", create_python_game_object, METH_VARARGS, "Creates a new object given a group name, object name, tag, and other parameters."},
-		{"set_skybox", set_skybox, METH_VARARGS, "Takes a material name to set as the background skybox texture and an optinal distance from the viewer."},
-		{NULL, NULL, 0, NULL}
+	{"load_script", load_script, METH_VARARGS, "load_script('script-path-and-fname') -> None"},
+	{"load_scene", load_scene, METH_VARARGS, "load_scene(scene_fname) -> None"},
+	{"find_all_string_match_indicies", find_all_string_match_indicies, METH_VARARGS, "find_all_string_match_indicies(\"givenString\", \"stringToFind\")"},
+	{"log", log, METH_VARARGS, "log('my message', color=None, distance=None) -> None"},
+	{"create_game_object", create_python_game_object, METH_VARARGS, "create_game_object('my_group', 'my_name', 42, other_game_object=None, script_fname=None)"},
+	{"set_skybox", set_skybox, METH_VARARGS, "set_skybox(\"MySkyboxMaterial\") -> None"},
+	{"register_input_listener", register_input_listener, METH_VARARGS, "register_input_listener(game_object) -> None"},
+	{"deregister_input_listener", deregister_input_listener, METH_VARARGS, "deregister_input_listener(game_object) -> None"},
+	{"has_action", has_action, METH_VARARGS, "has_action(action_name) -> bool"},
+	{"get_action", get_action, METH_VARARGS, "get_action(action_name) -> bool"},
+	{"has_axis", has_axis, METH_VARARGS, "has_axis(axis_name) -> bool"},
+	{"get_axis", get_axis, METH_VARARGS, "get_axis(axis_name) -> float"},
+	{NULL, NULL, 0, NULL}
 };
 
 struct PyModuleDef ogre_module = {

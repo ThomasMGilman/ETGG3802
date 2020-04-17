@@ -16,13 +16,13 @@ namespace OgreEngine
 		};
 
 	protected:
-		GameObject* Parent;
+		GameObject* mParent;
 		std::map<std::string, propertyData> mProperties;
 
 	public:
 		enum class ComponentType { CAMERA, LIGHT, MESH };
 
-		Component(GameObject* owner) { this->Parent = owner; };
+		Component(GameObject* owner) { this->mParent = owner; };
 
 		~Component() {};
 

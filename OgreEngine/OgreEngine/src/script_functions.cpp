@@ -8,7 +8,7 @@
 
 extern PyTypeObject GameObjectType;
 
-OgreEngine::package<Ogre::ColourValue> OgreEngine::get_colour_from_pytuple(PyObject* tuple)
+OgreEngine::package<Ogre::ColourValue> OgreEngine::get_colour_from_pytuple(PyObject* tuple, int offsetIntoTuple = 0)
 {
 	OgreEngine::package<Ogre::ColourValue> returnPack;
 	if (PyTuple_Size(tuple) != 3)
@@ -16,9 +16,9 @@ OgreEngine::package<Ogre::ColourValue> OgreEngine::get_colour_from_pytuple(PyObj
 	else
 	{
 		OgreEngine::package<float> r, g, b;
-		r = get_num_from_pytuple<float>(tuple, 0);
-		g = get_num_from_pytuple<float>(tuple, 1);
-		b = get_num_from_pytuple<float>(tuple, 2);
+		r = get_num_from_pytuple<float>(tuple, 0 + offsetIntoTuple);
+		g = get_num_from_pytuple<float>(tuple, 1 + offsetIntoTuple);
+		b = get_num_from_pytuple<float>(tuple, 2 + offsetIntoTuple);
 		if (r.errSet || g.errSet || b.errSet)
 			returnPack.msg = "Got Invalid Paramater in tuple!!!\n\tr: " + r.msg + "\n\tg: " + g.msg + "\n\tb: " + b.msg+"\n\t";
 		if (r.data > 1 || r.data < 0 || g.data > 1 || g.data < 0 || b.data > 1 || b.data < 0)
@@ -30,7 +30,7 @@ OgreEngine::package<Ogre::ColourValue> OgreEngine::get_colour_from_pytuple(PyObj
 	return returnPack;
 }
 
-OgreEngine::package<Ogre::Vector3> OgreEngine::get_vector3_from_pytuple(PyObject* tuple)
+OgreEngine::package<Ogre::Vector3> OgreEngine::get_vector3_from_pytuple(PyObject* tuple, int offsetIntoTuple)
 {
 	OgreEngine::package<Ogre::Vector3> returnPack;
 	if (PyTuple_Size(tuple) != 3)
@@ -38,9 +38,9 @@ OgreEngine::package<Ogre::Vector3> OgreEngine::get_vector3_from_pytuple(PyObject
 	else
 	{
 		OgreEngine::package<float> x, y, z;
-		x = get_num_from_pytuple<float>(tuple, 0);
-		y = get_num_from_pytuple<float>(tuple, 1);
-		z = get_num_from_pytuple<float>(tuple, 2);
+		x = get_num_from_pytuple<float>(tuple, 0 + offsetIntoTuple);
+		y = get_num_from_pytuple<float>(tuple, 1 + offsetIntoTuple);
+		z = get_num_from_pytuple<float>(tuple, 2 + offsetIntoTuple);
 		if (x.errSet || y.errSet || z.errSet)
 		{
 			returnPack.errSet = true;
@@ -52,18 +52,18 @@ OgreEngine::package<Ogre::Vector3> OgreEngine::get_vector3_from_pytuple(PyObject
 	return returnPack;
 }
 
-OgreEngine::package<Ogre::Quaternion> OgreEngine::get_quaternion_from_pytuple(PyObject* tuple)
+OgreEngine::package<Ogre::Quaternion> OgreEngine::get_quaternion_from_pytuple(PyObject* tuple, int offsetIntoTuple)
 {
 	OgreEngine::package<Ogre::Quaternion> returnPack;
 	if (PyTuple_Size(tuple) != 4)
 		returnPack.msg = "Got Tuple of Invalid size!! Tuple needs to be of size 4.\n\t";
 	else
 	{
-		OgreEngine::package<float> x, y, z, w;
-		x = get_num_from_pytuple<float>(tuple, 0);
-		y = get_num_from_pytuple<float>(tuple, 1);
-		z = get_num_from_pytuple<float>(tuple, 2);
-		w = get_num_from_pytuple<float>(tuple, 3);
+		OgreEngine::package<float> w, x, y, z;
+		w = get_num_from_pytuple<float>(tuple, 0 + offsetIntoTuple);
+		x = get_num_from_pytuple<float>(tuple, 1 + offsetIntoTuple);
+		y = get_num_from_pytuple<float>(tuple, 2 + offsetIntoTuple);
+		z = get_num_from_pytuple<float>(tuple, 3 + offsetIntoTuple);
 		if (x.errSet || y.errSet || z.errSet || w.errSet)
 		{
 			returnPack.errSet = true;
@@ -108,7 +108,12 @@ PyObject* OgreEngine::load_script(PyObject* self, PyObject* args)
 	return Py_None;
 }
 
-PyObject* OgreEngine::find_string_match_indicies(PyObject* self, PyObject* args)
+PyObject* OgreEngine::load_scene(PyObject* self, PyObject* args)
+{
+	return nullptr;
+}
+
+PyObject* OgreEngine::find_all_string_match_indicies(PyObject* self, PyObject* args)
 {
 	//self is the module we are a part of
 	// args is a tuple
@@ -321,4 +326,34 @@ PyObject* OgreEngine::set_skybox(PyObject* self, PyObject* args)
 		PyErr_SetString(PyExc_ValueError, "Did not get arguement of type Tuple");
 	Py_IncRef(Py_None);
 	return Py_None;
+}
+
+PyObject* OgreEngine::register_input_listener(PyObject* self, PyObject* args)
+{
+	return nullptr;
+}
+
+PyObject* OgreEngine::deregister_input_listener(PyObject* self, PyObject* args)
+{
+	return nullptr;
+}
+
+PyObject* OgreEngine::has_action(PyObject* self, PyObject* args)
+{
+	return nullptr;
+}
+
+PyObject* OgreEngine::get_action(PyObject* self, PyObject* args)
+{
+	return nullptr;
+}
+
+PyObject* OgreEngine::has_axis(PyObject* self, PyObject* args)
+{
+	return nullptr;
+}
+
+PyObject* OgreEngine::get_axis(PyObject* self, PyObject* args)
+{
+	return nullptr;
 }

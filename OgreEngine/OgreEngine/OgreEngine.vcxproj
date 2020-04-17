@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClCompile Include="src\application.cpp" />
     <ClCompile Include="src\component_camera.cpp" />
+    <ClCompile Include="src\component_input_listener.cpp" />
     <ClCompile Include="src\component_light.cpp" />
     <ClCompile Include="src\component_mesh.cpp" />
     <ClCompile Include="src\game_object.cpp" />
