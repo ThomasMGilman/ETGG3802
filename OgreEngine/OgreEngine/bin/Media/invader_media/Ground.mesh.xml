@@ -3,22 +3,22 @@
     <sharedgeometry vertexcount="4">
         <vertexbuffer colours_diffuse="False" normals="true" positions="true" texture_coords="1">
             <vertex>
-                <position x="-1.000000" y="-1.000000" z="0.000000"/>
+                <position x="-8.088890" y="-15.305777" z="0.000000"/>
                 <normal x="0.000000" y="0.000000" z="1.000000"/>
                 <texcoord u="0.215312" v="0.000075"/>
             </vertex>
             <vertex>
-                <position x="1.000000" y="-1.000000" z="0.000000"/>
+                <position x="8.088890" y="-15.305777" z="0.000000"/>
                 <normal x="0.000000" y="0.000000" z="1.000000"/>
                 <texcoord u="0.215312" v="0.999925"/>
             </vertex>
             <vertex>
-                <position x="1.000000" y="1.000000" z="0.000000"/>
+                <position x="8.088890" y="15.305777" z="0.000000"/>
                 <normal x="0.000000" y="0.000000" z="1.000000"/>
                 <texcoord u="0.777727" v="0.999925"/>
             </vertex>
             <vertex>
-                <position x="-1.000000" y="1.000000" z="0.000000"/>
+                <position x="-8.088890" y="15.305777" z="0.000000"/>
                 <normal x="0.000000" y="0.000000" z="1.000000"/>
                 <texcoord u="0.777727" v="0.000075"/>
             </vertex>

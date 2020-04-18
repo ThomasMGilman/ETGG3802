@@ -77,10 +77,10 @@ namespace OgreEngine
 		// ***** OBJECT / XML READER FUNCTIONS *****
 	public:
 		/// Given a list of scenes or object xmls. This loads in the scene/objects
-		void load_scenes(std::list<std::tuple<std::string, std::string>> fileNames, bool printReadValues = true);
+		void load_scenes(std::list<std::tuple<std::string, std::string>> fileNames, bool printReadValues = false);
 
 		/// Load in the given scene/objects from the file given using tinyxml2
-		void load_scene(std::string fileName, std::string path, bool printReadValues = true);
+		void load_scene(std::string file, std::string groupName, bool printReadValues = false);
 
 		/// Create new GameObject Component from xml parameters
 		void parse_xml_nodes(tinyxml2::XMLElement* element, std::string groupName, std::string path, bool printReadValues, GameObject* parent = nullptr);
@@ -134,7 +134,6 @@ namespace OgreEngine
 		/// Returns true if that game object was destroyed (i.e. was it found).
 		void group_destroy(std::string group_name, bool destroy_group);
 
-		
 		void group_destroy(std::map<std::string, std::map<std::string, GameObject*>>::iterator& group, bool destroy_group);
 
 		/// Destroys all game objects and groups entirely

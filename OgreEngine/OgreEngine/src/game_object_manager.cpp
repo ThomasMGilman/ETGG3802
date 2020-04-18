@@ -39,9 +39,9 @@ void GameObjectManager::load_scenes(std::list<std::tuple<std::string, std::strin
 		load_scene(std::get<0>(val), std::get<1>(val), printReadValues);
 }
 
-void GameObjectManager::load_scene(std::string fileName, std::string path, bool printReadValues)
+void GameObjectManager::load_scene(std::string file, std::string groupName, bool printReadValues)
 {
-	mDoc->LoadFile((path + fileName).c_str());
+	mDoc->LoadFile(file.c_str());
 	if (mDoc->Error())
 	{
 		std::string error = mDoc->ErrorStr();
@@ -56,7 +56,7 @@ void GameObjectManager::load_scene(std::string fileName, std::string path, bool 
 		{
 			tinyxml2::XMLElement* firstNode = nodesElement->FirstChildElement();
 			if(firstNode != NULL)
-				parse_xml_nodes(firstNode, fileName, path, printReadValues);
+				parse_xml_nodes(firstNode, groupName, "", printReadValues);
 		}
 	}
 }
@@ -181,7 +181,8 @@ void GameObjectManager::parse_xml_gameobject(tinyxml2::XMLElement* element, std:
 		std::string nodeName = element->Attribute("name");
 		if (nodeName == "tag")
 			set_game_object_tag(element->IntAttribute("data"), parent);
-		//else if (nodeName == "script")
+		else if (nodeName == "script")
+			parent->make_script_twin(element->Attribute("data"));
 	}
 	else
 	{
@@ -506,7 +507,7 @@ void GameObjectManager::set_visibility(std::string group_name, bool is_visible)
 
 GameObject* GameObjectManager::create_game_object(std::string group_name, std::string object_name, GameObject* parent, unsigned int tag, Ogre::Vector3 pos, Ogre::Quaternion rot)
 {
-	GameObject* newObj = new GameObject(object_name, tag, parent, pos, rot);
+	GameObject* newObj = new GameObject(object_name, tag, group_name, parent, pos, rot);
 	
 	mGroupsIter = mObjects.find(group_name);
 	if (mGroupsIter != mObjects.end())

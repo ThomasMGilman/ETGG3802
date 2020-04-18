@@ -12,7 +12,7 @@ namespace OgreEngine
 	};
 
 	template<typename T>
-	OgreEngine::package<T> get_num_from_pytuple(PyObject* tuple, int index)
+	package<T> get_num_from_pytuple(PyObject* tuple, int index)
 	{
 		OgreEngine::package<T> f;
 		if (!PyNumber_Check(PyTuple_GetItem(tuple, index)))
@@ -44,11 +44,11 @@ namespace OgreEngine
 		return f;
 	};
 
-	OgreEngine::package<Ogre::ColourValue> get_colour_from_pytuple(PyObject* tuple, int offsetIntoTuple = 0);
+	package<Ogre::ColourValue> get_colour_from_pytuple(PyObject* tuple, int offsetIntoTuple = 0);
 
-	OgreEngine::package<Ogre::Vector3> get_vector3_from_pytuple(PyObject* tuple, int offsetIntoTuple = 0);
+	package<Ogre::Vector3> get_vector3_from_pytuple(PyObject* tuple, int offsetIntoTuple = 0);
 
-	OgreEngine::package<Ogre::Quaternion> get_quaternion_from_pytuple(PyObject* tuple, int offsetIntoTuple = 0);
+	package<Ogre::Quaternion> get_quaternion_from_pytuple(PyObject* tuple, int offsetIntoTuple = 0);
 
 	/// Loads the provided script. The provided script must include full path to said script.
 	PyObject* load_script(PyObject* self, PyObject* args);

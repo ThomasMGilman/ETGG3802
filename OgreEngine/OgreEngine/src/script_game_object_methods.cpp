@@ -47,94 +47,112 @@ PyObject* OgreEngine::script::get_name(PyObject* self, PyObject* args)
 
 PyObject* OgreEngine::script::create_mesh_component(PyObject* self, PyObject* args)
 {
-    std::string errMsg;
-    if (PyTuple_Check(args) && PyTuple_Size(args) == 1)
+    script::GameObject* thisObj = ((script::GameObject*)(PyTypeObject*)self);
+    if (thisObj->mTwin != nullptr)
     {
-        if (PyUnicode_Check(PyTuple_GetItem(args, 0)))
+        std::string errMsg;
+        if (PyTuple_Check(args) && PyTuple_Size(args) == 1)
         {
-            std::string fileName = PyUnicode_AsUTF8(PyTuple_GetItem(args, 0));
-            script::GameObject* thisObj = ((script::GameObject*)(PyTypeObject*)self);
-            thisObj->mTwin->create_mesh(thisObj->mTwin->get_name() + "_Mesh", fileName);
-            Py_INCREF(Py_None);
-            return Py_None;
+            if (PyUnicode_Check(PyTuple_GetItem(args, 0)))
+            {
+                std::string fileName = PyUnicode_AsUTF8(PyTuple_GetItem(args, 0));
+                thisObj->mTwin->create_mesh(thisObj->mTwin->get_name() + "_Mesh", fileName);
+            }
+            else
+                errMsg = "create_mesh_component ERROR!! Value Is not of type string!!";
         }
         else
-            errMsg = "create_mesh_component ERROR!! Value Is not of type string!!";
+            errMsg = "create_mesh_component ERROR!! Did not get a valid Tuple!! Need to recieve a tuple of size 1 containing a string!!";
+        PyErr_SetString(PyExc_ValueError, errMsg.c_str());
+        return NULL;
     }
-    else
-        errMsg = "create_mesh_component ERROR!! Did not get a valid Tuple!! Need to recieve a tuple of size 1 containing a string!!";
-    PyErr_SetString(PyExc_ValueError, errMsg.c_str());
-    return NULL;
+    Py_INCREF(Py_None);
+    return Py_None;
 }
 
 PyObject* OgreEngine::script::rotate_local(PyObject* self, PyObject* args)
 {
-    OgreEngine::package<float> degrees = get_num_from_pytuple<float>(args, 0);
-    OgreEngine::package<Ogre::Vector3> axisPackage = get_vector3_from_pytuple(args);
-    if (degrees.errSet || axisPackage.errSet)
-    {
-        PyErr_SetString(PyExc_ValueError, ("rotate_world ERROR!! Degrees: " + degrees.msg + "Axis: " + axisPackage.msg).c_str());
-        return NULL;
-    }
     script::GameObject* thisObj = ((script::GameObject*)(PyTypeObject*)self);
-    thisObj->mTwin->rotate_local(degrees.data, axisPackage.data);
+    if (thisObj->mTwin != nullptr)
+    {
+        OgreEngine::package<float> degrees = get_num_from_pytuple<float>(args, 0);
+        OgreEngine::package<Ogre::Vector3> axisPackage = get_vector3_from_pytuple(args);
+        if (degrees.errSet || axisPackage.errSet)
+        {
+            PyErr_SetString(PyExc_ValueError, ("rotate_world ERROR!! Degrees: " + degrees.msg + "Axis: " + axisPackage.msg).c_str());
+            return NULL;
+        }
+        thisObj->mTwin->rotate_local(degrees.data, axisPackage.data);
+    }
     Py_INCREF(Py_None);
     return Py_None;
 }
 
 PyObject* OgreEngine::script::rotate_world(PyObject* self, PyObject* args)
 {
-    OgreEngine::package<float> degrees = get_num_from_pytuple<float>(args, 0);
-    OgreEngine::package<Ogre::Vector3> axisPackage = get_vector3_from_pytuple(args);
-    if (degrees.errSet || axisPackage.errSet)
-    {
-        PyErr_SetString(PyExc_ValueError, ("rotate_world ERROR!! Degrees: "+degrees.msg+"Axis: "+axisPackage.msg).c_str());
-        return NULL;
-    }
     script::GameObject* thisObj = ((script::GameObject*)(PyTypeObject*)self);
-    thisObj->mTwin->rotate_world(degrees.data, axisPackage.data);
+    if (thisObj->mTwin != nullptr)
+    {
+        OgreEngine::package<float> degrees = get_num_from_pytuple<float>(args, 0);
+        OgreEngine::package<Ogre::Vector3> axisPackage = get_vector3_from_pytuple(args);
+        if (degrees.errSet || axisPackage.errSet)
+        {
+            PyErr_SetString(PyExc_ValueError, ("rotate_world ERROR!! Degrees: " + degrees.msg + "Axis: " + axisPackage.msg).c_str());
+            return NULL;
+        }
+        thisObj->mTwin->rotate_world(degrees.data, axisPackage.data);
+    }
     Py_INCREF(Py_None);
     return Py_None;
 }
 
 PyObject* OgreEngine::script::scale(PyObject* self, PyObject* args)
 {
-    OgreEngine::package<Ogre::Vector3> translationPackage = get_vector3_from_pytuple(args);
-    if (translationPackage.errSet)
-    {
-        PyErr_SetString(PyExc_ValueError, ("scale ERROR!! "+translationPackage.msg).c_str());
-        return NULL;
-    }
     script::GameObject* thisObj = ((script::GameObject*)(PyTypeObject*)self);
-    thisObj->mTwin->scale(translationPackage.data);
+    if (thisObj->mTwin != nullptr)
+    {
+        OgreEngine::package<Ogre::Vector3> translationPackage = get_vector3_from_pytuple(args);
+        if (translationPackage.errSet)
+        {
+            PyErr_SetString(PyExc_ValueError, ("scale ERROR!! " + translationPackage.msg).c_str());
+            return NULL;
+        }
+        thisObj->mTwin->scale(translationPackage.data);
+    }
     Py_INCREF(Py_None);
     return Py_None;
 }
 
 PyObject* OgreEngine::script::translate_local(PyObject* self, PyObject* args)
 {
-    OgreEngine::package<Ogre::Vector3> translationPackage = get_vector3_from_pytuple(args);
-    if (translationPackage.errSet)
-    {
-        PyErr_SetString(PyExc_ValueError, ("tanslate_local ERROR!! "+translationPackage.msg).c_str());
-        return NULL;
-    }
     script::GameObject* thisObj = ((script::GameObject*)(PyTypeObject*)self);
-    thisObj->mTwin->translate_local(translationPackage.data);
+    if (thisObj->mTwin != nullptr)
+    {
+        OgreEngine::package<Ogre::Vector3> translationPackage = get_vector3_from_pytuple(args);
+        if (translationPackage.errSet)
+        {
+            PyErr_SetString(PyExc_ValueError, ("tanslate_local ERROR!! " + translationPackage.msg).c_str());
+            return NULL;
+        }
+        thisObj->mTwin->translate_local(translationPackage.data);
+    }
     Py_INCREF(Py_None);
     return Py_None;
 }
 
 PyObject* OgreEngine::script::translate_world(PyObject* self, PyObject* args)
 {
-    OgreEngine::package<Ogre::Vector3> translationPackage = get_vector3_from_pytuple(args);
-    if (translationPackage.errSet)
-    {
-        PyErr_SetString(PyExc_ValueError, ("tanslate_world ERROR!! "+translationPackage.msg).c_str());
-        return NULL;
-    }
     script::GameObject* thisObj = ((script::GameObject*)(PyTypeObject*)self);
-    thisObj->mTwin->translate_world(translationPackage.data);
+    if (thisObj->mTwin != nullptr)
+    {
+        OgreEngine::package<Ogre::Vector3> translationPackage = get_vector3_from_pytuple(args);
+        if (translationPackage.errSet)
+        {
+            PyErr_SetString(PyExc_ValueError, ("tanslate_world ERROR!! " + translationPackage.msg).c_str());
+            return NULL;
+        }
+        thisObj->mTwin->translate_world(translationPackage.data);
+    }
     Py_INCREF(Py_None);
     return Py_None;
 }

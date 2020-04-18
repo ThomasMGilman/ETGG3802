@@ -12,11 +12,18 @@ namespace OgreEngine
 	protected:
 
 		GameObject* mParent;
+		Ogre::Node* mNode;
 	public:
 
 		ComponentInputListener(GameObject* owner, std::string name = "");
 
 		~ComponentInputListener();
+
+		void update(float elapsed) override {};
+
+		ComponentType get_type() override { return ComponentType::INPUT_LISTENER; }
+
+		void set_visible(bool isVisible) override {};
 
 		/// process incoming broadcasted input button/key events
 		void process_key_action(std::string action, bool is_pressed);

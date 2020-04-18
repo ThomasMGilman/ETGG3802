@@ -9,7 +9,13 @@ namespace OgreEngine {
 	class LogManager : public Singleton<LogManager>
 	{
 	public:
-		LogManager(float vpHeight, std::string logFileName = "log.txt", int numLogs = 20);
+		LogManager(float vpHeight, float vpWidth, std::string logFileName = "log.txt", int numLogs = 20);
+
+		std::string get_current_time();
+
+		void toggle_debug_panel();
+
+		void update_debug_panel(Ogre::Real elapsed_time);
 
 		// Creates a new text element area with the desired caption and color and returns it as a message structure with its position stored
 		void set_text_element(std::string caption, Ogre::ColourValue text_color, float log_time_seconds);
@@ -39,7 +45,7 @@ namespace OgreEngine {
 		// Ogre Overlay tools
 		Ogre::OverlayManager& mOverlayManager = Ogre::OverlayManager::getSingleton();
 		Ogre::Overlay* mOverlay;
-		Ogre::OverlayContainer* mOverlayPanel;
+		Ogre::OverlayContainer* mOverlayPanel, *mOverlayDebugPanel;
 
 		// Time object
 		std::time_t mTimer;
@@ -47,8 +53,11 @@ namespace OgreEngine {
 		// Output stream
 		std::ofstream mOutfile;
 
+		// For debugging
+		Ogre::Real last_elapsed;
 		// Container for text to display to screen
 		std::vector<msg_pack> mLogs;
+		std::vector<msg_pack> mDebugLogs;
 		std::stack<std::tuple<float, std::string, Ogre::ColourValue>> mPendingLogs;
 	};
 }

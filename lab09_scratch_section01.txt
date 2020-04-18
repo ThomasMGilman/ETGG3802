@@ -1,0 +1,32 @@
+in Application.cpp, frameStarted
+
+Ogre::RenderWindow * win = getRenderWindow();
+Ogre::RenderTarget::FrameStats stats = win->getStatistics();
+stats.numTriangle
+stats.avgFPS;
+
+
+In ColliderComponent...
+
+If you want the 3 axes (for a box)
+     Ogre::Quaternion Q = mOwner->get_world_orientation();
+	 Ogre::Vector3 xaxis, yaxis, zaxis;
+	 Q.ToAxes(xaxis, yaxis, zaxiz);    // Fills in the 3 vectors.
+	 
+	 Ogre::Vector3 pos = mOwner->get_world_position();
+	 
+	 box 0.91219 0.26035 0.72042
+	 
+// When deciding whether to do a collision check with object a and b
+For a in objects:
+   For b in objects:
+      b_layer = ...    # e.g. 2 for bumpers / ground
+      a_mask = ...     # e.g. 36 for invaders
+	  do_collision = b_layer & a_mask     # <- close, but not correct, yet.
+      #if a == b or a shouldn’t collide with b (next slide):
+      if a == b or do_collision == 0:
+   	     continue
+      else:
+	     call the helper function to decide if a hits b.  If it does:
+             notify a that it was hit by b.
+

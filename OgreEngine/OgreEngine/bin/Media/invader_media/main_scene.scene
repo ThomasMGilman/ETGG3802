@@ -1,17 +1,487 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- exporter: blender2ogre 0.7.0 -->
-<!-- export_time: Wed, 05 Feb 2020 15:38:57 +0000 -->
-<!-- previous_export_time: Wed, 05 Feb 2020 15:36:35 +0000 -->
+<!-- export_time: Fri, 10 Apr 2020 17:01:02 +0000 -->
+<!-- previous_export_time: Thu, 09 Apr 2020 21:05:05 +0000 -->
 <scene author="JasonW" formatVersion="1.1" >
   <nodes >
+    <node name="FleetContainer" >
+      <position x="0.962700" y="15.771332" z="0.938314" />
+      <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
+      <scale x="1.000000" y="1.000000" z="1.000000" />
+      <userData >
+        <property data="Fleet" name="script" type="str" />
+      </userData>
+      <node name="Invader" >
+        <position x="3.788558" y="4.158113" z="-0.042447" />
+        <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
+        <scale x="0.075393" y="0.269194" z="0.075393" />
+        <userData >
+          <property data="Invader" name="script" type="str" />
+          <property data="20" name="tag" type="int" />
+          <property data="box 0.91219 0.26035 0.72042" name="collider" type="str" />
+          <property data="0" name="collider_layer" type="int" />
+          <property data="36" name="collider_mask" type="int" />
+        </userData>
+        <entity meshFile="Invader.mesh" name="Invader" >
+          <userData >
+            <property data="1.0" name="mass" type="float" />
+            <property data="1.0" name="mass_radius" type="float" />
+            <property data="STATIC" name="physics_type" type="str" />
+            <property data="False" name="actor" type="bool" />
+            <property data="False" name="ghost" type="bool" />
+            <property data="0.0" name="velocity_min" type="float" />
+            <property data="0.0" name="velocity_max" type="float" />
+            <property data="False" name="lock_trans_x" type="bool" />
+            <property data="False" name="lock_trans_y" type="bool" />
+            <property data="False" name="lock_trans_z" type="bool" />
+            <property data="False" name="lock_rot_x" type="bool" />
+            <property data="False" name="lock_rot_y" type="bool" />
+            <property data="False" name="lock_rot_z" type="bool" />
+            <property data="False" name="anisotropic_friction" type="bool" />
+            <property data="1.0" name="friction_x" type="float" />
+            <property data="1.0" name="friction_y" type="float" />
+            <property data="1.0" name="friction_z" type="float" />
+            <property data="0.03999999910593033" name="damping_trans" type="float" />
+            <property data="0.10000000149011612" name="damping_rot" type="float" />
+            <property data="0.4000000059604645" name="inertia_tensor" type="float" />
+          </userData>
+        </entity>
+      </node>
+      <node name="Invader.001" >
+        <position x="1.388443" y="4.158113" z="-0.015616" />
+        <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
+        <scale x="0.075393" y="0.269194" z="0.075393" />
+        <userData >
+          <property data="Invader" name="script" type="str" />
+          <property data="20" name="tag" type="int" />
+          <property data="box 0.91219 0.26035 0.72042" name="collider" type="str" />
+          <property data="0" name="collider_layer" type="int" />
+          <property data="36" name="collider_mask" type="int" />
+        </userData>
+        <entity meshFile="Invader.mesh" name="Invader.001" >
+          <userData >
+            <property data="1.0" name="mass" type="float" />
+            <property data="1.0" name="mass_radius" type="float" />
+            <property data="STATIC" name="physics_type" type="str" />
+            <property data="False" name="actor" type="bool" />
+            <property data="False" name="ghost" type="bool" />
+            <property data="0.0" name="velocity_min" type="float" />
+            <property data="0.0" name="velocity_max" type="float" />
+            <property data="False" name="lock_trans_x" type="bool" />
+            <property data="False" name="lock_trans_y" type="bool" />
+            <property data="False" name="lock_trans_z" type="bool" />
+            <property data="False" name="lock_rot_x" type="bool" />
+            <property data="False" name="lock_rot_y" type="bool" />
+            <property data="False" name="lock_rot_z" type="bool" />
+            <property data="False" name="anisotropic_friction" type="bool" />
+            <property data="1.0" name="friction_x" type="float" />
+            <property data="1.0" name="friction_y" type="float" />
+            <property data="1.0" name="friction_z" type="float" />
+            <property data="0.03999999910593033" name="damping_trans" type="float" />
+            <property data="0.10000000149011612" name="damping_rot" type="float" />
+            <property data="0.4000000059604645" name="inertia_tensor" type="float" />
+          </userData>
+        </entity>
+      </node>
+      <node name="Invader.002" >
+        <position x="-1.121569" y="4.158113" z="-0.015616" />
+        <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
+        <scale x="0.075393" y="0.269194" z="0.075393" />
+        <userData >
+          <property data="Invader" name="script" type="str" />
+          <property data="20" name="tag" type="int" />
+          <property data="box 0.91219 0.26035 0.72042" name="collider" type="str" />
+          <property data="0" name="collider_layer" type="int" />
+          <property data="36" name="collider_mask" type="int" />
+        </userData>
+        <entity meshFile="Invader.mesh" name="Invader.002" >
+          <userData >
+            <property data="1.0" name="mass" type="float" />
+            <property data="1.0" name="mass_radius" type="float" />
+            <property data="STATIC" name="physics_type" type="str" />
+            <property data="False" name="actor" type="bool" />
+            <property data="False" name="ghost" type="bool" />
+            <property data="0.0" name="velocity_min" type="float" />
+            <property data="0.0" name="velocity_max" type="float" />
+            <property data="False" name="lock_trans_x" type="bool" />
+            <property data="False" name="lock_trans_y" type="bool" />
+            <property data="False" name="lock_trans_z" type="bool" />
+            <property data="False" name="lock_rot_x" type="bool" />
+            <property data="False" name="lock_rot_y" type="bool" />
+            <property data="False" name="lock_rot_z" type="bool" />
+            <property data="False" name="anisotropic_friction" type="bool" />
+            <property data="1.0" name="friction_x" type="float" />
+            <property data="1.0" name="friction_y" type="float" />
+            <property data="1.0" name="friction_z" type="float" />
+            <property data="0.03999999910593033" name="damping_trans" type="float" />
+            <property data="0.10000000149011612" name="damping_rot" type="float" />
+            <property data="0.4000000059604645" name="inertia_tensor" type="float" />
+          </userData>
+        </entity>
+      </node>
+      <node name="Invader.003" >
+        <position x="-3.598489" y="4.158113" z="-0.015616" />
+        <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
+        <scale x="0.075393" y="0.269194" z="0.075393" />
+        <userData >
+          <property data="Invader" name="script" type="str" />
+          <property data="20" name="tag" type="int" />
+          <property data="box 0.91219 0.26035 0.72042" name="collider" type="str" />
+          <property data="36" name="collider_mask" type="int" />
+          <property data="0" name="collider_layer" type="int" />
+        </userData>
+        <entity meshFile="Invader.mesh" name="Invader.003" >
+          <userData >
+            <property data="1.0" name="mass" type="float" />
+            <property data="1.0" name="mass_radius" type="float" />
+            <property data="STATIC" name="physics_type" type="str" />
+            <property data="False" name="actor" type="bool" />
+            <property data="False" name="ghost" type="bool" />
+            <property data="0.0" name="velocity_min" type="float" />
+            <property data="0.0" name="velocity_max" type="float" />
+            <property data="False" name="lock_trans_x" type="bool" />
+            <property data="False" name="lock_trans_y" type="bool" />
+            <property data="False" name="lock_trans_z" type="bool" />
+            <property data="False" name="lock_rot_x" type="bool" />
+            <property data="False" name="lock_rot_y" type="bool" />
+            <property data="False" name="lock_rot_z" type="bool" />
+            <property data="False" name="anisotropic_friction" type="bool" />
+            <property data="1.0" name="friction_x" type="float" />
+            <property data="1.0" name="friction_y" type="float" />
+            <property data="1.0" name="friction_z" type="float" />
+            <property data="0.03999999910593033" name="damping_trans" type="float" />
+            <property data="0.10000000149011612" name="damping_rot" type="float" />
+            <property data="0.4000000059604645" name="inertia_tensor" type="float" />
+          </userData>
+        </entity>
+      </node>
+      <node name="Invader.004" >
+        <position x="-3.598489" y="0.030508" z="-0.015616" />
+        <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
+        <scale x="0.075393" y="0.269194" z="0.075393" />
+        <userData >
+          <property data="Invader" name="script" type="str" />
+          <property data="20" name="tag" type="int" />
+          <property data="box 0.91219 0.26035 0.72042" name="collider" type="str" />
+          <property data="0" name="collider_layer" type="int" />
+          <property data="36" name="collider_mask" type="int" />
+        </userData>
+        <entity meshFile="Invader.mesh" name="Invader.004" >
+          <userData >
+            <property data="1.0" name="mass" type="float" />
+            <property data="1.0" name="mass_radius" type="float" />
+            <property data="STATIC" name="physics_type" type="str" />
+            <property data="False" name="actor" type="bool" />
+            <property data="False" name="ghost" type="bool" />
+            <property data="0.0" name="velocity_min" type="float" />
+            <property data="0.0" name="velocity_max" type="float" />
+            <property data="False" name="lock_trans_x" type="bool" />
+            <property data="False" name="lock_trans_y" type="bool" />
+            <property data="False" name="lock_trans_z" type="bool" />
+            <property data="False" name="lock_rot_x" type="bool" />
+            <property data="False" name="lock_rot_y" type="bool" />
+            <property data="False" name="lock_rot_z" type="bool" />
+            <property data="False" name="anisotropic_friction" type="bool" />
+            <property data="1.0" name="friction_x" type="float" />
+            <property data="1.0" name="friction_y" type="float" />
+            <property data="1.0" name="friction_z" type="float" />
+            <property data="0.03999999910593033" name="damping_trans" type="float" />
+            <property data="0.10000000149011612" name="damping_rot" type="float" />
+            <property data="0.4000000059604645" name="inertia_tensor" type="float" />
+          </userData>
+        </entity>
+      </node>
+      <node name="Invader.005" >
+        <position x="-1.121569" y="0.030508" z="-0.015616" />
+        <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
+        <scale x="0.075393" y="0.269194" z="0.075393" />
+        <userData >
+          <property data="Invader" name="script" type="str" />
+          <property data="1" name="tag" type="int" />
+          <property data="box 0.91219 0.26035 0.72042" name="collider" type="str" />
+          <property data="0" name="collider_layer" type="int" />
+          <property data="36" name="collider_mask" type="int" />
+        </userData>
+        <entity meshFile="Invader.mesh" name="Invader.005" >
+          <userData >
+            <property data="1.0" name="mass" type="float" />
+            <property data="1.0" name="mass_radius" type="float" />
+            <property data="STATIC" name="physics_type" type="str" />
+            <property data="False" name="actor" type="bool" />
+            <property data="False" name="ghost" type="bool" />
+            <property data="0.0" name="velocity_min" type="float" />
+            <property data="0.0" name="velocity_max" type="float" />
+            <property data="False" name="lock_trans_x" type="bool" />
+            <property data="False" name="lock_trans_y" type="bool" />
+            <property data="False" name="lock_trans_z" type="bool" />
+            <property data="False" name="lock_rot_x" type="bool" />
+            <property data="False" name="lock_rot_y" type="bool" />
+            <property data="False" name="lock_rot_z" type="bool" />
+            <property data="False" name="anisotropic_friction" type="bool" />
+            <property data="1.0" name="friction_x" type="float" />
+            <property data="1.0" name="friction_y" type="float" />
+            <property data="1.0" name="friction_z" type="float" />
+            <property data="0.03999999910593033" name="damping_trans" type="float" />
+            <property data="0.10000000149011612" name="damping_rot" type="float" />
+            <property data="0.4000000059604645" name="inertia_tensor" type="float" />
+          </userData>
+        </entity>
+      </node>
+      <node name="Invader.006" >
+        <position x="1.388443" y="0.030508" z="-0.015616" />
+        <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
+        <scale x="0.075393" y="0.269194" z="0.075393" />
+        <userData >
+          <property data="Invader" name="script" type="str" />
+          <property data="20" name="tag" type="int" />
+          <property data="box 0.91219 0.26035 0.72042" name="collider" type="str" />
+          <property data="0" name="collider_layer" type="int" />
+          <property data="36" name="collider_mask" type="int" />
+        </userData>
+        <entity meshFile="Invader.mesh" name="Invader.006" >
+          <userData >
+            <property data="1.0" name="mass" type="float" />
+            <property data="1.0" name="mass_radius" type="float" />
+            <property data="STATIC" name="physics_type" type="str" />
+            <property data="False" name="actor" type="bool" />
+            <property data="False" name="ghost" type="bool" />
+            <property data="0.0" name="velocity_min" type="float" />
+            <property data="0.0" name="velocity_max" type="float" />
+            <property data="False" name="lock_trans_x" type="bool" />
+            <property data="False" name="lock_trans_y" type="bool" />
+            <property data="False" name="lock_trans_z" type="bool" />
+            <property data="False" name="lock_rot_x" type="bool" />
+            <property data="False" name="lock_rot_y" type="bool" />
+            <property data="False" name="lock_rot_z" type="bool" />
+            <property data="False" name="anisotropic_friction" type="bool" />
+            <property data="1.0" name="friction_x" type="float" />
+            <property data="1.0" name="friction_y" type="float" />
+            <property data="1.0" name="friction_z" type="float" />
+            <property data="0.03999999910593033" name="damping_trans" type="float" />
+            <property data="0.10000000149011612" name="damping_rot" type="float" />
+            <property data="0.4000000059604645" name="inertia_tensor" type="float" />
+          </userData>
+        </entity>
+      </node>
+      <node name="Invader.007" >
+        <position x="3.868084" y="0.030508" z="-0.015616" />
+        <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
+        <scale x="0.075393" y="0.269194" z="0.075393" />
+        <userData >
+          <property data="Invader" name="script" type="str" />
+          <property data="20" name="tag" type="int" />
+          <property data="box 0.91219 0.26035 0.72042" name="collider" type="str" />
+          <property data="0" name="collider_layer" type="int" />
+          <property data="36" name="collider_mask" type="int" />
+        </userData>
+        <entity meshFile="Invader.mesh" name="Invader.007" >
+          <userData >
+            <property data="1.0" name="mass" type="float" />
+            <property data="1.0" name="mass_radius" type="float" />
+            <property data="STATIC" name="physics_type" type="str" />
+            <property data="False" name="actor" type="bool" />
+            <property data="False" name="ghost" type="bool" />
+            <property data="0.0" name="velocity_min" type="float" />
+            <property data="0.0" name="velocity_max" type="float" />
+            <property data="False" name="lock_trans_x" type="bool" />
+            <property data="False" name="lock_trans_y" type="bool" />
+            <property data="False" name="lock_trans_z" type="bool" />
+            <property data="False" name="lock_rot_x" type="bool" />
+            <property data="False" name="lock_rot_y" type="bool" />
+            <property data="False" name="lock_rot_z" type="bool" />
+            <property data="False" name="anisotropic_friction" type="bool" />
+            <property data="1.0" name="friction_x" type="float" />
+            <property data="1.0" name="friction_y" type="float" />
+            <property data="1.0" name="friction_z" type="float" />
+            <property data="0.03999999910593033" name="damping_trans" type="float" />
+            <property data="0.10000000149011612" name="damping_rot" type="float" />
+            <property data="0.4000000059604645" name="inertia_tensor" type="float" />
+          </userData>
+        </entity>
+      </node>
+      <node name="Invader.008" >
+        <position x="3.868084" y="-3.715729" z="-0.015616" />
+        <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
+        <scale x="0.075393" y="0.269194" z="0.075393" />
+        <userData >
+          <property data="20" name="tag" type="int" />
+          <property data="Invader" name="script" type="str" />
+          <property data="box 0.91219 0.26035 0.72042" name="collider" type="str" />
+          <property data="0" name="collider_layer" type="int" />
+          <property data="36" name="collider_mask" type="int" />
+        </userData>
+        <entity meshFile="Invader.mesh" name="Invader.008" >
+          <userData >
+            <property data="1.0" name="mass" type="float" />
+            <property data="1.0" name="mass_radius" type="float" />
+            <property data="STATIC" name="physics_type" type="str" />
+            <property data="False" name="actor" type="bool" />
+            <property data="False" name="ghost" type="bool" />
+            <property data="0.0" name="velocity_min" type="float" />
+            <property data="0.0" name="velocity_max" type="float" />
+            <property data="False" name="lock_trans_x" type="bool" />
+            <property data="False" name="lock_trans_y" type="bool" />
+            <property data="False" name="lock_trans_z" type="bool" />
+            <property data="False" name="lock_rot_x" type="bool" />
+            <property data="False" name="lock_rot_y" type="bool" />
+            <property data="False" name="lock_rot_z" type="bool" />
+            <property data="False" name="anisotropic_friction" type="bool" />
+            <property data="1.0" name="friction_x" type="float" />
+            <property data="1.0" name="friction_y" type="float" />
+            <property data="1.0" name="friction_z" type="float" />
+            <property data="0.03999999910593033" name="damping_trans" type="float" />
+            <property data="0.10000000149011612" name="damping_rot" type="float" />
+            <property data="0.4000000059604645" name="inertia_tensor" type="float" />
+          </userData>
+        </entity>
+      </node>
+      <node name="Invader.009" >
+        <position x="1.388443" y="-3.715729" z="-0.015616" />
+        <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
+        <scale x="0.075393" y="0.269194" z="0.075393" />
+        <userData >
+          <property data="20" name="tag" type="int" />
+          <property data="Invader" name="script" type="str" />
+          <property data="box 0.91219 0.26035 0.72042" name="collider" type="str" />
+          <property data="0" name="collider_layer" type="int" />
+          <property data="36" name="collider_mask" type="int" />
+        </userData>
+        <entity meshFile="Invader.mesh" name="Invader.009" >
+          <userData >
+            <property data="1.0" name="mass" type="float" />
+            <property data="1.0" name="mass_radius" type="float" />
+            <property data="STATIC" name="physics_type" type="str" />
+            <property data="False" name="actor" type="bool" />
+            <property data="False" name="ghost" type="bool" />
+            <property data="0.0" name="velocity_min" type="float" />
+            <property data="0.0" name="velocity_max" type="float" />
+            <property data="False" name="lock_trans_x" type="bool" />
+            <property data="False" name="lock_trans_y" type="bool" />
+            <property data="False" name="lock_trans_z" type="bool" />
+            <property data="False" name="lock_rot_x" type="bool" />
+            <property data="False" name="lock_rot_y" type="bool" />
+            <property data="False" name="lock_rot_z" type="bool" />
+            <property data="False" name="anisotropic_friction" type="bool" />
+            <property data="1.0" name="friction_x" type="float" />
+            <property data="1.0" name="friction_y" type="float" />
+            <property data="1.0" name="friction_z" type="float" />
+            <property data="0.03999999910593033" name="damping_trans" type="float" />
+            <property data="0.10000000149011612" name="damping_rot" type="float" />
+            <property data="0.4000000059604645" name="inertia_tensor" type="float" />
+          </userData>
+        </entity>
+      </node>
+      <node name="Invader.010" >
+        <position x="-1.121569" y="-3.715729" z="-0.015616" />
+        <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
+        <scale x="0.075393" y="0.269194" z="0.075393" />
+        <userData >
+          <property data="Invader" name="script" type="str" />
+          <property data="20" name="tag" type="int" />
+          <property data="box 0.91219 0.26035 0.72042" name="collider" type="str" />
+          <property data="0" name="collider_layer" type="int" />
+          <property data="36" name="collider_mask" type="int" />
+        </userData>
+        <entity meshFile="Invader.mesh" name="Invader.010" >
+          <userData >
+            <property data="1.0" name="mass" type="float" />
+            <property data="1.0" name="mass_radius" type="float" />
+            <property data="STATIC" name="physics_type" type="str" />
+            <property data="False" name="actor" type="bool" />
+            <property data="False" name="ghost" type="bool" />
+            <property data="0.0" name="velocity_min" type="float" />
+            <property data="0.0" name="velocity_max" type="float" />
+            <property data="False" name="lock_trans_x" type="bool" />
+            <property data="False" name="lock_trans_y" type="bool" />
+            <property data="False" name="lock_trans_z" type="bool" />
+            <property data="False" name="lock_rot_x" type="bool" />
+            <property data="False" name="lock_rot_y" type="bool" />
+            <property data="False" name="lock_rot_z" type="bool" />
+            <property data="False" name="anisotropic_friction" type="bool" />
+            <property data="1.0" name="friction_x" type="float" />
+            <property data="1.0" name="friction_y" type="float" />
+            <property data="1.0" name="friction_z" type="float" />
+            <property data="0.03999999910593033" name="damping_trans" type="float" />
+            <property data="0.10000000149011612" name="damping_rot" type="float" />
+            <property data="0.4000000059604645" name="inertia_tensor" type="float" />
+          </userData>
+        </entity>
+      </node>
+      <node name="Invader.011" >
+        <position x="-3.598489" y="-3.715729" z="-0.015616" />
+        <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
+        <scale x="0.075393" y="0.269194" z="0.075393" />
+        <userData >
+          <property data="Invader" name="script" type="str" />
+          <property data="20" name="tag" type="int" />
+          <property data="box 0.91219 0.26035 0.72042" name="collider" type="str" />
+          <property data="0" name="collider_layer" type="int" />
+          <property data="36" name="collider_mask" type="int" />
+        </userData>
+        <entity meshFile="Invader.mesh" name="Invader.011" >
+          <userData >
+            <property data="1.0" name="mass" type="float" />
+            <property data="1.0" name="mass_radius" type="float" />
+            <property data="STATIC" name="physics_type" type="str" />
+            <property data="False" name="actor" type="bool" />
+            <property data="False" name="ghost" type="bool" />
+            <property data="0.0" name="velocity_min" type="float" />
+            <property data="0.0" name="velocity_max" type="float" />
+            <property data="False" name="lock_trans_x" type="bool" />
+            <property data="False" name="lock_trans_y" type="bool" />
+            <property data="False" name="lock_trans_z" type="bool" />
+            <property data="False" name="lock_rot_x" type="bool" />
+            <property data="False" name="lock_rot_y" type="bool" />
+            <property data="False" name="lock_rot_z" type="bool" />
+            <property data="False" name="anisotropic_friction" type="bool" />
+            <property data="1.0" name="friction_x" type="float" />
+            <property data="1.0" name="friction_y" type="float" />
+            <property data="1.0" name="friction_z" type="float" />
+            <property data="0.03999999910593033" name="damping_trans" type="float" />
+            <property data="0.10000000149011612" name="damping_rot" type="float" />
+            <property data="0.4000000059604645" name="inertia_tensor" type="float" />
+          </userData>
+        </entity>
+      </node>
+    </node>
+    <node name="CamRotater" >
+      <position x="0.000000" y="0.000000" z="0.000000" />
+      <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
+      <scale x="1.000000" y="1.000000" z="1.000000" />
+    </node>
     <node name="ShieldA.002" >
       <position x="5.984766" y="2.753002" z="1.305722" />
       <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
       <scale x="1.000000" y="0.358097" z="1.000000" />
       <userData >
         <property data="3" name="tag" type="int" />
+        <property data="box 1 0.3581 1" name="collider" type="str" />
+        <property data="3" name="collider_layer" type="int" />
+        <property data="0" name="collider_mask" type="int" />
       </userData>
       <entity meshFile="ShieldA.mesh" name="ShieldA.002" >
+        <userData >
+          <property data="1.0" name="mass" type="float" />
+          <property data="1.0" name="mass_radius" type="float" />
+          <property data="STATIC" name="physics_type" type="str" />
+          <property data="False" name="actor" type="bool" />
+          <property data="False" name="ghost" type="bool" />
+          <property data="0.0" name="velocity_min" type="float" />
+          <property data="0.0" name="velocity_max" type="float" />
+          <property data="False" name="lock_trans_x" type="bool" />
+          <property data="False" name="lock_trans_y" type="bool" />
+          <property data="False" name="lock_trans_z" type="bool" />
+          <property data="False" name="lock_rot_x" type="bool" />
+          <property data="False" name="lock_rot_y" type="bool" />
+          <property data="False" name="lock_rot_z" type="bool" />
+          <property data="False" name="anisotropic_friction" type="bool" />
+          <property data="1.0" name="friction_x" type="float" />
+          <property data="1.0" name="friction_y" type="float" />
+          <property data="1.0" name="friction_z" type="float" />
+          <property data="0.03999999910593033" name="damping_trans" type="float" />
+          <property data="0.10000000149011612" name="damping_rot" type="float" />
+          <property data="0.4000000059604645" name="inertia_tensor" type="float" />
+        </userData>
       </entity>
     </node>
     <node name="ShieldA.001" >
@@ -20,129 +490,33 @@
       <scale x="1.000000" y="0.358097" z="1.000000" />
       <userData >
         <property data="3" name="tag" type="int" />
+        <property data="box 1 0.3581 1" name="collider" type="str" />
+        <property data="3" name="collider_layer" type="int" />
+        <property data="0" name="collider_mask" type="int" />
       </userData>
       <entity meshFile="ShieldA.mesh" name="ShieldA.001" >
-      </entity>
-    </node>
-    <node name="Invader.011" >
-      <position x="-2.635789" y="12.055605" z="0.922698" />
-      <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
-      <scale x="0.075393" y="0.269194" z="0.075393" />
-      <userData >
-        <property data="Invader" name="script" type="str" />
-        <property data="20" name="tag" type="int" />
-      </userData>
-      <entity meshFile="Invader.mesh" name="Invader.011" >
-      </entity>
-    </node>
-    <node name="Invader.010" >
-      <position x="-0.158869" y="12.055605" z="0.922698" />
-      <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
-      <scale x="0.075393" y="0.269194" z="0.075393" />
-      <userData >
-        <property data="Invader" name="script" type="str" />
-        <property data="20" name="tag" type="int" />
-      </userData>
-      <entity meshFile="Invader.mesh" name="Invader.010" >
-      </entity>
-    </node>
-    <node name="Invader.009" >
-      <position x="2.351143" y="12.055605" z="0.922698" />
-      <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
-      <scale x="0.075393" y="0.269194" z="0.075393" />
-      <userData >
-        <property data="Invader" name="script" type="str" />
-        <property data="20" name="tag" type="int" />
-      </userData>
-      <entity meshFile="Invader.mesh" name="Invader.009" >
-      </entity>
-    </node>
-    <node name="Invader.008" >
-      <position x="4.830784" y="12.055605" z="0.922698" />
-      <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
-      <scale x="0.075393" y="0.269194" z="0.075393" />
-      <userData >
-        <property data="Invader" name="script" type="str" />
-        <property data="20" name="tag" type="int" />
-      </userData>
-      <entity meshFile="Invader.mesh" name="Invader.008" >
-      </entity>
-    </node>
-    <node name="Invader.007" >
-      <position x="4.830784" y="15.801842" z="0.922698" />
-      <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
-      <scale x="0.075393" y="0.269194" z="0.075393" />
-      <userData >
-        <property data="Invader" name="script" type="str" />
-        <property data="20" name="tag" type="int" />
-      </userData>
-      <entity meshFile="Invader.mesh" name="Invader.007" >
-      </entity>
-    </node>
-    <node name="Invader.006" >
-      <position x="2.351143" y="15.801842" z="0.922698" />
-      <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
-      <scale x="0.075393" y="0.269194" z="0.075393" />
-      <userData >
-        <property data="Invader" name="script" type="str" />
-        <property data="20" name="tag" type="int" />
-      </userData>
-      <entity meshFile="Invader.mesh" name="Invader.006" >
-      </entity>
-    </node>
-    <node name="Invader.005" >
-      <position x="-0.158869" y="15.801842" z="0.922698" />
-      <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
-      <scale x="0.075393" y="0.269194" z="0.075393" />
-      <userData >
-        <property data="Invader" name="script" type="str" />
-        <property data="20" name="tag" type="int" />
-      </userData>
-      <entity meshFile="Invader.mesh" name="Invader.005" >
-      </entity>
-    </node>
-    <node name="Invader.004" >
-      <position x="-2.635789" y="15.801842" z="0.922698" />
-      <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
-      <scale x="0.075393" y="0.269194" z="0.075393" />
-      <userData >
-        <property data="Invader" name="script" type="str" />
-        <property data="20" name="tag" type="int" />
-      </userData>
-      <entity meshFile="Invader.mesh" name="Invader.004" >
-      </entity>
-    </node>
-    <node name="Invader.003" >
-      <position x="-2.635789" y="19.929449" z="0.922698" />
-      <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
-      <scale x="0.075393" y="0.269194" z="0.075393" />
-      <userData >
-        <property data="Invader" name="script" type="str" />
-        <property data="20" name="tag" type="int" />
-      </userData>
-      <entity meshFile="Invader.mesh" name="Invader.003" >
-      </entity>
-    </node>
-    <node name="Invader.002" >
-      <position x="-0.158869" y="19.929449" z="0.922698" />
-      <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
-      <scale x="0.075393" y="0.269194" z="0.075393" />
-      <userData >
-        <property data="Invader" name="script" type="str" />
-        <property data="20" name="tag" type="int" />
-      </userData>
-      <entity meshFile="Invader.mesh" name="Invader.002" >
-      </entity>
-    </node>
-    <node name="Invader.001" >
-      <position x="2.351143" y="19.929449" z="0.922698" />
-      <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
-      <scale x="0.075393" y="0.269194" z="0.075393" />
-      <userData >
-        <property data="Invader" name="script" type="str" />
-        <property data="20" name="tag" type="int" />
-      </userData>
-      <entity meshFile="Invader.mesh" name="Invader.001" >
+        <userData >
+          <property data="1.0" name="mass" type="float" />
+          <property data="1.0" name="mass_radius" type="float" />
+          <property data="STATIC" name="physics_type" type="str" />
+          <property data="False" name="actor" type="bool" />
+          <property data="False" name="ghost" type="bool" />
+          <property data="0.0" name="velocity_min" type="float" />
+          <property data="0.0" name="velocity_max" type="float" />
+          <property data="False" name="lock_trans_x" type="bool" />
+          <property data="False" name="lock_trans_y" type="bool" />
+          <property data="False" name="lock_trans_z" type="bool" />
+          <property data="False" name="lock_rot_x" type="bool" />
+          <property data="False" name="lock_rot_y" type="bool" />
+          <property data="False" name="lock_rot_z" type="bool" />
+          <property data="False" name="anisotropic_friction" type="bool" />
+          <property data="1.0" name="friction_x" type="float" />
+          <property data="1.0" name="friction_y" type="float" />
+          <property data="1.0" name="friction_z" type="float" />
+          <property data="0.03999999910593033" name="damping_trans" type="float" />
+          <property data="0.10000000149011612" name="damping_rot" type="float" />
+          <property data="0.4000000059604645" name="inertia_tensor" type="float" />
+        </userData>
       </entity>
     </node>
     <node name="ShieldA" >
@@ -151,8 +525,33 @@
       <scale x="1.000000" y="0.358097" z="1.000000" />
       <userData >
         <property data="3" name="tag" type="int" />
+        <property data="box 1 0.3581 1" name="collider" type="str" />
+        <property data="3" name="collider_layer" type="int" />
+        <property data="0" name="collider_mask" type="int" />
       </userData>
       <entity meshFile="ShieldA.mesh" name="ShieldA" >
+        <userData >
+          <property data="1.0" name="mass" type="float" />
+          <property data="1.0" name="mass_radius" type="float" />
+          <property data="STATIC" name="physics_type" type="str" />
+          <property data="False" name="actor" type="bool" />
+          <property data="False" name="ghost" type="bool" />
+          <property data="0.0" name="velocity_min" type="float" />
+          <property data="0.0" name="velocity_max" type="float" />
+          <property data="False" name="lock_trans_x" type="bool" />
+          <property data="False" name="lock_trans_y" type="bool" />
+          <property data="False" name="lock_trans_z" type="bool" />
+          <property data="False" name="lock_rot_x" type="bool" />
+          <property data="False" name="lock_rot_y" type="bool" />
+          <property data="False" name="lock_rot_z" type="bool" />
+          <property data="False" name="anisotropic_friction" type="bool" />
+          <property data="1.0" name="friction_x" type="float" />
+          <property data="1.0" name="friction_y" type="float" />
+          <property data="1.0" name="friction_z" type="float" />
+          <property data="0.03999999910593033" name="damping_trans" type="float" />
+          <property data="0.10000000149011612" name="damping_rot" type="float" />
+          <property data="0.4000000059604645" name="inertia_tensor" type="float" />
+        </userData>
       </entity>
     </node>
     <node name="RightBumper" >
@@ -160,10 +559,34 @@
       <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
       <scale x="1.000000" y="15.994886" z="1.000000" />
       <userData >
-        <property data="0" name="visible" type="int" />
-        <property data="10" name="tag" type="int" />
+        <property data="1" name="tag" type="int" />
+        <property data="box 0.96 15.99489 1" name="collider" type="str" />
+        <property data="2" name="collider_layer" type="int" />
+        <property data="0" name="collider_mask" type="int" />
       </userData>
       <entity meshFile="RightBumper.mesh" name="RightBumper" >
+        <userData >
+          <property data="1.0" name="mass" type="float" />
+          <property data="1.0" name="mass_radius" type="float" />
+          <property data="STATIC" name="physics_type" type="str" />
+          <property data="False" name="actor" type="bool" />
+          <property data="False" name="ghost" type="bool" />
+          <property data="0.0" name="velocity_min" type="float" />
+          <property data="0.0" name="velocity_max" type="float" />
+          <property data="False" name="lock_trans_x" type="bool" />
+          <property data="False" name="lock_trans_y" type="bool" />
+          <property data="False" name="lock_trans_z" type="bool" />
+          <property data="False" name="lock_rot_x" type="bool" />
+          <property data="False" name="lock_rot_y" type="bool" />
+          <property data="False" name="lock_rot_z" type="bool" />
+          <property data="False" name="anisotropic_friction" type="bool" />
+          <property data="1.0" name="friction_x" type="float" />
+          <property data="1.0" name="friction_y" type="float" />
+          <property data="1.0" name="friction_z" type="float" />
+          <property data="0.03999999910593033" name="damping_trans" type="float" />
+          <property data="0.10000000149011612" name="damping_rot" type="float" />
+          <property data="0.4000000059604645" name="inertia_tensor" type="float" />
+        </userData>
       </entity>
     </node>
     <node name="LeftBumper" >
@@ -171,41 +594,79 @@
       <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
       <scale x="1.000000" y="15.994886" z="1.000000" />
       <userData >
-        <property data="0" name="visible" type="int" />
-        <property data="2" name="tag" type="int" />
+        <property data="1" name="tag" type="int" />
+        <property data="box 0.96 15.99489 1" name="collider" type="str" />
+        <property data="0" name="collider_mask" type="int" />
+        <property data="2" name="collider_layer" type="int" />
       </userData>
       <entity meshFile="LeftBumper.mesh" name="LeftBumper" >
+        <userData >
+          <property data="1.0" name="mass" type="float" />
+          <property data="1.0" name="mass_radius" type="float" />
+          <property data="STATIC" name="physics_type" type="str" />
+          <property data="False" name="actor" type="bool" />
+          <property data="False" name="ghost" type="bool" />
+          <property data="0.0" name="velocity_min" type="float" />
+          <property data="0.0" name="velocity_max" type="float" />
+          <property data="False" name="lock_trans_x" type="bool" />
+          <property data="False" name="lock_trans_y" type="bool" />
+          <property data="False" name="lock_trans_z" type="bool" />
+          <property data="False" name="lock_rot_x" type="bool" />
+          <property data="False" name="lock_rot_y" type="bool" />
+          <property data="False" name="lock_rot_z" type="bool" />
+          <property data="False" name="anisotropic_friction" type="bool" />
+          <property data="1.0" name="friction_x" type="float" />
+          <property data="1.0" name="friction_y" type="float" />
+          <property data="1.0" name="friction_z" type="float" />
+          <property data="0.03999999910593033" name="damping_trans" type="float" />
+          <property data="0.10000000149011612" name="damping_rot" type="float" />
+          <property data="0.4000000059604645" name="inertia_tensor" type="float" />
+        </userData>
       </entity>
     </node>
     <node name="Ground" >
       <position x="0.000000" y="12.837422" z="0.000000" />
       <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
-      <scale x="8.088890" y="15.305777" z="8.088890" />
+      <scale x="1.000000" y="1.000000" z="1.000000" />
       <userData >
         <property data="10" name="tag" type="int" />
+        <property data="box 8.09 15.30578 0.001" name="collider" type="str" />
+        <property data="2" name="collider_layer" type="int" />
+        <property data="0" name="collider_mask" type="int" />
       </userData>
       <entity meshFile="Ground.mesh" name="Ground" >
-      </entity>
-    </node>
-    <node name="Invader" >
-      <position x="4.751258" y="19.929449" z="0.895867" />
-      <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
-      <scale x="0.075393" y="0.269194" z="0.075393" />
-      <userData >
-        <property data="Invader" name="script" type="str" />
-        <property data="20" name="tag" type="int" />
-      </userData>
-      <entity meshFile="Invader.mesh" name="Invader" >
+        <userData >
+          <property data="1.0" name="mass" type="float" />
+          <property data="1.0" name="mass_radius" type="float" />
+          <property data="STATIC" name="physics_type" type="str" />
+          <property data="False" name="actor" type="bool" />
+          <property data="False" name="ghost" type="bool" />
+          <property data="0.0" name="velocity_min" type="float" />
+          <property data="0.0" name="velocity_max" type="float" />
+          <property data="False" name="lock_trans_x" type="bool" />
+          <property data="False" name="lock_trans_y" type="bool" />
+          <property data="False" name="lock_trans_z" type="bool" />
+          <property data="False" name="lock_rot_x" type="bool" />
+          <property data="False" name="lock_rot_y" type="bool" />
+          <property data="False" name="lock_rot_z" type="bool" />
+          <property data="False" name="anisotropic_friction" type="bool" />
+          <property data="1.0" name="friction_x" type="float" />
+          <property data="1.0" name="friction_y" type="float" />
+          <property data="1.0" name="friction_z" type="float" />
+          <property data="0.03999999910593033" name="damping_trans" type="float" />
+          <property data="0.10000000149011612" name="damping_rot" type="float" />
+          <property data="0.4000000059604645" name="inertia_tensor" type="float" />
+        </userData>
       </entity>
     </node>
     <node name="Lamp" >
-      <position x="4.076245" y="1.005454" z="5.903862" />
-      <rotation qw="0.570947" qx="0.169076" qy="0.272171" qz="0.755880" />
+      <position x="0.277535" y="9.583456" z="7.728680" />
+      <rotation qw="0.993597" qx="0.112986" qy="0.000000" qz="0.000000" />
       <scale x="1.000000" y="1.000000" z="1.000000" />
       <userData >
         <property data="1.0" name="prop" type="float" />
       </userData>
-      <light name="Lamp" powerScale="1.0" type="point" >
+      <light name="Lamp" powerScale="1.0" type="directional" >
         <colourDiffuse b="1.0" g="1.0" r="1.0" />
         <colourSpecular b="1.0" g="1.0" r="1.0" />
         <lightAttenuation constant="1.0" linear="0.03333335240683057" quadratic="0.0" range="5000" />
@@ -216,15 +677,39 @@
       <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
       <scale x="1.000000" y="1.000000" z="1.000000" />
       <userData >
-        <property data="1.0" name="prop" type="float" />
-		<property data="Ship" name="script" type="str" />
+        <property data="1" name="tag" type="int" />
+        <property data="Ship" name="script" type="str" />
+        <property data="box 2.5341 1.5785 1" name="collider" type="str" />
+        <property data="4" name="collider_layer" type="int" />
+        <property data="7" name="collider_mask" type="int" />
       </userData>
       <entity meshFile="Ship.mesh" name="Ship" >
-        
+        <userData >
+          <property data="0.0" name="mass" type="float" />
+          <property data="0.0" name="mass_radius" type="float" />
+          <property data="NO_COLLISION" name="physics_type" type="str" />
+          <property data="False" name="actor" type="bool" />
+          <property data="False" name="ghost" type="bool" />
+          <property data="0.0" name="velocity_min" type="float" />
+          <property data="0.0" name="velocity_max" type="float" />
+          <property data="False" name="lock_trans_x" type="bool" />
+          <property data="False" name="lock_trans_y" type="bool" />
+          <property data="False" name="lock_trans_z" type="bool" />
+          <property data="False" name="lock_rot_x" type="bool" />
+          <property data="False" name="lock_rot_y" type="bool" />
+          <property data="False" name="lock_rot_z" type="bool" />
+          <property data="False" name="anisotropic_friction" type="bool" />
+          <property data="0.0" name="friction_x" type="float" />
+          <property data="0.0" name="friction_y" type="float" />
+          <property data="0.0" name="friction_z" type="float" />
+          <property data="0.0" name="damping_trans" type="float" />
+          <property data="0.0" name="damping_rot" type="float" />
+          <property data="0.0" name="inertia_tensor" type="float" />
+        </userData>
       </entity>
       <node name="Camera" >
-        <position x="0.000000" y="-6.984127" z="4.077788" />
-        <rotation qw="0.789047" qx="0.614333" qy="0.000000" qz="0.000000" />
+        <position x="0.000000" y="10.183885" z="63.805969" />
+        <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="0.000000" />
         <scale x="1.000000" y="1.000000" z="1.000000" />
         <userData >
           <property data="1" name="tag" type="int" />
@@ -237,9 +722,6 @@
   </nodes>
   <externals >
     <item type="material" >
-      <file name="ShieldMaterial" />
-    </item>
-    <item type="material" >
       <file name="ShipMat" />
     </item>
     <item type="material" >
@@ -247,6 +729,9 @@
     </item>
     <item type="material" >
       <file name="GroundMaterial" />
+    </item>
+    <item type="material" >
+      <file name="ShieldMaterial" />
     </item>
   </externals>
   <environment >

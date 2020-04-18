@@ -5,10 +5,13 @@
 #include <script_manager.h>
 #include <script_game_object_methods.h>
 #include <script_game_object.h>
+#include <input_manager.h>
+
+using namespace OgreEngine;
 
 extern PyTypeObject GameObjectType;
 
-OgreEngine::package<Ogre::ColourValue> OgreEngine::get_colour_from_pytuple(PyObject* tuple, int offsetIntoTuple = 0)
+package<Ogre::ColourValue> OgreEngine::get_colour_from_pytuple(PyObject* tuple, int offsetIntoTuple)
 {
 	OgreEngine::package<Ogre::ColourValue> returnPack;
 	if (PyTuple_Size(tuple) != 3)
@@ -30,7 +33,7 @@ OgreEngine::package<Ogre::ColourValue> OgreEngine::get_colour_from_pytuple(PyObj
 	return returnPack;
 }
 
-OgreEngine::package<Ogre::Vector3> OgreEngine::get_vector3_from_pytuple(PyObject* tuple, int offsetIntoTuple)
+package<Ogre::Vector3> OgreEngine::get_vector3_from_pytuple(PyObject* tuple, int offsetIntoTuple)
 {
 	OgreEngine::package<Ogre::Vector3> returnPack;
 	if (PyTuple_Size(tuple) != 3)
@@ -52,7 +55,7 @@ OgreEngine::package<Ogre::Vector3> OgreEngine::get_vector3_from_pytuple(PyObject
 	return returnPack;
 }
 
-OgreEngine::package<Ogre::Quaternion> OgreEngine::get_quaternion_from_pytuple(PyObject* tuple, int offsetIntoTuple)
+package<Ogre::Quaternion> OgreEngine::get_quaternion_from_pytuple(PyObject* tuple, int offsetIntoTuple)
 {
 	OgreEngine::package<Ogre::Quaternion> returnPack;
 	if (PyTuple_Size(tuple) != 4)
@@ -110,6 +113,19 @@ PyObject* OgreEngine::load_script(PyObject* self, PyObject* args)
 
 PyObject* OgreEngine::load_scene(PyObject* self, PyObject* args)
 {
+	std::string excMsg = (__FILE__);
+	bool excSet = false;
+	int size = PyTuple_Size(args);
+
+	if (PyTuple_Check(args) && size == 2)
+	{
+		std::string groupName = PyUnicode_AsUTF8(PyTuple_GetItem(args, 0));
+		std::string fileName = PyUnicode_AsUTF8(PyTuple_GetItem(args, 1));
+		GAME_OBJ_MANAGER->load_scene(fileName, groupName);
+		Py_INCREF(Py_None);
+		return Py_None;
+	}
+	PyErr_SetString(PyExc_AttributeError, (excMsg+" load_scene ERROR!! PyObject argument not tuple or not size 2!!").c_str());
 	return nullptr;
 }
 
@@ -330,30 +346,68 @@ PyObject* OgreEngine::set_skybox(PyObject* self, PyObject* args)
 
 PyObject* OgreEngine::register_input_listener(PyObject* self, PyObject* args)
 {
+	int size = PyTuple_Size(args);
+	if (size == 1)
+	{
+		PyObject* gameObject = PyTuple_GetItem(args, 0);
+		if (((script::GameObject*)gameObject)->mTwin != nullptr)
+		{
+			INPUT_MANAGER->register_listener(((script::GameObject*)gameObject)->mTwin->create_input_listener("listener"));
+		}
+		Py_IncRef(Py_None);
+		return Py_None;
+	}
+	PyErr_SetString(PyExc_ValueError, "register_input_listener ERROR!! Recieved to many arguments");
 	return nullptr;
 }
 
 PyObject* OgreEngine::deregister_input_listener(PyObject* self, PyObject* args)
 {
+	int size = PyTuple_Size(args);
+	if (size == 1)
+	{
+		GameObject* gameObject = ((script::GameObject*)PyTuple_GetItem(args, 0))->mTwin;
+		INPUT_MANAGER->deregister_listener(gameObject->get_input_listener());
+		gameObject->delete_input_listener();
+		Py_IncRef(Py_None);
+		return Py_None;
+	}
+	PyErr_SetString(PyExc_ValueError, "register_input_listener ERROR!! Recieved to many arguments");
 	return nullptr;
 }
 
 PyObject* OgreEngine::has_action(PyObject* self, PyObject* args)
 {
+	int size = PyTuple_Size(args);
+	if (size == 1)
+		return PyBool_FromLong(INPUT_MANAGER->has_action(PyUnicode_AsUTF8(PyTuple_GetItem(args, 0))));
+	PyErr_SetString(PyExc_ValueError, "has_action ERROR!! Recieved to many arguments");
 	return nullptr;
 }
 
 PyObject* OgreEngine::get_action(PyObject* self, PyObject* args)
 {
+	int size = PyTuple_Size(args);
+	if (size == 1)
+		return PyBool_FromLong(INPUT_MANAGER->is_action_active(PyUnicode_AsUTF8(PyTuple_GetItem(args, 0))));
+	PyErr_SetString(PyExc_ValueError, "get_action ERROR!! Recieved to many arguments");
 	return nullptr;
 }
 
 PyObject* OgreEngine::has_axis(PyObject* self, PyObject* args)
 {
+	int size = PyTuple_Size(args);
+	if (size == 1)
+		return PyBool_FromLong(INPUT_MANAGER->has_axis(PyUnicode_AsUTF8(PyTuple_GetItem(args, 0))));
+	PyErr_SetString(PyExc_ValueError, "has_axis ERROR!! Recieved to many arguments");
 	return nullptr;
 }
 
 PyObject* OgreEngine::get_axis(PyObject* self, PyObject* args)
 {
+	int size = PyTuple_Size(args);
+	if (size == 1)
+		return PyFloat_FromDouble(INPUT_MANAGER->get_axis(PyUnicode_AsUTF8(PyTuple_GetItem(args, 0))));
+	PyErr_SetString(PyExc_ValueError, "get_axis ERROR!! Recieved to many arguments");
 	return nullptr;
 }

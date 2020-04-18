@@ -7,7 +7,8 @@ using namespace OgreEngine;
 
 CameraComponent::CameraComponent(GameObject * owner, std::string name) : Component(owner)
 {
-	mCamera = APPLICATION->get_scene_manager()->createCamera(name.empty() ? owner->get_name() + "_camera" : name);
+	this->componentName = name.empty() ? owner->get_name() + "_camera" : name;
+	mCamera = APPLICATION->get_scene_manager()->createCamera(this->componentName);
 	owner->get_scene_node()->attachObject(mCamera);
 	mCamera->setAutoAspectRatio(true);
 	mCamera->setNearClipDistance(0.1f);

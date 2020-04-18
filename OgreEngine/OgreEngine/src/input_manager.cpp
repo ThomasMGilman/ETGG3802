@@ -10,17 +10,22 @@ InputManager* InputManager::msSingleton = nullptr;
 
 InputManager::InputManager(std::string bindings_file, bool debugMode)
 {
-	this->mDebugging = true;
+	this->mDebugging = debugMode;
 	this->mKeyNames = OgreEngine::InputBindings::mKeyNames;
 	this->mGamepadAxisNames = OgreEngine::InputBindings::mGamepadAxisNames;
 	this->mGamepadButtonNames = OgreEngine::InputBindings::mGamepadButtonNames;
 
+	SDL_InitSubSystem(SDL_INIT_JOYSTICK);
+	SDL_InitSubSystem(SDL_INIT_GAMECONTROLLER);
+
 	/// Load bindings from input action, axis mapping file
+	this->mDoc = new tinyxml2::XMLDocument;
 	load_bindings(bindings_file);
 }
 
 InputManager::~InputManager()
 {
+	delete(this->mDoc);
 }
 
 bool InputManager::has_axis(std::string name)
@@ -87,11 +92,18 @@ void InputManager::update(float dt)
 			break;
 		}
 	}
+	std::map<std::string, float>::iterator axisIter = mAxisValues.begin();
+	while (axisIter != mAxisValues.end())
+	{
+		if (axisIter->second != 0)
+			broadcast_axis_event(axisIter->first, axisIter->second);
+		axisIter++;
+	}
 }
 
 void InputManager::load_bindings(std::string fname, std::string fpath)
 {
-	mDoc->LoadFile((fpath + fname).c_str());
+	mDoc->LoadFile(fname.c_str());
 	if (mDoc->Error())
 	{
 		std::string error = mDoc->ErrorStr();
@@ -106,7 +118,9 @@ void InputManager::load_bindings(std::string fname, std::string fpath)
 			tinyxml2::XMLElement* bindingNodes = firstElement->FirstChildElement();
 			if (bindingNodes != NULL)
 				xml_parse_binding_nodes(bindingNodes);
-			LOG_MANAGER->log_message(fname + " contains 0 binding input actions!!");
+			else
+				LOG_MANAGER->log_message(fname + " contains 0 binding input actions!!");
+			LOG_MANAGER->log_message(fname + " Finished reading inputs!!");
 		}
 	}
 }
@@ -173,8 +187,6 @@ void InputManager::xml_parse_axis_nodes(tinyxml2::XMLElement* bindingNode)
 			mKeyAxisBindings[posKey][action] = 1.0f;
 		if (mKeyAxisBindings.find(negKey) == mKeyAxisBindings.end())
 			mKeyAxisBindings[negKey][action] = -1.0f;
-		create_axis(pos_action); 
-		create_axis(neg_action);
 	}
 	else if (type == "gamepad")
 	{
@@ -185,8 +197,8 @@ void InputManager::xml_parse_axis_nodes(tinyxml2::XMLElement* bindingNode)
 			mGamepadAxisBindings[controllerID][k] = action;
 		else
 			LOG_MANAGER->log_message("Duplicate gamepad axis action specified!! Line: " + std::to_string(bindingNode->GetLineNum()), ERROR_COLOUR);
-		create_axis(axisName);
 	}
+	create_axis(action);
 	
 	tinyxml2::XMLElement* nextElement = bindingNode->NextSiblingElement();
 	if (nextElement != NULL)
@@ -224,9 +236,13 @@ void InputManager::broadcast_action(std::string action, bool is_pressed)
 	mActionValues[action] = is_pressed;
 
 	if (this->mDebugging) LOG_MANAGER->log_message((is_pressed ? "pressed: " : "released: ") + action, DEBUG_COLOUR, ERROR_DISPLAY_TIME);
-	if (action == "escape")
+	if (action == "quit" && is_pressed)
 	{
-		APPLICATION->getRoot()->queueEndRendering();
+		APPLICATION->quite();
+	}
+	else if (action == "debug" && is_pressed)
+	{
+		LOG_MANAGER->toggle_debug_panel();
 	}
 	else
 	{
@@ -237,17 +253,18 @@ void InputManager::broadcast_action(std::string action, bool is_pressed)
 
 void InputManager::broadcast_axis_event(std::string axis, float new_value)
 {
-	if (this->mDebugging) LOG_MANAGER->log_message(axis + ": " + std::to_string(new_value), DEBUG_COLOUR, ERROR_DISPLAY_TIME);
-	for (ComponentInputListener* listener : this->mListeners)
-		listener->process_axis_action(axis, new_value);
+	if (new_value > mGamepadDeadZone || new_value < -mGamepadDeadZone)
+	{
+		if (this->mDebugging) LOG_MANAGER->log_message(axis + ": " + std::to_string(new_value), DEBUG_COLOUR, ERROR_DISPLAY_TIME);
+		for (ComponentInputListener* listener : this->mListeners)
+			listener->process_axis_action(axis, new_value);
+	}
 }
 
-///WORK HERE
 void InputManager::scan_for_gamepads()
 {
 }
 
-///WORK HERE
 void InputManager::handle_key(SDL_Keycode k, bool is_pressed)
 {
 	// Check if action for key_event exists, if it does, update action binding and broadcast event_type
@@ -255,7 +272,14 @@ void InputManager::handle_key(SDL_Keycode k, bool is_pressed)
 		broadcast_action(mKeyActionBindings[k], is_pressed);
 	else if(mKeyAxisBindings.find(k) != mKeyAxisBindings.end())
 	{
-		
+		std::map<std::string, float>::iterator axisIter = mKeyAxisBindings[k].begin();
+		while (axisIter != mKeyAxisBindings[k].end())
+		{
+			mAxisValues[axisIter->first] = is_pressed ? axisIter->second : 0;
+			if (this->mDebugging) LOG_MANAGER->log_message(axisIter->first + " new val: " + std::to_string(mAxisValues[axisIter->first]), DEBUG_COLOUR, ERROR_DISPLAY_TIME);
+			broadcast_axis_event(axisIter->first, mAxisValues[axisIter->first]);
+			axisIter++;
+		}
 	}
 }
 
@@ -270,7 +294,6 @@ void InputManager::handle_joy_button(SDL_GameControllerButton button, int joy_id
 	}
 }
 
-///WORK HERE
 void InputManager::handle_joy_axis(SDL_GameControllerAxis axis, int joy_id, Sint16 value)
 {
 	if (value > mGamepadDeadZone || value < -mGamepadDeadZone)
@@ -283,6 +306,7 @@ void InputManager::handle_joy_axis(SDL_GameControllerAxis axis, int joy_id, Sint
 			{
 				std::string axisName = mGamepadAxisBindings[joy_id][axis];
 				mAxisValues[axisName] += value;
+				if (this->mDebugging) LOG_MANAGER->log_message(axisName+" new val: "+std::to_string(mAxisValues[axisName]), DEBUG_COLOUR, ERROR_DISPLAY_TIME);
 				broadcast_axis_event(axisName, mAxisValues[axisName]);
 			}
 		}

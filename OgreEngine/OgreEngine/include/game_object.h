@@ -4,6 +4,7 @@
 #include <component_light.h>
 #include <component_camera.h>
 #include <component_mesh.h>
+#include <component_input_listener.h>
 
 namespace OgreEngine
 {
@@ -28,12 +29,19 @@ namespace OgreEngine
 
 		/// The name of this object 
 		std::string mName;
+		
+		/// Which group this object belongs to
+		std::string mGroup;
 
 		/// The Ogre Scene Node storing our position / orientation / scale and spot within the hierarchy
 		Ogre::SceneNode* mSceneNode;
 
 		/// An integer tag that can be used by the user (e.g. 0 = invaders, 1 = player, ... 
 		int mTag;
+
+		GameObject* mParent = nullptr;
+		/// key = name, value = GameObject;
+		std::map<std::string, GameObject*> mChildren;
 
 		std::map<Component::ComponentType, std::map<std::string, Component*>> mComponents;
 		std::map<Component::ComponentType, std::map<std::string, Component*>>::iterator mTypeIter;
@@ -43,7 +51,7 @@ namespace OgreEngine
 	protected:
 		/// Constructor.  Note: Constructors are normally public.  I'm doing this, however, to force the
 		/// user to create a GameObject through the GameObjectManager (the "Factory")
-		GameObject(std::string name, int tag, GameObject* parent = NULL, Ogre::Vector3 pos = Ogre::Vector3::ZERO, Ogre::Quaternion rot = Ogre::Quaternion::IDENTITY);
+		GameObject(std::string name, int tag, std::string group_name, GameObject* parent = NULL, Ogre::Vector3 pos = Ogre::Vector3::ZERO, Ogre::Quaternion rot = Ogre::Quaternion::IDENTITY);
 
 		/// Destructor
 		virtual ~GameObject();
@@ -174,6 +182,8 @@ namespace OgreEngine
 		/// simple setter for gameObject
 		void set_script_twin(PyObject* twin) { mScriptTwin = twin; }
 
+		void make_script_twin(std::string className);
+
 		/// Calls the method passed and runs it as long as the args_tuple contains a valid number of arguments
 		void run_method(std::string meth_name, PyObject* args_tuple);
 
@@ -182,29 +192,66 @@ namespace OgreEngine
 		/// Makes all components of this object active / visible (or not, if the parameter is false)
 		void set_visibility(bool is_visible) { mSceneNode->setVisible(is_visible); }
 
+		// ***** CHILD GAMEOBJECT METHODS *****
+	public:
+
+		/// Adds an association between this object and the other gameobject as a new child
+		void set_child_object(GameObject* otherGameObject);
+
+		/// Get the requested child by name if it is associated and exists
+		GameObject* get_child_object(std::string name);
+
+		/// Check if specified child exists. If no arguments given, returns if object has any children
+		bool has_child(std::string name);
+
+		/// Destroy and remove all associated child gameobjects
+		void delete_all_children();
+
+		/// Destroy and remove the specified child gameobject if present
+		void delete_child(std::string name);
+
+		/// Removes the child if present from the child list, but does not destroy them
+		void remove_child_association(std::string name);
+
 		// ***** COMPONENT METHODS *****
 	public:
-		
+		/// Destroy and remove all attached components
 		void delete_all_components();
 
-
+		/// Destroy and remove the specific attached component
 		bool delete_component(std::string objectName);
 		
-
+		/// Destroy and remove the specific attached component
 		bool delete_component(std::string objectName, Component::ComponentType type);
 
+		/// Destroy and remove the input listener/s attached
+		bool delete_input_listener();
 
+		/// Retrieves the specific component type by name and type
 		template<class C>
 		C* get_component(std::string objectName, Component::ComponentType type);
-		
-		
+
+		/// Retrieves the first component of the specified type
+		template<class C>
+		C* get_component(Component::ComponentType type);
+
+		/// Create a mesh component with the given name and from the given entity mesh file
 		MeshComponent* create_mesh(std::string meshName, std::string fname);
 
-
+		/// Create a light component with the given name and type
 		LightComponent* create_light(std::string lightName, LightType lightType);
 
-
+		/// Create a camera component with the given name
 		CameraComponent* create_camera(std::string cameraName);
-		
+
+		/// Create a input listener with the given name
+		ComponentInputListener* create_input_listener(std::string listenerName);
+
+		/// Returns the first input listener component if it exists
+		ComponentInputListener* get_input_listener();
+
+		// ***** Operrator Overloads *****
+	public:
+		bool operator== (GameObject* other);
 	};
 }

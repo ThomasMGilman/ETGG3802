@@ -5,6 +5,7 @@ namespace OgreEngine
 {
 	
 	class GameObject;
+
 	class Component
 	{
 		
@@ -16,13 +17,15 @@ namespace OgreEngine
 		};
 
 	protected:
-		GameObject* mParent;
 		std::map<std::string, propertyData> mProperties;
 
 	public:
-		enum class ComponentType { CAMERA, LIGHT, MESH };
+		GameObject* mParent;
+		std::string componentName;
+		
+		enum class ComponentType { CAMERA, LIGHT, MESH, INPUT_LISTENER };
 
-		Component(GameObject* owner) { this->mParent = owner; };
+		Component(GameObject* owner) { mParent = owner; };
 
 		~Component() {};
 

@@ -27,8 +27,13 @@ namespace OgreEngine {
 			OgreBites::ApplicationContext::shutdown();
 		};
 
+		/// Updates Everything given the elapsed time
 		virtual bool frameStarted(const Ogre::FrameEvent& e) override;
 
+		/// Call the Quite Function
+		void quite();
+
+		/// Retrieves the current scene manager
 		Ogre::SceneManager* get_scene_manager() { return this->mScnMgr; };
 
 	private:
