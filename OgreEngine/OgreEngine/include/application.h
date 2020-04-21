@@ -7,7 +7,7 @@
 #include "script_manager.h"
 #include <Singleton.h>
 
-#define APPLICATION Application::getSingletonPtr()
+#define APPLICATION Application::get_singleton_ptr()
 
 namespace OgreEngine {
 	class GameObjectManager;

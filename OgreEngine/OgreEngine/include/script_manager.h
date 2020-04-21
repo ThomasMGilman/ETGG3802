@@ -5,7 +5,7 @@
 #include <stdafx.h>
 #include <singleton.h>
 
-#define SCRIPT_MANAGER ScriptManager::getSingletonPtr()
+#define SCRIPT_MANAGER ScriptManager::get_singleton_ptr()
 
 namespace OgreEngine
 {

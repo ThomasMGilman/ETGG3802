@@ -23,7 +23,7 @@ namespace OgreEngine
 		GameObject* mParent;
 		std::string componentName;
 		
-		enum class ComponentType { CAMERA, LIGHT, MESH, INPUT_LISTENER };
+		enum class ComponentType { CAMERA, COLLIDER, INPUT_LISTENER, LIGHT, MESH  };
 
 		Component(GameObject* owner) { mParent = owner; };
 

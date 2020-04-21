@@ -2,7 +2,7 @@
 #include <stdafx.h>
 #include <component.h>
 
-namespace ssuge
+namespace OgreEngine
 {
 	// Forward references
 	enum class CollisionLayer;
@@ -21,6 +21,9 @@ namespace ssuge
 	protected:
 		/// What type of collider is this?
 		ColliderType mColliderType;
+
+		std::vector<Ogre::Vector3> mPrismEdges = {};
+		std::vector<std::pair<Ogre::Vector3, float>> mPrismPlanes = {};
 
 		/// For rectangular prisms, this is the "half-extents" centered around the game object's
 		/// origin.  For sphere's, the .x field is the radius, the .y field is the radius^2, the .z is unused
@@ -63,11 +66,28 @@ namespace ssuge
 		/// we potentially have a collision
 		long long get_mask() { return mCollisionMask; }
 
+		Ogre::Vector3 get_position() { return this->mParent->get_world_position(); }
+
+		/// returns a vector of 3 axis {xAxis, yAxis, zAxis}.
+		std::vector<Ogre::Vector3> get_axis();
+
+		/// Returns true if point is within the bounds of the collider, otherwise false
+		bool point_inside(Ogre::Vector3 point);
+
 		/// Projects this object onto the given Ray.  The first number is <= the second
 		Ogre::Vector2 get_projection_extents(const Ogre::Vector3& origin, const Ogre::Vector3& direction);
 
 		/// Gets the corner points (only makes sense if this is a box collider, but the call always returns something)
-		std::vector<Ogre::Vector3> get_rectangular_prism_points(const Ogre::Vector3 pos, const Ogre::Vector3& xaxis, const Ogre::Vector3& yaxis, const Ogre::Vector3& zaxis);
+		std::vector<Ogre::Vector3> get_rectangular_prism_points(const Ogre::Vector3& pos, const Ogre::Vector3& xAxis, const Ogre::Vector3& yAxis, const Ogre::Vector3& zAxis);
+
+		/// Gets the corner points (only makes sense if this is a box collider, but the call always returns something)
+		std::vector<Ogre::Vector3> get_rectangular_prism_points();
+
+		/// Gets the planes (only makes sense if this is a box collider, but the call always returns something)
+		std::vector<std::pair<Ogre::Vector3, float>> get_rectangular_prism_planes(const Ogre::Vector3& pos, const Ogre::Vector3& xAxis, const Ogre::Vector3& yAxis, const Ogre::Vector3& zAxis);
+
+		/// Gets the planes (only makes sense if this is a box collider, but the call always returns something)
+		std::vector<std::pair<Ogre::Vector3, float>> get_rectangular_prism_planes();
 
 		/// Return the type of this component
 		ComponentType get_type() override { return ComponentType::COLLIDER; }

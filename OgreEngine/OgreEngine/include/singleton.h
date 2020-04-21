@@ -37,7 +37,7 @@ namespace OgreEngine
 			msSingleton = (T*)this;
 		};
 
-		static T* getSingletonPtr()
+		static T* get_singleton_ptr()
 		{
 			if (msSingleton == nullptr) throw BadUsageException();
 			return msSingleton;

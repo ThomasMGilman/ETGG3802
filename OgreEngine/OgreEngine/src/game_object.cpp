@@ -6,12 +6,12 @@
 
 using namespace OgreEngine;
 
-GameObject::GameObject(std::string name, int tag, std::string group_name, GameObject* parent, Ogre::Vector3 pos, Ogre::Quaternion rot) : mName(name), mTag(tag), mGroup(group_name)
+GameObject::GameObject(std::string name, int tag, std::string group_name, GameObject* parent, Ogre::Vector3 pos, Ogre::Quaternion rot) : 
+	mName(name), mTag(tag), mGroup(group_name), mParent(parent)
 {
 	if (parent != nullptr)
 	{
 		mSceneNode = parent->get_scene_node()->createChildSceneNode(pos, rot);
-		this->mParent = parent;
 		parent->set_child_object(this);
 	}
 	else
@@ -20,17 +20,12 @@ GameObject::GameObject(std::string name, int tag, std::string group_name, GameOb
 
 GameObject::~GameObject()
 {
-	delete_all_components();
-	
-	Ogre::SceneNode* parentNode = mSceneNode->getParentSceneNode();
-	if (parentNode != nullptr)
-		parentNode->removeChild(mSceneNode);
+	this->delete_all_components();
+	this->delete_all_children();
+	this->detach_from_parent();
 
-	if (this->mParent != nullptr)
-		this->mParent->remove_child_association(this->mName);
-	//Ogre::SceneNode* parentNode = mSceneNode->getParentSceneNode();
+	// Destroy this scene node
 	APPLICATION->get_scene_manager()->destroySceneNode(mSceneNode);
-	
 }
 
 void GameObject::update(float elapsed)
@@ -74,10 +69,6 @@ void OgreEngine::GameObject::make_script_twin(std::string className)
 {
 	if (SCRIPT_MANAGER->PyClasses.find(className) != SCRIPT_MANAGER->PyClasses.end())
 	{
-		//PyObject* args = PyTuple_Pack(3,
-		//	PyUnicode_FromStringAndSize(this->mGroup.c_str(), this->mGroup.length()),
-		//	PyUnicode_FromStringAndSize(this->mName.c_str(), this->mName.length()),
-		//	PyLong_FromLong(this->mTag));
 		PyObject* pyClass = SCRIPT_MANAGER->PyClasses[className];
 		PyObject* newPyObj = PyObject_Call(pyClass, PyTuple_New(0), 0);
 		this->set_script_twin(newPyObj);
@@ -128,7 +119,7 @@ GameObject* OgreEngine::GameObject::get_child_object(std::string name)
 					return child->second->get_child_object(name);
 				child++;
 			}
-			throw new std::runtime_error("Child Name: "+name+" Does not exist in Children, yet returned this->has_child(name) returned 'true'!!!");
+			throw new std::runtime_error("Child Name: "+name+" Does not exist in Children, yet this->has_child(name) returned 'true'!!!");
 		}
 	}
 	return nullptr;
@@ -179,9 +170,25 @@ void OgreEngine::GameObject::remove_child_association(std::string name)
 {
 	if (this->mChildren.count(name))
 	{
+		GameObject* child = this->mChildren[name];
 		this->mChildren.erase(name);
+		child->detach_from_parent();
+		
 		LOG_MANAGER->log("GameObject: " + this->mName + " in Group:" + this->mGroup + " has removed association with its Child: " + name + " !!");
 	}
+}
+
+void OgreEngine::GameObject::detach_from_parent()
+{
+	// Remove association to parent object if there is one
+	Ogre::SceneNode* parentNode = mSceneNode->getParentSceneNode();
+	if (parentNode != nullptr)
+		parentNode->removeChild(mSceneNode);
+
+	if (this->mParent != nullptr)
+		this->mParent->remove_child_association(this->mName);
+
+	this->mParent = nullptr;
 }
 
 void GameObject::delete_all_components()

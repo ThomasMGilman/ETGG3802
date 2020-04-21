@@ -3,7 +3,7 @@
 #include <stdafx.h>
 #include <singleton.h>
 
-#define LOG_MANAGER LogManager::getSingletonPtr()
+#define LOG_MANAGER LogManager::get_singleton_ptr()
 
 namespace OgreEngine {
 	class LogManager : public Singleton<LogManager>

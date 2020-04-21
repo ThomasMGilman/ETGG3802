@@ -12,7 +12,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\application.cpp" />
+    <ClCompile Include="src\collision_manager.cpp" />
     <ClCompile Include="src\component_camera.cpp" />
+    <ClCompile Include="src\component_collider.cpp" />
     <ClCompile Include="src\component_input_listener.cpp" />
     <ClCompile Include="src\component_light.cpp" />
     <ClCompile Include="src\component_mesh.cpp" />
@@ -29,11 +31,14 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\utility.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\application.h" />
+    <ClInclude Include="include\collision_manager.h" />
     <ClInclude Include="include\component.h" />
     <ClInclude Include="include\component_camera.h" />
+    <ClInclude Include="include\component_collider.h" />
     <ClInclude Include="include\component_input_listener.h" />
     <ClInclude Include="include\component_light.h" />
     <ClInclude Include="include\component_mesh.h" />
@@ -48,6 +53,7 @@
     <ClInclude Include="include\SDL_name_mappings.h" />
     <ClInclude Include="include\singleton.h" />
     <ClInclude Include="include\stdafx.h" />
+    <ClInclude Include="include\utility.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

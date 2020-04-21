@@ -39,10 +39,13 @@ namespace OgreEngine
 		/// An integer tag that can be used by the user (e.g. 0 = invaders, 1 = player, ... 
 		int mTag;
 
+		/// This Objects parent object
 		GameObject* mParent = nullptr;
-		/// key = name, value = GameObject;
+
+		/// Map of associated child objects. key = name, value = GameObject;
 		std::map<std::string, GameObject*> mChildren;
 
+		/// Map of component objects associated with this object
 		std::map<Component::ComponentType, std::map<std::string, Component*>> mComponents;
 		std::map<Component::ComponentType, std::map<std::string, Component*>>::iterator mTypeIter;
 		std::map<std::string, Component*>::iterator mCompIter;
@@ -212,6 +215,9 @@ namespace OgreEngine
 
 		/// Removes the child if present from the child list, but does not destroy them
 		void remove_child_association(std::string name);
+
+		/// Remove associations to parent object if there is one
+		void detach_from_parent();
 
 		// ***** COMPONENT METHODS *****
 	public:

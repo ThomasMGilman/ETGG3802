@@ -3,7 +3,7 @@
 #include <singleton.h>
 #include <component_input_listener.h>
 
-#define INPUT_MANAGER InputManager::getSingletonPtr()
+#define INPUT_MANAGER InputManager::get_singleton_ptr()
 
 namespace OgreEngine
 {

@@ -25,7 +25,7 @@ void Application::setup(void)
 
 	//register scene with the RTSS(Shader)
 	Ogre::RTShader::ShaderGenerator* shadergen = 
-		Ogre::RTShader::ShaderGenerator::getSingletonPtr();
+		Ogre::RTShader::ShaderGenerator::get_singleton_ptr();
 	shadergen->addSceneManager(mScnMgr);
 
 	//Set Ambient light color, shadowing type, and background color

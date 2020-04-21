@@ -2,9 +2,9 @@
 #include <stdafx.h>
 #include <singleton.h>
 
-#define COLLISION_MANAGER ssuge::CollisionManager::get_singleton_ptr()
+#define COLLISION_MANAGER CollisionManager::get_singleton_ptr()
 
-namespace ssuge
+namespace OgreEngine
 {
 	class ComponentCollider;
 	class GameObject;
@@ -34,7 +34,6 @@ namespace ssuge
 		/// Adds a collider to our master list.  This is done by the ComponentCollider
 		void add_collider(ComponentCollider* c);
 
-
 		/// This is called by the ComponentCollider destructor -- removes a collider form our master list
 		void remove_collider(ComponentCollider* c);
 
@@ -49,6 +48,8 @@ namespace ssuge
 
 		/// Returns true if the given mask and layer are valid, false if either is not
 		bool validate_mask_and_layer(long long mask, int layer);
+
+		bool has_separation(Ogre::Vector2 extA, Ogre::Vector2 extB);
 
 		/// Clears and filles in the passed Vector with GameObjects that are
 		/// hit by the given ray.  Returns true if one thing or more is hit.  This variant

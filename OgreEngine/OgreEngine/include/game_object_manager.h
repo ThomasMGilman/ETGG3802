@@ -7,7 +7,7 @@
 #include <game_object.h>
 #include <singleton.h>
 
-#define GAME_OBJ_MANAGER GameObjectManager::getSingletonPtr()
+#define GAME_OBJ_MANAGER GameObjectManager::get_singleton_ptr()
 
 namespace OgreEngine
 {
