@@ -1,6 +1,6 @@
-import ssuge
+import ogre_module
 
-class Bullet(ssuge.GameObject):
+class Bullet(ogre_module.GameObject):
 	def create(self, *args):
 		# Assumption: user will pass us a boolean (True for player bullets, False for enemy)
 		if args[0]:
@@ -17,8 +17,7 @@ class Bullet(ssuge.GameObject):
 			
 	def update(self, dt):
 		self.translate_local(0, self.mMoveSpeed * dt, 0)
-
 			
 	def collision_start(self, other):
-		ssuge.log(self.name() + " " + str(self.get_world_position()) + " hit " + other.name() + " " + str(other.get_world_position()), (0.2, 1, 0.2), 3)
-		ssuge.queue_destroy(self)
+		ogre_module.log(self.name() + " " + str(self.get_world_position()) + " hit " + other.name() + " " + str(other.get_world_position()), (0.2, 1, 0.2), 3)
+		ogre_module.queue_destroy(self)

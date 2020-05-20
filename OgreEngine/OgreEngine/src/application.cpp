@@ -25,7 +25,7 @@ void Application::setup(void)
 
 	//register scene with the RTSS(Shader)
 	Ogre::RTShader::ShaderGenerator* shadergen = 
-		Ogre::RTShader::ShaderGenerator::get_singleton_ptr();
+		Ogre::RTShader::ShaderGenerator::getSingletonPtr();
 	shadergen->addSceneManager(mScnMgr);
 
 	//Set Ambient light color, shadowing type, and background color
@@ -34,10 +34,11 @@ void Application::setup(void)
 	getRenderWindow()->addViewport(nullptr)->setBackgroundColour(Ogre::ColourValue(0,0,0));
 
 	//Initialize application managers
-	mLogger = new LogManager(getRenderWindow()->getViewport(0)->getActualHeight(), getRenderWindow()->getViewport(0)->getActualWidth());
+	mLM = new LogManager(getRenderWindow()->getViewport(0)->getActualHeight(), getRenderWindow()->getViewport(0)->getActualWidth());
 	mGOM = new GameObjectManager();
 	mSM = new ScriptManager();
 	mIM = new InputManager("../Media/core_media/input_bindings.xml");
+	mCM = new CollisionManager();
 
 	// Start Game instance
 	mSM->run_script("../Media/invader_media/init.py");
@@ -45,10 +46,15 @@ void Application::setup(void)
 
 bool Application::frameStarted(const Ogre::FrameEvent& e)
 {
-	//Update InputManager, GameObjectManage, and LogManager
-	mIM->update(e.timeSinceLastFrame);
-	mGOM->update(e.timeSinceLastFrame);
-	mLogger->update(e.timeSinceLastFrame);
+	//Update InputManager, CollisionManager, GameObjectManage, and LogManager
+	mGOM->updating = true;
+	mIM->update(e.timeSinceLastFrame);		// Input Manager
+	mGOM->update(e.timeSinceLastFrame);		// Game Object Manager
+	mCM->update(e.timeSinceLastFrame);		// Collision Manager
+	mLM->update(e.timeSinceLastFrame);		// Log Manager
+	mGOM->updating = false;
+	mGOM->add_queued_objects();
+	mGOM->destroy_queued_objects();
 
 	return frameEnded(e);
 }
@@ -60,8 +66,5 @@ void OgreEngine::Application::quite()
 
 Application::~Application()
 {
-	delete(mGOM);
-	delete(mSM);
-	delete(mLogger);
-	delete(mIM);
+	
 }

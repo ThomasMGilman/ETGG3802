@@ -1,4 +1,5 @@
 #include <stdafx.h>
+#include <utility.h>
 #include <game_object_manager.h>
 #include <log_manager.h>
 #include <application.h>
@@ -15,22 +16,44 @@ GameObjectManager::GameObjectManager()
 GameObjectManager::~GameObjectManager()
 {
 	delete(mDoc);
-	destroy_all();
+	this->destroy_all();
+	// Delete any Queued objects
+	std::unordered_set<GameObject*>::iterator QueIter = mQueuedToCreateObjects.begin();
+	while (QueIter != mQueuedToCreateObjects.end())
+	{
+		if (*QueIter != nullptr)
+			delete(*QueIter);
+		QueIter++;
+	}
 }
 
 void GameObjectManager::update(float elapsed)
 {
-	mGroupsIter = mObjects.begin();
-	while (mGroupsIter != mObjects.end())
+	// Add any queued objects to the map of current scene objects
+	std::unordered_set<GameObject*>::iterator QueIter = mQueuedToCreateObjects.begin();
+	while (QueIter != mQueuedToCreateObjects.end())
 	{
-		mObjIter = mGroupsIter->second.begin();
-		while (mObjIter != mGroupsIter->second.end())
-		{
-			mObjIter->second->update(elapsed);
-			mObjIter++;
-		}
-		mGroupsIter++;
+		mObjects[(*QueIter)->mGroup][(*QueIter)->mName] = *QueIter;
+		QueIter++;
 	}
+	mQueuedToCreateObjects.clear();
+
+	// Update all scene objects
+	std::map<std::string, std::map<std::string, GameObject*>>::iterator GroupsIter = mObjects.begin();
+	while (GroupsIter != mObjects.end())
+	{
+		std::map<std::string, GameObject* >::iterator ObjectsIter = GroupsIter->second.begin();
+		while (ObjectsIter != GroupsIter->second.end())
+		{
+			ObjectsIter->second->update(elapsed);
+			ObjectsIter++;
+		}
+		GroupsIter++;
+	}
+
+	// Finished Updating
+	if (this->firstUpdate)
+		this->firstUpdate = false;
 }
 
 void GameObjectManager::load_scenes(std::list<std::tuple<std::string, std::string>> fileNames, bool printReadValues)
@@ -71,12 +94,15 @@ void GameObjectManager::parse_xml_nodes(tinyxml2::XMLElement* element, std::stri
 	{
 		std::string par = parent != nullptr ? parent->get_name() : "NULL";
 		std::string name = element->Attribute("name");
-		if(printReadValues)
-			LOG_MANAGER->log_message("Creating " + name + " Parent is: " + par);
-		GameObject* newObject = create_game_object(groupName, name, parent);
-		tinyxml2::XMLElement* firstChild = element->FirstChildElement();
-		if (firstChild != NULL)
-			parse_xml_gameobject(firstChild, groupName, path, printReadValues, newObject);
+		if (this->get_game_object(name, groupName) == nullptr)
+		{
+			if (printReadValues)
+				LOG_MANAGER->log_message("Creating " + name + " Parent is: " + par);
+			GameObject* newObject = create_game_object(groupName, name, parent);
+			tinyxml2::XMLElement* firstChild = element->FirstChildElement();
+			if (firstChild != NULL)
+				parse_xml_gameobject(firstChild, groupName, path, printReadValues, newObject);
+		}
 	}
 	else if (nodeVal == "externals")
 	{
@@ -88,12 +114,7 @@ void GameObjectManager::parse_xml_nodes(tinyxml2::XMLElement* element, std::stri
 	}
 	else if (nodeVal == "environment")
 		parse_xml_environment(element, printReadValues);
-	else if (parent != NULL)
-	{
-		tinyxml2::XMLElement* firstElement = element->FirstChildElement();
-		if (firstElement != NULL)
-			parse_xml_nodes(firstElement, groupName, path, printReadValues, parent);
-	}
+
 	tinyxml2::XMLElement* nextSibling = element->NextSiblingElement();
 	if (nextSibling != NULL)
 		parse_xml_nodes(nextSibling, groupName, path, printReadValues, parent);
@@ -179,10 +200,33 @@ void GameObjectManager::parse_xml_gameobject(tinyxml2::XMLElement* element, std:
 	else if (nodeVal == "property")
 	{
 		std::string nodeName = element->Attribute("name");
-		if (nodeName == "tag")
-			set_game_object_tag(element->IntAttribute("data"), parent);
-		else if (nodeName == "script")
+		if (nodeName == "script")
 			parent->make_script_twin(element->Attribute("data"));
+		else if (nodeName == "tag")
+			set_game_object_tag(element->IntAttribute("data"), parent);
+		else if (nodeName == "collider")
+		{
+			// break up line into colliderType, ColliderType::RECTANGULAR_PRISM ? extentsX, extentsY, extentsZ : radius
+			std::vector<std::string> dataLine;
+			split_str(element->Attribute("data"), dataLine, ' ');
+			if (dataLine.size() > 0)
+			{
+				if (dataLine[0] == "box" && dataLine.size() == 4)
+					parent->create_collider("main_collider", ColliderType::RECTANGULAR_PRISM,
+						Ogre::Vector3(atof(dataLine[1].c_str()), atof(dataLine[2].c_str()), atof(dataLine[3].c_str())));
+				else if (dataLine[0] == "sphere")
+					parent->create_collider("main_collider", ColliderType::SPHERE, Ogre::Vector3(atof(dataLine[1].c_str())));
+			}
+			else
+				throw new std::runtime_error("Scene Parse ERROR!!! Improperly formatted XML. Does not contain collider type and extents info!! data: " + (std::string)element->Attribute("data"));
+		}
+		else if (nodeName == "collider_layer" || nodeName == "collider_mask")
+		{
+			if(nodeName == "collider_layer")
+				parent->get_collider()->set_layer(element->IntAttribute("data"));
+			else
+				parent->get_collider()->set_mask(element->IntAttribute("data"));
+		}
 	}
 	else
 	{
@@ -272,6 +316,8 @@ void GameObjectManager::parse_xml_light(tinyxml2::XMLElement* element, std::stri
 
 	std::string name = element->Attribute("name");
 	LightComponent* light = parent->create_light(name.empty() ? parent->get_name() : name, type);
+	if (type == OgreEngine::LightType::DIRECTIONAL)
+		light->set_direction(Ogre::Vector3(0, 0, -1));
 
 	tinyxml2::XMLElement* firstElement = element->FirstChildElement();
 	if (firstElement != NULL)
@@ -340,24 +386,24 @@ void GameObjectManager::set_game_object_tag(int newTag, GameObject* object)
 GameObject* GameObjectManager::get_game_object(std::string game_object_name)
 {
 	GameObject* reqObject = nullptr;
-	mGroupsIter = mObjects.begin();
-	mGroupsRevIter = mObjects.rbegin();
-	while (mGroupsIter != mObjects.end() && mGroupsRevIter != mObjects.rend() && *mGroupsIter != *mGroupsRevIter)
+	std::map<std::string, std::map<std::string, GameObject*>>::iterator GroupsIter = mObjects.begin();
+	std::map<std::string, std::map<std::string, GameObject*>>::reverse_iterator GroupsRevIter = mObjects.rbegin();
+	while (GroupsIter != mObjects.end() && GroupsRevIter != mObjects.rend() && *GroupsIter != *GroupsRevIter)
 	{
-		mObjIter = mGroupsIter->second.find(game_object_name);
-		if (mObjIter != mGroupsIter->second.end())
+		std::map<std::string, GameObject* >::iterator ObjIter = GroupsIter->second.find(game_object_name);
+		if (ObjIter != GroupsIter->second.end())
 		{
-			reqObject = mObjIter->second;
+			reqObject = ObjIter->second;
 			break;
 		}
-		mObjIter = mGroupsRevIter->second.find(game_object_name);
-		if (mObjIter != mGroupsIter->second.end())
+		ObjIter = GroupsRevIter->second.find(game_object_name);
+		if (ObjIter != GroupsIter->second.end())
 		{
-			reqObject = mObjIter->second;
+			reqObject = ObjIter->second;
 			break;
 		}
-		mGroupsIter++;
-		mGroupsRevIter++;
+		GroupsIter++;
+		GroupsRevIter++;
 	}
 
 	return reqObject;
@@ -367,12 +413,12 @@ GameObject* GameObjectManager::get_game_object(std::string game_object_name, std
 {
 	GameObject* reqObject = nullptr;
 	
-	mGroupsIter = mObjects.find(group_name);
-	if (mGroupsIter != mObjects.end())
+	std::map<std::string, std::map<std::string, GameObject*>>::iterator GroupsIter = mObjects.find(group_name);
+	if (GroupsIter != mObjects.end())
 	{
-		mObjIter = mGroupsIter->second.find(game_object_name);
-		if (mObjIter != mGroupsIter->second.end())
-			reqObject = mObjIter->second;
+		std::map<std::string, GameObject* >::iterator ObjIter = GroupsIter->second.find(game_object_name);
+		if (ObjIter != GroupsIter->second.end())
+			reqObject = ObjIter->second;
 		else
 			LOG_MANAGER->log("User trying to access nonexistent gameObject: " + game_object_name + " in group: " + group_name);
 	}
@@ -384,14 +430,14 @@ GameObject* GameObjectManager::get_game_object(std::string game_object_name, std
 
 void GameObjectManager::get_game_objects(std::string group_name, std::vector<GameObject*>& result)
 {
-	mGroupsIter = mObjects.find(group_name);
-	if (mGroupsIter != mObjects.end())
+	std::map<std::string, std::map<std::string, GameObject*>>::iterator GroupsIter = mObjects.find(group_name);
+	if (GroupsIter != mObjects.end())
 	{
-		mObjIter = mGroupsIter->second.begin();
-		while (mObjIter != mGroupsIter->second.end())
+		std::map<std::string, GameObject* >::iterator ObjIter = GroupsIter->second.begin();
+		while (ObjIter != GroupsIter->second.end())
 		{
-			result.push_back(mObjIter->second);
-			mObjIter++;
+			result.push_back(ObjIter->second);
+			ObjIter++;
 		}
 	}
 	else
@@ -400,22 +446,48 @@ void GameObjectManager::get_game_objects(std::string group_name, std::vector<Gam
 
 bool GameObjectManager::has_group(std::string group_name)
 {
-	mGroupsIter = mObjects.find(group_name);
-	if (mGroupsIter != mObjects.end())
+	std::map<std::string, std::map<std::string, GameObject*>>::iterator GroupsIter = mObjects.find(group_name);
+	if (GroupsIter != mObjects.end())
 		return true;
 	return false;
 }
 
+void OgreEngine::GameObjectManager::queue_deletion_of_game_object(GameObject* obj)
+{
+	if (mQueuedToDestroyObjects.count(obj) == 0) 
+		mQueuedToDestroyObjects.insert(obj);
+}
+
+void OgreEngine::GameObjectManager::destroy_queued_objects()
+{
+	// Destroy Queued objects
+	std::unordered_set<GameObject*>::iterator QueIter = mQueuedToDestroyObjects.begin();
+	while (QueIter != mQueuedToDestroyObjects.end())
+	{
+		this->destroy_game_object((*QueIter)->mGroup, (*QueIter)->mName);
+		QueIter++;
+	}
+	mQueuedToDestroyObjects.clear();
+}
+
 bool GameObjectManager::destroy_game_object(std::string group_name, std::string gobj_name, bool ignoreLog)
 {
-	mGroupsIter = mObjects.find(group_name);
-	if (mGroupsIter != mObjects.end())
+	std::map<std::string, std::map<std::string, GameObject*>>::iterator GroupsIter = mObjects.find(group_name);
+	if (GroupsIter != mObjects.end())
 	{
-		mObjIter = mGroupsIter->second.find(gobj_name);
-		if (mObjIter != mGroupsIter->second.end())
+		std::map<std::string, GameObject* >::iterator ObjIter = GroupsIter->second.find(gobj_name);
+		if (ObjIter != GroupsIter->second.end())
 		{
-			delete(mObjIter->second);
-			mGroupsIter->second.erase(mObjIter);
+			for (int i = 0; i < mTaggedObjects[ObjIter->second->get_tag()].size(); i++)
+			{
+				if (mTaggedObjects[ObjIter->second->get_tag()][i] == ObjIter->second)
+				{
+					mTaggedObjects[ObjIter->second->get_tag()].erase(mTaggedObjects[ObjIter->second->get_tag()].begin() + i);
+					break;
+				}
+			}
+			delete(ObjIter->second);
+			GroupsIter->second.erase(ObjIter);
 			return true;
 		}
 		else if(!ignoreLog)
@@ -429,39 +501,39 @@ bool GameObjectManager::destroy_game_object(std::string group_name, std::string 
 bool GameObjectManager::destroy_game_object(std::string gobj_name)
 {
 	bool deletedObj = false;
-	mGroupsIter = mObjects.begin();
-	mGroupsRevIter = mObjects.rbegin();
-	while (mGroupsIter != mObjects.end() && mGroupsRevIter != mObjects.rend())
+	std::map<std::string, std::map<std::string, GameObject*>>::iterator GroupsIter = mObjects.begin();
+	std::map<std::string, std::map<std::string, GameObject*>>::reverse_iterator GroupsRevIter = mObjects.rbegin();
+	while (GroupsIter != mObjects.end() && GroupsRevIter != mObjects.rend())
 	{
-		if (*mGroupsIter == *mGroupsRevIter)
+		if (*GroupsIter == *GroupsRevIter)
 		{
-			this->destroy_game_object(mGroupsIter->first, gobj_name, false);
+			this->destroy_game_object(GroupsIter->first, gobj_name, false);
 			break;
 		}
 
-		destroy_game_object(mGroupsIter->first, gobj_name, false);
-		destroy_game_object(mGroupsRevIter->first, gobj_name, false);
+		destroy_game_object(GroupsIter->first, gobj_name, false);
+		destroy_game_object(GroupsRevIter->first, gobj_name, false);
 
-		mGroupsIter++;
-		mGroupsRevIter++;
+		GroupsIter++;
+		GroupsRevIter++;
 	}
 	return deletedObj;
 }
 
 void GameObjectManager::group_destroy(std::string group_name, bool destroy_group)
 {
-	mGroupsIter = mObjects.find(group_name);
-	if (mGroupsIter != mObjects.end())
+	std::map<std::string, std::map<std::string, GameObject*>>::iterator GroupsIter = mObjects.find(group_name);
+	if (GroupsIter != mObjects.end())
 	{
-		mObjIter = mGroupsIter->second.begin();
-		while(mObjIter != mGroupsIter->second.end())
+		std::map<std::string, GameObject* >::iterator ObjIter = GroupsIter->second.begin();
+		while(ObjIter != GroupsIter->second.end())
 		{
-			delete(mObjIter->second);
-			mGroupsIter->second.erase(mObjIter);
-			mObjIter++;
+			delete(ObjIter->second);
+			GroupsIter->second.erase(ObjIter);
+			ObjIter++;
 		}
 		if(destroy_group)
-			mObjects.erase(mGroupsIter->first);
+			mObjects.erase(GroupsIter->first);
 	}
 	else
 		LOG_MANAGER->log("User trying to clear or delete nonexistent group: " + group_name);
@@ -469,36 +541,43 @@ void GameObjectManager::group_destroy(std::string group_name, bool destroy_group
 
 void GameObjectManager::group_destroy(std::map<std::string, std::map<std::string, GameObject*>>::iterator& group, bool destroy_group)
 {
-	mObjIter = group->second.begin();
-	while (mObjIter != group->second.end())
+	std::map<std::string, GameObject* >::iterator ObjIter = group->second.begin();
+	while (ObjIter != group->second.end())
 	{
-		delete(mObjIter->second);
-		mObjIter++;
+		if (updating)
+			mQueuedToDestroyObjects.insert(ObjIter->second);
+		else
+			delete(ObjIter->second);
+		ObjIter++;
 	}
-	group->second.clear();
-	if (destroy_group)
-		mObjects.erase(mGroupsIter->first);
+	if (!updating)
+	{
+		group->second.clear();
+		if (destroy_group)
+			mObjects.erase(group->first);
+	}
 }
 
 void GameObjectManager::destroy_all()
 {
-	mGroupsIter = mObjects.begin();
+	std::map<std::string, std::map<std::string, GameObject*>>::iterator GroupsIter;
 	while (mObjects.size() > 0)
 	{
-		group_destroy(mGroupsIter, true);
+		GroupsIter = mObjects.begin();
+		group_destroy(GroupsIter, true);
 	}
 }
 
 void GameObjectManager::set_visibility(std::string group_name, bool is_visible)
 {
-	mGroupsIter = mObjects.find(group_name);
-	if (mGroupsIter != mObjects.end())
+	std::map<std::string, std::map<std::string, GameObject*>>::iterator GroupsIter = mObjects.find(group_name);
+	if (GroupsIter != mObjects.end())
 	{
-		mObjIter = mGroupsIter->second.begin();
-		while (mObjIter != mGroupsIter->second.end())
+		std::map<std::string, GameObject* >::iterator ObjIter = GroupsIter->second.begin();
+		while (ObjIter != GroupsIter->second.end())
 		{
-			mObjIter->second->set_visibility(is_visible);
-			mObjIter++;
+			ObjIter->second->set_visibility(is_visible);
+			ObjIter++;
 		}
 	}
 	else
@@ -509,18 +588,21 @@ GameObject* GameObjectManager::create_game_object(std::string group_name, std::s
 {
 	GameObject* newObj = new GameObject(object_name, tag, group_name, parent, pos, rot);
 	
-	mGroupsIter = mObjects.find(group_name);
-	if (mGroupsIter != mObjects.end())
+	std::map<std::string, std::map<std::string, GameObject*>>::iterator GroupsIter = mObjects.find(group_name);
+	if (GroupsIter != mObjects.end())
 	{
 		// Check if Object is already in the group
-		mObjIter = mGroupsIter->second.find(object_name);
-		if (mObjIter == mGroupsIter->second.end()) // GameObject not in group, create it
+		std::map<std::string, GameObject* >::iterator ObjectsIter = GroupsIter->second.find(object_name);
+		// GameObject not in group, create it
+		if (ObjectsIter == GroupsIter->second.end() && mQueuedToCreateObjects.count(newObj) == 0)
 		{
-			mGroupsIter->second[object_name] = newObj; //.emplace(object_name, newObj);
-			mTaggedObjects[tag].push_back(newObj);
+			if (!updating)
+				GroupsIter->second[object_name] = newObj; //.emplace(object_name, newObj);
+			else
+				mQueuedToCreateObjects.insert(newObj);
 		}
-			
-		else // GameObject is already apart of the dictionary Log Error and return nullptr as GameObject
+		// GameObject is already apart of the dictionary Log Error and return nullptr as GameObject
+		else 
 		{
 			LOG_MANAGER->log_message("GameObject_CreationError: Object: " + object_name + " already exists in group: " + group_name, Ogre::ColourValue(1, 0, 0));
 			delete(newObj);
@@ -529,8 +611,21 @@ GameObject* GameObjectManager::create_game_object(std::string group_name, std::s
 	}
 	else // Object Group does not exist, create group and place new object in group
 		mObjects[group_name][object_name] = newObj;
-		
+	mTaggedObjects[tag].push_back(newObj);
+
 	return newObj;
+}
+
+void OgreEngine::GameObjectManager::add_queued_objects()
+{
+	for (std::unordered_set<GameObject*>::iterator objIter = mQueuedToCreateObjects.begin(); objIter != mQueuedToCreateObjects.end(); objIter++)
+	{
+		if (mObjects[(*objIter)->get_group_name()].count((*objIter)->get_name()) == 0)
+			mObjects[(*objIter)->get_group_name()][(*objIter)->get_name()] = *objIter;
+		else
+			throw new std::runtime_error("Trying to create another instance of an already exsisting game object, this is not allowed!!");
+	}
+	mQueuedToCreateObjects.clear();
 }
 
 GameObject* GameObjectManager::create_ground_plane(std::string materialName)

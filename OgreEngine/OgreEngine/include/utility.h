@@ -3,14 +3,7 @@
 
 namespace OgreEngine
 {
-	template<typename T>
-	float magnitude(T container, bool squared = false)
-	{
-		float amount = 0;
-		for (auto val : container)
-			amount += val * val;
-		return (squared ? amount : sqrt(amount));
-	}
+	float magnitude(Ogre::Vector3 container, bool squared = false);
 
 	void normalized(Ogre::Vector3& dir);
 

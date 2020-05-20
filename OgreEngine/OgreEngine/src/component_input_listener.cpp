@@ -4,9 +4,9 @@
 
 using namespace OgreEngine;
 
-ComponentInputListener::ComponentInputListener(GameObject* owner, std::string name) : Component(owner)
+ComponentInputListener::ComponentInputListener(GameObject* owner, std::string name) : 
+	Component(owner, name.empty() ? owner->get_name() + "_listener" : name)
 {
-	Component::componentName = name.empty() ? owner->get_name() + "_listener" : name;
 }
 
 ComponentInputListener::~ComponentInputListener()

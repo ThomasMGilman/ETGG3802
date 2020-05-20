@@ -1,9 +1,85 @@
-﻿  input_manager.cpp
+﻿  game_object_manager.cpp
 D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\include\component_camera.h(50,130): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\include\component_camera.h(50,108): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\input_manager.cpp(9,41): warning C4356: 'OgreEngine::Singleton<OgreEngine::InputManager>::msSingleton': static data member cannot be initialized via derived class
-D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\input_manager.cpp(238,133): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\input_manager.cpp(258,123): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\input_manager.cpp(279,162): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\input_manager.cpp(309,145): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\game_object_manager.cpp(9,51): warning C4356: 'OgreEngine::Singleton<OgreEngine::GameObjectManager>::msSingleton': static data member cannot be initialized via derived class
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\game_object_manager.cpp(216,79): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=Ogre::Real
+          ]
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\game_object_manager.cpp(216,52): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=Ogre::Real
+          ]
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\game_object_manager.cpp(216,25): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=Ogre::Real
+          ]
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\game_object_manager.cpp(218,87): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=Ogre::Real
+          ]
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\game_object_manager.cpp(653,41): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\game_object_manager.cpp(654,42): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\game_object_manager.cpp(661,40): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\game_object_manager.cpp(662,41): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\game_object_manager.cpp(668,42): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\game_object_manager.cpp(669,43): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\game_object_manager.cpp(699,43): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=Ogre::Real
+          ]
+  script_functions.cpp
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\include\component_camera.h(50,130): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\include\component_camera.h(50,108): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(120,11): warning C4244: 'initializing': conversion from 'Py_ssize_t' to 'int', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(157,36): warning C4244: 'argument': conversion from '__int64' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(204,21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(226,16): warning C4244: 'initializing': conversion from 'Py_ssize_t' to 'int', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(343,93): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(361,17): warning C4244: 'initializing': conversion from 'Py_ssize_t' to 'int', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(373,79): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(375,32): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(406,11): warning C4244: 'initializing': conversion from 'Py_ssize_t' to 'int', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(423,11): warning C4244: 'initializing': conversion from 'Py_ssize_t' to 'int', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(438,11): warning C4244: 'initializing': conversion from 'Py_ssize_t' to 'int', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(447,11): warning C4244: 'initializing': conversion from 'Py_ssize_t' to 'int', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(456,11): warning C4244: 'initializing': conversion from 'Py_ssize_t' to 'int', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(465,11): warning C4244: 'initializing': conversion from 'Py_ssize_t' to 'int', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(477,17): warning C4244: 'initializing': conversion from 'Py_ssize_t' to 'int', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\include\script_functions.h(24,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\src\script_functions.cpp(24): message : see reference to function template instantiation 'OgreEngine::package<float> OgreEngine::get_num_from_pytuple<float>(PyObject *,int)' being compiled
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\include\script_functions.h(37,26): warning C4244: '=': conversion from 'long' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\include\script_functions.h(41,29): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\include\script_functions.h(39,36): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\include\script_functions.h(41,29): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+  Generating Code...
   OgreEngine.vcxproj -> D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\bin\Debug\OgreEngine.exe

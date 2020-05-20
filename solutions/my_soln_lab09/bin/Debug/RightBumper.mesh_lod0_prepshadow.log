@@ -1,0 +1,141 @@
+12:43:17: Edge Data
+12:43:17: ---------
+12:43:17: Triangle 0 = {indexSet=0, vertexSet=0, v0=0, v1=1, v2=2}
+12:43:17: Triangle 1 = {indexSet=0, vertexSet=0, v0=0, v1=2, v2=3}
+12:43:17: Triangle 2 = {indexSet=0, vertexSet=0, v0=4, v1=5, v2=6}
+12:43:17: Triangle 3 = {indexSet=0, vertexSet=0, v0=4, v1=6, v2=7}
+12:43:17: Triangle 4 = {indexSet=0, vertexSet=0, v0=8, v1=9, v2=10}
+12:43:17: Triangle 5 = {indexSet=0, vertexSet=0, v0=8, v1=10, v2=11}
+12:43:17: Triangle 6 = {indexSet=0, vertexSet=0, v0=12, v1=13, v2=14}
+12:43:17: Triangle 7 = {indexSet=0, vertexSet=0, v0=12, v1=14, v2=15}
+12:43:17: Triangle 8 = {indexSet=0, vertexSet=0, v0=16, v1=17, v2=18}
+12:43:17: Triangle 9 = {indexSet=0, vertexSet=0, v0=16, v1=18, v2=19}
+12:43:17: Triangle 10 = {indexSet=0, vertexSet=0, v0=20, v1=21, v2=22}
+12:43:17: Triangle 11 = {indexSet=0, vertexSet=0, v0=20, v1=22, v2=23}
+12:43:17: Edge Group vertexSet=0
+12:43:17: Edge 0 = {
+  tri0=0, 
+  tri1=6, 
+  v0=0, 
+  v1=1, 
+  degenerate=false 
+}
+12:43:17: Edge 1 = {
+  tri0=0, 
+  tri1=10, 
+  v0=1, 
+  v1=2, 
+  degenerate=false 
+}
+12:43:17: Edge 2 = {
+  tri0=0, 
+  tri1=1, 
+  v0=2, 
+  v1=0, 
+  degenerate=false 
+}
+12:43:17: Edge 3 = {
+  tri0=1, 
+  tri1=2, 
+  v0=2, 
+  v1=3, 
+  degenerate=false 
+}
+12:43:17: Edge 4 = {
+  tri0=1, 
+  tri1=8, 
+  v0=3, 
+  v1=0, 
+  degenerate=false 
+}
+12:43:17: Edge 5 = {
+  tri0=2, 
+  tri1=10, 
+  v0=5, 
+  v1=6, 
+  degenerate=false 
+}
+12:43:17: Edge 6 = {
+  tri0=2, 
+  tri1=3, 
+  v0=6, 
+  v1=4, 
+  degenerate=false 
+}
+12:43:17: Edge 7 = {
+  tri0=3, 
+  tri1=4, 
+  v0=6, 
+  v1=7, 
+  degenerate=false 
+}
+12:43:17: Edge 8 = {
+  tri0=3, 
+  tri1=9, 
+  v0=7, 
+  v1=4, 
+  degenerate=false 
+}
+12:43:17: Edge 9 = {
+  tri0=4, 
+  tri1=11, 
+  v0=9, 
+  v1=10, 
+  degenerate=false 
+}
+12:43:17: Edge 10 = {
+  tri0=4, 
+  tri1=5, 
+  v0=10, 
+  v1=8, 
+  degenerate=false 
+}
+12:43:17: Edge 11 = {
+  tri0=5, 
+  tri1=7, 
+  v0=10, 
+  v1=11, 
+  degenerate=false 
+}
+12:43:17: Edge 12 = {
+  tri0=5, 
+  tri1=9, 
+  v0=11, 
+  v1=8, 
+  degenerate=false 
+}
+12:43:17: Edge 13 = {
+  tri0=6, 
+  tri1=8, 
+  v0=13, 
+  v1=14, 
+  degenerate=false 
+}
+12:43:17: Edge 14 = {
+  tri0=6, 
+  tri1=7, 
+  v0=14, 
+  v1=12, 
+  degenerate=false 
+}
+12:43:17: Edge 15 = {
+  tri0=7, 
+  tri1=11, 
+  v0=15, 
+  v1=12, 
+  degenerate=false 
+}
+12:43:17: Edge 16 = {
+  tri0=8, 
+  tri1=9, 
+  v0=18, 
+  v1=16, 
+  degenerate=false 
+}
+12:43:17: Edge 17 = {
+  tri0=10, 
+  tri1=11, 
+  v0=22, 
+  v1=20, 
+  degenerate=false 
+}

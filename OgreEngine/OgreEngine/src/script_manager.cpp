@@ -13,16 +13,20 @@ ScriptManager* ScriptManager::msSingleton = nullptr;
 PyMethodDef my_functions[] = {
 	{"load_script", load_script, METH_VARARGS, "load_script('script-path-and-fname') -> None"},
 	{"load_scene", load_scene, METH_VARARGS, "load_scene(scene_fname) -> None"},
+	{"load_collider_visualizations", load_collider_visualizations, METH_VARARGS, "load_collider_visualizations() -> None"},
 	{"find_all_string_match_indicies", find_all_string_match_indicies, METH_VARARGS, "find_all_string_match_indicies(\"givenString\", \"stringToFind\")"},
 	{"log", log, METH_VARARGS, "log('my message', color=None, distance=None) -> None"},
 	{"create_game_object", create_python_game_object, METH_VARARGS, "create_game_object('my_group', 'my_name', 42, other_game_object=None, script_fname=None)"},
 	{"set_skybox", set_skybox, METH_VARARGS, "set_skybox(\"MySkyboxMaterial\") -> None"},
+	{"raycast", raycast, METH_VARARGS, "raycast(origin(x,y,z), direction(x,y,z), mask(int), ray_dist(float)) -> {((x,y,z), PyObject*), ...} | None"},
 	{"register_input_listener", register_input_listener, METH_VARARGS, "register_input_listener(game_object) -> None"},
 	{"deregister_input_listener", deregister_input_listener, METH_VARARGS, "deregister_input_listener(game_object) -> None"},
 	{"has_action", has_action, METH_VARARGS, "has_action(action_name) -> bool"},
 	{"get_action", get_action, METH_VARARGS, "get_action(action_name) -> bool"},
 	{"has_axis", has_axis, METH_VARARGS, "has_axis(axis_name) -> bool"},
 	{"get_axis", get_axis, METH_VARARGS, "get_axis(axis_name) -> float"},
+	{"queue_destroy", queue_destroy, METH_VARARGS, "queue_destroy(PyObject*) -> None"},
+	{"build_edge_lists", build_edge_list, METH_VARARGS, "build_edge_list(groupName) -> None"},
 	{NULL, NULL, 0, NULL}
 };
 

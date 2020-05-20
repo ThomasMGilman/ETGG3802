@@ -1,0 +1,6 @@
+04/10/2020@13:01:08    Successfully executed script '../media/invader_media/ship.py'
+04/10/2020@13:01:08    Successfully executed script '../media/invader_media/invader.py'
+04/10/2020@13:01:08    Successfully executed script '../media/invader_media/fleet.py'
+04/10/2020@13:01:08    Successfully executed script '../media/invader_media/bullet.py'
+04/10/2020@13:01:08    made a fleet
+04/10/2020@13:01:09    Successfully executed script '..\media\invader_media\init.py'

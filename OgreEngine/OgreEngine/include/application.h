@@ -5,6 +5,7 @@
 #include "game_object_manager.h"
 #include "input_manager.h"
 #include "script_manager.h"
+#include "collision_manager.h"
 #include <Singleton.h>
 
 #define APPLICATION Application::get_singleton_ptr()
@@ -23,7 +24,14 @@ namespace OgreEngine {
 
 		virtual void shutdown(void) override
 		{
-			// Delete all of the GameObjects
+			// Shutdown Managers
+			delete(mGOM);	// Game Object Manager
+			delete(mSM);	// Script Manager
+			delete(mIM);	// Input Manager
+			delete(mCM);	// Collision Manager
+			delete(mLM);	// Log Manager
+
+			// Shutdown Ogre
 			OgreBites::ApplicationContext::shutdown();
 		};
 
@@ -33,22 +41,22 @@ namespace OgreEngine {
 		/// Call the Quite Function
 		void quite();
 
+		/// Retrieves the root of the application
+		Ogre::Root* get_root() { return this->mRoot; }
+
 		/// Retrieves the current scene manager
 		Ogre::SceneManager* get_scene_manager() { return this->mScnMgr; };
 
 	private:
-		//std::vector<GameObject*> objects;
-
+		/// Ogre Application and Scene required components
 		Ogre::Root* mRoot;
 		Ogre::SceneManager* mScnMgr;
-		Ogre::Timer* mTimer;
 
-		std::unordered_set<int> mKeysDown;
-		std::stringstream mStringStream;
-
-		LogManager* mLogger;
+		/// Game Manager Objects
+		LogManager* mLM;
 		GameObjectManager* mGOM;
 		ScriptManager* mSM;
 		InputManager* mIM;
+		CollisionManager* mCM;
 	};
 }

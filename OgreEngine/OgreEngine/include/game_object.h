@@ -5,6 +5,7 @@
 #include <component_camera.h>
 #include <component_mesh.h>
 #include <component_input_listener.h>
+#include <component_collider.h>
 
 namespace OgreEngine
 {
@@ -69,6 +70,9 @@ namespace OgreEngine
 	public:
 		/// Makes this game object a child of the given game object, detaching it from its current parent (if any).
 		void set_parent(GameObject* parent);
+
+		/// Retrieve this GameObjects parent if set, otherwise returns nullptr
+		GameObject* get_parent() { return this->mParent; }
 
 		/// Set the positional offset (relative to parent game object) 
 		void set_position(float x, float y, float z) { mSceneNode->setPosition(Ogre::Vector3(x, y, z)); }
@@ -177,6 +181,9 @@ namespace OgreEngine
 		/// Gets the name of this game object
 		std::string get_name() { return mName; }
 
+		/// Gets the name of this game objects group
+		std::string get_group_name() { return mGroup; }
+
 		/// Gets the group name (as a string) of this game object in the GOM
 		int get_tag() { return mTag; }
 
@@ -185,6 +192,9 @@ namespace OgreEngine
 		/// simple setter for gameObject
 		void set_script_twin(PyObject* twin) { mScriptTwin = twin; }
 
+		PyObject* get_script_twin() { return this->mScriptTwin; }
+
+		/// Looks for the specified python class and sets a new instance of that class as the twin class
 		void make_script_twin(std::string className);
 
 		/// Calls the method passed and runs it as long as the args_tuple contains a valid number of arguments
@@ -253,8 +263,13 @@ namespace OgreEngine
 		/// Create a input listener with the given name
 		ComponentInputListener* create_input_listener(std::string listenerName);
 
+		/// Create a collision component with the given name
+		ComponentCollider* create_collider(std::string colliderName, ColliderType colliderType, Ogre::Vector3 data, int layer = 0, int mask = 0);
+
 		/// Returns the first input listener component if it exists
 		ComponentInputListener* get_input_listener();
+
+		ComponentCollider* get_collider();
 
 		// ***** Operrator Overloads *****
 	public:

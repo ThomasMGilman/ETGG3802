@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<input_bindings>
+	<actions>
+		<action name="fire" type="key" value="space"/>
+		<action name="quit" type="key" value="escape"/>
+		
+		<!-- this is an xml comment, by the way.  The id_num should be 0...n for a SPECIFIC
+		     gamepad or -1 for ANY gamepad.  See the  -->
+		<action name="fire" type="gamepad" id_num="0" value="a"/>
+		<action name="quit" type="gamepad" id_num="-1" value="start"/>
+	</actions>
+	
+	<axes>
+		<axis name="horizontal" type="key" positive="d" negative="a"/>
+		<axis name="vertical" type="key" positive="w" negative="s"/>
+		
+		<axis name="horizontal" type="gamepad" id_num="0" value="left-x"/>
+		<axis name="vertical" type="gamepad" id_num="0" value="left-y"/>
+	</axes>
+</input_bindings>

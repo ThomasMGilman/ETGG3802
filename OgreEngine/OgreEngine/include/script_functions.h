@@ -56,6 +56,8 @@ namespace OgreEngine
 	/// Loads the provided scene. The provided scene must include full path to said scene.
 	PyObject* load_scene(PyObject* self, PyObject* args);
 
+	PyObject* load_collider_visualizations(PyObject* self, PyObject* args);
+
 	/// Given a string, finds all matches with the given match case.
 	PyObject* find_all_string_match_indicies(PyObject* self, PyObject* args);
 
@@ -67,6 +69,8 @@ namespace OgreEngine
 
 	/// Sets the skybox image to the provided image.
 	PyObject* set_skybox(PyObject* self, PyObject* args);
+
+	PyObject* raycast(PyObject* self, PyObject* args);
 
 	/// Register the gameobject as a new input listener.
 	PyObject* register_input_listener(PyObject* self, PyObject* args);
@@ -85,4 +89,9 @@ namespace OgreEngine
 
 	/// Get the requested input axis.
 	PyObject* get_axis(PyObject* self, PyObject* args);
+
+	/// Queue an object to be destroyed at end of update
+	PyObject* queue_destroy(PyObject* self, PyObject* args);
+
+	PyObject* build_edge_list(PyObject* self, PyObject* args);
 }

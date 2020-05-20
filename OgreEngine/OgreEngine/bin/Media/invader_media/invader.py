@@ -1,7 +1,7 @@
-import ssuge
+import ogre_module
 import random
 
-class Invader(ssuge.GameObject):
+class Invader(ogre_module.GameObject):
 	def create(self, *args):
 		self.mTimeToFire = random.uniform(5.0, 20.0)
 		#self.mTimeToFire = 1.0
@@ -25,9 +25,9 @@ class Invader(ssuge.GameObject):
 				ray_direction = (0, -1, 0)
 				ray_dist = 100
 				ray_mask = 0x01                 # Only look for hits with layer0 (invaders)
-				ray_result = ssuge.raycast(ray_origin, ray_direction, ray_mask, ray_dist)
+				ray_result = ogre_module.raycast(ray_origin, ray_direction, ray_mask, ray_dist)
 				if len(ray_result) == 0:
-					new_bull = ssuge.create_game_object("InvaderGroup", \
+					new_bull = ogre_module.create_game_object("InvaderGroup", \
 								self.name() + "_bullet" + str(self.mBulletCounter), 101, "Bullet", False)
 					self.mBulletCounter += 1
 					new_bull_position = list(self.get_world_position())
@@ -48,7 +48,7 @@ class Invader(ssuge.GameObject):
 	def collision_start(self, other):
 		if other.tag() == 100:
 			# Player bullet -- kaboom!
-			ssuge.queue_destroy(self)
+			ogre_module.queue_destroy(self)
 		else:
 			# Assume it's a wall
 			parent = self.parent()

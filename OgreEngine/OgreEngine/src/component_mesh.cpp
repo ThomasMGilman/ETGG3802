@@ -5,10 +5,10 @@
 
 using namespace OgreEngine;
 
-MeshComponent::MeshComponent(std::string fname, GameObject * owner, std::string name) : Component(owner)
+MeshComponent::MeshComponent(std::string fname, GameObject * owner, std::string name) : 
+	Component(owner, name.empty() ? owner->get_name() + "_entity" : name)
 {
-	this->componentName = name.empty() ? owner->get_name() + "_entity" : name;
-	mEntity = APPLICATION->get_scene_manager()->createEntity(this->componentName, fname);
+	mEntity = APPLICATION->get_scene_manager()->createEntity(this->mComponentName, fname);
 	owner->get_scene_node()->attachObject(mEntity);
 	mAnimationState = NULL;
 }

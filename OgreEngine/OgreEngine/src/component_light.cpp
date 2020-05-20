@@ -5,10 +5,10 @@
 
 using namespace OgreEngine;
 
-LightComponent::LightComponent(LightType type, GameObject * owner, std::string name) : Component(owner)
+LightComponent::LightComponent(LightType type, GameObject * owner, std::string name) : 
+	Component(owner, name.empty() ? owner->get_name() + "_light" : name)
 {
-	this->componentName = name.empty() ? owner->get_name() + "_light" : name;
-	mLight = APPLICATION->get_scene_manager()->createLight(this->componentName);
+	mLight = APPLICATION->get_scene_manager()->createLight(this->mComponentName);
 	owner->get_scene_node()->attachObject(mLight);
 	if (type == LightType::DIRECTIONAL)
 		mLight->setType(Ogre::Light::LT_DIRECTIONAL);

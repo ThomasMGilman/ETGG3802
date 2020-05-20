@@ -1,7 +1,8 @@
 # Directories to ignore
-.vs/
-dependencies/
-zips/
+**/.vs/*
+**/dependencies/*
+**/zips/*
+**/build/*
 
 # Ignore commpressed files
 *.zip

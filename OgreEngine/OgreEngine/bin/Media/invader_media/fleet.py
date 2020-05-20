@@ -1,11 +1,11 @@
-import ssuge
+import ogre_module
 
-class Fleet(ssuge.GameObject):
+class Fleet(ogre_module.GameObject):
 	def create(self, *args):
 		self.mMovingLeft = True
 		self.mSpeed = 0.1
 		self.mForwardTimer = None
-		ssuge.log("made a fleet", (1, 1, 1), 1)
+		ogre_module.log("made a fleet", (1, 1, 1), 1)
 		
 	def update(self, dt):
 		dx = dy = 0
@@ -24,7 +24,7 @@ class Fleet(ssuge.GameObject):
 		
 	def bump(self):
 		if self.mForwardTimer == None:
-			ssuge.log("BUMP!", (1, 1, 1), 3)
+			ogre_module.log("BUMP!", (1, 1, 1), 3)
 			self.mForwardTimer = 1.5
 			self.mMovingLeft = not self.mMovingLeft
 	

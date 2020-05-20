@@ -43,13 +43,17 @@ namespace OgreEngine
 	// ***** CONSTRUCTORS / DESTRUCTORS *****
 	public:
 		/// Creates a sphere-collider
-		ComponentCollider(GameObject* owner, int layer, long long mask, float radius);
+		ComponentCollider(GameObject* owner, int layer, long long mask, float radius, std::string name);
 
 		/// Creates a rectangular-prism-collider
-		ComponentCollider(GameObject* owner, int layer, long long mask, Ogre::Vector3 extents);
+		ComponentCollider(GameObject* owner, int layer, long long mask, Ogre::Vector3 extents, std::string name);
 
 		/// Destructor
 		virtual ~ComponentCollider();
+	
+	// ***** OVERIDES *****
+	public:
+		void update(float elapsed) override;
 
 	// ***** GETTERS / SETTERS *****
 	public:
@@ -59,14 +63,21 @@ namespace OgreEngine
 		/// Gets the extents data for this collider
 		Ogre::Vector3 get_data() { return mData; }
 
+		/// Sets the component colliders layer
+		void set_layer(int layer) { mLayer = layer; }
+
 		/// Gets the layer this object exists on (should be 0 - 31)
 		int get_layer() { return mLayer; }
+
+		/// Sets the component colliders mask
+		void set_mask(long long mask) { mCollisionMask = mask; }
 
 		/// Gets the mask.  If 1 bit-left-shifted the other object's layer anded with this mask is non-zero,
 		/// we potentially have a collision
 		long long get_mask() { return mCollisionMask; }
 
-		Ogre::Vector3 get_position() { return this->mParent->get_world_position(); }
+		/// Returns this colliders gameobject world position
+		Ogre::Vector3 get_position();
 
 		/// returns a vector of 3 axis {xAxis, yAxis, zAxis}.
 		std::vector<Ogre::Vector3> get_axis();
@@ -100,7 +111,15 @@ namespace OgreEngine
 		/// Create a volume visualization model
 		void create_collider_visualization();
 
-		/// Returns true if two extents (from calling get_projection_extents) have "daylight" between them
-		static bool has_separation(const Ogre::Vector2& ext1, const Ogre::Vector2& ext2);
+		// ***** COLLISION METHODS *****
+	public:
+		/// Handle start of collision with other gameobject
+		void start_collision(GameObject* otherObject);
+
+		/// Handle continued collision with other gameobject
+		void continue_collision(GameObject* otherObject);
+
+		/// Handle end of collision with other gameobject
+		void end_collision(GameObject* otherObject);
 	};
 }

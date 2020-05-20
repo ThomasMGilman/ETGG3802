@@ -1,0 +1,217 @@
+4/29/2020@12:28:21pm Reading in input bindings from: ../Media/core_media/input_bindings.xml
+4/29/2020@12:28:21pm Trying to add duplicate Action mapping!! action: fire
+4/29/2020@12:28:21pm Trying to add duplicate Action mapping!! action: quit
+4/29/2020@12:28:21pm Trying to add duplicate Axis mapping!! axis: horizontal
+4/29/2020@12:28:21pm Trying to add duplicate Axis mapping!! axis: vertical
+4/29/2020@12:28:21pm ../Media/core_media/input_bindings.xml Finished reading inputs!!
+4/29/2020@12:28:21pm Got Class: Ship
+4/29/2020@12:28:21pm Successfully loaded script: ../media/invader_media/ship.py
+4/29/2020@12:28:21pm Got Class: Invader
+4/29/2020@12:28:21pm Successfully loaded script: ../media/invader_media/invader.py
+4/29/2020@12:28:21pm Got Class: Fleet
+4/29/2020@12:28:21pm Successfully loaded script: ../media/invader_media/fleet.py
+4/29/2020@12:28:21pm Got Class: Bullet
+4/29/2020@12:28:21pm Successfully loaded script: ../media/invader_media/bullet.py
+4/29/2020@12:28:21pm Read in Scene by: JasonW
+4/29/2020@12:28:21pm User trying to access nonexistent group: InvaderGroup to find gameObject: FleetContainer
+4/29/2020@12:28:21pm User trying to access nonexistent gameObject: Invader in group: InvaderGroup
+4/29/2020@12:28:21pm User trying to access nonexistent gameObject: Invader.001 in group: InvaderGroup
+4/29/2020@12:28:21pm User trying to access nonexistent gameObject: Invader.002 in group: InvaderGroup
+4/29/2020@12:28:21pm User trying to access nonexistent gameObject: Invader.003 in group: InvaderGroup
+4/29/2020@12:28:21pm User trying to access nonexistent gameObject: Invader.004 in group: InvaderGroup
+4/29/2020@12:28:21pm User trying to access nonexistent gameObject: Invader.005 in group: InvaderGroup
+4/29/2020@12:28:21pm User trying to access nonexistent gameObject: Invader.006 in group: InvaderGroup
+4/29/2020@12:28:21pm User trying to access nonexistent gameObject: Invader.007 in group: InvaderGroup
+4/29/2020@12:28:21pm User trying to access nonexistent gameObject: Invader.008 in group: InvaderGroup
+4/29/2020@12:28:21pm User trying to access nonexistent gameObject: Invader.009 in group: InvaderGroup
+4/29/2020@12:28:21pm User trying to access nonexistent gameObject: Invader.010 in group: InvaderGroup
+4/29/2020@12:28:21pm User trying to access nonexistent gameObject: Invader.011 in group: InvaderGroup
+4/29/2020@12:28:21pm User trying to access nonexistent gameObject: CamRotater in group: InvaderGroup
+4/29/2020@12:28:21pm User trying to access nonexistent gameObject: ShieldA.002 in group: InvaderGroup
+4/29/2020@12:28:21pm User trying to access nonexistent gameObject: ShieldA.001 in group: InvaderGroup
+4/29/2020@12:28:21pm User trying to access nonexistent gameObject: ShieldA in group: InvaderGroup
+4/29/2020@12:28:21pm User trying to access nonexistent gameObject: RightBumper in group: InvaderGroup
+4/29/2020@12:28:21pm User trying to access nonexistent gameObject: LeftBumper in group: InvaderGroup
+4/29/2020@12:28:21pm User trying to access nonexistent gameObject: Ground in group: InvaderGroup
+4/29/2020@12:28:21pm User trying to access nonexistent gameObject: Lamp in group: InvaderGroup
+4/29/2020@12:28:21pm User trying to access nonexistent gameObject: Ship in group: InvaderGroup
+4/29/2020@12:28:21pm User trying to access nonexistent gameObject: Camera in group: InvaderGroup
+4/29/2020@12:28:21pm Successfully loaded script: ../Media/invader_media/init.py
+4/29/2020@12:28:21pm made a fleet
+4/29/2020@12:28:31pm Invader.008_bullet0 (4.169986724853516, 8.489622116088867, 1.2226979732513428) hit Ship (1.6650012731552124, 6.825000286102295, 1.2483819723129272)
+4/29/2020@12:28:31pm GameObject: Invader.008_bullet0_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:31pm GameObject: Invader.008_bullet0 in Group:InvaderGroup has removed association with its Child: Invader.008_bullet0_collisionVisualizer !!
+4/29/2020@12:28:31pm GameObject: Invader.008_bullet0 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:31pm Invader.009_bullet0 (1.5831458568572998, 9.012619972229004, 1.2226979732513428) hit Ship (0.16500157117843628, 7.4250006675720215, 1.2483819723129272)
+4/29/2020@12:28:31pm GameObject: Invader.009_bullet0_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:31pm GameObject: Invader.009_bullet0 in Group:InvaderGroup has removed association with its Child: Invader.009_bullet0_collisionVisualizer !!
+4/29/2020@12:28:31pm GameObject: Invader.009_bullet0 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:33pm player_bullet_0 (1.6350017786026, 11.719983100891113, 1.2483819723129272) hit Invader.009 (1.1837469339370728, 12.05560302734375, 0.9226980209350586)
+4/29/2020@12:28:33pm GameObject: player_bullet_0_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:33pm GameObject: player_bullet_0 in Group:InvaderGroup has removed association with its Child: player_bullet_0_collisionVisualizer !!
+4/29/2020@12:28:33pm GameObject: player_bullet_0 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:33pm GameObject: Invader.009_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:33pm GameObject: Invader.009 in Group:InvaderGroup has removed association with its Child: Invader.009_collisionVisualizer !!
+4/29/2020@12:28:33pm GameObject: Invader.009 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:33pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader.009 !!
+4/29/2020@12:28:35pm Invader.010_bullet0 (-1.4111647605895996, 10.070612907409668, 1.2226979732513428) hit player_bullet_1 (-1.274998664855957, 9.949980735778809, 1.2483819723129272)
+4/29/2020@12:28:35pm player_bullet_1 (-1.274998664855957, 9.949980735778809, 1.2483819723129272) hit Invader.010_bullet0 (-1.4111647605895996, 10.070612907409668, 1.2226979732513428)
+4/29/2020@12:28:35pm GameObject: Invader.010_bullet0_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:35pm GameObject: Invader.010_bullet0 in Group:InvaderGroup has removed association with its Child: Invader.010_bullet0_collisionVisualizer !!
+4/29/2020@12:28:35pm GameObject: Invader.010_bullet0 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:35pm GameObject: player_bullet_1_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:35pm GameObject: player_bullet_1 in Group:InvaderGroup has removed association with its Child: player_bullet_1_collisionVisualizer !!
+4/29/2020@12:28:35pm GameObject: player_bullet_1 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:37pm Invader.008_bullet1 (3.5576882362365723, 7.794627666473389, 1.2226979732513428) hit Ship (4.395002365112305, 6.165000915527344, 1.2483819723129272)
+4/29/2020@12:28:37pm GameObject: Invader.008_bullet1_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:37pm GameObject: Invader.008_bullet1 in Group:InvaderGroup has removed association with its Child: Invader.008_bullet1_collisionVisualizer !!
+4/29/2020@12:28:37pm GameObject: Invader.008_bullet1 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:38pm player_bullet_2 (-1.7699986696243286, 11.69997501373291, 1.2483819723129272) hit Invader.010 (-1.8758633136749268, 12.05560302734375, 0.9226980209350586)
+4/29/2020@12:28:38pm GameObject: player_bullet_2_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:38pm GameObject: player_bullet_2 in Group:InvaderGroup has removed association with its Child: player_bullet_2_collisionVisualizer !!
+4/29/2020@12:28:38pm GameObject: player_bullet_2 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:38pm GameObject: Invader.010_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:38pm GameObject: Invader.010 in Group:InvaderGroup has removed association with its Child: Invader.010_collisionVisualizer !!
+4/29/2020@12:28:38pm GameObject: Invader.010 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:38pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader.010 !!
+4/29/2020@12:28:40pm player_bullet_3 (3.240002155303955, 11.71997356414795, 1.2483819723129272) hit Invader.008 (2.9356906414031982, 12.05560302734375, 0.9226980209350586)
+4/29/2020@12:28:40pm GameObject: player_bullet_3_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:40pm GameObject: player_bullet_3 in Group:InvaderGroup has removed association with its Child: player_bullet_3_collisionVisualizer !!
+4/29/2020@12:28:40pm GameObject: player_bullet_3 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:40pm GameObject: Invader.008_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:40pm GameObject: Invader.008 in Group:InvaderGroup has removed association with its Child: Invader.008_collisionVisualizer !!
+4/29/2020@12:28:40pm GameObject: Invader.008 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:40pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader.008 !!
+4/29/2020@12:28:41pm Invader.006_bullet0 (0.6369487047195435, 12.179861068725586, 1.2226979732513428) hit Ship (-0.10499781370162964, 10.574992179870605, 1.2483819723129272)
+4/29/2020@12:28:41pm GameObject: Invader.006_bullet0_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:41pm GameObject: Invader.006_bullet0 in Group:InvaderGroup has removed association with its Child: Invader.006_bullet0_collisionVisualizer !!
+4/29/2020@12:28:41pm GameObject: Invader.006_bullet0 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:43pm player_bullet_4 (-5.114998817443848, 11.7249755859375, 1.2483819723129272) hit Invader.011 (-4.852280616760254, 12.05560302734375, 0.9226980209350586)
+4/29/2020@12:28:43pm GameObject: player_bullet_4_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:43pm GameObject: player_bullet_4 in Group:InvaderGroup has removed association with its Child: player_bullet_4_collisionVisualizer !!
+4/29/2020@12:28:43pm GameObject: player_bullet_4 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:43pm GameObject: Invader.011_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:43pm GameObject: Invader.011 in Group:InvaderGroup has removed association with its Child: Invader.011_collisionVisualizer !!
+4/29/2020@12:28:43pm GameObject: Invader.011 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:43pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader.011 !!
+4/29/2020@12:28:44pm Invader.011_bullet0 (-4.608881950378418, 8.421626091003418, 1.2226979732513428) hit Ship (-5.114998817443848, 6.8250017166137695, 1.2483819723129272)
+4/29/2020@12:28:44pm GameObject: Invader.011_bullet0_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:44pm GameObject: Invader.011_bullet0 in Group:InvaderGroup has removed association with its Child: Invader.011_bullet0_collisionVisualizer !!
+4/29/2020@12:28:44pm GameObject: Invader.011_bullet0 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:45pm Invader.006_bullet1 (0.12845146656036377, 13.33685302734375, 1.2226979732513428) hit Ship (1.245002269744873, 11.744989395141602, 1.2483819723129272)
+4/29/2020@12:28:45pm GameObject: Invader.006_bullet1_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:45pm GameObject: Invader.006_bullet1 in Group:InvaderGroup has removed association with its Child: Invader.006_bullet1_collisionVisualizer !!
+4/29/2020@12:28:45pm GameObject: Invader.006_bullet1 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:45pm Invader.007_bullet0 (2.5836925506591797, 13.564850807189941, 1.2226979732513428) hit Ship (1.245002269744873, 11.954988479614258, 1.2483819723129272)
+4/29/2020@12:28:45pm GameObject: Invader.007_bullet0_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:45pm GameObject: Invader.007_bullet0 in Group:InvaderGroup has removed association with its Child: Invader.007_bullet0_collisionVisualizer !!
+4/29/2020@12:28:45pm GameObject: Invader.007_bullet0 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:45pm Invader.005_bullet0 (-2.4401602745056152, 13.552851676940918, 1.2226979732513428) hit Ship (0.10500209033489227, 12.164987564086914, 1.2483819723129272)
+4/29/2020@12:28:45pm GameObject: Invader.005_bullet0_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:45pm GameObject: Invader.005_bullet0 in Group:InvaderGroup has removed association with its Child: Invader.005_bullet0_collisionVisualizer !!
+4/29/2020@12:28:45pm GameObject: Invader.005_bullet0 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:50pm Invader.004_bullet0 (-5.111079216003418, 10.893869400024414, 1.2226979732513428) hit Ship (-3.7499983310699463, 9.254993438720703, 1.2483819723129272)
+4/29/2020@12:28:50pm GameObject: Invader.004_bullet0_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:50pm GameObject: Invader.004_bullet0 in Group:InvaderGroup has removed association with its Child: Invader.004_bullet0_collisionVisualizer !!
+4/29/2020@12:28:50pm GameObject: Invader.004_bullet0 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:51pm Invader.005_bullet1 (-2.9542574882507324, 12.710858345031738, 1.2226979732513428) hit Ship (-3.7499983310699463, 11.039985656738281, 1.2483819723129272)
+4/29/2020@12:28:51pm GameObject: Invader.005_bullet1_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:51pm GameObject: Invader.005_bullet1 in Group:InvaderGroup has removed association with its Child: Invader.005_bullet1_collisionVisualizer !!
+4/29/2020@12:28:51pm GameObject: Invader.005_bullet1 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:52pm Invader.007_bullet1 (1.8510961532592773, 13.877848625183105, 1.2226979732513428) hit Ship (2.7150027751922607, 12.299980163574219, 1.2483819723129272)
+4/29/2020@12:28:52pm GameObject: Invader.007_bullet1_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:52pm GameObject: Invader.007_bullet1 in Group:InvaderGroup has removed association with its Child: Invader.007_bullet1_collisionVisualizer !!
+4/29/2020@12:28:52pm GameObject: Invader.007_bullet1 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:52pm Invader.006_bullet2 (-0.5604448318481445, 12.820857048034668, 1.2226979732513428) hit Ship (1.9950027465820312, 12.494979858398438, 1.2483819723129272)
+4/29/2020@12:28:52pm GameObject: Invader.006_bullet2_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:52pm GameObject: Invader.006_bullet2 in Group:InvaderGroup has removed association with its Child: Invader.006_bullet2_collisionVisualizer !!
+4/29/2020@12:28:52pm GameObject: Invader.006_bullet2 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:56pm Invader.004_bullet1 (-5.9035773277282715, 13.056854248046875, 1.2226979732513428) hit Ship (-4.799997806549072, 11.459983825683594, 1.2483819723129272)
+4/29/2020@12:28:56pm GameObject: Invader.004_bullet1_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:56pm GameObject: Invader.004_bullet1 in Group:InvaderGroup has removed association with its Child: Invader.004_bullet1_collisionVisualizer !!
+4/29/2020@12:28:56pm GameObject: Invader.004_bullet1 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:56pm Invader.005_bullet2 (-3.5498576164245605, 13.85784912109375, 1.2226979732513428) hit Ship (-4.799997806549072, 12.19498062133789, 1.2483819723129272)
+4/29/2020@12:28:56pm GameObject: Invader.005_bullet2_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:28:56pm GameObject: Invader.005_bullet2 in Group:InvaderGroup has removed association with its Child: Invader.005_bullet2_collisionVisualizer !!
+4/29/2020@12:28:56pm GameObject: Invader.005_bullet2 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:2pm Invader.006_bullet3 (-1.306246042251587, 10.782870292663574, 1.2226979732513428) hit Ship (1.2600023746490479, 9.164989471435547, 1.2483819723129272)
+4/29/2020@12:29:2pm GameObject: Invader.006_bullet3_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:2pm GameObject: Invader.006_bullet3 in Group:InvaderGroup has removed association with its Child: Invader.006_bullet3_collisionVisualizer !!
+4/29/2020@12:29:2pm GameObject: Invader.006_bullet3 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:2pm Invader.007_bullet2 (1.0000946521759033, 12.410859107971191, 1.2226979732513428) hit Ship (1.4700024127960205, 10.739982604980469, 1.2483819723129272)
+4/29/2020@12:29:2pm GameObject: Invader.007_bullet2_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:2pm GameObject: Invader.007_bullet2 in Group:InvaderGroup has removed association with its Child: Invader.007_bullet2_collisionVisualizer !!
+4/29/2020@12:29:2pm GameObject: Invader.007_bullet2 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:3pm Invader.004_bullet2 (-6.596578598022461, 12.807856559753418, 1.2226979732513428) hit Ship (-4.064998149871826, 12.194977760314941, 1.2483819723129272)
+4/29/2020@12:29:3pm GameObject: Invader.004_bullet2_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:3pm GameObject: Invader.004_bullet2 in Group:InvaderGroup has removed association with its Child: Invader.004_bullet2_collisionVisualizer !!
+4/29/2020@12:29:3pm GameObject: Invader.004_bullet2 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:7pm Invader.005_bullet3 (-4.386059284210205, 11.92286205291748, 1.2226979732513428) hit Ship (-4.169997692108154, 10.334986686706543, 1.2483819723129272)
+4/29/2020@12:29:7pm GameObject: Invader.005_bullet3_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:7pm GameObject: Invader.005_bullet3 in Group:InvaderGroup has removed association with its Child: Invader.005_bullet3_collisionVisualizer !!
+4/29/2020@12:29:7pm GameObject: Invader.005_bullet3 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:8pm Invader.006_bullet4 (-2.0799474716186523, 12.51485824584961, 1.2226979732513428) hit Ship (-2.189997673034668, 10.844985008239746, 1.2483819723129272)
+4/29/2020@12:29:8pm GameObject: Invader.006_bullet4_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:8pm GameObject: Invader.006_bullet4 in Group:InvaderGroup has removed association with its Child: Invader.006_bullet4_collisionVisualizer !!
+4/29/2020@12:29:8pm GameObject: Invader.006_bullet4 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:9pm Invader.005_bullet4 (-4.892660140991211, 14.058847427368164, 1.2226979732513428) hit Ship (-6.0449981689453125, 12.38998031616211, 1.2483819723129272)
+4/29/2020@12:29:9pm GameObject: Invader.005_bullet4_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:9pm GameObject: Invader.005_bullet4 in Group:InvaderGroup has removed association with its Child: Invader.005_bullet4_collisionVisualizer !!
+4/29/2020@12:29:9pm GameObject: Invader.005_bullet4 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:10pm Invader.004_bullet3 (-7.411980152130127, 14.059847831726074, 1.2226979732513428) hit Ship (-6.0449981689453125, 12.38998031616211, 1.2483819723129272)
+4/29/2020@12:29:10pm GameObject: Invader.004_bullet3_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:10pm GameObject: Invader.004_bullet3 in Group:InvaderGroup has removed association with its Child: Invader.004_bullet3_collisionVisualizer !!
+4/29/2020@12:29:10pm GameObject: Invader.004_bullet3 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:10pm Invader.007_bullet3 (0.08179283142089844, 13.399852752685547, 1.2226979732513428) hit Ship (-2.3999974727630615, 12.38998031616211, 1.2483819723129272)
+4/29/2020@12:29:10pm GameObject: Invader.007_bullet3_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:10pm GameObject: Invader.007_bullet3 in Group:InvaderGroup has removed association with its Child: Invader.007_bullet3_collisionVisualizer !!
+4/29/2020@12:29:10pm GameObject: Invader.007_bullet3 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: CamRotater in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Camera in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Ship in Group:InvaderGroup has removed association with its Child: Camera !!
+4/29/2020@12:29:13pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader !!
+4/29/2020@12:29:13pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader.001 !!
+4/29/2020@12:29:13pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader.002 !!
+4/29/2020@12:29:13pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader.003 !!
+4/29/2020@12:29:13pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader.004 !!
+4/29/2020@12:29:13pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader.005 !!
+4/29/2020@12:29:13pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader.006 !!
+4/29/2020@12:29:13pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader.007 !!
+4/29/2020@12:29:13pm GameObject: FleetContainer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Ground in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Invader_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Invader in Group:InvaderGroup has removed association with its Child: Invader_collisionVisualizer !!
+4/29/2020@12:29:13pm GameObject: Invader in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Invader.001_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Invader.001 in Group:InvaderGroup has removed association with its Child: Invader.001_collisionVisualizer !!
+4/29/2020@12:29:13pm GameObject: Invader.001 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Invader.002_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Invader.002 in Group:InvaderGroup has removed association with its Child: Invader.002_collisionVisualizer !!
+4/29/2020@12:29:13pm GameObject: Invader.002 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Invader.003_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Invader.003 in Group:InvaderGroup has removed association with its Child: Invader.003_collisionVisualizer !!
+4/29/2020@12:29:13pm GameObject: Invader.003 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Invader.004_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Invader.004 in Group:InvaderGroup has removed association with its Child: Invader.004_collisionVisualizer !!
+4/29/2020@12:29:13pm GameObject: Invader.004 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Invader.005_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Invader.005 in Group:InvaderGroup has removed association with its Child: Invader.005_collisionVisualizer !!
+4/29/2020@12:29:13pm GameObject: Invader.005 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Invader.006_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Invader.006 in Group:InvaderGroup has removed association with its Child: Invader.006_collisionVisualizer !!
+4/29/2020@12:29:13pm GameObject: Invader.006 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Invader.006_bullet5_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Invader.006_bullet5 in Group:InvaderGroup has removed association with its Child: Invader.006_bullet5_collisionVisualizer !!
+4/29/2020@12:29:13pm GameObject: Invader.006_bullet5 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Invader.007_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Invader.007 in Group:InvaderGroup has removed association with its Child: Invader.007_collisionVisualizer !!
+4/29/2020@12:29:13pm GameObject: Invader.007 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Lamp in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: LeftBumper in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: RightBumper in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: ShieldA in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: ShieldA.001 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: ShieldA.002 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Ship_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@12:29:13pm GameObject: Ship in Group:InvaderGroup has removed association with its Child: Ship_collisionVisualizer !!
+4/29/2020@12:29:13pm GameObject: Ship in Group:InvaderGroup has deleted all its children!!

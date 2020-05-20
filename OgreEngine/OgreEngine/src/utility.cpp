@@ -3,7 +3,7 @@
 
 using namespace OgreEngine;
 
-bool contains_char(const std::string& s, const char c)
+bool OgreEngine::contains_char(const std::string& s, const char c)
 {
 	for (unsigned int i = 0; i < s.size(); i++)
 	{
@@ -14,7 +14,7 @@ bool contains_char(const std::string& s, const char c)
 }
 
 
-void split_str(const std::string& s, std::vector<std::string>& result, const char c)
+void OgreEngine::split_str(const std::string& s, std::vector<std::string>& result, const char c)
 {
 	result.clear();
 	std::string partial;
@@ -32,9 +32,15 @@ void split_str(const std::string& s, std::vector<std::string>& result, const cha
 		result.push_back(partial);
 }
 
+float OgreEngine::magnitude(Ogre::Vector3 container, bool squared)
+{
+	float amount = pow(container.x, 2) + pow(container.y, 2) + pow(container.z, 2);
+	return (squared ? amount : sqrt(amount));
+}
+
 void OgreEngine::normalized(Ogre::Vector3& dir)
 {
-	Ogre::Vector3 copy = dir.xyz();
+	Ogre::Vector3 copy = dir;
 	float mag = magnitude(dir);
 	if (mag != 0)
 	{
@@ -46,7 +52,7 @@ void OgreEngine::normalized(Ogre::Vector3& dir)
 
 Ogre::Vector3 OgreEngine::normalized(Ogre::Vector3 dir)
 {
-	Ogre::Vector3 copy = dir.xyz();
+	Ogre::Vector3 copy = dir;
 	float mag = magnitude(dir);
 	if (mag == 0)
 		return copy;

@@ -33,11 +33,18 @@ void GameObject::update(float elapsed)
 	// Check if script twin present and pass time to that function
 	if (mScriptTwin != nullptr)
 	{
+		if (GAME_OBJ_MANAGER->firstUpdate)
+		{
+			PyObject* empty = PyTuple_New(0);
+			if (PyObject_HasAttrString(mScriptTwin, "create"))
+				run_method("create", empty);
+			Py_DecRef(empty);
+		}
 		if (PyObject_HasAttrString(mScriptTwin, "update"))
 		{
-			PyObject* elapsedTuple = PyTuple_New(1);
-			PyTuple_SetItem(elapsedTuple, 0, PyFloat_FromDouble(elapsed));
+			PyObject* elapsedTuple = PyTuple_Pack(1, PyFloat_FromDouble(elapsed));
 			run_method("update", elapsedTuple);
+			Py_DecRef(elapsedTuple);
 		}
 	}
 
@@ -74,25 +81,34 @@ void OgreEngine::GameObject::make_script_twin(std::string className)
 		this->set_script_twin(newPyObj);
 		((script::GameObject*)newPyObj)->mTwin = this;
 
-		PyObject* empty = PyTuple_New(0);
-		if(PyObject_HasAttrString(pyClass, "create"))
-			run_method("create", empty);
+		// Check if scene is currently running if so, create as script should already exist
+		if (!GAME_OBJ_MANAGER->firstUpdate)
+		{
+			PyObject* empty = PyTuple_New(0);
+			if (PyObject_HasAttrString(mScriptTwin, "create"))
+				run_method("create", empty);
+			Py_DecRef(empty);
+		}
 	}
 }
 
 void OgreEngine::GameObject::run_method(std::string meth_name, PyObject* args_tuple)
 {
 	if (mScriptTwin == nullptr)
-		throw new std::exception("PyObject* mScriptTwin is NULL!!! Trying to call method on gameobject that does not have an associated python script attached to it!!!");
+		return;//throw new std::exception("PyObject* mScriptTwin is NULL!!! Trying to call method on gameobject that does not have an associated python script attached to it!!!");
 	if (PyObject_HasAttrString(mScriptTwin, meth_name.c_str()))
 	{
 		PyObject* method = PyObject_GetAttrString(mScriptTwin, meth_name.c_str());
 		PyObject* results = PyObject_Call(method, args_tuple, 0);
 		if (results == nullptr)
+		{
+			SCRIPT_MANAGER->handle_error();
 			throw new std::exception(("PyObject Method failure!!! The method: " + meth_name + " failed! Check arguments passed and method called!!").c_str());
+		}
 	}
-	else
-		throw new std::exception(("Invalid Method called!! mScriptTwin does not contain the method called: " + meth_name).c_str());
+	//else
+		//LOG_MANAGER->log("Calling undefined Method!! mScriptTwin does not contain the method called: " + meth_name);
+		//throw new std::exception(("Invalid Method called!! mScriptTwin does not contain the method called: " + meth_name).c_str());
 }
 
 void OgreEngine::GameObject::set_child_object(GameObject* otherGameObject)
@@ -106,7 +122,8 @@ void OgreEngine::GameObject::set_child_object(GameObject* otherGameObject)
 
 GameObject* OgreEngine::GameObject::get_child_object(std::string name)
 {
-	if (this->mChildren.count > 0 && this->has_child(name))
+
+	if (this->mChildren.size() > 0 && this->has_child(name))
 	{
 		if (this->mChildren.count(name))
 			return this->mChildren[name];
@@ -146,11 +163,13 @@ void OgreEngine::GameObject::delete_all_children()
 {
 	if (this->mChildren.size() > 0)
 	{
-		std::map<std::string, GameObject*>::iterator child = this->mChildren.begin();
-		while (child != this->mChildren.end())
+		std::map<std::string, GameObject*>::iterator c = this->mChildren.begin();
+		while (c != this->mChildren.end())
 		{
-			GAME_OBJ_MANAGER->destroy_game_object(child->second->mGroup, child->second->mName);
-			child++;
+			GameObject* child = c->second;
+			child->detach_from_parent();
+			GAME_OBJ_MANAGER->queue_deletion_of_game_object(child);
+			c = this->mChildren.begin();
 		}
 	}
 	LOG_MANAGER->log("GameObject: " + this->mName + " in Group:" + this->mGroup + " has deleted all its children!!");
@@ -168,25 +187,30 @@ void OgreEngine::GameObject::delete_child(std::string name)
 
 void OgreEngine::GameObject::remove_child_association(std::string name)
 {
-	if (this->mChildren.count(name))
+	if (this != nullptr)
 	{
-		GameObject* child = this->mChildren[name];
-		this->mChildren.erase(name);
-		child->detach_from_parent();
-		
-		LOG_MANAGER->log("GameObject: " + this->mName + " in Group:" + this->mGroup + " has removed association with its Child: " + name + " !!");
+		if (this->mChildren.count(name))
+		{
+			GameObject* child = this->mChildren[name];
+			this->mChildren.erase(name);
+			child->detach_from_parent();
+
+			LOG_MANAGER->log("GameObject: " + this->mName + " in Group:" + this->mGroup + " has removed association with its Child: " + name + " !!");
+		}
 	}
 }
 
 void OgreEngine::GameObject::detach_from_parent()
 {
 	// Remove association to parent object if there is one
-	Ogre::SceneNode* parentNode = mSceneNode->getParentSceneNode();
-	if (parentNode != nullptr)
-		parentNode->removeChild(mSceneNode);
-
 	if (this->mParent != nullptr)
+	{
 		this->mParent->remove_child_association(this->mName);
+		Ogre::SceneNode* parentNode = mSceneNode->getParentSceneNode();
+		if(parentNode != NULL)
+			parentNode->removeChild(mSceneNode);
+	}
+		
 
 	this->mParent = nullptr;
 }
@@ -200,10 +224,12 @@ void GameObject::delete_all_components()
 		while (mCompIter != mTypeIter->second.end())
 		{
 			delete(mCompIter->second);
-			mTypeIter->second.erase(mCompIter);
+			mCompIter++;
 		}
-		mComponents.erase(mTypeIter);
+		mTypeIter->second.clear();
+		mTypeIter++;
 	}
+	mComponents.clear();
 }
 
 bool GameObject::delete_component(std::string objectName)
@@ -295,7 +321,7 @@ MeshComponent* GameObject::create_mesh(std::string meshName, std::string fname)
 		return nullptr;
 	}
 	MeshComponent* newMesh = new MeshComponent(fname, this, meshName);
-	mComponents[Component::ComponentType::MESH][meshName] = newMesh;
+	mComponents[Component::ComponentType::MESH][newMesh->mComponentName] = newMesh;
 	return newMesh;
 }
 
@@ -307,7 +333,7 @@ LightComponent* GameObject::create_light(std::string lightName, LightType lightT
 		return nullptr;
 	}
 	LightComponent* newLight = new LightComponent(lightType, this, lightName);
-	mComponents[Component::ComponentType::LIGHT][lightName] = newLight;
+	mComponents[Component::ComponentType::LIGHT][newLight->mComponentName] = newLight;
 	return newLight;
 }
 
@@ -319,7 +345,7 @@ CameraComponent* GameObject::create_camera(std::string cameraName)
 		return nullptr;
 	}
 	CameraComponent* newCamera = new CameraComponent(this, cameraName);
-	mComponents[Component::ComponentType::CAMERA][cameraName] = newCamera;
+	mComponents[Component::ComponentType::CAMERA][newCamera->mComponentName] = newCamera;
 	return newCamera;
 }
 
@@ -327,17 +353,47 @@ ComponentInputListener* GameObject::create_input_listener(std::string listenerNa
 {
 	if (get_component<ComponentInputListener>(listenerName, Component::ComponentType::INPUT_LISTENER) != nullptr)
 	{
-		LOG_MANAGER->log_message("INPUT_LISTENER CREATION ERROR!!! Trying to create camera object with a name that already exists: " + this->get_name() + " _camera" + listenerName);
+		LOG_MANAGER->log_message("INPUT_LISTENER CREATION ERROR!!! Trying to create input object with a name that already exists: " + this->get_name() + " _input" + listenerName);
 		return nullptr;
 	}
 	ComponentInputListener* newInputListener = new ComponentInputListener(this, listenerName);
-	mComponents[Component::ComponentType::INPUT_LISTENER][listenerName] = newInputListener;
+	mComponents[Component::ComponentType::INPUT_LISTENER][newInputListener->mComponentName] = newInputListener;
 	return newInputListener;
+}
+
+ComponentCollider* OgreEngine::GameObject::create_collider(std::string colliderName, ColliderType colliderType, Ogre::Vector3 data, int layer, int mask)
+{
+	if (get_component<ComponentCollider>(colliderName, Component::ComponentType::COLLIDER) != nullptr)
+	{
+		LOG_MANAGER->log_message("COLLIDER CREATION ERROR!!! Trying to create collider object with a name that already exists: " + this->get_name() + " _collider" + colliderName);
+		return nullptr;
+	}
+	
+	ComponentCollider* newCollider = nullptr;
+	switch (colliderType)
+	{
+	case ColliderType::SPHERE:
+		newCollider = new ComponentCollider(this, layer, mask, data[0], colliderName);
+		break;
+	case ColliderType::RECTANGULAR_PRISM:
+		newCollider = new ComponentCollider(this, layer, mask, data, colliderName);
+		break;
+	default:
+		throw new std::runtime_error("Unsupported Collider Type assigned!!");
+		break;
+	}
+	mComponents[Component::ComponentType::COLLIDER][newCollider->mComponentName] = newCollider;
+	return newCollider;
 }
 
 ComponentInputListener* OgreEngine::GameObject::get_input_listener()
 {
 	return get_component<ComponentInputListener>(Component::ComponentType::INPUT_LISTENER);
+}
+
+ComponentCollider* OgreEngine::GameObject::get_collider()
+{
+	return get_component<ComponentCollider>(Component::ComponentType::COLLIDER);;
 }
 
 bool OgreEngine::GameObject::operator==(GameObject* other)

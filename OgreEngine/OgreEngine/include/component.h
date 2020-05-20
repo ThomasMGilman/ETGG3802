@@ -21,13 +21,13 @@ namespace OgreEngine
 
 	public:
 		GameObject* mParent;
-		std::string componentName;
+		std::string mComponentName;
 		
 		enum class ComponentType { CAMERA, COLLIDER, INPUT_LISTENER, LIGHT, MESH  };
 
-		Component(GameObject* owner) { mParent = owner; };
+		Component(GameObject* owner, std::string name) { this->mParent = owner; this->mComponentName = name; };
 
-		~Component() {};
+		virtual ~Component() {};
 
 		/// Append the property of type T to the property map container
 		template<typename T>

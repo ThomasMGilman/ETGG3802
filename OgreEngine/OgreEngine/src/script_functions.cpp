@@ -1,11 +1,13 @@
 #include <stdafx.h>
 #include <script_functions.h>
 #include <log_manager.h>
+#include <game_object.h>
 #include <game_object_manager.h>
 #include <script_manager.h>
 #include <script_game_object_methods.h>
 #include <script_game_object.h>
 #include <input_manager.h>
+#include <collision_manager.h>
 
 using namespace OgreEngine;
 
@@ -127,6 +129,13 @@ PyObject* OgreEngine::load_scene(PyObject* self, PyObject* args)
 	}
 	PyErr_SetString(PyExc_AttributeError, (excMsg+" load_scene ERROR!! PyObject argument not tuple or not size 2!!").c_str());
 	return nullptr;
+}
+
+PyObject* OgreEngine::load_collider_visualizations(PyObject* self, PyObject* args)
+{
+	COLLISION_MANAGER->set_debug_visibility(true);
+	Py_IncRef(Py_None);
+	return Py_None;
 }
 
 PyObject* OgreEngine::find_all_string_match_indicies(PyObject* self, PyObject* args)
@@ -344,6 +353,54 @@ PyObject* OgreEngine::set_skybox(PyObject* self, PyObject* args)
 	return Py_None;
 }
 
+PyObject* OgreEngine::raycast(PyObject* self, PyObject* args)
+{
+	std::string errMsg;
+	if (PyTuple_Check(args))
+	{
+		int tupleSize = PyTuple_Size(args);
+		if (tupleSize == 4)
+		{
+			package<Ogre::Vector3> origin = get_vector3_from_pytuple(PyTuple_GetItem(args, 0));
+			package<Ogre::Vector3> direction = get_vector3_from_pytuple(PyTuple_GetItem(args, 1));
+			package<int> mask = get_num_from_pytuple<int>(args, 2);
+			package<int> dist = get_num_from_pytuple<int>(args, 3);
+			if (origin.errSet || direction.errSet || mask.errSet || dist.errSet)
+				errMsg = "raycast ERROR!! args Data ERROR!!\n\tOrigin: " + origin.msg + "\n\tDirection: " + direction.msg + "\n\tMask: " + mask.msg + "\n\tDistance: " + dist.msg;
+			else
+			{
+				std::vector<std::pair<Ogre::Vector3, OgreEngine::GameObject*>> hits;
+				COLLISION_MANAGER->raycast_bounded(origin.data, direction.data, hits, dist.data, mask.data);
+
+				int hits_size = hits.size();
+				PyObject* returnTuple = PyTuple_New(hits_size);
+				if (hits_size > 0)
+				{
+					for (int i = 0; i < hits_size; i++)
+					{
+						PyObject* hit_point = PyTuple_Pack(3, PyFloat_FromDouble(hits[i].first.x), PyFloat_FromDouble(hits[i].first.y), PyFloat_FromDouble(hits[i].first.z));
+						Py_INCREF(hits[i].second->get_script_twin());
+						PyObject* pair = PyTuple_Pack(2, hit_point, hits[i].second->get_script_twin());
+						PyTuple_SetItem(returnTuple, i, pair);
+					}
+				}
+				return returnTuple;
+			}
+		}
+		else
+			errMsg = "raycast ERROR!! Invalid Tuple size!!! Need to pass a Tuple of size 4, got: " + std::to_string(tupleSize);
+	}
+	else
+		errMsg = "raycast ERROR!! Did not recieve argument of type Tuple!!! Need to pass Tuple of size 4!!";
+	if (!errMsg.empty())
+	{
+		PyErr_SetString(PyExc_AttributeError, errMsg.c_str());
+		return NULL;
+	}
+	Py_IncRef(Py_None);
+	return Py_None;
+}
+
 PyObject* OgreEngine::register_input_listener(PyObject* self, PyObject* args)
 {
 	int size = PyTuple_Size(args);
@@ -410,4 +467,54 @@ PyObject* OgreEngine::get_axis(PyObject* self, PyObject* args)
 		return PyFloat_FromDouble(INPUT_MANAGER->get_axis(PyUnicode_AsUTF8(PyTuple_GetItem(args, 0))));
 	PyErr_SetString(PyExc_ValueError, "get_axis ERROR!! Recieved to many arguments");
 	return nullptr;
+}
+
+PyObject* OgreEngine::queue_destroy(PyObject* self, PyObject* args)
+{
+	std::string errMsg;
+	if (PyTuple_Check(args))
+	{
+		int tupleSize = PyTuple_Size(args);
+		if (tupleSize == 1)
+		{
+			script::GameObject* pyObj = (script::GameObject*)(PyTypeObject*)PyTuple_GetItem(args, 0);
+			GAME_OBJ_MANAGER->queue_deletion_of_game_object(pyObj->mTwin);
+		}
+		else
+			errMsg = "queue_destroy ERROR!! Tuple passed needs to be size 1!! got size: "+std::to_string(tupleSize);
+	}
+	if (!errMsg.empty())
+	{
+		PyErr_SetString(PyExc_AttributeError, errMsg.c_str());
+		return nullptr;
+	}
+	Py_IncRef(Py_None);
+	return Py_None;
+}
+
+PyObject* OgreEngine::build_edge_list(PyObject* self, PyObject* args)
+{
+	if (!PyTuple_Check(args) || PyTuple_Size(args) != 1 || !PyUnicode_Check(PyTuple_GetItem(args, 0)))
+	{
+		PyErr_SetString(PyExc_ValueError, "You must pass a (string) group name to this function");
+		return NULL;
+	}
+
+	std::string group_name = PyUnicode_AsUTF8(PyTuple_GetItem(args, 0));
+
+	// Go through all the meshes in the [group_name] group -- make sure this is where
+	// your FileSystem paths are in resources.cfg.
+	Ogre::MeshManager& mmgr = Ogre::MeshManager::getSingleton();
+	Ogre::ResourceGroupManager& rgmgr = Ogre::ResourceGroupManager::getSingleton();
+	Ogre::StringVectorPtr items = rgmgr.findResourceNames(group_name, "mesh", false);
+	for (int i = 0; i < items->size(); i++)
+	{
+		Ogre::String name = items->at(i);
+		Ogre::MeshPtr mptr = Ogre::MeshManager::getSingleton().getByName(name);
+		if (!mptr)
+			mptr->buildEdgeList();
+	}
+
+	Py_INCREF(Py_None);
+	return Py_None;
 }

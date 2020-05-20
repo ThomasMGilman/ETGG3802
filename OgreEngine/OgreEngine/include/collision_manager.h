@@ -25,6 +25,8 @@ namespace OgreEngine
 		std::set<std::pair<GameObject*, GameObject*>> mOngoingCollisions;
 
 	public:
+		bool is_visible = false;
+
 		/// Default constructor
 		CollisionManager();
 
@@ -61,6 +63,9 @@ namespace OgreEngine
 		bool raycast_bounded(const Ogre::Vector3& origin, const Ogre::Vector3& direction, std::vector<std::pair<Ogre::Vector3, GameObject*>>& hits, float max_dist, long long mask = 0xFFFFFFFFFFFFFFFF);
 
 	protected:
+		/// Helper function that pickes which collider function to choose
+		bool collision_picker(ComponentCollider* firstCollider, ComponentCollider* secondCollider);
+
 		/// Helper function that looks for collision between a rectangular prism and another rectangular prism
 		bool rprism_rprism_collide(ComponentCollider* rprismA, ComponentCollider* rprismB);
 

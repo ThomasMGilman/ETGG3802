@@ -124,16 +124,17 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\RTShaderSystem;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\Overlay;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\Bites;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE;$(ProjectDir)dependencies\tinyxml2\include;$(ProjectDir)dependencies\python-3.8.1-x64\include;$(ProjectDir)dependencies\python-3.8.1-x64\include\cpython;$(ProjectDir)dependencies\python-3.8.1-x64\include\internal;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\RTShaderSystem;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\Overlay;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\include\OGRE\Bites;$(ProjectDir)dependencies\tinyxml2\include;$(ProjectDir)dependencies\python-3.8.1-x64\include;$(ProjectDir)dependencies\python-3.8.1-x64\include\cpython;$(ProjectDir)dependencies\python-3.8.1-x64\include\internal;D:\School\Programs\ETGG 3802_01 Realtime Interactive Prog 2\OgreEngine\OgreEngine\dependencies\SDL2-2.0.10\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(ProjectDir)dependencies\tinyxml2\lib;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\lib;$(ProjectDir)dependencies\python-3.8.1-x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>OgreBites.lib;OgreMain.lib;OgreOverlay.lib;OgreRTShaderSystem.lib;tinyxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)dependencies\tinyxml2\lib;$(ProjectDir)dependencies\ogre1.12.2_vc2019_x64\lib;$(ProjectDir)dependencies\python-3.8.1-x64\lib;$(ProjectDir)dependencies\SDL2-2.0.10\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OgreBites.lib;OgreMain.lib;OgreOverlay.lib;OgreRTShaderSystem.lib;tinyxml2.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

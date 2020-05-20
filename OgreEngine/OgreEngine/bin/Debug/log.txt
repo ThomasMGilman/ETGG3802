@@ -1,607 +1,326 @@
-4/17/2020@5:45:15am Reading in input bindings from: ../Media/my_media/input_bindings.xml
-4/17/2020@5:45:15am Trying to add duplicate Action mapping!! action: fire
-4/17/2020@5:45:15am Trying to add duplicate Action mapping!! action: quit
-4/17/2020@5:45:15am Trying to add duplicate Axis mapping!! axis: horizontal
-4/17/2020@5:45:15am Trying to add duplicate Axis mapping!! axis: vertical
-4/17/2020@5:45:15am ../Media/my_media/input_bindings.xml Finished reading inputs!!
-4/17/2020@5:45:15am Got Class: Ship
-4/17/2020@5:45:15am Successfully loaded script: ../media/invader_media/ship.py
-4/17/2020@5:45:15am Got Class: Invader
-4/17/2020@5:45:15am Successfully loaded script: ../media/invader_media/invader.py
-4/17/2020@5:45:15am Read in Scene by: JasonW
-4/17/2020@5:45:15am starting Ship.create...
-4/17/2020@5:45:15am ...done with Ship.create
-4/17/2020@5:45:15am Successfully loaded script: ../Media/invader_media/init.py
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:17am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:18am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:19am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:20am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am PEW
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am un-PEW
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:21am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:26am axis 'horizontal' is to the limit!
-4/17/2020@5:45:27am axis 'horizontal' is to the limit!
-4/17/2020@5:45:27am axis 'horizontal' is to the limit!
-4/17/2020@5:45:27am axis 'horizontal' is to the limit!
-4/17/2020@5:45:27am axis 'horizontal' is to the limit!
-4/17/2020@5:45:27am axis 'horizontal' is to the limit!
-4/17/2020@5:45:27am axis 'horizontal' is to the limit!
+4/29/2020@11:39:27pm Reading in input bindings from: ../Media/core_media/input_bindings.xml
+4/29/2020@11:39:27pm Trying to add duplicate Action mapping!! action: fire
+4/29/2020@11:39:27pm Trying to add duplicate Action mapping!! action: quit
+4/29/2020@11:39:27pm Trying to add duplicate Axis mapping!! axis: horizontal
+4/29/2020@11:39:27pm Trying to add duplicate Axis mapping!! axis: vertical
+4/29/2020@11:39:27pm ../Media/core_media/input_bindings.xml Finished reading inputs!!
+4/29/2020@11:39:27pm Got Class: Ship
+4/29/2020@11:39:27pm Successfully loaded script: ../media/invader_media/ship.py
+4/29/2020@11:39:27pm Got Class: Invader
+4/29/2020@11:39:27pm Successfully loaded script: ../media/invader_media/invader.py
+4/29/2020@11:39:27pm Got Class: Fleet
+4/29/2020@11:39:27pm Successfully loaded script: ../media/invader_media/fleet.py
+4/29/2020@11:39:27pm Got Class: Bullet
+4/29/2020@11:39:27pm Successfully loaded script: ../media/invader_media/bullet.py
+4/29/2020@11:39:27pm Read in Scene by: JasonW
+4/29/2020@11:39:27pm User trying to access nonexistent group: InvaderGroup to find gameObject: FleetContainer
+4/29/2020@11:39:27pm User trying to access nonexistent gameObject: Invader in group: InvaderGroup
+4/29/2020@11:39:27pm User trying to access nonexistent gameObject: Invader.001 in group: InvaderGroup
+4/29/2020@11:39:27pm User trying to access nonexistent gameObject: Invader.002 in group: InvaderGroup
+4/29/2020@11:39:27pm User trying to access nonexistent gameObject: Invader.003 in group: InvaderGroup
+4/29/2020@11:39:27pm User trying to access nonexistent gameObject: Invader.004 in group: InvaderGroup
+4/29/2020@11:39:27pm User trying to access nonexistent gameObject: Invader.005 in group: InvaderGroup
+4/29/2020@11:39:27pm User trying to access nonexistent gameObject: Invader.006 in group: InvaderGroup
+4/29/2020@11:39:27pm User trying to access nonexistent gameObject: Invader.007 in group: InvaderGroup
+4/29/2020@11:39:27pm User trying to access nonexistent gameObject: Invader.008 in group: InvaderGroup
+4/29/2020@11:39:27pm User trying to access nonexistent gameObject: Invader.009 in group: InvaderGroup
+4/29/2020@11:39:27pm User trying to access nonexistent gameObject: Invader.010 in group: InvaderGroup
+4/29/2020@11:39:27pm User trying to access nonexistent gameObject: Invader.011 in group: InvaderGroup
+4/29/2020@11:39:27pm User trying to access nonexistent gameObject: CamRotater in group: InvaderGroup
+4/29/2020@11:39:27pm User trying to access nonexistent gameObject: ShieldA.002 in group: InvaderGroup
+4/29/2020@11:39:27pm User trying to access nonexistent gameObject: ShieldA.001 in group: InvaderGroup
+4/29/2020@11:39:27pm User trying to access nonexistent gameObject: ShieldA in group: InvaderGroup
+4/29/2020@11:39:27pm User trying to access nonexistent gameObject: RightBumper in group: InvaderGroup
+4/29/2020@11:39:27pm User trying to access nonexistent gameObject: LeftBumper in group: InvaderGroup
+4/29/2020@11:39:27pm User trying to access nonexistent gameObject: Ground in group: InvaderGroup
+4/29/2020@11:39:27pm User trying to access nonexistent gameObject: Lamp in group: InvaderGroup
+4/29/2020@11:39:27pm User trying to access nonexistent gameObject: Ship in group: InvaderGroup
+4/29/2020@11:39:27pm User trying to access nonexistent gameObject: Camera in group: InvaderGroup
+4/29/2020@11:39:27pm Successfully loaded script: ../Media/invader_media/init.py
+4/29/2020@11:39:27pm made a fleet
+4/29/2020@11:39:40pm Invader.011_bullet0 (-3.47009015083313, 6.58662223815918, 1.2226979732513428) hit Ship (-2.8050003051757812, 5.0400004386901855, 1.2483819723129272)
+4/29/2020@11:39:40pm GameObject: Invader.011_bullet0 in Group:InvaderGroup has removed association with its Child: Invader.011_bullet0_collisionVisualizer !!
+4/29/2020@11:39:40pm GameObject: Invader.011_bullet0 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:39:40pm GameObject: Invader.011_bullet0_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:39:40pm Invader.010_bullet0 (-1.0479700565338135, 7.108626365661621, 1.2226979732513428) hit Ship (-2.8050003051757812, 5.445000171661377, 1.2483819723129272)
+4/29/2020@11:39:40pm GameObject: Invader.010_bullet0 in Group:InvaderGroup has removed association with its Child: Invader.010_bullet0_collisionVisualizer !!
+4/29/2020@11:39:40pm GameObject: Invader.010_bullet0 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:39:40pm GameObject: Invader.010_bullet0_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:39:44pm Invader.009_bullet0 (0.9722418785095215, 8.848638534545898, 1.2226979732513428) hit Ship (0.990000307559967, 7.320003032684326, 1.2483819723129272)
+4/29/2020@11:39:44pm GameObject: Invader.009_bullet0 in Group:InvaderGroup has removed association with its Child: Invader.009_bullet0_collisionVisualizer !!
+4/29/2020@11:39:44pm GameObject: Invader.009_bullet0 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:39:44pm GameObject: Invader.009_bullet0_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:39:46pm Invader.011_bullet1 (-4.047689914703369, 6.6686506271362305, 1.2226979732513428) hit Ship (-5.324999809265137, 4.995001316070557, 1.2483819723129272)
+4/29/2020@11:39:46pm GameObject: Invader.011_bullet1 in Group:InvaderGroup has removed association with its Child: Invader.011_bullet1_collisionVisualizer !!
+4/29/2020@11:39:46pm GameObject: Invader.011_bullet1 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:39:46pm GameObject: Invader.011_bullet1_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:39:50pm Invader.010_bullet1 (-1.9543695449829102, 6.869629859924316, 1.2226979732513428) hit Ship (-0.9599967002868652, 5.369998931884766, 1.2483819723129272)
+4/29/2020@11:39:50pm GameObject: Invader.010_bullet1 in Group:InvaderGroup has removed association with its Child: Invader.010_bullet1_collisionVisualizer !!
+4/29/2020@11:39:50pm GameObject: Invader.010_bullet1 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:39:50pm GameObject: Invader.010_bullet1_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:39:50pm Invader.008_bullet0 (3.1160836219787598, 5.960622310638428, 1.2226979732513428) hit Ship (0.5400033593177795, 6.869998931884766, 1.2483819723129272)
+4/29/2020@11:39:50pm GameObject: Invader.008_bullet0 in Group:InvaderGroup has removed association with its Child: Invader.008_bullet0_collisionVisualizer !!
+4/29/2020@11:39:50pm GameObject: Invader.008_bullet0 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:39:50pm GameObject: Invader.008_bullet0_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:39:50pm Invader.009_bullet1 (0.2528482675552368, 9.711623191833496, 1.2226979732513428) hit Ship (1.8000035285949707, 8.129999160766602, 1.2483819723129272)
+4/29/2020@11:39:50pm GameObject: Invader.009_bullet1 in Group:InvaderGroup has removed association with its Child: Invader.009_bullet1_collisionVisualizer !!
+4/29/2020@11:39:50pm GameObject: Invader.009_bullet1 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:39:50pm GameObject: Invader.009_bullet1_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:39:50pm BUMP!
+4/29/2020@11:39:50pm Invader.011_bullet2 (-4.909880638122559, 11.173606872558594, 1.2226979732513428) hit Ship (-2.47499680519104, 12.614997863769531, 1.2483819723129272)
+4/29/2020@11:39:50pm GameObject: Invader.011_bullet2 in Group:InvaderGroup has removed association with its Child: Invader.011_bullet2_collisionVisualizer !!
+4/29/2020@11:39:50pm GameObject: Invader.011_bullet2 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:39:50pm GameObject: Invader.011_bullet2_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:39:52pm BUMP!
+4/29/2020@11:39:54pm BUMP!
+4/29/2020@11:39:54pm Invader.008_bullet1 (2.547292470932007, 7.2493438720703125, 1.2226979732513428) hit Ship (3.1500041484832764, 8.74499797821045, 1.2483819723129272)
+4/29/2020@11:39:54pm GameObject: Invader.008_bullet1 in Group:InvaderGroup has removed association with its Child: Invader.008_bullet1_collisionVisualizer !!
+4/29/2020@11:39:54pm GameObject: Invader.008_bullet1 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:39:54pm GameObject: Invader.008_bullet1_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:39:55pm Invader.010_bullet2 (-2.383760929107666, 8.77402400970459, 1.2226979732513428) hit Ship (-2.4149961471557617, 7.289997577667236, 1.2483819723129272)
+4/29/2020@11:39:55pm GameObject: Invader.010_bullet2 in Group:InvaderGroup has removed association with its Child: Invader.010_bullet2_collisionVisualizer !!
+4/29/2020@11:39:55pm GameObject: Invader.010_bullet2 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:39:55pm GameObject: Invader.010_bullet2_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:39:55pm BUMP!
+4/29/2020@11:39:57pm BUMP!
+4/29/2020@11:39:58pm Invader.008_bullet2 (2.6104917526245117, 9.580326080322266, 1.2226979732513428) hit Ship (4.680004596710205, 11.249991416931152, 1.2483819723129272)
+4/29/2020@11:39:58pm GameObject: Invader.008_bullet2 in Group:InvaderGroup has removed association with its Child: Invader.008_bullet2_collisionVisualizer !!
+4/29/2020@11:39:58pm GameObject: Invader.008_bullet2 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:39:58pm GameObject: Invader.008_bullet2_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:39:58pm Invader.009_bullet2 (0.13085079193115234, 8.599836349487305, 1.2226979732513428) hit Ship (2.625004291534424, 7.529991626739502, 1.2483819723129272)
+4/29/2020@11:39:58pm GameObject: Invader.009_bullet2 in Group:InvaderGroup has removed association with its Child: Invader.009_bullet2_collisionVisualizer !!
+4/29/2020@11:39:58pm GameObject: Invader.009_bullet2 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:0pm Invader.011_bullet3 (-4.836182117462158, 9.510839462280273, 1.2226979732513428) hit Ship (-2.2499964237213135, 9.374991416931152, 1.2483819723129272)
+4/29/2020@11:40:0pm GameObject: Invader.011_bullet3 in Group:InvaderGroup has removed association with its Child: Invader.011_bullet3_collisionVisualizer !!
+4/29/2020@11:40:0pm GameObject: Invader.011_bullet3 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:0pm GameObject: Invader.011_bullet3_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:0pm BUMP!
+4/29/2020@11:40:2pm BUMP!
+4/29/2020@11:40:8pm Invader.010_bullet3 (-2.274064064025879, 4.119731426239014, 1.2226979732513428) hit Ship (-3.044994831085205, 2.4599897861480713, 1.2483819723129272)
+4/29/2020@11:40:8pm GameObject: Invader.010_bullet3 in Group:InvaderGroup has removed association with its Child: Invader.010_bullet3_collisionVisualizer !!
+4/29/2020@11:40:8pm GameObject: Invader.010_bullet3 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:8pm GameObject: Invader.010_bullet3_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:12pm Invader.009_bullet3 (0.4336448311805725, 3.372352361679077, 1.2226979732513428) hit Ship (-0.4649949371814728, 1.8299899101257324, 1.2483819723129272)
+4/29/2020@11:40:12pm GameObject: Invader.009_bullet3 in Group:InvaderGroup has removed association with its Child: Invader.009_bullet3_collisionVisualizer !!
+4/29/2020@11:40:12pm GameObject: Invader.009_bullet3 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:12pm GameObject: Invader.009_bullet3_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:14pm Invader.011_bullet4 (-4.601886749267578, 0.996362566947937, 1.2226979732513428) hit Ship (-4.589994430541992, -0.49501004815101624, 1.2483819723129272)
+4/29/2020@11:40:14pm GameObject: Invader.011_bullet4 in Group:InvaderGroup has removed association with its Child: Invader.011_bullet4_collisionVisualizer !!
+4/29/2020@11:40:14pm GameObject: Invader.011_bullet4 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:14pm GameObject: Invader.011_bullet4_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:14pm Invader.008_bullet3 (2.890185832977295, 0.8063540458679199, 1.2226979732513428) hit Ship (0.30000507831573486, -0.25501003861427307, 1.2483819723129272)
+4/29/2020@11:40:14pm GameObject: Invader.008_bullet3 in Group:InvaderGroup has removed association with its Child: Invader.008_bullet3_collisionVisualizer !!
+4/29/2020@11:40:14pm GameObject: Invader.008_bullet3 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:14pm GameObject: Invader.008_bullet3_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:19pm Invader.010_bullet4 (-1.6613643169403076, 0.6383516192436218, 1.2226979732513428) hit Ship (0.15000534057617188, -1.0350109338760376, 1.2483819723129272)
+4/29/2020@11:40:19pm GameObject: Invader.010_bullet4 in Group:InvaderGroup has removed association with its Child: Invader.010_bullet4_collisionVisualizer !!
+4/29/2020@11:40:19pm GameObject: Invader.010_bullet4 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:19pm GameObject: Invader.010_bullet4_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:19pm Invader.009_bullet4 (0.9531481266021729, 1.6163557767868042, 1.2226979732513428) hit Ship (-0.8399946689605713, -0.045010894536972046, 1.2483819723129272)
+4/29/2020@11:40:19pm GameObject: Invader.009_bullet4 in Group:InvaderGroup has removed association with its Child: Invader.009_bullet4_collisionVisualizer !!
+4/29/2020@11:40:19pm GameObject: Invader.009_bullet4 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:19pm GameObject: Invader.009_bullet4_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:19pm Invader.011_bullet5 (-3.85878324508667, 3.253370523452759, 1.2226979732513428) hit Ship (-2.549994707107544, 1.6649891138076782, 1.2483819723129272)
+4/29/2020@11:40:19pm GameObject: Invader.011_bullet5 in Group:InvaderGroup has removed association with its Child: Invader.011_bullet5_collisionVisualizer !!
+4/29/2020@11:40:19pm GameObject: Invader.011_bullet5 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:19pm GameObject: Invader.011_bullet5_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:19pm Invader.010_bullet5 (-0.9983633160591125, 6.805335521697998, 1.2226979732513428) hit Ship (-3.464994430541992, 5.9099884033203125, 1.2483819723129272)
+4/29/2020@11:40:19pm GameObject: Invader.010_bullet5 in Group:InvaderGroup has removed association with its Child: Invader.010_bullet5_collisionVisualizer !!
+4/29/2020@11:40:19pm GameObject: Invader.010_bullet5 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:19pm GameObject: Invader.010_bullet5_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:20pm Invader.011_bullet6 (-3.163783073425293, 9.763355255126953, 1.2226979732513428) hit Ship (-1.0949941873550415, 8.279989242553711, 1.2483819723129272)
+4/29/2020@11:40:20pm GameObject: Invader.011_bullet6 in Group:InvaderGroup has removed association with its Child: Invader.011_bullet6_collisionVisualizer !!
+4/29/2020@11:40:20pm GameObject: Invader.011_bullet6 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:20pm GameObject: Invader.011_bullet6_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:20pm Invader.009_bullet5 (1.6190483570098877, 7.704334259033203, 1.2226979732513428) hit Ship (-0.8399941921234131, 8.534989356994629, 1.2483819723129272)
+4/29/2020@11:40:20pm GameObject: Invader.009_bullet5 in Group:InvaderGroup has removed association with its Child: Invader.009_bullet5_collisionVisualizer !!
+4/29/2020@11:40:20pm GameObject: Invader.009_bullet5 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:20pm GameObject: Invader.009_bullet5_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:20pm BUMP!
+4/29/2020@11:40:20pm Invader.008_bullet4 (3.8777894973754883, 5.045365810394287, 1.2226979732513428) hit Ship (5.895005702972412, 6.659989356994629, 1.2483819723129272)
+4/29/2020@11:40:20pm GameObject: Invader.008_bullet4 in Group:InvaderGroup has removed association with its Child: Invader.008_bullet4_collisionVisualizer !!
+4/29/2020@11:40:20pm GameObject: Invader.008_bullet4 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:20pm GameObject: Invader.008_bullet4_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:22pm Invader.010_bullet6 (-0.6279628276824951, 9.690372467041016, 1.2226979732513428) hit Ship (0.5250058174133301, 8.084988594055176, 1.2483819723129272)
+4/29/2020@11:40:22pm GameObject: Invader.010_bullet6 in Group:InvaderGroup has removed association with its Child: Invader.010_bullet6_collisionVisualizer !!
+4/29/2020@11:40:22pm GameObject: Invader.010_bullet6 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:22pm GameObject: Invader.010_bullet6_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:22pm BUMP!
+4/29/2020@11:40:23pm BUMP!
+4/29/2020@11:40:24pm player_bullet_0 (4.440006256103516, 14.020003318786621, 1.2483819723129272) hit Invader.007 (4.317590236663818, 14.361602783203125, 0.9226980209350586)
+4/29/2020@11:40:24pm GameObject: player_bullet_0 in Group:InvaderGroup has removed association with its Child: player_bullet_0_collisionVisualizer !!
+4/29/2020@11:40:24pm GameObject: player_bullet_0 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:24pm GameObject: Invader.007 in Group:InvaderGroup has removed association with its Child: Invader.007_collisionVisualizer !!
+4/29/2020@11:40:24pm GameObject: Invader.007 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:24pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader.007 !!
+4/29/2020@11:40:24pm GameObject: player_bullet_0_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:25pm Invader.008_bullet5 (4.302090167999268, 7.031772136688232, 1.2226979732513428) hit Ship (4.440006256103516, 5.49000358581543, 1.2483819723129272)
+4/29/2020@11:40:25pm GameObject: Invader.008_bullet5 in Group:InvaderGroup has removed association with its Child: Invader.008_bullet5_collisionVisualizer !!
+4/29/2020@11:40:25pm GameObject: Invader.008_bullet5 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:25pm GameObject: Invader.008_bullet5_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:26pm player_bullet_1 (4.440006256103516, 10.254997253417969, 1.2483819723129272) hit Invader.008 (4.235990047454834, 10.549666404724121, 0.9226980209350586)
+4/29/2020@11:40:26pm GameObject: player_bullet_1 in Group:InvaderGroup has removed association with its Child: player_bullet_1_collisionVisualizer !!
+4/29/2020@11:40:26pm GameObject: player_bullet_1 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:26pm GameObject: Invader.008 in Group:InvaderGroup has removed association with its Child: Invader.008_collisionVisualizer !!
+4/29/2020@11:40:26pm GameObject: Invader.008 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:26pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader.008 !!
+4/29/2020@11:40:26pm GameObject: player_bullet_1_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:26pm GameObject: Invader.008_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:26pm Invader.009_bullet6 (1.8379491567611694, 8.485965728759766, 1.2226979732513428) hit Ship (3.120006561279297, 7.020003795623779, 1.2483819723129272)
+4/29/2020@11:40:26pm GameObject: Invader.009_bullet6 in Group:InvaderGroup has removed association with its Child: Invader.009_bullet6_collisionVisualizer !!
+4/29/2020@11:40:26pm GameObject: Invader.009_bullet6 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:26pm GameObject: Invader.009_bullet6_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:26pm player_bullet_2 (1.770006537437439, 10.205001831054688, 1.2483819723129272) hit Invader.009 (1.7203490734100342, 10.549666404724121, 0.9226980209350586)
+4/29/2020@11:40:26pm GameObject: Invader.009 in Group:InvaderGroup has removed association with its Child: Invader.009_collisionVisualizer !!
+4/29/2020@11:40:26pm GameObject: Invader.009 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:26pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader.009 !!
+4/29/2020@11:40:26pm GameObject: player_bullet_2 in Group:InvaderGroup has removed association with its Child: player_bullet_2_collisionVisualizer !!
+4/29/2020@11:40:26pm GameObject: player_bullet_2 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:26pm GameObject: Invader.009_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:26pm GameObject: player_bullet_2_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:27pm Invader.011_bullet7 (-3.262382984161377, 9.12468147277832, 1.2226979732513428) hit Ship (-0.7199937105178833, 8.19000244140625, 1.2483819723129272)
+4/29/2020@11:40:27pm GameObject: Invader.011_bullet7 in Group:InvaderGroup has removed association with its Child: Invader.011_bullet7_collisionVisualizer !!
+4/29/2020@11:40:27pm GameObject: Invader.011_bullet7 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:27pm GameObject: Invader.011_bullet7_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:28pm player_bullet_5 (-2.519994020462036, 10.199994087219238, 1.2483819723129272) hit Invader.011 (-3.450083017349243, 10.549666404724121, 0.9226980209350586)
+4/29/2020@11:40:28pm GameObject: player_bullet_5 in Group:InvaderGroup has removed association with its Child: player_bullet_5_collisionVisualizer !!
+4/29/2020@11:40:28pm GameObject: player_bullet_5 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:28pm GameObject: Invader.011 in Group:InvaderGroup has removed association with its Child: Invader.011_collisionVisualizer !!
+4/29/2020@11:40:28pm GameObject: Invader.011 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:28pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader.011 !!
+4/29/2020@11:40:28pm GameObject: player_bullet_5_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:28pm GameObject: Invader.011_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:28pm player_bullet_3 (0.7200063467025757, 13.96497917175293, 1.2483819723129272) hit Invader.006 (1.523449182510376, 14.295903205871582, 0.9226980209350586)
+4/29/2020@11:40:28pm GameObject: player_bullet_3 in Group:InvaderGroup has removed association with its Child: player_bullet_3_collisionVisualizer !!
+4/29/2020@11:40:28pm GameObject: player_bullet_3 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:28pm GameObject: Invader.006 in Group:InvaderGroup has removed association with its Child: Invader.006_collisionVisualizer !!
+4/29/2020@11:40:28pm GameObject: Invader.006 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:28pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader.006 !!
+4/29/2020@11:40:28pm GameObject: player_bullet_3_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:28pm GameObject: Invader.006_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:30pm player_bullet_8 (-0.4349936544895172, 10.239997863769531, 1.2483819723129272) hit Invader.010 (-1.1312628984451294, 10.549666404724121, 0.9226980209350586)
+4/29/2020@11:40:30pm GameObject: player_bullet_8 in Group:InvaderGroup has removed association with its Child: player_bullet_8_collisionVisualizer !!
+4/29/2020@11:40:30pm GameObject: player_bullet_8 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:30pm GameObject: Invader.010 in Group:InvaderGroup has removed association with its Child: Invader.010_collisionVisualizer !!
+4/29/2020@11:40:30pm GameObject: Invader.010 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:30pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader.010 !!
+4/29/2020@11:40:30pm GameObject: player_bullet_8_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:30pm GameObject: Invader.010_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:30pm Invader.010_bullet7 (-1.0473629236221313, 8.857656478881836, 1.2226979732513428) hit Ship (-0.7199935913085938, 7.410001754760742, 1.2483819723129272)
+4/29/2020@11:40:30pm GameObject: Invader.010_bullet7 in Group:InvaderGroup has removed association with its Child: Invader.010_bullet7_collisionVisualizer !!
+4/29/2020@11:40:30pm GameObject: Invader.010_bullet7 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:30pm GameObject: Invader.010_bullet7_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:30pm Invader.004_bullet0 (-3.4676828384399414, 11.3969144821167, 1.2226979732513428) hit Ship (-2.4899938106536865, 9.855000495910645, 1.2483819723129272)
+4/29/2020@11:40:30pm GameObject: Invader.004_bullet0 in Group:InvaderGroup has removed association with its Child: Invader.004_bullet0_collisionVisualizer !!
+4/29/2020@11:40:30pm GameObject: Invader.004_bullet0 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:30pm GameObject: Invader.004_bullet0_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:31pm player_bullet_10 (-4.31999397277832, 13.949996948242188, 1.2483819723129272) hit Invader.004 (-3.7318830490112305, 14.295903205871582, 0.9226980209350586)
+4/29/2020@11:40:31pm GameObject: Invader.004 in Group:InvaderGroup has removed association with its Child: Invader.004_collisionVisualizer !!
+4/29/2020@11:40:31pm GameObject: Invader.004 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:31pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader.004 !!
+4/29/2020@11:40:31pm GameObject: player_bullet_10 in Group:InvaderGroup has removed association with its Child: player_bullet_10_collisionVisualizer !!
+4/29/2020@11:40:31pm GameObject: player_bullet_10 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:31pm GameObject: Invader.004_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:31pm GameObject: player_bullet_10_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:32pm Invader.005_bullet0 (-1.306563138961792, 12.994911193847656, 1.2226979732513428) hit player_bullet_11 (-1.1999942064285278, 12.884994506835938, 1.2483819723129272)
+4/29/2020@11:40:32pm player_bullet_11 (-1.1999942064285278, 12.884994506835938, 1.2483819723129272) hit Invader.005_bullet0 (-1.306563138961792, 12.994911193847656, 1.2226979732513428)
+4/29/2020@11:40:32pm GameObject: Invader.005_bullet0 in Group:InvaderGroup has removed association with its Child: Invader.005_bullet0_collisionVisualizer !!
+4/29/2020@11:40:32pm GameObject: Invader.005_bullet0 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:32pm GameObject: Invader.005_bullet0_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:32pm GameObject: player_bullet_11 in Group:InvaderGroup has removed association with its Child: player_bullet_11_collisionVisualizer !!
+4/29/2020@11:40:32pm GameObject: player_bullet_11 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:32pm GameObject: player_bullet_11_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:33pm BUMP!
+4/29/2020@11:40:33pm player_bullet_12 (-1.3799941539764404, 18.019996643066406, 1.2483819723129272) hit Invader.002 (-1.424963116645813, 18.33971405029297, 0.9226980209350586)
+4/29/2020@11:40:33pm GameObject: player_bullet_12 in Group:InvaderGroup has removed association with its Child: player_bullet_12_collisionVisualizer !!
+4/29/2020@11:40:33pm GameObject: player_bullet_12 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:33pm GameObject: Invader.002 in Group:InvaderGroup has removed association with its Child: Invader.002_collisionVisualizer !!
+4/29/2020@11:40:33pm GameObject: Invader.002 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:33pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader.002 !!
+4/29/2020@11:40:33pm GameObject: Invader.002_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:34pm Invader_bullet0 (3.920664072036743, 12.18057918548584, 1.1958669424057007) hit Ship (3.1500062942504883, 10.619999885559082, 1.2483819723129272)
+4/29/2020@11:40:34pm GameObject: Invader_bullet0 in Group:InvaderGroup has removed association with its Child: Invader_bullet0_collisionVisualizer !!
+4/29/2020@11:40:34pm GameObject: Invader_bullet0 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:34pm GameObject: Invader_bullet0_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:35pm BUMP!
+4/29/2020@11:40:35pm Invader.001_bullet0 (1.2469490766525269, 14.065513610839844, 1.2226979732513428) hit Ship (1.4700063467025757, 12.449999809265137, 1.2483819723129272)
+4/29/2020@11:40:35pm GameObject: Invader.001_bullet0 in Group:InvaderGroup has removed association with its Child: Invader.001_bullet0_collisionVisualizer !!
+4/29/2020@11:40:35pm GameObject: Invader.001_bullet0 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:35pm GameObject: Invader.001_bullet0_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:35pm player_bullet_13 (0.21000589430332184, 17.905006408691406, 1.2483819723129272) hit Invader.001 (1.1447486877441406, 18.257129669189453, 0.9226980209350586)
+4/29/2020@11:40:35pm GameObject: player_bullet_13 in Group:InvaderGroup has removed association with its Child: player_bullet_13_collisionVisualizer !!
+4/29/2020@11:40:35pm GameObject: player_bullet_13 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:35pm GameObject: Invader.001 in Group:InvaderGroup has removed association with its Child: Invader.001_collisionVisualizer !!
+4/29/2020@11:40:35pm GameObject: Invader.001 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:35pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader.001 !!
+4/29/2020@11:40:35pm GameObject: Invader.001_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:35pm player_bullet_14 (3.1500062942504883, 17.94499969482422, 1.2483819723129272) hit Invader (3.544863700866699, 18.235729217529297, 0.8958669900894165)
+4/29/2020@11:40:35pm GameObject: player_bullet_14 in Group:InvaderGroup has removed association with its Child: player_bullet_14_collisionVisualizer !!
+4/29/2020@11:40:35pm GameObject: player_bullet_14 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:35pm GameObject: player_bullet_14_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:35pm GameObject: Invader in Group:InvaderGroup has removed association with its Child: Invader_collisionVisualizer !!
+4/29/2020@11:40:35pm GameObject: Invader in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:35pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader !!
+4/29/2020@11:40:35pm GameObject: Invader_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:37pm player_bullet_17 (-1.5299934148788452, 13.660013198852539, 1.2483819723129272) hit Invader.005 (-1.4008632898330688, 13.99470329284668, 0.9226980209350586)
+4/29/2020@11:40:37pm GameObject: player_bullet_17 in Group:InvaderGroup has removed association with its Child: player_bullet_17_collisionVisualizer !!
+4/29/2020@11:40:37pm GameObject: player_bullet_17 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:37pm GameObject: Invader.005 in Group:InvaderGroup has removed association with its Child: Invader.005_collisionVisualizer !!
+4/29/2020@11:40:37pm GameObject: Invader.005 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:37pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader.005 !!
+4/29/2020@11:40:37pm GameObject: Invader.005_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:37pm GameObject: player_bullet_17_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:37pm Invader.003_bullet0 (-3.8541831970214844, 16.2683162689209, 1.2226979732513428) hit player_bullet_18 (-3.7349932193756104, 16.185014724731445, 1.2483819723129272)
+4/29/2020@11:40:37pm player_bullet_18 (-3.7349932193756104, 16.185014724731445, 1.2483819723129272) hit Invader.003_bullet0 (-3.8541831970214844, 16.2683162689209, 1.2226979732513428)
+4/29/2020@11:40:37pm GameObject: Invader.003_bullet0 in Group:InvaderGroup has removed association with its Child: Invader.003_bullet0_collisionVisualizer !!
+4/29/2020@11:40:37pm GameObject: Invader.003_bullet0 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:37pm GameObject: Invader.003_bullet0_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:37pm GameObject: player_bullet_18 in Group:InvaderGroup has removed association with its Child: player_bullet_18_collisionVisualizer !!
+4/29/2020@11:40:37pm GameObject: player_bullet_18 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:38pm BUMP!
+4/29/2020@11:40:40pm BUMP!
+4/29/2020@11:40:41pm player_bullet_19 (-3.374993085861206, 17.55998420715332, 1.2483819723129272) hit Invader.003 (-3.9491825103759766, 17.90084457397461, 0.9226980209350586)
+4/29/2020@11:40:41pm GameObject: player_bullet_19 in Group:InvaderGroup has removed association with its Child: player_bullet_19_collisionVisualizer !!
+4/29/2020@11:40:41pm GameObject: player_bullet_19 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:41pm GameObject: Invader.003 in Group:InvaderGroup has removed association with its Child: Invader.003_collisionVisualizer !!
+4/29/2020@11:40:41pm GameObject: Invader.003 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:41pm GameObject: FleetContainer in Group:InvaderGroup has removed association with its Child: Invader.003 !!
+4/29/2020@11:40:41pm GameObject: Invader.003_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:41pm GameObject: player_bullet_19_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: CamRotater in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: Camera in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: Ship in Group:InvaderGroup has removed association with its Child: Camera !!
+4/29/2020@11:40:49pm GameObject: FleetContainer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: Ground in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: Invader.007_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: Invader.009_bullet2_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: Lamp in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: LeftBumper in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: RightBumper in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: ShieldA in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: ShieldA.001 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: ShieldA.002 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: Ship in Group:InvaderGroup has removed association with its Child: Ship_collisionVisualizer !!
+4/29/2020@11:40:49pm GameObject: Ship in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: Ship_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: player_bullet_12_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: player_bullet_13_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: player_bullet_15 in Group:InvaderGroup has removed association with its Child: player_bullet_15_collisionVisualizer !!
+4/29/2020@11:40:49pm GameObject: player_bullet_15 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: player_bullet_15_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: player_bullet_16 in Group:InvaderGroup has removed association with its Child: player_bullet_16_collisionVisualizer !!
+4/29/2020@11:40:49pm GameObject: player_bullet_16 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: player_bullet_16_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: player_bullet_18_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: player_bullet_4 in Group:InvaderGroup has removed association with its Child: player_bullet_4_collisionVisualizer !!
+4/29/2020@11:40:49pm GameObject: player_bullet_4 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: player_bullet_4_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: player_bullet_6 in Group:InvaderGroup has removed association with its Child: player_bullet_6_collisionVisualizer !!
+4/29/2020@11:40:49pm GameObject: player_bullet_6 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: player_bullet_6_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: player_bullet_7 in Group:InvaderGroup has removed association with its Child: player_bullet_7_collisionVisualizer !!
+4/29/2020@11:40:49pm GameObject: player_bullet_7 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: player_bullet_7_collisionVisualizer in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: player_bullet_9 in Group:InvaderGroup has removed association with its Child: player_bullet_9_collisionVisualizer !!
+4/29/2020@11:40:49pm GameObject: player_bullet_9 in Group:InvaderGroup has deleted all its children!!
+4/29/2020@11:40:49pm GameObject: player_bullet_9_collisionVisualizer in Group:InvaderGroup has deleted all its children!!

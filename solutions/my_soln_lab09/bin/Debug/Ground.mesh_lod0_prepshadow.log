@@ -1,0 +1,40 @@
+12:43:17: Edge Data
+12:43:17: ---------
+12:43:17: Triangle 0 = {indexSet=0, vertexSet=0, v0=0, v1=1, v2=2}
+12:43:17: Triangle 1 = {indexSet=0, vertexSet=0, v0=0, v1=2, v2=3}
+12:43:17: Edge Group vertexSet=0
+12:43:17: Edge 0 = {
+  tri0=0, 
+  tri1=18446744073709551615, 
+  v0=0, 
+  v1=1, 
+  degenerate=true 
+}
+12:43:17: Edge 1 = {
+  tri0=0, 
+  tri1=18446744073709551615, 
+  v0=1, 
+  v1=2, 
+  degenerate=true 
+}
+12:43:17: Edge 2 = {
+  tri0=0, 
+  tri1=1, 
+  v0=2, 
+  v1=0, 
+  degenerate=false 
+}
+12:43:17: Edge 3 = {
+  tri0=1, 
+  tri1=18446744073709551615, 
+  v0=2, 
+  v1=3, 
+  degenerate=true 
+}
+12:43:17: Edge 4 = {
+  tri0=1, 
+  tri1=18446744073709551615, 
+  v0=3, 
+  v1=0, 
+  degenerate=true 
+}

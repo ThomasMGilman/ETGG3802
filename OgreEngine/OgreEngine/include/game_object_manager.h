@@ -29,19 +29,20 @@ namespace OgreEngine
 		};
 
 		// ***** ATTRIBUTES *****
+	public:
+		/// First update flag, if true checks to see if script twin is not null and check for a create method
+		bool firstUpdate = true, updating = false;
 	protected:
 		// GameObject map for creating and keeping track of GameObjects
 		std::map<std::string, std::map<std::string, GameObject*>> mObjects;
 		std::map<int, std::vector<GameObject*>> mTaggedObjects;
 
+		// Queued Gameobjects waiting to be added to currently active objects in scene.
+		std::unordered_set<GameObject*> mQueuedToCreateObjects;
+		std::unordered_set<GameObject*> mQueuedToDestroyObjects;
+
 		//map of Externals parsed by scene xml, each external is a list of the externalResource and its Path
 		std::map<std::string, std::list<ExternalResource>> mExternals;
-
-		// Iterators
-		std::map<std::string, GameObject*>::iterator mObjIter;
-		std::map<std::string, GameObject*>::reverse_iterator mObjRevIter;
-		std::map<std::string, std::map<std::string, GameObject*>>::iterator mGroupsIter;
-		std::map<std::string, std::map<std::string, GameObject*>>::reverse_iterator mGroupsRevIter;
 
 		std::string mMediaPath = "../Media/my_media/";
 
@@ -123,6 +124,12 @@ namespace OgreEngine
 
 		// ***** DELETION METHODS ***** 
 	public:
+		/// Queue GameObject for deletion
+		void queue_deletion_of_game_object(GameObject* obj);
+
+		/// Destroy all Queued GameObjects at end of frame
+		void destroy_queued_objects();
+
 		/// Destroys a game object (faster version) if you know the group name
 		bool destroy_game_object(std::string group_name, std::string gobj_name, bool ignoreLog = true);
 		
@@ -147,6 +154,8 @@ namespace OgreEngine
 		/// Creates a new game object.  This creates a group as well, if the given one doesn't exist.
 		GameObject* create_game_object(std::string group_name, std::string object_name, GameObject* parent = nullptr, unsigned int tag = 0, Ogre::Vector3 pos = Ogre::Vector3::ZERO, Ogre::Quaternion rot = Ogre::Quaternion::IDENTITY);
 		
+		void add_queued_objects();
+
 		GameObject* create_ground_plane(std::string materialName);
 
 		void set_skybox(std::string materialName = "Examples/SpaceSkyBox", float distance = 300.0f, bool drawFirst = false);
